@@ -1,5 +1,7 @@
 # Eternal Powers — The 2D Chronicles
 
+**[Play Eternal Powers in your browser](https://muonntau.github.io/Eternal-Powers/)**
+
 A playable 2D fantasy campaign based on the supplied **Eternal Powers Game Manual**, provisional ruleset 0.1. Explore three realms, develop an angelic or demonic character, complete authored contracts, build a sanctuary, and change the world through reversible rituals.
 
 The game includes local solo play, persistent private co-op, hundreds of generated graphics and audio assets, and licensed CC0 imports. Everything needed for the game is shipped in the repository.
