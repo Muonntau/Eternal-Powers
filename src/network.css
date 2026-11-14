@@ -1,0 +1,1232 @@
+.modal-multiplayer,
+.modal-network {
+  max-width: 1100px;
+  width: 1100px;
+}
+.multiplayer-content {
+  padding: 25px 30px 30px;
+}
+.network-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  padding: 27px 28px;
+  border: 1px solid #a8b07a55;
+  border-radius: 5px;
+  background:
+    linear-gradient(110deg, #203e30ed, #28452fbd),
+    url("/assets/celestial-sanctuary-keyart.png") center/cover;
+}
+.network-banner .eyebrow {
+  font-size: 6px;
+  letter-spacing: 1.5px;
+}
+.network-banner h3 {
+  font: 34px/1.05 var(--serif);
+  color: #e2e3bd;
+  margin: 9px 0 13px;
+}
+.network-banner p {
+  font-size: 9px;
+  line-height: 1.9;
+  color: #9bb58c;
+  max-width: 650px;
+}
+.network-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  min-width: 110px;
+}
+.network-status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #829b70;
+  box-shadow: 0 0 10px #7da25a33;
+}
+.network-status.connected i {
+  background: #b4d492;
+  box-shadow: 0 0 12px #9fc97977;
+}
+.network-status > span {
+  font-size: 5px;
+  letter-spacing: 1.3px;
+  color: #a3b98c;
+  white-space: nowrap;
+}
+.network-status strong {
+  font: 25px var(--serif);
+  letter-spacing: 3px;
+  color: #e0dfb1;
+  font-weight: 400;
+}
+.network-error {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  margin: 19px 0;
+  padding: 13px 15px;
+  border: 1px solid #b2936a66;
+  border-radius: 4px;
+  background: #b1935c0d;
+  color: #c6b18a;
+  font-size: 9px;
+  line-height: 1.8;
+}
+.network-error > span {
+  flex: 1;
+}
+.network-error > svg,
+.network-error button {
+  margin-top: 2px;
+}
+.network-connect {
+  padding-top: 27px;
+}
+.network-intro {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 27px;
+  color: #b0c18a;
+}
+.network-intro > h3 {
+  font: 32px/1.1 var(--serif);
+  color: #d2dfb3;
+  margin: 15px 0 13px;
+}
+.network-intro > p {
+  font-size: 9px;
+  line-height: 2;
+  color: #91aa7b;
+}
+.network-server-note {
+  display: flex;
+  align-items: start;
+  gap: 11px;
+  text-align: left;
+  padding: 15px 17px;
+  margin-top: 20px;
+  border: 1px solid #99ac6b33;
+  border-radius: 4px;
+  background: #8ea2590a;
+  color: #94ab7b;
+  font-size: 8px;
+  line-height: 1.9;
+}
+.network-server-note > svg {
+  margin-top: 2px;
+  color: #b2c28d;
+}
+.network-server-note code {
+  font-size: 8px;
+  color: #c5ce9f;
+  background: #172f1c88;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+.network-connect-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.network-connect-grid > section {
+  border: 1px solid #a1af7144;
+  border-radius: 5px;
+  background: #8aa05908;
+  padding: 25px;
+}
+.network-connect-grid .eyebrow {
+  font-size: 6px;
+  letter-spacing: 1.4px;
+  margin-bottom: 18px;
+}
+.network-connect-grid h3 {
+  font: 28px/1.1 var(--serif);
+  color: #cdd9ad;
+  margin: 21px 0 17px;
+}
+.network-connect-grid > section > h3:first-of-type {
+  margin-top: 0;
+}
+.network-connect-grid > section > p {
+  font-size: 9px;
+  line-height: 2;
+  color: #8da775;
+  margin-bottom: 20px;
+}
+.multiplayer-content label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 7px;
+  letter-spacing: 0.5px;
+  color: #9eb586;
+}
+.multiplayer-content input,
+.multiplayer-content select {
+  font: 10px Inter;
+  color: #c8d4aa;
+  background: #19301f;
+  border: 1px solid #9bab6d55;
+  border-radius: 3px;
+  padding: 11px 12px;
+  min-width: 0;
+  max-width: 100%;
+}
+.multiplayer-content input::placeholder {
+  color: #6e8b60;
+}
+.network-connect-grid label {
+  margin-bottom: 18px;
+}
+.network-connect-grid .network-checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 10px;
+  font-size: 8px;
+  letter-spacing: 0;
+  line-height: 1.9;
+  color: #829e70;
+}
+.network-checkbox input {
+  margin: 4px 0 0;
+  accent-color: #c7bd83;
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+}
+.network-connect-grid > .section .primary-button {
+  font-size: 9px;
+}
+.network-connect-grid .primary-button,
+.network-connect-grid .outline-button {
+  font-size: 9px;
+  padding: 12px 15px;
+}
+.network-connect-grid .world-code-input {
+  font: 25px var(--serif);
+  letter-spacing: 5px;
+  text-align: center;
+  color: #d1d9ae;
+  padding: 13px 12px;
+  text-transform: uppercase;
+}
+.network-privacy {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  margin-top: 26px;
+  padding-top: 21px;
+  border-top: 1px solid var(--line);
+  color: #a8ba86;
+}
+.network-privacy > p {
+  font-size: 8px;
+  line-height: 1.9;
+  color: #809e6c;
+}
+.network-privacy > svg {
+  margin-top: 2px;
+}
+.saved-network-identity {
+  display: flex;
+  align-items: start;
+  gap: 9px;
+  font-size: 8px;
+  line-height: 1.9;
+  color: #a1b889;
+  padding: 13px;
+  background: #8da3590a;
+  border: 1px solid #8fa75d33;
+  border-radius: 3px;
+  margin-bottom: 22px;
+}
+.saved-network-identity > svg {
+  margin-top: 2px;
+}
+.network-room-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 24px 0;
+}
+.network-room-bar > div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.network-room-bar .eyebrow {
+  font-size: 5px;
+  letter-spacing: 1.1px;
+}
+.network-room-bar strong {
+  font: 27px var(--serif);
+  color: #d6dda8;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+.network-room-bar > div:last-child > span {
+  font-size: 8px;
+  color: #87a372;
+}
+.network-room-bar .outline-button {
+  font-size: 8px;
+  padding: 9px 11px;
+}
+.network-tabs {
+  margin: 0 0 24px;
+}
+.network-tabs button {
+  font-size: 9px;
+  padding: 12px 18px;
+}
+.network-party-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 25px;
+}
+.network-roster > article {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid #9dad6d44;
+  border-radius: 5px;
+  padding: 17px;
+  margin-bottom: 14px;
+  background: #8da55a08;
+}
+.network-roster > article.offline {
+  opacity: 0.55;
+}
+.network-player-avatar {
+  width: 47px;
+  height: 61px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(#a2b16b17, transparent);
+  flex-shrink: 0;
+}
+.network-player-avatar > img {
+  height: 57px;
+  width: 46px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+.network-roster > article > div:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+.network-roster h3 {
+  font: 25px/1.1 var(--serif);
+  color: #c8d6a9;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.network-roster h3 > small {
+  font: 5px Inter;
+  letter-spacing: 1px;
+  color: #9eb67f;
+}
+.network-roster p {
+  font-size: 7px;
+  line-height: 1.8;
+  color: #8ca576;
+  margin: 6px 0;
+}
+.network-roster span {
+  font-size: 7px;
+  color: #6e945d;
+}
+.network-roster > article > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: end;
+}
+.network-roster select {
+  font-size: 7px;
+  padding: 7px;
+  max-width: 95px;
+  text-transform: capitalize;
+}
+.network-roster .outline-button {
+  font-size: 7px;
+  padding: 7px 9px;
+  gap: 6px;
+}
+.party-chat {
+  border: 1px solid #9bac6c44;
+  background: #7f9e5508;
+  border-radius: 5px;
+  padding: 21px;
+  display: flex;
+  flex-direction: column;
+  min-height: 330px;
+}
+.party-chat > .section-caption {
+  font-size: 6px;
+  letter-spacing: 1.2px;
+  margin-bottom: 16px;
+}
+.party-chat > .section-caption > span {
+  font-size: 4px;
+  letter-spacing: 0.6px;
+  color: #6a915b;
+}
+.party-chat-messages {
+  height: 250px;
+  overflow: auto;
+  margin-bottom: 17px;
+  scrollbar-width: thin;
+}
+.party-chat-messages > div {
+  padding: 11px 0;
+  border-bottom: 1px solid #91a56622;
+}
+.party-chat-messages strong {
+  font-size: 7px;
+  font-weight: 500;
+  color: #bbca98;
+  display: block;
+  margin-bottom: 5px;
+}
+.party-chat-messages p {
+  font-size: 9px;
+  line-height: 1.9;
+  color: #91ac7d;
+  overflow-wrap: anywhere;
+}
+.party-chat-messages .own strong {
+  color: #d2cc99;
+}
+.party-chat > form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+}
+.party-chat input {
+  font-size: 8px;
+  padding: 10px;
+  flex: 1;
+  width: 100px;
+}
+.party-chat .outline-button {
+  font-size: 7px;
+  gap: 5px;
+  padding: 10px;
+}
+.network-empty-note {
+  font-size: 9px;
+  line-height: 1.9;
+  color: #6f935f;
+  margin: 18px 0;
+}
+.player-trade-sides {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.player-trade-sides > section {
+  border: 1px solid #a1af7044;
+  border-radius: 5px;
+  padding: 23px;
+  background: #8ba15709;
+}
+.player-trade-sides .eyebrow {
+  font-size: 6px;
+  letter-spacing: 1.2px;
+  margin-bottom: 15px;
+}
+.player-trade-sides h3 {
+  font: 28px/1.2 var(--serif);
+  color: #cbd6a9;
+  min-height: 62px;
+  margin-bottom: 20px;
+}
+.network-offer-items > div {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 10px 0;
+  border-top: 1px solid #93a76633;
+  font-size: 8px;
+  color: #9eb787;
+}
+.network-offer-items > div > span {
+  flex: 1;
+}
+.network-offer-items button {
+  color: #bdaa7d;
+}
+.network-offer-builder {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  margin: 16px 0;
+}
+.network-offer-builder select {
+  font-size: 8px;
+  flex: 1;
+  padding: 9px;
+  max-width: 180px;
+}
+.network-offer-builder input {
+  font-size: 8px;
+  width: 57px;
+  padding: 9px;
+}
+.network-offer-builder > .outline-button {
+  font-size: 7px;
+  padding: 9px;
+  gap: 5px;
+}
+.network-karma-offer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+  margin: 21px 0;
+}
+.network-karma-offer label {
+  font-size: 6px;
+}
+.network-karma-offer input {
+  font-size: 8px;
+  width: 100%;
+  padding: 10px;
+}
+.network-karma-offer > .outline-button {
+  grid-column: 1/-1;
+  font-size: 7px;
+  padding: 9px 12px;
+}
+.trade-lock-state {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  color: #a9bb84;
+  font-size: 8px;
+  border-top: 1px solid #93a76633;
+  padding-top: 17px;
+}
+.network-confirmed {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #b2c98d;
+  font-size: 8px;
+  margin-top: 16px;
+}
+.network-trade-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 22px;
+}
+.network-trade-actions > .primary-button,
+.network-trade-actions > .subtle-button {
+  font-size: 8px;
+}
+.network-settlements > article {
+  padding: 17px 20px;
+  border: 1px solid #a1ad7044;
+  border-radius: 4px;
+  margin-top: 17px;
+  background: #90a35b0a;
+}
+.network-settlements strong {
+  font: 25px var(--serif);
+  color: #c0d09f;
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 400;
+}
+.network-settlements span {
+  font-size: 8px;
+  line-height: 1.9;
+  color: #88a575;
+}
+.market-list-form {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr 0.8fr 1fr;
+  gap: 14px;
+  align-items: end;
+  padding: 20px;
+  border: 1px solid #9fad6f44;
+  border-radius: 5px;
+  background: #8fa35908;
+  margin-bottom: 24px;
+}
+.market-list-form label {
+  font-size: 6px;
+}
+.market-list-form input,
+.market-list-form select {
+  font-size: 8px;
+  padding: 10px;
+}
+.market-list-form .primary-button {
+  grid-column: 1/-1;
+  font-size: 8px;
+  padding: 11px;
+}
+.market-listings > article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.market-listings .eyebrow {
+  font-size: 5px;
+  letter-spacing: 1px;
+}
+.market-listings h3 {
+  font: 27px var(--serif);
+  color: #c7d4a6;
+  margin: 8px 0;
+}
+.market-listings p {
+  font-size: 9px;
+  color: #b5bd85;
+}
+.market-listings .outline-button {
+  font-size: 8px;
+  padding: 10px 12px;
+}
+.network-receipts {
+  padding-top: 20px;
+  margin-top: 27px;
+  border-top: 1px solid var(--line);
+  font-size: 8px;
+  color: #a2b982;
+}
+.network-receipts summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.network-receipts summary:before {
+  content: "+";
+  font-size: 12px;
+  color: #a5b87f;
+}
+.network-receipts[open] summary {
+  margin-bottom: 16px;
+}
+.network-receipts[open] summary:before {
+  content: "−";
+}
+.network-receipts > div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 0;
+  border-bottom: 1px solid #8da45e22;
+  font-size: 8px;
+  color: #94ad7b;
+}
+.network-receipts small {
+  margin-left: auto;
+  font-size: 5px;
+  color: #6d935c;
+  overflow-wrap: anywhere;
+  max-width: 70%;
+}
+@media (max-width: 1000px) {
+  .network-party-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .network-roster > article {
+    gap: 11px;
+    padding: 15px;
+  }
+  .network-player-avatar {
+    width: 39px;
+  }
+  .network-player-avatar > img {
+    height: 51px;
+    width: 41px;
+  }
+  .network-roster h3 {
+    font-size: 23px;
+  }
+  .network-roster p {
+    font-size: 6px;
+  }
+  .network-roster span {
+    font-size: 6px;
+  }
+  .network-roster .outline-button {
+    font-size: 6px;
+  }
+  .network-party-layout .party-chat {
+    padding: 17px;
+  }
+  .player-trade-sides {
+    gap: 17px;
+  }
+  .player-trade-sides > section {
+    padding: 20px;
+  }
+  .network-offer-builder {
+    flex-wrap: wrap;
+  }
+  .network-offer-builder select {
+    max-width: none;
+  }
+  .network-offer-builder > .outline-button {
+    flex: 1;
+  }
+  .network-connect-grid {
+    gap: 17px;
+  }
+  .network-connect-grid > section {
+    padding: 21px;
+  }
+  .network-connect-grid > section > p {
+    font-size: 8px;
+  }
+  .network-room-bar > div {
+    gap: 11px;
+  }
+  .network-room-bar > div:last-child {
+    gap: 10px;
+  }
+  .network-room-bar > div:last-child > span {
+    font-size: 7px;
+  }
+  .network-room-bar .outline-button {
+    font-size: 7px;
+  }
+  .market-list-form {
+    gap: 11px;
+    padding: 18px;
+  }
+}
+@media (max-width: 800px) {
+  .multiplayer-content {
+    padding: 23px;
+  }
+  .network-banner {
+    padding: 23px;
+    gap: 20px;
+  }
+  .network-banner h3 {
+    font-size: 30px;
+  }
+  .network-banner p {
+    font-size: 8px;
+  }
+  .network-banner .eyebrow {
+    font-size: 5px;
+    letter-spacing: 1.2px;
+  }
+  .network-status {
+    min-width: 87px;
+  }
+  .network-status > span {
+    font-size: 4px;
+    letter-spacing: 1px;
+  }
+  .network-status strong {
+    font-size: 23px;
+    letter-spacing: 2px;
+  }
+  .network-intro > h3 {
+    font-size: 29px;
+  }
+  .network-intro > p {
+    font-size: 8px;
+  }
+  .network-server-note {
+    font-size: 7px;
+  }
+  .network-connect-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .network-connect-grid > section {
+    padding: 19px;
+  }
+  .network-connect-grid h3 {
+    font-size: 26px;
+  }
+  .network-connect-grid label {
+    font-size: 6px;
+  }
+  .network-connect-grid input {
+    font-size: 9px;
+    padding: 10px;
+  }
+  .network-connect-grid .network-checkbox {
+    font-size: 7px;
+  }
+  .network-connect-grid .primary-button,
+  .network-connect-grid .outline-button {
+    font-size: 8px;
+    padding: 11px;
+    gap: 7px;
+  }
+  .network-connect-grid .eyebrow {
+    font-size: 5px;
+  }
+  .network-privacy > p {
+    font-size: 7px;
+  }
+  .network-privacy > svg {
+    width: 15px;
+  }
+  .network-room-bar {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .network-room-bar > .div {
+    width: 100%;
+  }
+  .network-room-bar > div:last-child {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .network-room-bar strong {
+    font-size: 25px;
+  }
+  .network-tabs button {
+    font-size: 8px;
+    padding: 12px 13px;
+    gap: 6px;
+  }
+  .network-party-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .network-roster {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 13px;
+  }
+  .network-roster > article {
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 16px;
+  }
+  .network-roster > article > div:last-child {
+    flex-direction: row;
+    align-items: center;
+    margin-left: 50px;
+  }
+  .network-player-avatar {
+    width: 39px;
+    height: 53px;
+  }
+  .network-roster h3 {
+    font-size: 24px;
+  }
+  .network-roster p {
+    font-size: 7px;
+  }
+  .network-roster span {
+    font-size: 6px;
+  }
+  .network-roster .outline-button {
+    font-size: 7px;
+  }
+  .party-chat-messages {
+    height: 200px;
+  }
+  .party-chat > .section-caption {
+    font-size: 6px;
+  }
+  .party-chat > .section-caption > span {
+    font-size: 4px;
+  }
+  .player-trade-sides {
+    gap: 15px;
+  }
+  .player-trade-sides > section {
+    padding: 19px;
+  }
+  .player-trade-sides .eyebrow {
+    font-size: 5px;
+    letter-spacing: 1px;
+  }
+  .player-trade-sides h3 {
+    font-size: 26px;
+    line-height: 1.15;
+  }
+  .network-karma-offer {
+    gap: 10px;
+  }
+  .network-karma-offer label {
+    font-size: 5px;
+  }
+  .trade-lock-state {
+    font-size: 7px;
+    line-height: 1.8;
+  }
+  .market-list-form {
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+    padding: 19px;
+  }
+  .market-list-form label {
+    font-size: 6px;
+  }
+  .market-list-form select,
+  .market-list-form input {
+    font-size: 9px;
+  }
+  .network-error {
+    font-size: 8px;
+  }
+}
+@media (max-width: 530px) {
+  .multiplayer-content {
+    padding: 18px 15px 22px;
+  }
+  .network-banner {
+    padding: 21px 17px;
+    gap: 13px;
+  }
+  .network-banner h3 {
+    font-size: 29px;
+    line-height: 1.05;
+  }
+  .network-banner p {
+    font-size: 8px;
+    line-height: 1.9;
+  }
+  .network-banner .eyebrow {
+    font-size: 4px;
+    letter-spacing: 1px;
+  }
+  .network-status {
+    min-width: 62px;
+  }
+  .network-status > span {
+    font-size: 3px;
+    letter-spacing: 0.6px;
+  }
+  .network-status strong {
+    font-size: 21px;
+    letter-spacing: 1px;
+  }
+  .network-connect {
+    padding-top: 24px;
+  }
+  .network-intro > h3 {
+    font-size: 28px;
+  }
+  .network-intro > p {
+    font-size: 8px;
+    line-height: 1.9;
+  }
+  .network-server-note {
+    font-size: 7px;
+    padding: 14px 13px;
+    gap: 9px;
+  }
+  .network-server-note code {
+    font-size: 7px;
+  }
+  .network-server-note > svg {
+    width: 13px;
+  }
+  .network-connect-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+  .network-connect-grid > section {
+    padding: 22px 18px;
+  }
+  .network-connect-grid h3 {
+    font-size: 28px;
+  }
+  .network-connect-grid > section > p {
+    font-size: 8px;
+  }
+  .network-connect-grid .eyebrow {
+    font-size: 5px;
+    letter-spacing: 1.3px;
+  }
+  .network-connect-grid label {
+    font-size: 7px;
+  }
+  .network-connect-grid input {
+    font-size: 10px;
+    padding: 12px;
+  }
+  .network-connect-grid .network-checkbox {
+    font-size: 7px;
+  }
+  .network-connect-grid .primary-button,
+  .network-connect-grid .outline-button {
+    font-size: 8px;
+    padding: 12px;
+  }
+  .network-privacy {
+    gap: 11px;
+  }
+  .network-privacy > p {
+    font-size: 8px;
+  }
+  .saved-network-identity {
+    font-size: 7px;
+  }
+  .network-room-bar {
+    margin: 20px 0;
+    gap: 16px;
+  }
+  .network-room-bar .eyebrow {
+    font-size: 4px;
+    letter-spacing: 0.8px;
+  }
+  .network-room-bar > div {
+    gap: 10px;
+  }
+  .network-room-bar strong {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+  .network-room-bar > div:last-child > span {
+    font-size: 6px;
+  }
+  .network-room-bar .outline-button {
+    font-size: 6px;
+    padding: 9px;
+    gap: 5px;
+  }
+  .network-room-bar .outline-button svg {
+    width: 10px;
+  }
+  .network-tabs {
+    overflow: auto;
+    white-space: nowrap;
+    gap: 0;
+    margin-bottom: 20px;
+  }
+  .network-tabs button {
+    font-size: 6px;
+    padding: 12px 9px;
+    gap: 5px;
+  }
+  .network-tabs svg {
+    width: 10px;
+  }
+  .network-roster {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+  .network-roster > article {
+    padding: 18px 15px;
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+  .network-roster > article > div:last-child {
+    margin: 0;
+    flex-direction: column;
+    align-items: end;
+    gap: 9px;
+  }
+  .network-player-avatar {
+    width: 37px;
+    height: 53px;
+  }
+  .network-roster h3 {
+    font-size: 25px;
+    gap: 7px;
+  }
+  .network-roster h3 > small {
+    font-size: 4px;
+    letter-spacing: 0.7px;
+  }
+  .network-roster p {
+    font-size: 6px;
+  }
+  .network-roster span {
+    font-size: 6px;
+  }
+  .network-roster select {
+    font-size: 6px;
+    padding: 7px;
+    max-width: 83px;
+  }
+  .network-roster .outline-button {
+    font-size: 7px;
+    padding: 8px;
+    gap: 5px;
+  }
+  .party-chat {
+    padding: 18px 15px !important;
+    min-height: 300px;
+  }
+  .party-chat-messages {
+    height: 210px;
+  }
+  .party-chat-messages strong {
+    font-size: 7px;
+  }
+  .party-chat-messages p {
+    font-size: 8px;
+  }
+  .party-chat > .section-caption {
+    font-size: 5px;
+    letter-spacing: 0.9px;
+  }
+  .party-chat > .section-caption > span {
+    font-size: 3px;
+    letter-spacing: 0.4px;
+  }
+  .party-chat input {
+    font-size: 8px;
+  }
+  .party-chat > .form {
+    gap: 7px;
+  }
+  .party-chat .outline-button {
+    font-size: 7px;
+    padding: 10px;
+    gap: 4px;
+  }
+  .player-trade-sides {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .player-trade-sides > section {
+    padding: 21px 18px;
+  }
+  .player-trade-sides h3 {
+    font-size: 29px;
+    min-height: 0;
+    margin-bottom: 21px;
+  }
+  .player-trade-sides .eyebrow {
+    font-size: 5px;
+    letter-spacing: 1.1px;
+  }
+  .network-offer-builder {
+    flex-wrap: nowrap;
+    gap: 7px;
+  }
+  .network-offer-builder select {
+    font-size: 8px;
+    padding: 10px;
+    flex: 1;
+    width: 100px;
+  }
+  .network-offer-builder input {
+    width: 46px;
+    font-size: 8px;
+    padding: 10px 7px;
+  }
+  .network-offer-builder .outline-button {
+    font-size: 7px;
+    padding: 10px;
+    gap: 5px;
+    flex: none;
+  }
+  .network-karma-offer {
+    gap: 12px;
+  }
+  .network-karma-offer label {
+    font-size: 6px;
+  }
+  .network-karma-offer input {
+    padding: 11px;
+    font-size: 9px;
+  }
+  .network-karma-offer > .outline-button {
+    font-size: 7px;
+    padding: 11px;
+  }
+  .trade-lock-state {
+    font-size: 8px;
+    line-height: 1.9;
+    margin-top: 20px;
+    padding-top: 17px;
+  }
+  .network-confirmed {
+    font-size: 8px;
+    line-height: 1.8;
+  }
+  .network-trade-actions {
+    align-items: stretch;
+    gap: 11px;
+    flex-direction: column;
+  }
+  .network-trade-actions > .primary-button,
+  .network-trade-actions > .subtle-button {
+    font-size: 8px;
+    padding: 12px;
+  }
+  .network-settlements > article {
+    padding: 18px 16px;
+  }
+  .network-settlements strong {
+    font-size: 26px;
+  }
+  .network-settlements span {
+    font-size: 8px;
+  }
+  .market-list-form {
+    padding: 19px 16px;
+    gap: 15px 12px;
+  }
+  .market-list-form label {
+    font-size: 6px;
+  }
+  .market-list-form input,
+  .market-list-form select {
+    font-size: 8px;
+    padding: 10px;
+  }
+  .market-list-form .primary-button {
+    font-size: 8px;
+    padding: 12px;
+  }
+  .market-listings > article {
+    padding: 21px 0;
+    gap: 17px;
+    align-items: start;
+    flex-direction: column;
+  }
+  .market-listings h3 {
+    font-size: 29px;
+  }
+  .market-listings p {
+    font-size: 9px;
+  }
+  .market-listings .outline-button {
+    font-size: 8px;
+    padding: 10px 12px;
+  }
+  .network-receipts {
+    font-size: 7px;
+  }
+  .network-receipts > div {
+    font-size: 7px;
+    gap: 12px;
+  }
+  .network-receipts small {
+    font-size: 4px;
+    max-width: 67%;
+  }
+  .network-error {
+    font-size: 8px;
+    padding: 13px 12px;
+    gap: 9px;
+  }
+}

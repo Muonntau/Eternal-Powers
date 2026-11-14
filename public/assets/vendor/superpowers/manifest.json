@@ -1,0 +1,673 @@
+{
+  "title": "Superpowers Medieval Fantasy Asset Pack",
+  "creator": "Pixel-boy / Sparklin Labs",
+  "license": "CC0-1.0",
+  "source": "https://github.com/sparklinlabs/superpowers-asset-packs",
+  "files": [
+    {
+      "path": "/assets/vendor/superpowers/LICENSE-CC0.txt",
+      "bytes": 6555,
+      "sha256": "36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673"
+    },
+    {
+      "path": "/assets/vendor/superpowers/SOURCE-README.md",
+      "bytes": 3743,
+      "sha256": "210e3d9edc0530c8893d28ebc8e65f0285144aad4f0ba556f2ba5c18aa0e033e"
+    },
+    {
+      "path": "/assets/vendor/superpowers/animals/0-animals.png",
+      "bytes": 620,
+      "sha256": "e953d96beb5621baa8aef73933d684e8863b215caebb0aafc33c5a5f995920c5"
+    },
+    {
+      "path": "/assets/vendor/superpowers/animals/1.png",
+      "bytes": 2940,
+      "sha256": "d1c72f8d7648ac574093886920e79fa7b1aee244cc7edf9302c3a807e47f41c1"
+    },
+    {
+      "path": "/assets/vendor/superpowers/animals/2.png",
+      "bytes": 2944,
+      "sha256": "eb495bcd875c3ed75182fb5fed13c8a030a7967cabeef3dfd164dc4281b02b7b"
+    },
+    {
+      "path": "/assets/vendor/superpowers/animals/3.png",
+      "bytes": 2927,
+      "sha256": "7af7ad8687e2f629a7a76b94f16921d0df413cc53951e55158e411d6c941dc1b"
+    },
+    {
+      "path": "/assets/vendor/superpowers/animals/4.png",
+      "bytes": 3036,
+      "sha256": "545dd9492ba4596125c30b38751f9758fd850c08bdc42f92be961f0a96fbb52f"
+    },
+    {
+      "path": "/assets/vendor/superpowers/animals/5.png",
+      "bytes": 3032,
+      "sha256": "a9d8a0781f1cc108ee711c8a7edb4a18f6a3344e914ad26e10c81612e29f0858"
+    },
+    {
+      "path": "/assets/vendor/superpowers/animals/6.png",
+      "bytes": 2958,
+      "sha256": "ae45db1195537306f8597a822da58a0a22fe50a5da4790a820e56fd386b7e73c"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/0-tileset.png",
+      "bytes": 21422,
+      "sha256": "ff01fdc39190d5d118f33be10e6c949dd4a47f7dccd62dfe9b90ed21263073d9"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/1.png",
+      "bytes": 3494,
+      "sha256": "fb08f738e8ddf938af596ce0154eb5104d03931a5defac8a3fab40c69c876c4d"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/10.png",
+      "bytes": 3002,
+      "sha256": "7d81c272bd78f45ef3211eb8cb5cd8fb18d914e25789c718961a3f7358989894"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/11.png",
+      "bytes": 3074,
+      "sha256": "30e8bc7d01337a5538ebfdcf641e7587735a837cda0f43ac91f98e67edba22e6"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/12.png",
+      "bytes": 3177,
+      "sha256": "9686e0b93dd0426bb453b5270e52e55bbf2834496ef8e72015da062d35974b14"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/13.png",
+      "bytes": 3042,
+      "sha256": "273ea63ad65ff9bd64106b94cfb1526b049aeb39375e271737eafbe2985677e8"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/14.png",
+      "bytes": 3342,
+      "sha256": "3f380e957ad33b713306a7c640cb7f75fa3b6db44680f8fc38f1685814596771"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/15.png",
+      "bytes": 3108,
+      "sha256": "249daf76abb82dbbeedd5b51198222c2d3c826fe6ce163bbda1ea23053272079"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/16.png",
+      "bytes": 3180,
+      "sha256": "a3f3ebda9500b54a56e17bc82846b3c950e8601b33054e8c66dfa04f53cfdaa3"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/17.png",
+      "bytes": 3768,
+      "sha256": "55c21db8d7cd761c54185b6cdb8b5ca31f54f954839fed6f6a9fce11adda612a"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/18.png",
+      "bytes": 3427,
+      "sha256": "eb9000dd48cc1fa6bf89e82c388e9765d8f8482dd48304e43cba00ad16758159"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/19.png",
+      "bytes": 3132,
+      "sha256": "36bb21b41f8d031286572277e5ef00185e926217e15f1eed63ce6d59516cdf69"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/2.png",
+      "bytes": 3264,
+      "sha256": "e22b6822633a3b20303c51b02ef0b6ef341ce728f09515c7af7867a77cd6e63e"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/20.png",
+      "bytes": 3064,
+      "sha256": "44e3a4ee017a94cda56f5c0e02950824a772425c5ba748057b7141d19d02f867"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/21.png",
+      "bytes": 3533,
+      "sha256": "901efb8cb0c150e66cdc23ed5d0c2c6d5bf74674c9500510543971ae55d1da7e"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/3.png",
+      "bytes": 3028,
+      "sha256": "43ce3ce61591218573c4939db5647349c55fb639b5837a5369b4a905551d368c"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/4.png",
+      "bytes": 3003,
+      "sha256": "e360d5282a1482214c894c6ad5bf35e65a5e9389bdccbb8fb107c52bafcb5794"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/5.png",
+      "bytes": 2970,
+      "sha256": "8988d003cc248344ca2686043efffb1117fe4b6fe4c1a04d84259b3a1357cf88"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/6.png",
+      "bytes": 3027,
+      "sha256": "260ffabbdfc04a6571aa4b2322b0e4df296b17476a9f1fe037ad64ffa2329cc4"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/7.png",
+      "bytes": 3138,
+      "sha256": "959eb0e35ef1a12f291411256befa82782db774a1e6dccd192070e47599a45f6"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/8.png",
+      "bytes": 3020,
+      "sha256": "c72e1ed696065efebf48b1c8c80dc0dce61c3c14c0f0edb3d338515fa4f5f0fa"
+    },
+    {
+      "path": "/assets/vendor/superpowers/background-elements/9.png",
+      "bytes": 3065,
+      "sha256": "5a1dafc82bbba137dbe55220ff29e36beb0b095bc9bf9203922aacac29cd8aee"
+    },
+    {
+      "path": "/assets/vendor/superpowers/characters/0-characters.png",
+      "bytes": 1164,
+      "sha256": "0634652574a2e05f8257e42a19591d179977dd8f7ec042b6cf893f9fb21f9585"
+    },
+    {
+      "path": "/assets/vendor/superpowers/characters/1.png",
+      "bytes": 3028,
+      "sha256": "95d0e3cce27118a0239b71decc12171773c40d9d352f1237d6120d8eb461e44f"
+    },
+    {
+      "path": "/assets/vendor/superpowers/characters/10.png",
+      "bytes": 3111,
+      "sha256": "3c23b1f93f4d84a6f98795f3c718b74a0e6f3f5c8f8c4097e1180ec126aa44c2"
+    },
+    {
+      "path": "/assets/vendor/superpowers/characters/2.png",
+      "bytes": 2951,
+      "sha256": "66339f0d4dac950f7d9e8f2c357db3c91772ba72424be4ef6a7768a63bb07f05"
+    },
+    {
+      "path": "/assets/vendor/superpowers/characters/3.png",
+      "bytes": 3023,
+      "sha256": "872c7ff22140885bac8c4881eec237d65559c1aa1f408634d2ad6508a5217bde"
+    },
+    {
+      "path": "/assets/vendor/superpowers/characters/4.png",
+      "bytes": 3019,
+      "sha256": "5cf0366556d7f3cc9fc36a2a527f3033eed14571151c0fe50503eee0345f8c98"
+    },
+    {
+      "path": "/assets/vendor/superpowers/characters/5.png",
+      "bytes": 3015,
+      "sha256": "8553ea00588f388e4212f1fb913447429cb681822d80b2885256cb1f4916bcf2"
+    },
+    {
+      "path": "/assets/vendor/superpowers/characters/6.png",
+      "bytes": 3007,
+      "sha256": "203684740bef3310770051e66877b9111492ae8f35795249dd47fd77f1abb37c"
+    },
+    {
+      "path": "/assets/vendor/superpowers/characters/7.png",
+      "bytes": 3084,
+      "sha256": "dca9931798abc13d500ef7b2d7c236d098500750330e57f442dc73251d2ea3ed"
+    },
+    {
+      "path": "/assets/vendor/superpowers/characters/8.png",
+      "bytes": 3051,
+      "sha256": "9897065b60a878f0e89a2dfc9bdc15671e86edeb248d9795bec756e05bb7358d"
+    },
+    {
+      "path": "/assets/vendor/superpowers/characters/9.png",
+      "bytes": 3078,
+      "sha256": "cf774d3257143adddef0fa9b37a58e60a868b3fe5bba6121eb14a44efa3c0e5a"
+    },
+    {
+      "path": "/assets/vendor/superpowers/fx/1.png",
+      "bytes": 142,
+      "sha256": "7fdf8952f87d77ea325763f6f46601779e08842cf4ea3ddea1361df8242fd0b2"
+    },
+    {
+      "path": "/assets/vendor/superpowers/fx/10.png",
+      "bytes": 258,
+      "sha256": "3eda92ffb318e3ea80b80703a49122b7235254ae3b84d3a9cc9faa0fd3eb7e8d"
+    },
+    {
+      "path": "/assets/vendor/superpowers/fx/11.png",
+      "bytes": 278,
+      "sha256": "983dcbe572a7fd56013f4370c27d1cfe34e823e8cf599b8c318de599515a410d"
+    },
+    {
+      "path": "/assets/vendor/superpowers/fx/2.png",
+      "bytes": 161,
+      "sha256": "93509a215a50ce3bfd01732c7f6994e2b73561881c95cf5cd6b656d537a1676a"
+    },
+    {
+      "path": "/assets/vendor/superpowers/fx/3.png",
+      "bytes": 167,
+      "sha256": "22b626e8bc1c1a00b999e5e7155f23b117f543159691db567b9d7b6c9d22ceab"
+    },
+    {
+      "path": "/assets/vendor/superpowers/fx/4.png",
+      "bytes": 183,
+      "sha256": "9c8cea819183c48fac384f18e8f50c6baffbdb25f99bea1ef69fb3ab8225c565"
+    },
+    {
+      "path": "/assets/vendor/superpowers/fx/5.png",
+      "bytes": 264,
+      "sha256": "20503540ddf955c9ae26f038fd237abbad75b4c7b74271581277333652e67b05"
+    },
+    {
+      "path": "/assets/vendor/superpowers/fx/6.png",
+      "bytes": 327,
+      "sha256": "a7c2bff6ffe8d63ca3486818816a4c1e2ec8492a8d1374df407a10d1867e4dc4"
+    },
+    {
+      "path": "/assets/vendor/superpowers/fx/7.png",
+      "bytes": 448,
+      "sha256": "1c4f246d530e74c162fbe3189c755f5ca0a61a242caed6ef106a476b82d8caad"
+    },
+    {
+      "path": "/assets/vendor/superpowers/fx/8.png",
+      "bytes": 405,
+      "sha256": "11f7a1e5d595a3bc625418ba7303c82f6baf0b6d4fb03bdfe9bcc9cbf9847372"
+    },
+    {
+      "path": "/assets/vendor/superpowers/fx/9.png",
+      "bytes": 318,
+      "sha256": "68a3f004b2182cbfcddaea72e55f7e2d0f2bc7d8c62ba64334cf5efeee5d604b"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/1.png",
+      "bytes": 2923,
+      "sha256": "c5f85fc169be94c2cfd6a1dd658c7a105176dc3257f932a79457d850bda62b1e"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/10.png",
+      "bytes": 2909,
+      "sha256": "86db4e2703cce194abeb2f7f125dfda21678085cc955d8b697edaa053a119816"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/11.png",
+      "bytes": 2913,
+      "sha256": "642da7a23450693bb4e93c2b876193a0fd4b4f670cb782a87775e0b47cc6894e"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/12.png",
+      "bytes": 3021,
+      "sha256": "0495ed911b68a6d8fa1c6771895d7505ea98317b17f373940d5d0d529fc5531f"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/13.png",
+      "bytes": 3026,
+      "sha256": "291b5d295bd6ebc749c8100878d9d4558616cc76e5ddcec1e080b4104c37650d"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/14.png",
+      "bytes": 3041,
+      "sha256": "692210db67aeab4d829eb3df822b50273efb3ba9b4d5b69fa015cb9a0eb08f7d"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/15.png",
+      "bytes": 2871,
+      "sha256": "7158e676103f812470da0e60bc46f4bab2462ae790f1ee67870af67c255e82dd"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/16.png",
+      "bytes": 2882,
+      "sha256": "f938ffe213a0d9018c3ed22d433a6e6bd4f6bbee8f02d2578c4908145f12d74b"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/17.png",
+      "bytes": 2895,
+      "sha256": "c171a9ea0fad2b00a79525b0d2d28288062baad60d826a4cc9c19d0a20ffdbdc"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/18.png",
+      "bytes": 2881,
+      "sha256": "0b1fb7c3d8cba4418950351a065b258dfc0caba90e36150bcf78b74d408bec08"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/19.png",
+      "bytes": 2914,
+      "sha256": "701d6db016a7f97220779db4b178faa394def1cf6482ebb98d7041d5fdb9eef4"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/2.png",
+      "bytes": 2972,
+      "sha256": "cf4ac17990cc817745615c2bcba666b932c1e6aaab3e96cd6d41327a63b2929e"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/3.png",
+      "bytes": 2959,
+      "sha256": "089e652b969c865614423613a4b3bfd6ba9fa22a43b508dbaaf99b3171210227"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/4.png",
+      "bytes": 2926,
+      "sha256": "0c2d12781364d0c1930ea60b8158c291d83a6272b8c7d0a4107e44aac0064a46"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/5.png",
+      "bytes": 2900,
+      "sha256": "9a7ad73bcf071f8c8300b3d284e16b8d92ceada0e458c3081e444748b26e604a"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/6.png",
+      "bytes": 2906,
+      "sha256": "2abc2ff16f8322a6c021d979f2f0a8386c8a853b04b79040ddd5d6102d10731e"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/7.png",
+      "bytes": 2951,
+      "sha256": "b8bf5a6bb530e7465cf67ea2df649a997179d66511d2f251a714c5fee75481d7"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/8.png",
+      "bytes": 2872,
+      "sha256": "fa4dbd073018123547d7600744c79e896c5790e5593caeb48cb612544981adef"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/9.png",
+      "bytes": 2854,
+      "sha256": "f8aa9b0fdba239ceeca88847325a78c549aa074945dbf4874aff3bd9d1ac2abd"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/barrel.png",
+      "bytes": 2950,
+      "sha256": "09806d7f28530ccf6b172496528de3b10c27225f2746eb9afc907adcdad599bf"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/crate.png",
+      "bytes": 2897,
+      "sha256": "7b52ec3f2180f71e72c17578e623f88b07607f4dd3225d53b213d61bddd1ad8e"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/element/1.png",
+      "bytes": 2947,
+      "sha256": "f8f89c893bb0192e199cfd2abd60726858064b3fe748ad995904ab094c11730a"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/element/2.png",
+      "bytes": 2963,
+      "sha256": "dfc1d10af06c7267c09c49077ed47d1792c16e5cefce398f42590bc4e0513e7d"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/element/3.png",
+      "bytes": 2949,
+      "sha256": "4c2ec0bbfb9b57be8b02ddae1485ac0b5d34a907c68da451603fa83bde48f87e"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/element/4.png",
+      "bytes": 2947,
+      "sha256": "4f3e5cf5f30dacf62d3d3f6615480f6655ae2667b4a6c7e893e705b692c154ff"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/element/5.png",
+      "bytes": 2980,
+      "sha256": "b5c08877c2c593c7be3921ad6f8886f76d08a6b6dd97095b82fd509f50ae9d8f"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/element/6.png",
+      "bytes": 3018,
+      "sha256": "dfca8d4ffd3754138d77cca9cde6f55b45b296abd05a3a52df20755105a619d5"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/element/7.png",
+      "bytes": 2892,
+      "sha256": "8269f86050dece5c8efe772460b090573274d56f7e182758074a29b1ca14aa64"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/element/8.png",
+      "bytes": 2976,
+      "sha256": "2fb76d5516da0a9cbb462d44b8715db34294c06ae960375043d96cdae73beefc"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/element/elements.png",
+      "bytes": 729,
+      "sha256": "f74cb6f67643ae8f3ba532161ad873bd384c9a5086ab98d75ca4e757dde21afd"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/emblem/1.png",
+      "bytes": 3300,
+      "sha256": "9fc554897d130a6513fa351c3199dc9cf5a648ed55dc6a00a70e6b559d5f1e34"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/emblem/2.png",
+      "bytes": 3195,
+      "sha256": "ff0ad84bb191637aa8719371dfd5b3caa1bec80d708fcbb4d59eb1f5acb7692c"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/emblem/3.png",
+      "bytes": 3222,
+      "sha256": "7e0db54472d8699d33b7bd404e86f65abf4510085519ce2b8486487fae306940"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/emblem/4.png",
+      "bytes": 3455,
+      "sha256": "237ce1cdb9bf382f62b14f4a4c5988c906ce6a36ede7ac3f999268930c90e6d1"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/emblem/5.png",
+      "bytes": 3378,
+      "sha256": "9f4c2fd082d2894b1c9ccf54e4ca3cfab118ddb4bc1b0ddaa910effab382cea3"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/emblem/6.png",
+      "bytes": 3455,
+      "sha256": "a7cefefdc22b1af4488f9dd0f89f15302b7b906c00099e4e974ba623de4b0126"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/emblem/all.png",
+      "bytes": 1799,
+      "sha256": "d6d0e0003f1152a6da7225a77a2ccce323f57fbe39d96981762230993cfaf837"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/food-&-potion/food.png",
+      "bytes": 655,
+      "sha256": "ad613804747b447bbe8516bb20e831997245404dc5558df41955ee5a61f10cde"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/food-&-potion/potion.png",
+      "bytes": 359,
+      "sha256": "c63c27e8d4b8770fdc3374990bb07e0c0b1789acb726a60dd22fa9f1c8277012"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/gold-&-gem/coin.png",
+      "bytes": 2921,
+      "sha256": "4e504b230a9de25df74cb6d541539fa594e7c92f70570d88cbbe776e46aa99b9"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/gold-&-gem/gem-1.png",
+      "bytes": 2900,
+      "sha256": "a4af46951cd3a4bd5d825352ab29b2ecd12684122ab649eab44a4dad79e1adc6"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/gold-&-gem/gem-2.png",
+      "bytes": 2857,
+      "sha256": "6c3268561592678f0f7568b2a27fb6c1e1f5dcef408b565be2c548e9e7e382b1"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/gold-&-gem/gem-3.png",
+      "bytes": 2859,
+      "sha256": "b020556264cb36059ffde22d98372b00613fa4b562ac8111ddc0a186a411573e"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/gold-&-gem/gem-4.png",
+      "bytes": 2846,
+      "sha256": "12dc0f585d4c93c1087e3905a8d97e8576c1af853f168d970f0e7c7f1f899652"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/gold-&-gem/gold-cup.png",
+      "bytes": 2952,
+      "sha256": "db4110093048321418dec10524d2ac08442ffa53e2c4586f18981a46a772d7a4"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/gold-&-gem/gold.png",
+      "bytes": 3144,
+      "sha256": "6b9f9daf17f8257ad6f39982f17790989ab8c7296cc337b77e93c856e929a39a"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/gold-chest-close.png",
+      "bytes": 2917,
+      "sha256": "c0ced82a649ee192fa906ab6140c2397a8450db2e87a5bc0cd1b4c73c56ffeab"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/gold-chest-open.png",
+      "bytes": 2906,
+      "sha256": "0eef6fcbd72eab214bc52f29a38622aeafb6d1798e391ef56388d29f818f2f4e"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/other.png",
+      "bytes": 3922,
+      "sha256": "5e31bd2f1d1194ac62ac021598c05ec55dd7154e80a7c88c7741f1a5004d3554"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/projectile/1.png",
+      "bytes": 2911,
+      "sha256": "c8ed2774ef9196d9507d5c3b095f8b97cfbdbee736b489f9784037533c74e4a2"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/projectile/2.png",
+      "bytes": 2921,
+      "sha256": "c0d15e4b6936ce24530b2baf44d5600c52f8e84aae7b3417660ba025ba8cc64b"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/projectile/3.png",
+      "bytes": 2860,
+      "sha256": "d6de27b9e495353c88ea97bd73f4a89002d38d73a49fe9a8ec830f51e92a0928"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/projectile/4.png",
+      "bytes": 2911,
+      "sha256": "c6c7b3cb45305033c6ce74a6449bb1a843d4060e049ebed800f36a8e180efa09"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/projectile/5.png",
+      "bytes": 2870,
+      "sha256": "20f14cf53b4ab1db7eeeee96783ef2bdefcc07020f5212a294d7d13888de297e"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/projectile/6.png",
+      "bytes": 2875,
+      "sha256": "0f01204ef3226d70e4a53a0af5ebff0ce99e336b5dea338bb0841dbc0b70a4ac"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/projectile/7.png",
+      "bytes": 2847,
+      "sha256": "0b95bb983b3949343618df1999cad79d61d80559d579d0754537330bcb959b01"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/projectile/8.png",
+      "bytes": 3017,
+      "sha256": "b6ee70a913926be5474de14366af2c77ce0659b953dea302b7943b06b02e9e4f"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/weapon/1.png",
+      "bytes": 2952,
+      "sha256": "dbc37d53962b2644b262bf8074ead0632afb699cf02cdecc40ac8d10ed40eb40"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/weapon/10.png",
+      "bytes": 2913,
+      "sha256": "0545a252dd4db4771568e781dca8f2f60c6baf825ef251fa82c1e90f21c21c40"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/weapon/11.png",
+      "bytes": 2875,
+      "sha256": "0e6d8fba313009ea697ac3a79ad6394cc668a74c88673d92371b91c299c9953a"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/weapon/2.png",
+      "bytes": 2909,
+      "sha256": "8f1489f1142078fa7c613f6b7e736a86486994eb53a7a58942513461d342743e"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/weapon/3.png",
+      "bytes": 2966,
+      "sha256": "9c02959a283a238efa229655bf45376f2decf23eb519eae457994f6e584308b0"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/weapon/4.png",
+      "bytes": 2943,
+      "sha256": "6b3242e6ec6e01a2396edd77766651f4f6d4f781f7d80249f6b2f356d3d41227"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/weapon/5.png",
+      "bytes": 2952,
+      "sha256": "c68195ce1960f1327c43a9010736fab0ff8c1a6b1ba7e18d8201efa77363c808"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/weapon/6.png",
+      "bytes": 2948,
+      "sha256": "d34d87a262df1e644625f28c117006704f8d5eda3812764145577ce11d647877"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/weapon/7.png",
+      "bytes": 2970,
+      "sha256": "f37648495fc809d8ba39955f6da033959adf7e498c5f0d625644228dabfb2461"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/weapon/8.png",
+      "bytes": 2952,
+      "sha256": "868c52f3bfe023c2ad3661b6af1e0ca58336e58ec5f50ab10f303253d6dc9e80"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/weapon/9.png",
+      "bytes": 2868,
+      "sha256": "7af52e6913c1d68f473a584edd9c4f684ffa67f8a117bacf5cbb85efb226d3a4"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/weapon/weapon.png",
+      "bytes": 726,
+      "sha256": "07be4205a77af632f75d3a9c67fb5b68411a486c9fa433da3fee4f306fe9114c"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/wood-chest-close.png",
+      "bytes": 2927,
+      "sha256": "ed914bb0648c98677c6534443bcb45c2d2e8f72e2c732faaad6ad7218bdc734d"
+    },
+    {
+      "path": "/assets/vendor/superpowers/items/wood-chest-open.png",
+      "bytes": 2948,
+      "sha256": "7f58d908a3b9aab3b5b86eb1639fded3f971030a3d86a8191ae313fa0ce4d9dc"
+    },
+    {
+      "path": "/assets/vendor/superpowers/music/theme-1.ogg",
+      "bytes": 1563653,
+      "sha256": "57cefd68c0be300c769f4262172f03b82189f7dc424fa1f66d26bde4e0785797"
+    },
+    {
+      "path": "/assets/vendor/superpowers/music/theme-3.ogg",
+      "bytes": 610970,
+      "sha256": "7d1fb73f6999b98fcb9ae55fa1b6b1a2d7d071b4b543d57d7e19554fc8f7c09c"
+    },
+    {
+      "path": "/assets/vendor/superpowers/music/theme-6.ogg",
+      "bytes": 1297738,
+      "sha256": "020e8b13d91d23e33664402fe7da9bf864217b979eb9fb46736a30650fddae61"
+    },
+    {
+      "path": "/assets/vendor/superpowers/sounds/forest-ambience.wav",
+      "bytes": 5292076,
+      "sha256": "cba9b9f6e999ad9ca54458e557759d0b0c49a3893c43de42696ac236734db7b0"
+    },
+    {
+      "path": "/assets/vendor/superpowers/sounds/monster-1.wav",
+      "bytes": 61804,
+      "sha256": "e869de88ca6e08b49f3a474aa23090d440ab184b4b90a3d6d3e965ddc6125820"
+    },
+    {
+      "path": "/assets/vendor/superpowers/sounds/monster-2.wav",
+      "bytes": 57856,
+      "sha256": "09ad1d322e373d3bf13ca4a55d920501fb7a21c1bd1496088873a3e3db9adf6c"
+    },
+    {
+      "path": "/assets/vendor/superpowers/sounds/victory-2.wav",
+      "bytes": 423538,
+      "sha256": "d01b8d02faef96215dd989ff42a2087a93a663b6003d1973bcebe03219486111"
+    },
+    {
+      "path": "/assets/vendor/superpowers/sounds/woosh-1.wav",
+      "bytes": 37100,
+      "sha256": "b4d339ca7703a039f52a7ad553662a4eed17a2ddbf8ac7e42440a6a7c458affc"
+    },
+    {
+      "path": "/assets/vendor/superpowers/sounds/woosh-2.wav",
+      "bytes": 59812,
+      "sha256": "39ef5123b248991019aed95efbc78246de1a529e4614f391c0d4c41e49a9ccbb"
+    }
+  ]
+}

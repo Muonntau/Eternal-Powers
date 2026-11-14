@@ -1,0 +1,5242 @@
+{
+  "version": 1,
+  "license": "Original Eternal Powers project artwork. No third-party source pixels.",
+  "generator": "scripts/generate-expanded-assets.py",
+  "powerIcons": {
+    "power-icons/love-laugh-1": {
+      "src": "/assets/power-icons/love-laugh-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-laugh-1",
+      "name": "Heartwarming Smile",
+      "level": 1,
+      "branchId": "love-laugh"
+    },
+    "power-icons/love-laugh-2": {
+      "src": "/assets/power-icons/love-laugh-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-laugh-2",
+      "name": "Infectious Chuckle",
+      "level": 2,
+      "branchId": "love-laugh"
+    },
+    "power-icons/love-laugh-3": {
+      "src": "/assets/power-icons/love-laugh-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-laugh-3",
+      "name": "Melodic Laughter",
+      "level": 3,
+      "branchId": "love-laugh"
+    },
+    "power-icons/love-laugh-4": {
+      "src": "/assets/power-icons/love-laugh-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-laugh-4",
+      "name": "Joyful Resonance",
+      "level": 4,
+      "branchId": "love-laugh"
+    },
+    "power-icons/love-laugh-5": {
+      "src": "/assets/power-icons/love-laugh-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-laugh-5",
+      "name": "Enraptured Hilarity",
+      "level": 5,
+      "branchId": "love-laugh"
+    },
+    "power-icons/love-laugh-6": {
+      "src": "/assets/power-icons/love-laugh-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-laugh-6",
+      "name": "Blissful Ecstasy",
+      "level": 6,
+      "branchId": "love-laugh"
+    },
+    "power-icons/love-laugh-7": {
+      "src": "/assets/power-icons/love-laugh-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-laugh-7",
+      "name": "Rapturous Uproar",
+      "level": 7,
+      "branchId": "love-laugh"
+    },
+    "power-icons/love-laugh-8": {
+      "src": "/assets/power-icons/love-laugh-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-laugh-8",
+      "name": "Celestial Glee",
+      "level": 8,
+      "branchId": "love-laugh"
+    },
+    "power-icons/love-laugh-9": {
+      "src": "/assets/power-icons/love-laugh-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-laugh-9",
+      "name": "Universal Merriment",
+      "level": 9,
+      "branchId": "love-laugh"
+    },
+    "power-icons/love-laugh-10": {
+      "src": "/assets/power-icons/love-laugh-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-laugh-10",
+      "name": "Eternal Jubilation",
+      "level": 10,
+      "branchId": "love-laugh"
+    },
+    "power-icons/light-pleasure-1": {
+      "src": "/assets/power-icons/light-pleasure-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-pleasure-1",
+      "name": "Glimmering Delight",
+      "level": 1,
+      "branchId": "light-pleasure"
+    },
+    "power-icons/light-pleasure-2": {
+      "src": "/assets/power-icons/light-pleasure-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-pleasure-2",
+      "name": "Radiant Euphoria",
+      "level": 2,
+      "branchId": "light-pleasure"
+    },
+    "power-icons/light-pleasure-3": {
+      "src": "/assets/power-icons/light-pleasure-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-pleasure-3",
+      "name": "Luminous Serenity",
+      "level": 3,
+      "branchId": "light-pleasure"
+    },
+    "power-icons/light-pleasure-4": {
+      "src": "/assets/power-icons/light-pleasure-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-pleasure-4",
+      "name": "Illuminated Bliss",
+      "level": 4,
+      "branchId": "light-pleasure"
+    },
+    "power-icons/light-pleasure-5": {
+      "src": "/assets/power-icons/light-pleasure-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-pleasure-5",
+      "name": "Heavenly Rapture",
+      "level": 5,
+      "branchId": "light-pleasure"
+    },
+    "power-icons/light-pleasure-6": {
+      "src": "/assets/power-icons/light-pleasure-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-pleasure-6",
+      "name": "Ethereal Elation",
+      "level": 6,
+      "branchId": "light-pleasure"
+    },
+    "power-icons/light-pleasure-7": {
+      "src": "/assets/power-icons/light-pleasure-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-pleasure-7",
+      "name": "Transcendent Euphony",
+      "level": 7,
+      "branchId": "light-pleasure"
+    },
+    "power-icons/light-pleasure-8": {
+      "src": "/assets/power-icons/light-pleasure-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-pleasure-8",
+      "name": "Divine Exhilaration",
+      "level": 8,
+      "branchId": "light-pleasure"
+    },
+    "power-icons/light-pleasure-9": {
+      "src": "/assets/power-icons/light-pleasure-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-pleasure-9",
+      "name": "Cosmic Ecstasy",
+      "level": 9,
+      "branchId": "light-pleasure"
+    },
+    "power-icons/light-pleasure-10": {
+      "src": "/assets/power-icons/light-pleasure-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-pleasure-10",
+      "name": "Eternal Luminescence",
+      "level": 10,
+      "branchId": "light-pleasure"
+    },
+    "power-icons/water-grow-1": {
+      "src": "/assets/power-icons/water-grow-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-grow-1",
+      "name": "Refreshing Mist",
+      "level": 1,
+      "branchId": "water-grow"
+    },
+    "power-icons/water-grow-2": {
+      "src": "/assets/power-icons/water-grow-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-grow-2",
+      "name": "Nourishing Drizzle",
+      "level": 2,
+      "branchId": "water-grow"
+    },
+    "power-icons/water-grow-3": {
+      "src": "/assets/power-icons/water-grow-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-grow-3",
+      "name": "Revitalizing Shower",
+      "level": 3,
+      "branchId": "water-grow"
+    },
+    "power-icons/water-grow-4": {
+      "src": "/assets/power-icons/water-grow-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-grow-4",
+      "name": "Fertile Torrent",
+      "level": 4,
+      "branchId": "water-grow"
+    },
+    "power-icons/water-grow-5": {
+      "src": "/assets/power-icons/water-grow-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-grow-5",
+      "name": "Verdant Cascade",
+      "level": 5,
+      "branchId": "water-grow"
+    },
+    "power-icons/water-grow-6": {
+      "src": "/assets/power-icons/water-grow-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-grow-6",
+      "name": "Flourishing Deluge",
+      "level": 6,
+      "branchId": "water-grow"
+    },
+    "power-icons/water-grow-7": {
+      "src": "/assets/power-icons/water-grow-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-grow-7",
+      "name": "Bountiful Oasis",
+      "level": 7,
+      "branchId": "water-grow"
+    },
+    "power-icons/water-grow-8": {
+      "src": "/assets/power-icons/water-grow-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-grow-8",
+      "name": "Celestial Wellspring",
+      "level": 8,
+      "branchId": "water-grow"
+    },
+    "power-icons/water-grow-9": {
+      "src": "/assets/power-icons/water-grow-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-grow-9",
+      "name": "Cosmic Resurgence",
+      "level": 9,
+      "branchId": "water-grow"
+    },
+    "power-icons/water-grow-10": {
+      "src": "/assets/power-icons/water-grow-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-grow-10",
+      "name": "Eternal Bloom",
+      "level": 10,
+      "branchId": "water-grow"
+    },
+    "power-icons/air-move-1": {
+      "src": "/assets/power-icons/air-move-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-move-1",
+      "name": "Gentle Gust",
+      "level": 1,
+      "branchId": "air-move"
+    },
+    "power-icons/air-move-2": {
+      "src": "/assets/power-icons/air-move-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-move-2",
+      "name": "Swift Zephyr",
+      "level": 2,
+      "branchId": "air-move"
+    },
+    "power-icons/air-move-3": {
+      "src": "/assets/power-icons/air-move-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-move-3",
+      "name": "Soaring Gale",
+      "level": 3,
+      "branchId": "air-move"
+    },
+    "power-icons/air-move-4": {
+      "src": "/assets/power-icons/air-move-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-move-4",
+      "name": "Cyclonic Surge",
+      "level": 4,
+      "branchId": "air-move"
+    },
+    "power-icons/air-move-5": {
+      "src": "/assets/power-icons/air-move-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-move-5",
+      "name": "Tempest Rider",
+      "level": 5,
+      "branchId": "air-move"
+    },
+    "power-icons/air-move-6": {
+      "src": "/assets/power-icons/air-move-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-move-6",
+      "name": "Stormrider",
+      "level": 6,
+      "branchId": "air-move"
+    },
+    "power-icons/air-move-7": {
+      "src": "/assets/power-icons/air-move-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-move-7",
+      "name": "Hurricane\u2019s Embrace",
+      "level": 7,
+      "branchId": "air-move"
+    },
+    "power-icons/air-move-8": {
+      "src": "/assets/power-icons/air-move-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-move-8",
+      "name": "Celestial Zephyr",
+      "level": 8,
+      "branchId": "air-move"
+    },
+    "power-icons/air-move-9": {
+      "src": "/assets/power-icons/air-move-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-move-9",
+      "name": "Cosmic Whirlwind",
+      "level": 9,
+      "branchId": "air-move"
+    },
+    "power-icons/air-move-10": {
+      "src": "/assets/power-icons/air-move-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-move-10",
+      "name": "Eternal Winds",
+      "level": 10,
+      "branchId": "air-move"
+    },
+    "power-icons/hate-clean-1": {
+      "src": "/assets/power-icons/hate-clean-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-clean-1",
+      "name": "Dispel Malice",
+      "level": 1,
+      "branchId": "hate-clean"
+    },
+    "power-icons/hate-clean-2": {
+      "src": "/assets/power-icons/hate-clean-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-clean-2",
+      "name": "Banish Spite",
+      "level": 2,
+      "branchId": "hate-clean"
+    },
+    "power-icons/hate-clean-3": {
+      "src": "/assets/power-icons/hate-clean-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-clean-3",
+      "name": "Purge Enmity",
+      "level": 3,
+      "branchId": "hate-clean"
+    },
+    "power-icons/hate-clean-4": {
+      "src": "/assets/power-icons/hate-clean-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-clean-4",
+      "name": "Exorcise Malevolence",
+      "level": 4,
+      "branchId": "hate-clean"
+    },
+    "power-icons/hate-clean-5": {
+      "src": "/assets/power-icons/hate-clean-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-clean-5",
+      "name": "Cleave Discord",
+      "level": 5,
+      "branchId": "hate-clean"
+    },
+    "power-icons/hate-clean-6": {
+      "src": "/assets/power-icons/hate-clean-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-clean-6",
+      "name": "Erase Animosity",
+      "level": 6,
+      "branchId": "hate-clean"
+    },
+    "power-icons/hate-clean-7": {
+      "src": "/assets/power-icons/hate-clean-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-clean-7",
+      "name": "Unravel Maleficence",
+      "level": 7,
+      "branchId": "hate-clean"
+    },
+    "power-icons/hate-clean-8": {
+      "src": "/assets/power-icons/hate-clean-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-clean-8",
+      "name": "Celestial Purity",
+      "level": 8,
+      "branchId": "hate-clean"
+    },
+    "power-icons/hate-clean-9": {
+      "src": "/assets/power-icons/hate-clean-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-clean-9",
+      "name": "Cosmic Absolution",
+      "level": 9,
+      "branchId": "hate-clean"
+    },
+    "power-icons/hate-clean-10": {
+      "src": "/assets/power-icons/hate-clean-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-clean-10",
+      "name": "Eternal Serenity",
+      "level": 10,
+      "branchId": "hate-clean"
+    },
+    "power-icons/dark-heal-1": {
+      "src": "/assets/power-icons/dark-heal-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-heal-1",
+      "name": "Shadow's Embrace",
+      "level": 1,
+      "branchId": "dark-heal"
+    },
+    "power-icons/dark-heal-2": {
+      "src": "/assets/power-icons/dark-heal-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-heal-2",
+      "name": "Obsidian Mend",
+      "level": 2,
+      "branchId": "dark-heal"
+    },
+    "power-icons/dark-heal-3": {
+      "src": "/assets/power-icons/dark-heal-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-heal-3",
+      "name": "Umbral Restoration",
+      "level": 3,
+      "branchId": "dark-heal"
+    },
+    "power-icons/dark-heal-4": {
+      "src": "/assets/power-icons/dark-heal-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-heal-4",
+      "name": "Night's Rejuvenation",
+      "level": 4,
+      "branchId": "dark-heal"
+    },
+    "power-icons/dark-heal-5": {
+      "src": "/assets/power-icons/dark-heal-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-heal-5",
+      "name": "Ebon Renewal",
+      "level": 5,
+      "branchId": "dark-heal"
+    },
+    "power-icons/dark-heal-6": {
+      "src": "/assets/power-icons/dark-heal-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-heal-6",
+      "name": "Abyssal Resurgence",
+      "level": 6,
+      "branchId": "dark-heal"
+    },
+    "power-icons/dark-heal-7": {
+      "src": "/assets/power-icons/dark-heal-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-heal-7",
+      "name": "Tenebrous Rebirth",
+      "level": 7,
+      "branchId": "dark-heal"
+    },
+    "power-icons/dark-heal-8": {
+      "src": "/assets/power-icons/dark-heal-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-heal-8",
+      "name": "Celestial Reclamation",
+      "level": 8,
+      "branchId": "dark-heal"
+    },
+    "power-icons/dark-heal-9": {
+      "src": "/assets/power-icons/dark-heal-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-heal-9",
+      "name": "Cosmic Reinvigoration",
+      "level": 9,
+      "branchId": "dark-heal"
+    },
+    "power-icons/dark-heal-10": {
+      "src": "/assets/power-icons/dark-heal-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-heal-10",
+      "name": "Eternal Revival",
+      "level": 10,
+      "branchId": "dark-heal"
+    },
+    "power-icons/fire-create-1": {
+      "src": "/assets/power-icons/fire-create-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-create-1",
+      "name": "Ember Spark",
+      "level": 1,
+      "branchId": "fire-create"
+    },
+    "power-icons/fire-create-2": {
+      "src": "/assets/power-icons/fire-create-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-create-2",
+      "name": "Flame Flicker",
+      "level": 2,
+      "branchId": "fire-create"
+    },
+    "power-icons/fire-create-3": {
+      "src": "/assets/power-icons/fire-create-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-create-3",
+      "name": "Blaze Conjuration",
+      "level": 3,
+      "branchId": "fire-create"
+    },
+    "power-icons/fire-create-4": {
+      "src": "/assets/power-icons/fire-create-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-create-4",
+      "name": "Inferno Manifestation",
+      "level": 4,
+      "branchId": "fire-create"
+    },
+    "power-icons/fire-create-5": {
+      "src": "/assets/power-icons/fire-create-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-create-5",
+      "name": "Pyrokinetic Sculpting",
+      "level": 5,
+      "branchId": "fire-create"
+    },
+    "power-icons/fire-create-6": {
+      "src": "/assets/power-icons/fire-create-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-create-6",
+      "name": "Incendiary Symphony",
+      "level": 6,
+      "branchId": "fire-create"
+    },
+    "power-icons/fire-create-7": {
+      "src": "/assets/power-icons/fire-create-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-create-7",
+      "name": "Infernal Artistry",
+      "level": 7,
+      "branchId": "fire-create"
+    },
+    "power-icons/fire-create-8": {
+      "src": "/assets/power-icons/fire-create-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-create-8",
+      "name": "Celestial Pyromancy",
+      "level": 8,
+      "branchId": "fire-create"
+    },
+    "power-icons/fire-create-9": {
+      "src": "/assets/power-icons/fire-create-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-create-9",
+      "name": "Cosmic Ignition",
+      "level": 9,
+      "branchId": "fire-create"
+    },
+    "power-icons/fire-create-10": {
+      "src": "/assets/power-icons/fire-create-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-create-10",
+      "name": "Eternal Pyre",
+      "level": 10,
+      "branchId": "fire-create"
+    },
+    "power-icons/earth-give-1": {
+      "src": "/assets/power-icons/earth-give-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-give-1",
+      "name": "Earthen Offering",
+      "level": 1,
+      "branchId": "earth-give"
+    },
+    "power-icons/earth-give-2": {
+      "src": "/assets/power-icons/earth-give-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-give-2",
+      "name": "Nature's Endowment",
+      "level": 2,
+      "branchId": "earth-give"
+    },
+    "power-icons/earth-give-3": {
+      "src": "/assets/power-icons/earth-give-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-give-3",
+      "name": "Earthly Boon",
+      "level": 3,
+      "branchId": "earth-give"
+    },
+    "power-icons/earth-give-4": {
+      "src": "/assets/power-icons/earth-give-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-give-4",
+      "name": "Bountiful Harvest",
+      "level": 4,
+      "branchId": "earth-give"
+    },
+    "power-icons/earth-give-5": {
+      "src": "/assets/power-icons/earth-give-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-give-5",
+      "name": "Terra Blessing",
+      "level": 5,
+      "branchId": "earth-give"
+    },
+    "power-icons/earth-give-6": {
+      "src": "/assets/power-icons/earth-give-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-give-6",
+      "name": "Verdant Altruism",
+      "level": 6,
+      "branchId": "earth-give"
+    },
+    "power-icons/earth-give-7": {
+      "src": "/assets/power-icons/earth-give-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-give-7",
+      "name": "Providence's Grant",
+      "level": 7,
+      "branchId": "earth-give"
+    },
+    "power-icons/earth-give-8": {
+      "src": "/assets/power-icons/earth-give-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-give-8",
+      "name": "Celestial Benefaction",
+      "level": 8,
+      "branchId": "earth-give"
+    },
+    "power-icons/earth-give-9": {
+      "src": "/assets/power-icons/earth-give-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-give-9",
+      "name": "Cosmic Bestowal",
+      "level": 9,
+      "branchId": "earth-give"
+    },
+    "power-icons/earth-give-10": {
+      "src": "/assets/power-icons/earth-give-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-give-10",
+      "name": "Eternal Generosity",
+      "level": 10,
+      "branchId": "earth-give"
+    },
+    "power-icons/hate-cry-1": {
+      "src": "/assets/power-icons/hate-cry-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-cry-1",
+      "name": "Discontent Whimper",
+      "level": 1,
+      "branchId": "hate-cry"
+    },
+    "power-icons/hate-cry-2": {
+      "src": "/assets/power-icons/hate-cry-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-cry-2",
+      "name": "Resentful Murmur",
+      "level": 2,
+      "branchId": "hate-cry"
+    },
+    "power-icons/hate-cry-3": {
+      "src": "/assets/power-icons/hate-cry-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-cry-3",
+      "name": "Mournful Lament",
+      "level": 3,
+      "branchId": "hate-cry"
+    },
+    "power-icons/hate-cry-4": {
+      "src": "/assets/power-icons/hate-cry-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-cry-4",
+      "name": "Malevolent Wail",
+      "level": 4,
+      "branchId": "hate-cry"
+    },
+    "power-icons/hate-cry-5": {
+      "src": "/assets/power-icons/hate-cry-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-cry-5",
+      "name": "Tormented Bellow",
+      "level": 5,
+      "branchId": "hate-cry"
+    },
+    "power-icons/hate-cry-6": {
+      "src": "/assets/power-icons/hate-cry-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-cry-6",
+      "name": "Vengeful Roar",
+      "level": 6,
+      "branchId": "hate-cry"
+    },
+    "power-icons/hate-cry-7": {
+      "src": "/assets/power-icons/hate-cry-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-cry-7",
+      "name": "Cacophonic Despair",
+      "level": 7,
+      "branchId": "hate-cry"
+    },
+    "power-icons/hate-cry-8": {
+      "src": "/assets/power-icons/hate-cry-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-cry-8",
+      "name": "Celestial Desolation",
+      "level": 8,
+      "branchId": "hate-cry"
+    },
+    "power-icons/hate-cry-9": {
+      "src": "/assets/power-icons/hate-cry-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-cry-9",
+      "name": "Cosmic Catastrophe",
+      "level": 9,
+      "branchId": "hate-cry"
+    },
+    "power-icons/hate-cry-10": {
+      "src": "/assets/power-icons/hate-cry-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-cry-10",
+      "name": "Eternal Anguish",
+      "level": 10,
+      "branchId": "hate-cry"
+    },
+    "power-icons/dark-pain-1": {
+      "src": "/assets/power-icons/dark-pain-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-pain-1",
+      "name": "Shadow Sting",
+      "level": 1,
+      "branchId": "dark-pain"
+    },
+    "power-icons/dark-pain-2": {
+      "src": "/assets/power-icons/dark-pain-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-pain-2",
+      "name": "Shrouded Affliction",
+      "level": 2,
+      "branchId": "dark-pain"
+    },
+    "power-icons/dark-pain-3": {
+      "src": "/assets/power-icons/dark-pain-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-pain-3",
+      "name": "Veiled Agony",
+      "level": 3,
+      "branchId": "dark-pain"
+    },
+    "power-icons/dark-pain-4": {
+      "src": "/assets/power-icons/dark-pain-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-pain-4",
+      "name": "Creeping Torture",
+      "level": 4,
+      "branchId": "dark-pain"
+    },
+    "power-icons/dark-pain-5": {
+      "src": "/assets/power-icons/dark-pain-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-pain-5",
+      "name": "Abyssal Torment",
+      "level": 5,
+      "branchId": "dark-pain"
+    },
+    "power-icons/dark-pain-6": {
+      "src": "/assets/power-icons/dark-pain-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-pain-6",
+      "name": "Eclipsing Agony",
+      "level": 6,
+      "branchId": "dark-pain"
+    },
+    "power-icons/dark-pain-7": {
+      "src": "/assets/power-icons/dark-pain-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-pain-7",
+      "name": "Stygian Agony",
+      "level": 7,
+      "branchId": "dark-pain"
+    },
+    "power-icons/dark-pain-8": {
+      "src": "/assets/power-icons/dark-pain-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-pain-8",
+      "name": "Celestial Anguish",
+      "level": 8,
+      "branchId": "dark-pain"
+    },
+    "power-icons/dark-pain-9": {
+      "src": "/assets/power-icons/dark-pain-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-pain-9",
+      "name": "Cosmic Desperation",
+      "level": 9,
+      "branchId": "dark-pain"
+    },
+    "power-icons/dark-pain-10": {
+      "src": "/assets/power-icons/dark-pain-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-pain-10",
+      "name": "Eternal Suffering",
+      "level": 10,
+      "branchId": "dark-pain"
+    },
+    "power-icons/fire-destroy-1": {
+      "src": "/assets/power-icons/fire-destroy-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-destroy-1",
+      "name": "Ember Flick",
+      "level": 1,
+      "branchId": "fire-destroy"
+    },
+    "power-icons/fire-destroy-2": {
+      "src": "/assets/power-icons/fire-destroy-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-destroy-2",
+      "name": "Scorching Blaze",
+      "level": 2,
+      "branchId": "fire-destroy"
+    },
+    "power-icons/fire-destroy-3": {
+      "src": "/assets/power-icons/fire-destroy-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-destroy-3",
+      "name": "Infernal Blast",
+      "level": 3,
+      "branchId": "fire-destroy"
+    },
+    "power-icons/fire-destroy-4": {
+      "src": "/assets/power-icons/fire-destroy-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-destroy-4",
+      "name": "Devouring Conflagration",
+      "level": 4,
+      "branchId": "fire-destroy"
+    },
+    "power-icons/fire-destroy-5": {
+      "src": "/assets/power-icons/fire-destroy-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-destroy-5",
+      "name": "Hellfire Torrent",
+      "level": 5,
+      "branchId": "fire-destroy"
+    },
+    "power-icons/fire-destroy-6": {
+      "src": "/assets/power-icons/fire-destroy-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-destroy-6",
+      "name": "Cataclysmic Inferno",
+      "level": 6,
+      "branchId": "fire-destroy"
+    },
+    "power-icons/fire-destroy-7": {
+      "src": "/assets/power-icons/fire-destroy-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-destroy-7",
+      "name": "Apocalyptic Annihilation",
+      "level": 7,
+      "branchId": "fire-destroy"
+    },
+    "power-icons/fire-destroy-8": {
+      "src": "/assets/power-icons/fire-destroy-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-destroy-8",
+      "name": "Celestial Incineration",
+      "level": 8,
+      "branchId": "fire-destroy"
+    },
+    "power-icons/fire-destroy-9": {
+      "src": "/assets/power-icons/fire-destroy-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-destroy-9",
+      "name": "Cosmic Armageddon",
+      "level": 9,
+      "branchId": "fire-destroy"
+    },
+    "power-icons/fire-destroy-10": {
+      "src": "/assets/power-icons/fire-destroy-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-destroy-10",
+      "name": "Eternal Conflagration",
+      "level": 10,
+      "branchId": "fire-destroy"
+    },
+    "power-icons/earth-take-1": {
+      "src": "/assets/power-icons/earth-take-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-take-1",
+      "name": "Slight Drain",
+      "level": 1,
+      "branchId": "earth-take"
+    },
+    "power-icons/earth-take-2": {
+      "src": "/assets/power-icons/earth-take-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-take-2",
+      "name": "Leeching Touch",
+      "level": 2,
+      "branchId": "earth-take"
+    },
+    "power-icons/earth-take-3": {
+      "src": "/assets/power-icons/earth-take-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-take-3",
+      "name": "Vitality Absorption",
+      "level": 3,
+      "branchId": "earth-take"
+    },
+    "power-icons/earth-take-4": {
+      "src": "/assets/power-icons/earth-take-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-take-4",
+      "name": "Essence Extraction",
+      "level": 4,
+      "branchId": "earth-take"
+    },
+    "power-icons/earth-take-5": {
+      "src": "/assets/power-icons/earth-take-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-take-5",
+      "name": "Soul Devour",
+      "level": 5,
+      "branchId": "earth-take"
+    },
+    "power-icons/earth-take-6": {
+      "src": "/assets/power-icons/earth-take-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-take-6",
+      "name": "Malevolent Feast",
+      "level": 6,
+      "branchId": "earth-take"
+    },
+    "power-icons/earth-take-7": {
+      "src": "/assets/power-icons/earth-take-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-take-7",
+      "name": "Sinister Consumption",
+      "level": 7,
+      "branchId": "earth-take"
+    },
+    "power-icons/earth-take-8": {
+      "src": "/assets/power-icons/earth-take-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-take-8",
+      "name": "Celestial Enslavement",
+      "level": 8,
+      "branchId": "earth-take"
+    },
+    "power-icons/earth-take-9": {
+      "src": "/assets/power-icons/earth-take-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-take-9",
+      "name": "Cosmic Obliteration",
+      "level": 9,
+      "branchId": "earth-take"
+    },
+    "power-icons/earth-take-10": {
+      "src": "/assets/power-icons/earth-take-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-take-10",
+      "name": "Eternal Usurpation",
+      "level": 10,
+      "branchId": "earth-take"
+    },
+    "power-icons/love-dirty-1": {
+      "src": "/assets/power-icons/love-dirty-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-dirty-1",
+      "name": "Manipulative Charm",
+      "level": 1,
+      "branchId": "love-dirty"
+    },
+    "power-icons/love-dirty-2": {
+      "src": "/assets/power-icons/love-dirty-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-dirty-2",
+      "name": "Deceitful Allure",
+      "level": 2,
+      "branchId": "love-dirty"
+    },
+    "power-icons/love-dirty-3": {
+      "src": "/assets/power-icons/love-dirty-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-dirty-3",
+      "name": "Malicious Enchantment",
+      "level": 3,
+      "branchId": "love-dirty"
+    },
+    "power-icons/love-dirty-4": {
+      "src": "/assets/power-icons/love-dirty-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-dirty-4",
+      "name": "Venomous Taint",
+      "level": 4,
+      "branchId": "love-dirty"
+    },
+    "power-icons/love-dirty-5": {
+      "src": "/assets/power-icons/love-dirty-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-dirty-5",
+      "name": "Tenebrous Seduction",
+      "level": 5,
+      "branchId": "love-dirty"
+    },
+    "power-icons/love-dirty-6": {
+      "src": "/assets/power-icons/love-dirty-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-dirty-6",
+      "name": "Corruptive Temptation",
+      "level": 6,
+      "branchId": "love-dirty"
+    },
+    "power-icons/love-dirty-7": {
+      "src": "/assets/power-icons/love-dirty-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-dirty-7",
+      "name": "Diabolical Ensnarement",
+      "level": 7,
+      "branchId": "love-dirty"
+    },
+    "power-icons/love-dirty-8": {
+      "src": "/assets/power-icons/love-dirty-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-dirty-8",
+      "name": "Celestial Subversion",
+      "level": 8,
+      "branchId": "love-dirty"
+    },
+    "power-icons/love-dirty-9": {
+      "src": "/assets/power-icons/love-dirty-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-dirty-9",
+      "name": "Cosmic Subjugation",
+      "level": 9,
+      "branchId": "love-dirty"
+    },
+    "power-icons/love-dirty-10": {
+      "src": "/assets/power-icons/love-dirty-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-dirty-10",
+      "name": "Eternal Deception",
+      "level": 10,
+      "branchId": "love-dirty"
+    },
+    "power-icons/light-harm-1": {
+      "src": "/assets/power-icons/light-harm-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-harm-1",
+      "name": "Gleaming Glimmer",
+      "level": 1,
+      "branchId": "light-harm"
+    },
+    "power-icons/light-harm-2": {
+      "src": "/assets/power-icons/light-harm-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-harm-2",
+      "name": "Radiant Scathe",
+      "level": 2,
+      "branchId": "light-harm"
+    },
+    "power-icons/light-harm-3": {
+      "src": "/assets/power-icons/light-harm-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-harm-3",
+      "name": "Luminous Agony",
+      "level": 3,
+      "branchId": "light-harm"
+    },
+    "power-icons/light-harm-4": {
+      "src": "/assets/power-icons/light-harm-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-harm-4",
+      "name": "Dazzling Affliction",
+      "level": 4,
+      "branchId": "light-harm"
+    },
+    "power-icons/light-harm-5": {
+      "src": "/assets/power-icons/light-harm-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-harm-5",
+      "name": "Celestial Wrath",
+      "level": 5,
+      "branchId": "light-harm"
+    },
+    "power-icons/light-harm-6": {
+      "src": "/assets/power-icons/light-harm-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-harm-6",
+      "name": "Holy Retribution",
+      "level": 6,
+      "branchId": "light-harm"
+    },
+    "power-icons/light-harm-7": {
+      "src": "/assets/power-icons/light-harm-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-harm-7",
+      "name": "Celestial Judgement",
+      "level": 7,
+      "branchId": "light-harm"
+    },
+    "power-icons/light-harm-8": {
+      "src": "/assets/power-icons/light-harm-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-harm-8",
+      "name": "Divine Purification",
+      "level": 8,
+      "branchId": "light-harm"
+    },
+    "power-icons/light-harm-9": {
+      "src": "/assets/power-icons/light-harm-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-harm-9",
+      "name": "Cosmic Illumination",
+      "level": 9,
+      "branchId": "light-harm"
+    },
+    "power-icons/light-harm-10": {
+      "src": "/assets/power-icons/light-harm-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-harm-10",
+      "name": "Eternal Radiance",
+      "level": 10,
+      "branchId": "light-harm"
+    },
+    "power-icons/water-decay-1": {
+      "src": "/assets/power-icons/water-decay-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-decay-1",
+      "name": "Muted Erosion",
+      "level": 1,
+      "branchId": "water-decay"
+    },
+    "power-icons/water-decay-2": {
+      "src": "/assets/power-icons/water-decay-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-decay-2",
+      "name": "Corrosive Drip",
+      "level": 2,
+      "branchId": "water-decay"
+    },
+    "power-icons/water-decay-3": {
+      "src": "/assets/power-icons/water-decay-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-decay-3",
+      "name": "Dilapidation Wave",
+      "level": 3,
+      "branchId": "water-decay"
+    },
+    "power-icons/water-decay-4": {
+      "src": "/assets/power-icons/water-decay-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-decay-4",
+      "name": "Destructive Flood",
+      "level": 4,
+      "branchId": "water-decay"
+    },
+    "power-icons/water-decay-5": {
+      "src": "/assets/power-icons/water-decay-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-decay-5",
+      "name": "Ruinous Torrent",
+      "level": 5,
+      "branchId": "water-decay"
+    },
+    "power-icons/water-decay-6": {
+      "src": "/assets/power-icons/water-decay-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-decay-6",
+      "name": "Devastating Erosion",
+      "level": 6,
+      "branchId": "water-decay"
+    },
+    "power-icons/water-decay-7": {
+      "src": "/assets/power-icons/water-decay-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-decay-7",
+      "name": "Cataclysmic Submersion",
+      "level": 7,
+      "branchId": "water-decay"
+    },
+    "power-icons/water-decay-8": {
+      "src": "/assets/power-icons/water-decay-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-decay-8",
+      "name": "Celestial Annihilation",
+      "level": 8,
+      "branchId": "water-decay"
+    },
+    "power-icons/water-decay-9": {
+      "src": "/assets/power-icons/water-decay-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-decay-9",
+      "name": "Cosmic Desolation",
+      "level": 9,
+      "branchId": "water-decay"
+    },
+    "power-icons/water-decay-10": {
+      "src": "/assets/power-icons/water-decay-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-decay-10",
+      "name": "Eternal Degradation",
+      "level": 10,
+      "branchId": "water-decay"
+    },
+    "power-icons/air-stop-1": {
+      "src": "/assets/power-icons/air-stop-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-stop-1",
+      "name": "Calming Breeze",
+      "level": 1,
+      "branchId": "air-stop"
+    },
+    "power-icons/air-stop-2": {
+      "src": "/assets/power-icons/air-stop-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-stop-2",
+      "name": "Hindered Flow",
+      "level": 2,
+      "branchId": "air-stop"
+    },
+    "power-icons/air-stop-3": {
+      "src": "/assets/power-icons/air-stop-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-stop-3",
+      "name": "Stifling Gust",
+      "level": 3,
+      "branchId": "air-stop"
+    },
+    "power-icons/air-stop-4": {
+      "src": "/assets/power-icons/air-stop-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-stop-4",
+      "name": "Gales of Suppression",
+      "level": 4,
+      "branchId": "air-stop"
+    },
+    "power-icons/air-stop-5": {
+      "src": "/assets/power-icons/air-stop-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-stop-5",
+      "name": "Suffocating Cyclone",
+      "level": 5,
+      "branchId": "air-stop"
+    },
+    "power-icons/air-stop-6": {
+      "src": "/assets/power-icons/air-stop-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-stop-6",
+      "name": "Tempestuous Standstill",
+      "level": 6,
+      "branchId": "air-stop"
+    },
+    "power-icons/air-stop-7": {
+      "src": "/assets/power-icons/air-stop-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-stop-7",
+      "name": "Celestial Whirlwind",
+      "level": 7,
+      "branchId": "air-stop"
+    },
+    "power-icons/air-stop-8": {
+      "src": "/assets/power-icons/air-stop-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-stop-8",
+      "name": "Cosmic Paralysis",
+      "level": 8,
+      "branchId": "air-stop"
+    },
+    "power-icons/air-stop-9": {
+      "src": "/assets/power-icons/air-stop-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-stop-9",
+      "name": "Worldly Stagnation",
+      "level": 9,
+      "branchId": "air-stop"
+    },
+    "power-icons/air-stop-10": {
+      "src": "/assets/power-icons/air-stop-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-stop-10",
+      "name": "Eternal Standstill",
+      "level": 10,
+      "branchId": "air-stop"
+    }
+  },
+  "enhancementIcons": {
+    "enhancement-icons/love-enhancement-1": {
+      "src": "/assets/enhancement-icons/love-enhancement-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-enhancement-1",
+      "name": "Gentle Soul",
+      "rank": 1
+    },
+    "enhancement-icons/love-enhancement-2": {
+      "src": "/assets/enhancement-icons/love-enhancement-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-enhancement-2",
+      "name": "Caring Spirit",
+      "rank": 2
+    },
+    "enhancement-icons/love-enhancement-3": {
+      "src": "/assets/enhancement-icons/love-enhancement-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-enhancement-3",
+      "name": "Compassionate Heart",
+      "rank": 3
+    },
+    "enhancement-icons/love-enhancement-4": {
+      "src": "/assets/enhancement-icons/love-enhancement-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-enhancement-4",
+      "name": "Empathic Aura",
+      "rank": 4
+    },
+    "enhancement-icons/love-enhancement-5": {
+      "src": "/assets/enhancement-icons/love-enhancement-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "love-enhancement-5",
+      "name": "Divine Embrace",
+      "rank": 5
+    },
+    "enhancement-icons/light-empowerment-1": {
+      "src": "/assets/enhancement-icons/light-empowerment-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-empowerment-1",
+      "name": "Faint Illumination",
+      "rank": 1
+    },
+    "enhancement-icons/light-empowerment-2": {
+      "src": "/assets/enhancement-icons/light-empowerment-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-empowerment-2",
+      "name": "Radiant Blessing",
+      "rank": 2
+    },
+    "enhancement-icons/light-empowerment-3": {
+      "src": "/assets/enhancement-icons/light-empowerment-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-empowerment-3",
+      "name": "Celestial Brilliance",
+      "rank": 3
+    },
+    "enhancement-icons/light-empowerment-4": {
+      "src": "/assets/enhancement-icons/light-empowerment-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-empowerment-4",
+      "name": "Luminous Sanctuary",
+      "rank": 4
+    },
+    "enhancement-icons/light-empowerment-5": {
+      "src": "/assets/enhancement-icons/light-empowerment-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "light-empowerment-5",
+      "name": "Divine Illumination",
+      "rank": 5
+    },
+    "enhancement-icons/water-reinforcement-1": {
+      "src": "/assets/enhancement-icons/water-reinforcement-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-reinforcement-1",
+      "name": "Healing Cascade",
+      "rank": 1
+    },
+    "enhancement-icons/water-reinforcement-2": {
+      "src": "/assets/enhancement-icons/water-reinforcement-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-reinforcement-2",
+      "name": "Nurturing Tide",
+      "rank": 2
+    },
+    "enhancement-icons/water-reinforcement-3": {
+      "src": "/assets/enhancement-icons/water-reinforcement-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-reinforcement-3",
+      "name": "Enchanted Wellspring",
+      "rank": 3
+    },
+    "enhancement-icons/water-reinforcement-4": {
+      "src": "/assets/enhancement-icons/water-reinforcement-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-reinforcement-4",
+      "name": "Purifying Torrent",
+      "rank": 4
+    },
+    "enhancement-icons/water-reinforcement-5": {
+      "src": "/assets/enhancement-icons/water-reinforcement-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "water-reinforcement-5",
+      "name": "Divine Restoration",
+      "rank": 5
+    },
+    "enhancement-icons/air-augmentation-1": {
+      "src": "/assets/enhancement-icons/air-augmentation-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-augmentation-1",
+      "name": "Swift Zephyr",
+      "rank": 1
+    },
+    "enhancement-icons/air-augmentation-2": {
+      "src": "/assets/enhancement-icons/air-augmentation-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-augmentation-2",
+      "name": "Graceful Ascension",
+      "rank": 2
+    },
+    "enhancement-icons/air-augmentation-3": {
+      "src": "/assets/enhancement-icons/air-augmentation-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-augmentation-3",
+      "name": "Celestial Flight",
+      "rank": 3
+    },
+    "enhancement-icons/air-augmentation-4": {
+      "src": "/assets/enhancement-icons/air-augmentation-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-augmentation-4",
+      "name": "Vortex Mastery",
+      "rank": 4
+    },
+    "enhancement-icons/air-augmentation-5": {
+      "src": "/assets/enhancement-icons/air-augmentation-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "air-augmentation-5",
+      "name": "Divine Aether",
+      "rank": 5
+    },
+    "enhancement-icons/hate-augmentation-1": {
+      "src": "/assets/enhancement-icons/hate-augmentation-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-augmentation-1",
+      "name": "Malicious Whispers",
+      "rank": 1
+    },
+    "enhancement-icons/hate-augmentation-2": {
+      "src": "/assets/enhancement-icons/hate-augmentation-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-augmentation-2",
+      "name": "Envenomed Malice",
+      "rank": 2
+    },
+    "enhancement-icons/hate-augmentation-3": {
+      "src": "/assets/enhancement-icons/hate-augmentation-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-augmentation-3",
+      "name": "Demonic Despair",
+      "rank": 3
+    },
+    "enhancement-icons/hate-augmentation-4": {
+      "src": "/assets/enhancement-icons/hate-augmentation-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-augmentation-4",
+      "name": "Soul Eater",
+      "rank": 4
+    },
+    "enhancement-icons/hate-augmentation-5": {
+      "src": "/assets/enhancement-icons/hate-augmentation-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "hate-augmentation-5",
+      "name": "Malevolent Tyranny",
+      "rank": 5
+    },
+    "enhancement-icons/dark-empowerment-1": {
+      "src": "/assets/enhancement-icons/dark-empowerment-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-empowerment-1",
+      "name": "Shadow Veil",
+      "rank": 1
+    },
+    "enhancement-icons/dark-empowerment-2": {
+      "src": "/assets/enhancement-icons/dark-empowerment-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-empowerment-2",
+      "name": "Searing Malevolence",
+      "rank": 2
+    },
+    "enhancement-icons/dark-empowerment-3": {
+      "src": "/assets/enhancement-icons/dark-empowerment-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-empowerment-3",
+      "name": "Abyssal Resurrection",
+      "rank": 3
+    },
+    "enhancement-icons/dark-empowerment-4": {
+      "src": "/assets/enhancement-icons/dark-empowerment-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-empowerment-4",
+      "name": "Sinister Reclamation",
+      "rank": 4
+    },
+    "enhancement-icons/dark-empowerment-5": {
+      "src": "/assets/enhancement-icons/dark-empowerment-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "dark-empowerment-5",
+      "name": "Demonic Rebirth",
+      "rank": 5
+    },
+    "enhancement-icons/fire-reinforcement-1": {
+      "src": "/assets/enhancement-icons/fire-reinforcement-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-reinforcement-1",
+      "name": "Malevolent Ember",
+      "rank": 1
+    },
+    "enhancement-icons/fire-reinforcement-2": {
+      "src": "/assets/enhancement-icons/fire-reinforcement-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-reinforcement-2",
+      "name": "Infernal Onslaught",
+      "rank": 2
+    },
+    "enhancement-icons/fire-reinforcement-3": {
+      "src": "/assets/enhancement-icons/fire-reinforcement-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-reinforcement-3",
+      "name": "Demonic Inferno",
+      "rank": 3
+    },
+    "enhancement-icons/fire-reinforcement-4": {
+      "src": "/assets/enhancement-icons/fire-reinforcement-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-reinforcement-4",
+      "name": "Hellfire Conquest",
+      "rank": 4
+    },
+    "enhancement-icons/fire-reinforcement-5": {
+      "src": "/assets/enhancement-icons/fire-reinforcement-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "fire-reinforcement-5",
+      "name": "Diabolical Annihilation",
+      "rank": 5
+    },
+    "enhancement-icons/earth-augmentation-1": {
+      "src": "/assets/enhancement-icons/earth-augmentation-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-augmentation-1",
+      "name": "Earthly Decay",
+      "rank": 1
+    },
+    "enhancement-icons/earth-augmentation-2": {
+      "src": "/assets/enhancement-icons/earth-augmentation-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-augmentation-2",
+      "name": "Corrupted Dominion",
+      "rank": 2
+    },
+    "enhancement-icons/earth-augmentation-3": {
+      "src": "/assets/enhancement-icons/earth-augmentation-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-augmentation-3",
+      "name": "Tenebrous Absorption",
+      "rank": 3
+    },
+    "enhancement-icons/earth-augmentation-4": {
+      "src": "/assets/enhancement-icons/earth-augmentation-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-augmentation-4",
+      "name": "Maleficent Control",
+      "rank": 4
+    },
+    "enhancement-icons/earth-augmentation-5": {
+      "src": "/assets/enhancement-icons/earth-augmentation-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "earth-augmentation-5",
+      "name": "Demonic Dominion",
+      "rank": 5
+    }
+  },
+  "techniqueIcons": {
+    "technique-icons/purging-redemption": {
+      "src": "/assets/technique-icons/purging-redemption.png",
+      "width": 48,
+      "height": 48,
+      "id": "purging-redemption",
+      "name": "Purging Redemption",
+      "lineage": "angel"
+    },
+    "technique-icons/divine-retaliation": {
+      "src": "/assets/technique-icons/divine-retaliation.png",
+      "width": 48,
+      "height": 48,
+      "id": "divine-retaliation",
+      "name": "Divine Retaliation",
+      "lineage": "angel"
+    },
+    "technique-icons/harmony-disruption": {
+      "src": "/assets/technique-icons/harmony-disruption.png",
+      "width": 48,
+      "height": 48,
+      "id": "harmony-disruption",
+      "name": "Harmony Disruption",
+      "lineage": "angel"
+    },
+    "technique-icons/benevolent-manipulation": {
+      "src": "/assets/technique-icons/benevolent-manipulation.png",
+      "width": 48,
+      "height": 48,
+      "id": "benevolent-manipulation",
+      "name": "Benevolent Manipulation",
+      "lineage": "angel"
+    },
+    "technique-icons/ethereal-retribution": {
+      "src": "/assets/technique-icons/ethereal-retribution.png",
+      "width": 48,
+      "height": 48,
+      "id": "ethereal-retribution",
+      "name": "Ethereal Retribution",
+      "lineage": "angel"
+    },
+    "technique-icons/divine-renewal": {
+      "src": "/assets/technique-icons/divine-renewal.png",
+      "width": 48,
+      "height": 48,
+      "id": "divine-renewal",
+      "name": "Divine Renewal",
+      "lineage": "angel"
+    },
+    "technique-icons/purifying-reprieve": {
+      "src": "/assets/technique-icons/purifying-reprieve.png",
+      "width": 48,
+      "height": 48,
+      "id": "purifying-reprieve",
+      "name": "Purifying Reprieve",
+      "lineage": "angel"
+    },
+    "technique-icons/benevolent-empowerment": {
+      "src": "/assets/technique-icons/benevolent-empowerment.png",
+      "width": 48,
+      "height": 48,
+      "id": "benevolent-empowerment",
+      "name": "Benevolent Empowerment",
+      "lineage": "angel"
+    },
+    "technique-icons/tenebrous-blessing": {
+      "src": "/assets/technique-icons/tenebrous-blessing.png",
+      "width": 48,
+      "height": 48,
+      "id": "tenebrous-blessing",
+      "name": "Tenebrous Blessing",
+      "lineage": "angel"
+    },
+    "technique-icons/redemptive-embrace": {
+      "src": "/assets/technique-icons/redemptive-embrace.png",
+      "width": 48,
+      "height": 48,
+      "id": "redemptive-embrace",
+      "name": "Redemptive Embrace",
+      "lineage": "angel"
+    },
+    "technique-icons/benevolent-forge": {
+      "src": "/assets/technique-icons/benevolent-forge.png",
+      "width": 48,
+      "height": 48,
+      "id": "benevolent-forge",
+      "name": "Benevolent Forge",
+      "lineage": "angel"
+    },
+    "technique-icons/harmonious-creation": {
+      "src": "/assets/technique-icons/harmonious-creation.png",
+      "width": 48,
+      "height": 48,
+      "id": "harmonious-creation",
+      "name": "Harmonious Creation",
+      "lineage": "angel"
+    },
+    "technique-icons/purifying-ignition": {
+      "src": "/assets/technique-icons/purifying-ignition.png",
+      "width": 48,
+      "height": 48,
+      "id": "purifying-ignition",
+      "name": "Purifying Ignition",
+      "lineage": "angel"
+    },
+    "technique-icons/benevolent-catalyst": {
+      "src": "/assets/technique-icons/benevolent-catalyst.png",
+      "width": 48,
+      "height": 48,
+      "id": "benevolent-catalyst",
+      "name": "Benevolent Catalyst",
+      "lineage": "angel"
+    },
+    "technique-icons/ethereal-incandescence": {
+      "src": "/assets/technique-icons/ethereal-incandescence.png",
+      "width": 48,
+      "height": 48,
+      "id": "ethereal-incandescence",
+      "name": "Ethereal Incandescence",
+      "lineage": "angel"
+    },
+    "technique-icons/celestial-offering": {
+      "src": "/assets/technique-icons/celestial-offering.png",
+      "width": 48,
+      "height": 48,
+      "id": "celestial-offering",
+      "name": "Celestial Offering",
+      "lineage": "angel"
+    },
+    "technique-icons/benevolent-yield": {
+      "src": "/assets/technique-icons/benevolent-yield.png",
+      "width": 48,
+      "height": 48,
+      "id": "benevolent-yield",
+      "name": "Benevolent Yield",
+      "lineage": "angel"
+    },
+    "technique-icons/nurturing-shelter": {
+      "src": "/assets/technique-icons/nurturing-shelter.png",
+      "width": 48,
+      "height": 48,
+      "id": "nurturing-shelter",
+      "name": "Nurturing Shelter",
+      "lineage": "angel"
+    },
+    "technique-icons/purifying-nourishment": {
+      "src": "/assets/technique-icons/purifying-nourishment.png",
+      "width": 48,
+      "height": 48,
+      "id": "purifying-nourishment",
+      "name": "Purifying Nourishment",
+      "lineage": "angel"
+    },
+    "technique-icons/harmonious-growth": {
+      "src": "/assets/technique-icons/harmonious-growth.png",
+      "width": 48,
+      "height": 48,
+      "id": "harmonious-growth",
+      "name": "Harmonious Growth",
+      "lineage": "angel"
+    },
+    "technique-icons/malevolent-manipulation": {
+      "src": "/assets/technique-icons/malevolent-manipulation.png",
+      "width": 48,
+      "height": 48,
+      "id": "malevolent-manipulation",
+      "name": "Malevolent Manipulation",
+      "lineage": "demon"
+    },
+    "technique-icons/twisted-affection": {
+      "src": "/assets/technique-icons/twisted-affection.png",
+      "width": 48,
+      "height": 48,
+      "id": "twisted-affection",
+      "name": "Twisted Affection",
+      "lineage": "demon"
+    },
+    "technique-icons/benevolent-deception": {
+      "src": "/assets/technique-icons/benevolent-deception.png",
+      "width": 48,
+      "height": 48,
+      "id": "benevolent-deception",
+      "name": "Benevolent Deception",
+      "lineage": "demon"
+    },
+    "technique-icons/tainted-embrace": {
+      "src": "/assets/technique-icons/tainted-embrace.png",
+      "width": 48,
+      "height": 48,
+      "id": "tainted-embrace",
+      "name": "Tainted Embrace",
+      "lineage": "demon"
+    },
+    "technique-icons/seductive-malevolence": {
+      "src": "/assets/technique-icons/seductive-malevolence.png",
+      "width": 48,
+      "height": 48,
+      "id": "seductive-malevolence",
+      "name": "Seductive Malevolence",
+      "lineage": "demon"
+    },
+    "technique-icons/malevolent-retribution": {
+      "src": "/assets/technique-icons/malevolent-retribution.png",
+      "width": 48,
+      "height": 48,
+      "id": "malevolent-retribution",
+      "name": "Malevolent Retribution",
+      "lineage": "demon"
+    },
+    "technique-icons/tenebrous-agony": {
+      "src": "/assets/technique-icons/tenebrous-agony.png",
+      "width": 48,
+      "height": 48,
+      "id": "tenebrous-agony",
+      "name": "Tenebrous Agony",
+      "lineage": "demon"
+    },
+    "technique-icons/cursed-radiance": {
+      "src": "/assets/technique-icons/cursed-radiance.png",
+      "width": 48,
+      "height": 48,
+      "id": "cursed-radiance",
+      "name": "Cursed Radiance",
+      "lineage": "demon"
+    },
+    "technique-icons/maleficent-affliction": {
+      "src": "/assets/technique-icons/maleficent-affliction.png",
+      "width": 48,
+      "height": 48,
+      "id": "maleficent-affliction",
+      "name": "Maleficent Affliction",
+      "lineage": "demon"
+    },
+    "technique-icons/purifying-torment": {
+      "src": "/assets/technique-icons/purifying-torment.png",
+      "width": 48,
+      "height": 48,
+      "id": "purifying-torment",
+      "name": "Purifying Torment",
+      "lineage": "demon"
+    },
+    "technique-icons/malevolent-rot": {
+      "src": "/assets/technique-icons/malevolent-rot.png",
+      "width": 48,
+      "height": 48,
+      "id": "malevolent-rot",
+      "name": "Malevolent Rot",
+      "lineage": "demon"
+    },
+    "technique-icons/demonic-desiccation": {
+      "src": "/assets/technique-icons/demonic-desiccation.png",
+      "width": 48,
+      "height": 48,
+      "id": "demonic-desiccation",
+      "name": "Demonic Desiccation",
+      "lineage": "demon"
+    },
+    "technique-icons/malignant-putrefaction": {
+      "src": "/assets/technique-icons/malignant-putrefaction.png",
+      "width": 48,
+      "height": 48,
+      "id": "malignant-putrefaction",
+      "name": "Malignant Putrefaction",
+      "lineage": "demon"
+    },
+    "technique-icons/tainted-regeneration": {
+      "src": "/assets/technique-icons/tainted-regeneration.png",
+      "width": 48,
+      "height": 48,
+      "id": "tainted-regeneration",
+      "name": "Tainted Regeneration",
+      "lineage": "demon"
+    },
+    "technique-icons/malefic-erosion": {
+      "src": "/assets/technique-icons/malefic-erosion.png",
+      "width": 48,
+      "height": 48,
+      "id": "malefic-erosion",
+      "name": "Malefic Erosion",
+      "lineage": "demon"
+    },
+    "technique-icons/malevolent-stasis": {
+      "src": "/assets/technique-icons/malevolent-stasis.png",
+      "width": 48,
+      "height": 48,
+      "id": "malevolent-stasis",
+      "name": "Malevolent Stasis",
+      "lineage": "demon"
+    },
+    "technique-icons/demonic-paralysis": {
+      "src": "/assets/technique-icons/demonic-paralysis.png",
+      "width": 48,
+      "height": 48,
+      "id": "demonic-paralysis",
+      "name": "Demonic Paralysis",
+      "lineage": "demon"
+    },
+    "technique-icons/temporal-disruption": {
+      "src": "/assets/technique-icons/temporal-disruption.png",
+      "width": 48,
+      "height": 48,
+      "id": "temporal-disruption",
+      "name": "Temporal Disruption",
+      "lineage": "demon"
+    },
+    "technique-icons/maleficent-wind-gust": {
+      "src": "/assets/technique-icons/maleficent-wind-gust.png",
+      "width": 48,
+      "height": 48,
+      "id": "maleficent-wind-gust",
+      "name": "Maleficent Wind Gust",
+      "lineage": "demon"
+    },
+    "technique-icons/corrupted-interdiction": {
+      "src": "/assets/technique-icons/corrupted-interdiction.png",
+      "width": 48,
+      "height": 48,
+      "id": "corrupted-interdiction",
+      "name": "Corrupted Interdiction",
+      "lineage": "demon"
+    }
+  },
+  "equipment": {
+    "equipment-icons/focus-1": {
+      "src": "/assets/equipment-icons/focus-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "focus-1",
+      "slot": "focus",
+      "tier": 1,
+      "name": "Rank 1 focus"
+    },
+    "equipment-icons/focus-2": {
+      "src": "/assets/equipment-icons/focus-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "focus-2",
+      "slot": "focus",
+      "tier": 2,
+      "name": "Rank 2 focus"
+    },
+    "equipment-icons/focus-3": {
+      "src": "/assets/equipment-icons/focus-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "focus-3",
+      "slot": "focus",
+      "tier": 3,
+      "name": "Rank 3 focus"
+    },
+    "equipment-icons/focus-4": {
+      "src": "/assets/equipment-icons/focus-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "focus-4",
+      "slot": "focus",
+      "tier": 4,
+      "name": "Rank 4 focus"
+    },
+    "equipment-icons/focus-5": {
+      "src": "/assets/equipment-icons/focus-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "focus-5",
+      "slot": "focus",
+      "tier": 5,
+      "name": "Rank 5 focus"
+    },
+    "equipment-icons/focus-6": {
+      "src": "/assets/equipment-icons/focus-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "focus-6",
+      "slot": "focus",
+      "tier": 6,
+      "name": "Rank 6 focus"
+    },
+    "equipment-icons/focus-7": {
+      "src": "/assets/equipment-icons/focus-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "focus-7",
+      "slot": "focus",
+      "tier": 7,
+      "name": "Rank 7 focus"
+    },
+    "equipment-icons/focus-8": {
+      "src": "/assets/equipment-icons/focus-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "focus-8",
+      "slot": "focus",
+      "tier": 8,
+      "name": "Rank 8 focus"
+    },
+    "equipment-icons/focus-9": {
+      "src": "/assets/equipment-icons/focus-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "focus-9",
+      "slot": "focus",
+      "tier": 9,
+      "name": "Rank 9 focus"
+    },
+    "equipment-icons/focus-10": {
+      "src": "/assets/equipment-icons/focus-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "focus-10",
+      "slot": "focus",
+      "tier": 10,
+      "name": "Rank 10 focus"
+    },
+    "equipment-icons/ward-1": {
+      "src": "/assets/equipment-icons/ward-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "ward-1",
+      "slot": "ward",
+      "tier": 1,
+      "name": "Rank 1 ward"
+    },
+    "equipment-icons/ward-2": {
+      "src": "/assets/equipment-icons/ward-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "ward-2",
+      "slot": "ward",
+      "tier": 2,
+      "name": "Rank 2 ward"
+    },
+    "equipment-icons/ward-3": {
+      "src": "/assets/equipment-icons/ward-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "ward-3",
+      "slot": "ward",
+      "tier": 3,
+      "name": "Rank 3 ward"
+    },
+    "equipment-icons/ward-4": {
+      "src": "/assets/equipment-icons/ward-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "ward-4",
+      "slot": "ward",
+      "tier": 4,
+      "name": "Rank 4 ward"
+    },
+    "equipment-icons/ward-5": {
+      "src": "/assets/equipment-icons/ward-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "ward-5",
+      "slot": "ward",
+      "tier": 5,
+      "name": "Rank 5 ward"
+    },
+    "equipment-icons/ward-6": {
+      "src": "/assets/equipment-icons/ward-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "ward-6",
+      "slot": "ward",
+      "tier": 6,
+      "name": "Rank 6 ward"
+    },
+    "equipment-icons/ward-7": {
+      "src": "/assets/equipment-icons/ward-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "ward-7",
+      "slot": "ward",
+      "tier": 7,
+      "name": "Rank 7 ward"
+    },
+    "equipment-icons/ward-8": {
+      "src": "/assets/equipment-icons/ward-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "ward-8",
+      "slot": "ward",
+      "tier": 8,
+      "name": "Rank 8 ward"
+    },
+    "equipment-icons/ward-9": {
+      "src": "/assets/equipment-icons/ward-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "ward-9",
+      "slot": "ward",
+      "tier": 9,
+      "name": "Rank 9 ward"
+    },
+    "equipment-icons/ward-10": {
+      "src": "/assets/equipment-icons/ward-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "ward-10",
+      "slot": "ward",
+      "tier": 10,
+      "name": "Rank 10 ward"
+    },
+    "equipment-icons/utility-1": {
+      "src": "/assets/equipment-icons/utility-1.png",
+      "width": 48,
+      "height": 48,
+      "id": "utility-1",
+      "slot": "utility",
+      "tier": 1,
+      "name": "Rank 1 utility"
+    },
+    "equipment-icons/utility-2": {
+      "src": "/assets/equipment-icons/utility-2.png",
+      "width": 48,
+      "height": 48,
+      "id": "utility-2",
+      "slot": "utility",
+      "tier": 2,
+      "name": "Rank 2 utility"
+    },
+    "equipment-icons/utility-3": {
+      "src": "/assets/equipment-icons/utility-3.png",
+      "width": 48,
+      "height": 48,
+      "id": "utility-3",
+      "slot": "utility",
+      "tier": 3,
+      "name": "Rank 3 utility"
+    },
+    "equipment-icons/utility-4": {
+      "src": "/assets/equipment-icons/utility-4.png",
+      "width": 48,
+      "height": 48,
+      "id": "utility-4",
+      "slot": "utility",
+      "tier": 4,
+      "name": "Rank 4 utility"
+    },
+    "equipment-icons/utility-5": {
+      "src": "/assets/equipment-icons/utility-5.png",
+      "width": 48,
+      "height": 48,
+      "id": "utility-5",
+      "slot": "utility",
+      "tier": 5,
+      "name": "Rank 5 utility"
+    },
+    "equipment-icons/utility-6": {
+      "src": "/assets/equipment-icons/utility-6.png",
+      "width": 48,
+      "height": 48,
+      "id": "utility-6",
+      "slot": "utility",
+      "tier": 6,
+      "name": "Rank 6 utility"
+    },
+    "equipment-icons/utility-7": {
+      "src": "/assets/equipment-icons/utility-7.png",
+      "width": 48,
+      "height": 48,
+      "id": "utility-7",
+      "slot": "utility",
+      "tier": 7,
+      "name": "Rank 7 utility"
+    },
+    "equipment-icons/utility-8": {
+      "src": "/assets/equipment-icons/utility-8.png",
+      "width": 48,
+      "height": 48,
+      "id": "utility-8",
+      "slot": "utility",
+      "tier": 8,
+      "name": "Rank 8 utility"
+    },
+    "equipment-icons/utility-9": {
+      "src": "/assets/equipment-icons/utility-9.png",
+      "width": 48,
+      "height": 48,
+      "id": "utility-9",
+      "slot": "utility",
+      "tier": 9,
+      "name": "Rank 9 utility"
+    },
+    "equipment-icons/utility-10": {
+      "src": "/assets/equipment-icons/utility-10.png",
+      "width": 48,
+      "height": 48,
+      "id": "utility-10",
+      "slot": "utility",
+      "tier": 10,
+      "name": "Rank 10 utility"
+    }
+  },
+  "vfx": {
+    "vfx/love-laugh-1": {
+      "src": "/assets/vfx/love-laugh-1.png",
+      "width": 768,
+      "height": 96,
+      "id": "love-laugh-1",
+      "branchId": "love-laugh",
+      "level": 1,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/love-laugh-2": {
+      "src": "/assets/vfx/love-laugh-2.png",
+      "width": 768,
+      "height": 96,
+      "id": "love-laugh-2",
+      "branchId": "love-laugh",
+      "level": 2,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/love-laugh-3": {
+      "src": "/assets/vfx/love-laugh-3.png",
+      "width": 768,
+      "height": 96,
+      "id": "love-laugh-3",
+      "branchId": "love-laugh",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/love-laugh-4": {
+      "src": "/assets/vfx/love-laugh-4.png",
+      "width": 768,
+      "height": 96,
+      "id": "love-laugh-4",
+      "branchId": "love-laugh",
+      "level": 4,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/family-love-laugh": {
+      "src": "/assets/vfx/family-love-laugh.png",
+      "width": 768,
+      "height": 96,
+      "id": "family-love-laugh",
+      "branchId": "love-laugh",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/light-pleasure-1": {
+      "src": "/assets/vfx/light-pleasure-1.png",
+      "width": 768,
+      "height": 96,
+      "id": "light-pleasure-1",
+      "branchId": "light-pleasure",
+      "level": 1,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/light-pleasure-2": {
+      "src": "/assets/vfx/light-pleasure-2.png",
+      "width": 768,
+      "height": 96,
+      "id": "light-pleasure-2",
+      "branchId": "light-pleasure",
+      "level": 2,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/light-pleasure-3": {
+      "src": "/assets/vfx/light-pleasure-3.png",
+      "width": 768,
+      "height": 96,
+      "id": "light-pleasure-3",
+      "branchId": "light-pleasure",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/light-pleasure-4": {
+      "src": "/assets/vfx/light-pleasure-4.png",
+      "width": 768,
+      "height": 96,
+      "id": "light-pleasure-4",
+      "branchId": "light-pleasure",
+      "level": 4,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/light-pleasure-5": {
+      "src": "/assets/vfx/light-pleasure-5.png",
+      "width": 768,
+      "height": 96,
+      "id": "light-pleasure-5",
+      "branchId": "light-pleasure",
+      "level": 5,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/family-light-pleasure": {
+      "src": "/assets/vfx/family-light-pleasure.png",
+      "width": 768,
+      "height": 96,
+      "id": "family-light-pleasure",
+      "branchId": "light-pleasure",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/water-grow-1": {
+      "src": "/assets/vfx/water-grow-1.png",
+      "width": 768,
+      "height": 96,
+      "id": "water-grow-1",
+      "branchId": "water-grow",
+      "level": 1,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/water-grow-2": {
+      "src": "/assets/vfx/water-grow-2.png",
+      "width": 768,
+      "height": 96,
+      "id": "water-grow-2",
+      "branchId": "water-grow",
+      "level": 2,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/water-grow-3": {
+      "src": "/assets/vfx/water-grow-3.png",
+      "width": 768,
+      "height": 96,
+      "id": "water-grow-3",
+      "branchId": "water-grow",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/water-grow-4": {
+      "src": "/assets/vfx/water-grow-4.png",
+      "width": 768,
+      "height": 96,
+      "id": "water-grow-4",
+      "branchId": "water-grow",
+      "level": 4,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/family-water-grow": {
+      "src": "/assets/vfx/family-water-grow.png",
+      "width": 768,
+      "height": 96,
+      "id": "family-water-grow",
+      "branchId": "water-grow",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/air-move-1": {
+      "src": "/assets/vfx/air-move-1.png",
+      "width": 768,
+      "height": 96,
+      "id": "air-move-1",
+      "branchId": "air-move",
+      "level": 1,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/air-move-2": {
+      "src": "/assets/vfx/air-move-2.png",
+      "width": 768,
+      "height": 96,
+      "id": "air-move-2",
+      "branchId": "air-move",
+      "level": 2,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/air-move-3": {
+      "src": "/assets/vfx/air-move-3.png",
+      "width": 768,
+      "height": 96,
+      "id": "air-move-3",
+      "branchId": "air-move",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/air-move-4": {
+      "src": "/assets/vfx/air-move-4.png",
+      "width": 768,
+      "height": 96,
+      "id": "air-move-4",
+      "branchId": "air-move",
+      "level": 4,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/air-move-5": {
+      "src": "/assets/vfx/air-move-5.png",
+      "width": 768,
+      "height": 96,
+      "id": "air-move-5",
+      "branchId": "air-move",
+      "level": 5,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/air-move-6": {
+      "src": "/assets/vfx/air-move-6.png",
+      "width": 768,
+      "height": 96,
+      "id": "air-move-6",
+      "branchId": "air-move",
+      "level": 6,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/family-air-move": {
+      "src": "/assets/vfx/family-air-move.png",
+      "width": 768,
+      "height": 96,
+      "id": "family-air-move",
+      "branchId": "air-move",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/hate-clean-1": {
+      "src": "/assets/vfx/hate-clean-1.png",
+      "width": 768,
+      "height": 96,
+      "id": "hate-clean-1",
+      "branchId": "hate-clean",
+      "level": 1,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/hate-clean-2": {
+      "src": "/assets/vfx/hate-clean-2.png",
+      "width": 768,
+      "height": 96,
+      "id": "hate-clean-2",
+      "branchId": "hate-clean",
+      "level": 2,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/hate-clean-3": {
+      "src": "/assets/vfx/hate-clean-3.png",
+      "width": 768,
+      "height": 96,
+      "id": "hate-clean-3",
+      "branchId": "hate-clean",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/hate-clean-4": {
+      "src": "/assets/vfx/hate-clean-4.png",
+      "width": 768,
+      "height": 96,
+      "id": "hate-clean-4",
+      "branchId": "hate-clean",
+      "level": 4,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/hate-clean-5": {
+      "src": "/assets/vfx/hate-clean-5.png",
+      "width": 768,
+      "height": 96,
+      "id": "hate-clean-5",
+      "branchId": "hate-clean",
+      "level": 5,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/family-hate-clean": {
+      "src": "/assets/vfx/family-hate-clean.png",
+      "width": 768,
+      "height": 96,
+      "id": "family-hate-clean",
+      "branchId": "hate-clean",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/dark-heal-1": {
+      "src": "/assets/vfx/dark-heal-1.png",
+      "width": 768,
+      "height": 96,
+      "id": "dark-heal-1",
+      "branchId": "dark-heal",
+      "level": 1,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/dark-heal-2": {
+      "src": "/assets/vfx/dark-heal-2.png",
+      "width": 768,
+      "height": 96,
+      "id": "dark-heal-2",
+      "branchId": "dark-heal",
+      "level": 2,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/dark-heal-3": {
+      "src": "/assets/vfx/dark-heal-3.png",
+      "width": 768,
+      "height": 96,
+      "id": "dark-heal-3",
+      "branchId": "dark-heal",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/dark-heal-4": {
+      "src": "/assets/vfx/dark-heal-4.png",
+      "width": 768,
+      "height": 96,
+      "id": "dark-heal-4",
+      "branchId": "dark-heal",
+      "level": 4,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/dark-heal-5": {
+      "src": "/assets/vfx/dark-heal-5.png",
+      "width": 768,
+      "height": 96,
+      "id": "dark-heal-5",
+      "branchId": "dark-heal",
+      "level": 5,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/dark-heal-7": {
+      "src": "/assets/vfx/dark-heal-7.png",
+      "width": 768,
+      "height": 96,
+      "id": "dark-heal-7",
+      "branchId": "dark-heal",
+      "level": 7,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/family-dark-heal": {
+      "src": "/assets/vfx/family-dark-heal.png",
+      "width": 768,
+      "height": 96,
+      "id": "family-dark-heal",
+      "branchId": "dark-heal",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/fire-create-1": {
+      "src": "/assets/vfx/fire-create-1.png",
+      "width": 768,
+      "height": 96,
+      "id": "fire-create-1",
+      "branchId": "fire-create",
+      "level": 1,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/fire-create-2": {
+      "src": "/assets/vfx/fire-create-2.png",
+      "width": 768,
+      "height": 96,
+      "id": "fire-create-2",
+      "branchId": "fire-create",
+      "level": 2,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/fire-create-3": {
+      "src": "/assets/vfx/fire-create-3.png",
+      "width": 768,
+      "height": 96,
+      "id": "fire-create-3",
+      "branchId": "fire-create",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/fire-create-4": {
+      "src": "/assets/vfx/fire-create-4.png",
+      "width": 768,
+      "height": 96,
+      "id": "fire-create-4",
+      "branchId": "fire-create",
+      "level": 4,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/fire-create-5": {
+      "src": "/assets/vfx/fire-create-5.png",
+      "width": 768,
+      "height": 96,
+      "id": "fire-create-5",
+      "branchId": "fire-create",
+      "level": 5,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/fire-create-6": {
+      "src": "/assets/vfx/fire-create-6.png",
+      "width": 768,
+      "height": 96,
+      "id": "fire-create-6",
+      "branchId": "fire-create",
+      "level": 6,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/fire-create-7": {
+      "src": "/assets/vfx/fire-create-7.png",
+      "width": 768,
+      "height": 96,
+      "id": "fire-create-7",
+      "branchId": "fire-create",
+      "level": 7,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/family-fire-create": {
+      "src": "/assets/vfx/family-fire-create.png",
+      "width": 768,
+      "height": 96,
+      "id": "family-fire-create",
+      "branchId": "fire-create",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/earth-give-1": {
+      "src": "/assets/vfx/earth-give-1.png",
+      "width": 768,
+      "height": 96,
+      "id": "earth-give-1",
+      "branchId": "earth-give",
+      "level": 1,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/earth-give-2": {
+      "src": "/assets/vfx/earth-give-2.png",
+      "width": 768,
+      "height": 96,
+      "id": "earth-give-2",
+      "branchId": "earth-give",
+      "level": 2,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/earth-give-3": {
+      "src": "/assets/vfx/earth-give-3.png",
+      "width": 768,
+      "height": 96,
+      "id": "earth-give-3",
+      "branchId": "earth-give",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/earth-give-4": {
+      "src": "/assets/vfx/earth-give-4.png",
+      "width": 768,
+      "height": 96,
+      "id": "earth-give-4",
+      "branchId": "earth-give",
+      "level": 4,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/family-earth-give": {
+      "src": "/assets/vfx/family-earth-give.png",
+      "width": 768,
+      "height": 96,
+      "id": "family-earth-give",
+      "branchId": "earth-give",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/hate-cry-1": {
+      "src": "/assets/vfx/hate-cry-1.png",
+      "width": 768,
+      "height": 96,
+      "id": "hate-cry-1",
+      "branchId": "hate-cry",
+      "level": 1,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/hate-cry-2": {
+      "src": "/assets/vfx/hate-cry-2.png",
+      "width": 768,
+      "height": 96,
+      "id": "hate-cry-2",
+      "branchId": "hate-cry",
+      "level": 2,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/hate-cry-3": {
+      "src": "/assets/vfx/hate-cry-3.png",
+      "width": 768,
+      "height": 96,
+      "id": "hate-cry-3",
+      "branchId": "hate-cry",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/hate-cry-4": {
+      "src": "/assets/vfx/hate-cry-4.png",
+      "width": 768,
+      "height": 96,
+      "id": "hate-cry-4",
+      "branchId": "hate-cry",
+      "level": 4,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/hate-cry-5": {
+      "src": "/assets/vfx/hate-cry-5.png",
+      "width": 768,
+      "height": 96,
+      "id": "hate-cry-5",
+      "branchId": "hate-cry",
+      "level": 5,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/hate-cry-6": {
+      "src": "/assets/vfx/hate-cry-6.png",
+      "width": 768,
+      "height": 96,
+      "id": "hate-cry-6",
+      "branchId": "hate-cry",
+      "level": 6,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/family-hate-cry": {
+      "src": "/assets/vfx/family-hate-cry.png",
+      "width": 768,
+      "height": 96,
+      "id": "family-hate-cry",
+      "branchId": "hate-cry",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/dark-pain-1": {
+      "src": "/assets/vfx/dark-pain-1.png",
+      "width": 768,
+      "height": 96,
+      "id": "dark-pain-1",
+      "branchId": "dark-pain",
+      "level": 1,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/dark-pain-2": {
+      "src": "/assets/vfx/dark-pain-2.png",
+      "width": 768,
+      "height": 96,
+      "id": "dark-pain-2",
+      "branchId": "dark-pain",
+      "level": 2,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/dark-pain-3": {
+      "src": "/assets/vfx/dark-pain-3.png",
+      "width": 768,
+      "height": 96,
+      "id": "dark-pain-3",
+      "branchId": "dark-pain",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/dark-pain-4": {
+      "src": "/assets/vfx/dark-pain-4.png",
+      "width": 768,
+      "height": 96,
+      "id": "dark-pain-4",
+      "branchId": "dark-pain",
+      "level": 4,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/dark-pain-5": {
+      "src": "/assets/vfx/dark-pain-5.png",
+      "width": 768,
+      "height": 96,
+      "id": "dark-pain-5",
+      "branchId": "dark-pain",
+      "level": 5,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/dark-pain-6": {
+      "src": "/assets/vfx/dark-pain-6.png",
+      "width": 768,
+      "height": 96,
+      "id": "dark-pain-6",
+      "branchId": "dark-pain",
+      "level": 6,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/family-dark-pain": {
+      "src": "/assets/vfx/family-dark-pain.png",
+      "width": 768,
+      "height": 96,
+      "id": "family-dark-pain",
+      "branchId": "dark-pain",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/fire-destroy-1": {
+      "src": "/assets/vfx/fire-destroy-1.png",
+      "width": 768,
+      "height": 96,
+      "id": "fire-destroy-1",
+      "branchId": "fire-destroy",
+      "level": 1,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/fire-destroy-2": {
+      "src": "/assets/vfx/fire-destroy-2.png",
+      "width": 768,
+      "height": 96,
+      "id": "fire-destroy-2",
+      "branchId": "fire-destroy",
+      "level": 2,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/fire-destroy-3": {
+      "src": "/assets/vfx/fire-destroy-3.png",
+      "width": 768,
+      "height": 96,
+      "id": "fire-destroy-3",
+      "branchId": "fire-destroy",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/fire-destroy-4": {
+      "src": "/assets/vfx/fire-destroy-4.png",
+      "width": 768,
+      "height": 96,
+      "id": "fire-destroy-4",
+      "branchId": "fire-destroy",
+      "level": 4,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/fire-destroy-5": {
+      "src": "/assets/vfx/fire-destroy-5.png",
+      "width": 768,
+      "height": 96,
+      "id": "fire-destroy-5",
+      "branchId": "fire-destroy",
+      "level": 5,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/family-fire-destroy": {
+      "src": "/assets/vfx/family-fire-destroy.png",
+      "width": 768,
+      "height": 96,
+      "id": "family-fire-destroy",
+      "branchId": "fire-destroy",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/earth-take-1": {
+      "src": "/assets/vfx/earth-take-1.png",
+      "width": 768,
+      "height": 96,
+      "id": "earth-take-1",
+      "branchId": "earth-take",
+      "level": 1,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/earth-take-2": {
+      "src": "/assets/vfx/earth-take-2.png",
+      "width": 768,
+      "height": 96,
+      "id": "earth-take-2",
+      "branchId": "earth-take",
+      "level": 2,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/earth-take-3": {
+      "src": "/assets/vfx/earth-take-3.png",
+      "width": 768,
+      "height": 96,
+      "id": "earth-take-3",
+      "branchId": "earth-take",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/earth-take-4": {
+      "src": "/assets/vfx/earth-take-4.png",
+      "width": 768,
+      "height": 96,
+      "id": "earth-take-4",
+      "branchId": "earth-take",
+      "level": 4,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/earth-take-5": {
+      "src": "/assets/vfx/earth-take-5.png",
+      "width": 768,
+      "height": 96,
+      "id": "earth-take-5",
+      "branchId": "earth-take",
+      "level": 5,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/earth-take-6": {
+      "src": "/assets/vfx/earth-take-6.png",
+      "width": 768,
+      "height": 96,
+      "id": "earth-take-6",
+      "branchId": "earth-take",
+      "level": 6,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/family-earth-take": {
+      "src": "/assets/vfx/family-earth-take.png",
+      "width": 768,
+      "height": 96,
+      "id": "family-earth-take",
+      "branchId": "earth-take",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/love-dirty-1": {
+      "src": "/assets/vfx/love-dirty-1.png",
+      "width": 768,
+      "height": 96,
+      "id": "love-dirty-1",
+      "branchId": "love-dirty",
+      "level": 1,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/love-dirty-2": {
+      "src": "/assets/vfx/love-dirty-2.png",
+      "width": 768,
+      "height": 96,
+      "id": "love-dirty-2",
+      "branchId": "love-dirty",
+      "level": 2,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/love-dirty-3": {
+      "src": "/assets/vfx/love-dirty-3.png",
+      "width": 768,
+      "height": 96,
+      "id": "love-dirty-3",
+      "branchId": "love-dirty",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/love-dirty-4": {
+      "src": "/assets/vfx/love-dirty-4.png",
+      "width": 768,
+      "height": 96,
+      "id": "love-dirty-4",
+      "branchId": "love-dirty",
+      "level": 4,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/love-dirty-5": {
+      "src": "/assets/vfx/love-dirty-5.png",
+      "width": 768,
+      "height": 96,
+      "id": "love-dirty-5",
+      "branchId": "love-dirty",
+      "level": 5,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/family-love-dirty": {
+      "src": "/assets/vfx/family-love-dirty.png",
+      "width": 768,
+      "height": 96,
+      "id": "family-love-dirty",
+      "branchId": "love-dirty",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/light-harm-1": {
+      "src": "/assets/vfx/light-harm-1.png",
+      "width": 768,
+      "height": 96,
+      "id": "light-harm-1",
+      "branchId": "light-harm",
+      "level": 1,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/light-harm-2": {
+      "src": "/assets/vfx/light-harm-2.png",
+      "width": 768,
+      "height": 96,
+      "id": "light-harm-2",
+      "branchId": "light-harm",
+      "level": 2,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/light-harm-3": {
+      "src": "/assets/vfx/light-harm-3.png",
+      "width": 768,
+      "height": 96,
+      "id": "light-harm-3",
+      "branchId": "light-harm",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/light-harm-4": {
+      "src": "/assets/vfx/light-harm-4.png",
+      "width": 768,
+      "height": 96,
+      "id": "light-harm-4",
+      "branchId": "light-harm",
+      "level": 4,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/light-harm-5": {
+      "src": "/assets/vfx/light-harm-5.png",
+      "width": 768,
+      "height": 96,
+      "id": "light-harm-5",
+      "branchId": "light-harm",
+      "level": 5,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/light-harm-6": {
+      "src": "/assets/vfx/light-harm-6.png",
+      "width": 768,
+      "height": 96,
+      "id": "light-harm-6",
+      "branchId": "light-harm",
+      "level": 6,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/family-light-harm": {
+      "src": "/assets/vfx/family-light-harm.png",
+      "width": 768,
+      "height": 96,
+      "id": "family-light-harm",
+      "branchId": "light-harm",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/water-decay-1": {
+      "src": "/assets/vfx/water-decay-1.png",
+      "width": 768,
+      "height": 96,
+      "id": "water-decay-1",
+      "branchId": "water-decay",
+      "level": 1,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/water-decay-2": {
+      "src": "/assets/vfx/water-decay-2.png",
+      "width": 768,
+      "height": 96,
+      "id": "water-decay-2",
+      "branchId": "water-decay",
+      "level": 2,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/water-decay-3": {
+      "src": "/assets/vfx/water-decay-3.png",
+      "width": 768,
+      "height": 96,
+      "id": "water-decay-3",
+      "branchId": "water-decay",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/water-decay-4": {
+      "src": "/assets/vfx/water-decay-4.png",
+      "width": 768,
+      "height": 96,
+      "id": "water-decay-4",
+      "branchId": "water-decay",
+      "level": 4,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/water-decay-5": {
+      "src": "/assets/vfx/water-decay-5.png",
+      "width": 768,
+      "height": 96,
+      "id": "water-decay-5",
+      "branchId": "water-decay",
+      "level": 5,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/water-decay-6": {
+      "src": "/assets/vfx/water-decay-6.png",
+      "width": 768,
+      "height": 96,
+      "id": "water-decay-6",
+      "branchId": "water-decay",
+      "level": 6,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/family-water-decay": {
+      "src": "/assets/vfx/family-water-decay.png",
+      "width": 768,
+      "height": 96,
+      "id": "family-water-decay",
+      "branchId": "water-decay",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/air-stop-1": {
+      "src": "/assets/vfx/air-stop-1.png",
+      "width": 768,
+      "height": 96,
+      "id": "air-stop-1",
+      "branchId": "air-stop",
+      "level": 1,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/air-stop-2": {
+      "src": "/assets/vfx/air-stop-2.png",
+      "width": 768,
+      "height": 96,
+      "id": "air-stop-2",
+      "branchId": "air-stop",
+      "level": 2,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/air-stop-3": {
+      "src": "/assets/vfx/air-stop-3.png",
+      "width": 768,
+      "height": 96,
+      "id": "air-stop-3",
+      "branchId": "air-stop",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/air-stop-4": {
+      "src": "/assets/vfx/air-stop-4.png",
+      "width": 768,
+      "height": 96,
+      "id": "air-stop-4",
+      "branchId": "air-stop",
+      "level": 4,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/air-stop-5": {
+      "src": "/assets/vfx/air-stop-5.png",
+      "width": 768,
+      "height": 96,
+      "id": "air-stop-5",
+      "branchId": "air-stop",
+      "level": 5,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/air-stop-6": {
+      "src": "/assets/vfx/air-stop-6.png",
+      "width": 768,
+      "height": 96,
+      "id": "air-stop-6",
+      "branchId": "air-stop",
+      "level": 6,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    },
+    "vfx/family-air-stop": {
+      "src": "/assets/vfx/family-air-stop.png",
+      "width": 768,
+      "height": 96,
+      "id": "family-air-stop",
+      "branchId": "air-stop",
+      "level": 3,
+      "frames": 8,
+      "frameWidth": 96,
+      "frameHeight": 96,
+      "fps": 12
+    }
+  },
+  "props": {
+    "zones/ethereal-sanctuary-landmark": {
+      "src": "/assets/zones/ethereal-sanctuary-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Ethereal Sanctuary",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "heaven"
+    },
+    "zones/ethereal-sanctuary-portal": {
+      "src": "/assets/zones/ethereal-sanctuary-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Ethereal Sanctuary gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/ethereal-sanctuary-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/divine-cities-landmark": {
+      "src": "/assets/zones/divine-cities-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Divine Cities",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "heaven"
+    },
+    "zones/divine-cities-portal": {
+      "src": "/assets/zones/divine-cities-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Divine Cities gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/divine-cities-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/halls-of-knowledge-landmark": {
+      "src": "/assets/zones/halls-of-knowledge-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Halls of Knowledge",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "heaven"
+    },
+    "zones/halls-of-knowledge-portal": {
+      "src": "/assets/zones/halls-of-knowledge-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Halls of Knowledge gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/halls-of-knowledge-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/ethereal-libraries-landmark": {
+      "src": "/assets/zones/ethereal-libraries-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Ethereal Libraries",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "heaven"
+    },
+    "zones/ethereal-libraries-portal": {
+      "src": "/assets/zones/ethereal-libraries-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Ethereal Libraries gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/ethereal-libraries-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/ethereal-gardens-landmark": {
+      "src": "/assets/zones/ethereal-gardens-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Ethereal Gardens",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "heaven"
+    },
+    "zones/ethereal-gardens-portal": {
+      "src": "/assets/zones/ethereal-gardens-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Ethereal Gardens gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/ethereal-gardens-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/celestial-waterfalls-landmark": {
+      "src": "/assets/zones/celestial-waterfalls-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Celestial Waterfalls",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "heaven"
+    },
+    "zones/celestial-waterfalls-portal": {
+      "src": "/assets/zones/celestial-waterfalls-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Celestial Waterfalls gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/celestial-waterfalls-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/palatial-halls-landmark": {
+      "src": "/assets/zones/palatial-halls-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Palatial Halls",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "heaven"
+    },
+    "zones/palatial-halls-portal": {
+      "src": "/assets/zones/palatial-halls-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Palatial Halls gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/palatial-halls-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/celestial-palaces-landmark": {
+      "src": "/assets/zones/celestial-palaces-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Celestial Palaces",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "heaven"
+    },
+    "zones/celestial-palaces-portal": {
+      "src": "/assets/zones/celestial-palaces-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Celestial Palaces gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/celestial-palaces-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/astral-observatory-landmark": {
+      "src": "/assets/zones/astral-observatory-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Astral Observatory",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "heaven"
+    },
+    "zones/astral-observatory-portal": {
+      "src": "/assets/zones/astral-observatory-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Astral Observatory gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/astral-observatory-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/celestial-observatories-landmark": {
+      "src": "/assets/zones/celestial-observatories-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Celestial Observatories",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "heaven"
+    },
+    "zones/celestial-observatories-portal": {
+      "src": "/assets/zones/celestial-observatories-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Celestial Observatories gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/celestial-observatories-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/eternal-light-fields-landmark": {
+      "src": "/assets/zones/eternal-light-fields-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Eternal Light Fields",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "heaven"
+    },
+    "zones/eternal-light-fields-portal": {
+      "src": "/assets/zones/eternal-light-fields-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Eternal Light Fields gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/eternal-light-fields-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/iridescent-temples-landmark": {
+      "src": "/assets/zones/iridescent-temples-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Iridescent Temples",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "heaven"
+    },
+    "zones/iridescent-temples-portal": {
+      "src": "/assets/zones/iridescent-temples-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Iridescent Temples gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/iridescent-temples-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/translucent-bridges-landmark": {
+      "src": "/assets/zones/translucent-bridges-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Translucent Bridges",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "heaven"
+    },
+    "zones/translucent-bridges-portal": {
+      "src": "/assets/zones/translucent-bridges-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Translucent Bridges gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/translucent-bridges-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/celestial-sanctuaries-landmark": {
+      "src": "/assets/zones/celestial-sanctuaries-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Celestial Sanctuaries",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "earth"
+    },
+    "zones/celestial-sanctuaries-portal": {
+      "src": "/assets/zones/celestial-sanctuaries-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Celestial Sanctuaries gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/celestial-sanctuaries-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/majestic-mountain-ranges-landmark": {
+      "src": "/assets/zones/majestic-mountain-ranges-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Majestic Mountain Ranges",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "earth"
+    },
+    "zones/majestic-mountain-ranges-portal": {
+      "src": "/assets/zones/majestic-mountain-ranges-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Majestic Mountain Ranges gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/majestic-mountain-ranges-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/sacred-groves-landmark": {
+      "src": "/assets/zones/sacred-groves-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Sacred Groves",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "earth"
+    },
+    "zones/sacred-groves-portal": {
+      "src": "/assets/zones/sacred-groves-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Sacred Groves gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/sacred-groves-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/prismatic-waterfalls-landmark": {
+      "src": "/assets/zones/prismatic-waterfalls-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Prismatic Waterfalls",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "earth"
+    },
+    "zones/prismatic-waterfalls-portal": {
+      "src": "/assets/zones/prismatic-waterfalls-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Prismatic Waterfalls gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/prismatic-waterfalls-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/cosmic-deserts-landmark": {
+      "src": "/assets/zones/cosmic-deserts-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Cosmic Deserts",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "earth"
+    },
+    "zones/cosmic-deserts-portal": {
+      "src": "/assets/zones/cosmic-deserts-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Cosmic Deserts gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/cosmic-deserts-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/city-of-stars-landmark": {
+      "src": "/assets/zones/city-of-stars-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "City of Stars",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "earth"
+    },
+    "zones/city-of-stars-portal": {
+      "src": "/assets/zones/city-of-stars-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "City of Stars gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/city-of-stars-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/sacred-temples-landmark": {
+      "src": "/assets/zones/sacred-temples-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Sacred Temples",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "earth"
+    },
+    "zones/sacred-temples-portal": {
+      "src": "/assets/zones/sacred-temples-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Sacred Temples gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/sacred-temples-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/ancient-pyramids-landmark": {
+      "src": "/assets/zones/ancient-pyramids-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Ancient Pyramids",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "earth"
+    },
+    "zones/ancient-pyramids-portal": {
+      "src": "/assets/zones/ancient-pyramids-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Ancient Pyramids gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/ancient-pyramids-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/sanctified-cathedrals-landmark": {
+      "src": "/assets/zones/sanctified-cathedrals-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Sanctified Cathedrals",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "earth"
+    },
+    "zones/sanctified-cathedrals-portal": {
+      "src": "/assets/zones/sanctified-cathedrals-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Sanctified Cathedrals gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/sanctified-cathedrals-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/zen-gardens-landmark": {
+      "src": "/assets/zones/zen-gardens-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Zen Gardens",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "earth"
+    },
+    "zones/zen-gardens-portal": {
+      "src": "/assets/zones/zen-gardens-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Zen Gardens gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/zen-gardens-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/sacred-monuments-landmark": {
+      "src": "/assets/zones/sacred-monuments-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Sacred Monuments",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "earth"
+    },
+    "zones/sacred-monuments-portal": {
+      "src": "/assets/zones/sacred-monuments-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Sacred Monuments gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/sacred-monuments-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/living-settlements-landmark": {
+      "src": "/assets/zones/living-settlements-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Living Settlements",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "earth"
+    },
+    "zones/living-settlements-portal": {
+      "src": "/assets/zones/living-settlements-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Living Settlements gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/living-settlements-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/forests-plains-and-lakes-landmark": {
+      "src": "/assets/zones/forests-plains-and-lakes-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Forests, Plains, and Lakes",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "earth"
+    },
+    "zones/forests-plains-and-lakes-portal": {
+      "src": "/assets/zones/forests-plains-and-lakes-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Forests, Plains, and Lakes gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/forests-plains-and-lakes-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/infernal-abyss-landmark": {
+      "src": "/assets/zones/infernal-abyss-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Infernal Abyss",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "hell"
+    },
+    "zones/infernal-abyss-portal": {
+      "src": "/assets/zones/infernal-abyss-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Infernal Abyss gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/infernal-abyss-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/malevolent-citadels-landmark": {
+      "src": "/assets/zones/malevolent-citadels-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Malevolent Citadels",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "hell"
+    },
+    "zones/malevolent-citadels-portal": {
+      "src": "/assets/zones/malevolent-citadels-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Malevolent Citadels gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/malevolent-citadels-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/realm-of-eternal-conflict-landmark": {
+      "src": "/assets/zones/realm-of-eternal-conflict-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Realm of Eternal Conflict",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "hell"
+    },
+    "zones/realm-of-eternal-conflict-portal": {
+      "src": "/assets/zones/realm-of-eternal-conflict-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Realm of Eternal Conflict gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/realm-of-eternal-conflict-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/pits-of-suffering-landmark": {
+      "src": "/assets/zones/pits-of-suffering-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Pits of Suffering",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "hell"
+    },
+    "zones/pits-of-suffering-portal": {
+      "src": "/assets/zones/pits-of-suffering-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Pits of Suffering gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/pits-of-suffering-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/forsaken-wastelands-landmark": {
+      "src": "/assets/zones/forsaken-wastelands-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Forsaken Wastelands",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "hell"
+    },
+    "zones/forsaken-wastelands-portal": {
+      "src": "/assets/zones/forsaken-wastelands-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Forsaken Wastelands gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/forsaken-wastelands-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/chaos-chasms-landmark": {
+      "src": "/assets/zones/chaos-chasms-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Chaos Chasms",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "hell"
+    },
+    "zones/chaos-chasms-portal": {
+      "src": "/assets/zones/chaos-chasms-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Chaos Chasms gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/chaos-chasms-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/malevolence-forest-landmark": {
+      "src": "/assets/zones/malevolence-forest-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Malevolence Forest",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "hell"
+    },
+    "zones/malevolence-forest-portal": {
+      "src": "/assets/zones/malevolence-forest-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Malevolence Forest gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/malevolence-forest-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/pits-of-despair-landmark": {
+      "src": "/assets/zones/pits-of-despair-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Pits of Despair",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "hell"
+    },
+    "zones/pits-of-despair-portal": {
+      "src": "/assets/zones/pits-of-despair-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Pits of Despair gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/pits-of-despair-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/infernal-strongholds-landmark": {
+      "src": "/assets/zones/infernal-strongholds-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Infernal Strongholds",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "hell"
+    },
+    "zones/infernal-strongholds-portal": {
+      "src": "/assets/zones/infernal-strongholds-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Infernal Strongholds gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/infernal-strongholds-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/infernal-gates-landmark": {
+      "src": "/assets/zones/infernal-gates-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Infernal Gates",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "hell"
+    },
+    "zones/infernal-gates-portal": {
+      "src": "/assets/zones/infernal-gates-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Infernal Gates gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/infernal-gates-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/dark-spire-towers-landmark": {
+      "src": "/assets/zones/dark-spire-towers-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Dark Spire Towers",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "hell"
+    },
+    "zones/dark-spire-towers-portal": {
+      "src": "/assets/zones/dark-spire-towers-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Dark Spire Towers gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/dark-spire-towers-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/tormented-ruins-landmark": {
+      "src": "/assets/zones/tormented-ruins-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Tormented Ruins",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "hell"
+    },
+    "zones/tormented-ruins-portal": {
+      "src": "/assets/zones/tormented-ruins-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Tormented Ruins gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/tormented-ruins-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/suffering-labyrinths-landmark": {
+      "src": "/assets/zones/suffering-labyrinths-landmark.png",
+      "width": 192,
+      "height": 224,
+      "name": "Suffering Labyrinths",
+      "anchor": [
+        96,
+        208
+      ],
+      "realm": "hell"
+    },
+    "zones/suffering-labyrinths-portal": {
+      "src": "/assets/zones/suffering-labyrinths-portal.png",
+      "width": 96,
+      "height": 128,
+      "name": "Suffering Labyrinths gateway",
+      "anchor": [
+        48,
+        118
+      ],
+      "animationSrc": "/assets/zones/suffering-labyrinths-portal-sheet.png",
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    }
+  },
+  "characters": {
+    "zones/ethereal-sanctuary-portal-sheet": {
+      "src": "/assets/zones/ethereal-sanctuary-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/divine-cities-portal-sheet": {
+      "src": "/assets/zones/divine-cities-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/halls-of-knowledge-portal-sheet": {
+      "src": "/assets/zones/halls-of-knowledge-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/ethereal-libraries-portal-sheet": {
+      "src": "/assets/zones/ethereal-libraries-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/ethereal-gardens-portal-sheet": {
+      "src": "/assets/zones/ethereal-gardens-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/celestial-waterfalls-portal-sheet": {
+      "src": "/assets/zones/celestial-waterfalls-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/palatial-halls-portal-sheet": {
+      "src": "/assets/zones/palatial-halls-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/celestial-palaces-portal-sheet": {
+      "src": "/assets/zones/celestial-palaces-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/astral-observatory-portal-sheet": {
+      "src": "/assets/zones/astral-observatory-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/celestial-observatories-portal-sheet": {
+      "src": "/assets/zones/celestial-observatories-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/eternal-light-fields-portal-sheet": {
+      "src": "/assets/zones/eternal-light-fields-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/iridescent-temples-portal-sheet": {
+      "src": "/assets/zones/iridescent-temples-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/translucent-bridges-portal-sheet": {
+      "src": "/assets/zones/translucent-bridges-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/celestial-sanctuaries-portal-sheet": {
+      "src": "/assets/zones/celestial-sanctuaries-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/majestic-mountain-ranges-portal-sheet": {
+      "src": "/assets/zones/majestic-mountain-ranges-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/sacred-groves-portal-sheet": {
+      "src": "/assets/zones/sacred-groves-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/prismatic-waterfalls-portal-sheet": {
+      "src": "/assets/zones/prismatic-waterfalls-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/cosmic-deserts-portal-sheet": {
+      "src": "/assets/zones/cosmic-deserts-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/city-of-stars-portal-sheet": {
+      "src": "/assets/zones/city-of-stars-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/sacred-temples-portal-sheet": {
+      "src": "/assets/zones/sacred-temples-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/ancient-pyramids-portal-sheet": {
+      "src": "/assets/zones/ancient-pyramids-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/sanctified-cathedrals-portal-sheet": {
+      "src": "/assets/zones/sanctified-cathedrals-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/zen-gardens-portal-sheet": {
+      "src": "/assets/zones/zen-gardens-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/sacred-monuments-portal-sheet": {
+      "src": "/assets/zones/sacred-monuments-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/living-settlements-portal-sheet": {
+      "src": "/assets/zones/living-settlements-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/forests-plains-and-lakes-portal-sheet": {
+      "src": "/assets/zones/forests-plains-and-lakes-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/infernal-abyss-portal-sheet": {
+      "src": "/assets/zones/infernal-abyss-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/malevolent-citadels-portal-sheet": {
+      "src": "/assets/zones/malevolent-citadels-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/realm-of-eternal-conflict-portal-sheet": {
+      "src": "/assets/zones/realm-of-eternal-conflict-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/pits-of-suffering-portal-sheet": {
+      "src": "/assets/zones/pits-of-suffering-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/forsaken-wastelands-portal-sheet": {
+      "src": "/assets/zones/forsaken-wastelands-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/chaos-chasms-portal-sheet": {
+      "src": "/assets/zones/chaos-chasms-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/malevolence-forest-portal-sheet": {
+      "src": "/assets/zones/malevolence-forest-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/pits-of-despair-portal-sheet": {
+      "src": "/assets/zones/pits-of-despair-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/infernal-strongholds-portal-sheet": {
+      "src": "/assets/zones/infernal-strongholds-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/infernal-gates-portal-sheet": {
+      "src": "/assets/zones/infernal-gates-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/dark-spire-towers-portal-sheet": {
+      "src": "/assets/zones/dark-spire-towers-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/tormented-ruins-portal-sheet": {
+      "src": "/assets/zones/tormented-ruins-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "zones/suffering-labyrinths-portal-sheet": {
+      "src": "/assets/zones/suffering-labyrinths-portal-sheet.png",
+      "width": 576,
+      "height": 128,
+      "frames": 6,
+      "frameWidth": 96,
+      "frameHeight": 128,
+      "fps": 7
+    },
+    "npc-jobs/guard-sheet": {
+      "src": "/assets/npc-jobs/guard-sheet.png",
+      "width": 160,
+      "height": 48,
+      "job": "guard",
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 48,
+      "fps": 5,
+      "anchor": [
+        20,
+        42
+      ]
+    },
+    "npc-jobs/medic-sheet": {
+      "src": "/assets/npc-jobs/medic-sheet.png",
+      "width": 160,
+      "height": 48,
+      "job": "medic",
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 48,
+      "fps": 5,
+      "anchor": [
+        20,
+        42
+      ]
+    },
+    "npc-jobs/scout-sheet": {
+      "src": "/assets/npc-jobs/scout-sheet.png",
+      "width": 160,
+      "height": 48,
+      "job": "scout",
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 48,
+      "fps": 5,
+      "anchor": [
+        20,
+        42
+      ]
+    },
+    "npc-jobs/trader-sheet": {
+      "src": "/assets/npc-jobs/trader-sheet.png",
+      "width": 160,
+      "height": 48,
+      "job": "trader",
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 48,
+      "fps": 5,
+      "anchor": [
+        20,
+        42
+      ]
+    },
+    "npc-jobs/blacksmith-sheet": {
+      "src": "/assets/npc-jobs/blacksmith-sheet.png",
+      "width": 160,
+      "height": 48,
+      "job": "blacksmith",
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 48,
+      "fps": 5,
+      "anchor": [
+        20,
+        42
+      ]
+    },
+    "npc-jobs/farmer-sheet": {
+      "src": "/assets/npc-jobs/farmer-sheet.png",
+      "width": 160,
+      "height": 48,
+      "job": "farmer",
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 48,
+      "fps": 5,
+      "anchor": [
+        20,
+        42
+      ]
+    },
+    "npc-jobs/fisher-sheet": {
+      "src": "/assets/npc-jobs/fisher-sheet.png",
+      "width": 160,
+      "height": 48,
+      "job": "fisher",
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 48,
+      "fps": 5,
+      "anchor": [
+        20,
+        42
+      ]
+    },
+    "npc-jobs/scholar-sheet": {
+      "src": "/assets/npc-jobs/scholar-sheet.png",
+      "width": 160,
+      "height": 48,
+      "job": "scholar",
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 48,
+      "fps": 5,
+      "anchor": [
+        20,
+        42
+      ]
+    },
+    "npc-jobs/bard-sheet": {
+      "src": "/assets/npc-jobs/bard-sheet.png",
+      "width": 160,
+      "height": 48,
+      "job": "bard",
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 48,
+      "fps": 5,
+      "anchor": [
+        20,
+        42
+      ]
+    },
+    "npc-jobs/gardener-sheet": {
+      "src": "/assets/npc-jobs/gardener-sheet.png",
+      "width": 160,
+      "height": 48,
+      "job": "gardener",
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 48,
+      "fps": 5,
+      "anchor": [
+        20,
+        42
+      ]
+    },
+    "npc-jobs/alchemist-sheet": {
+      "src": "/assets/npc-jobs/alchemist-sheet.png",
+      "width": 160,
+      "height": 48,
+      "job": "alchemist",
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 48,
+      "fps": 5,
+      "anchor": [
+        20,
+        42
+      ]
+    },
+    "npc-jobs/courier-sheet": {
+      "src": "/assets/npc-jobs/courier-sheet.png",
+      "width": 160,
+      "height": 48,
+      "job": "courier",
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 48,
+      "fps": 5,
+      "anchor": [
+        20,
+        42
+      ]
+    },
+    "wildlife/rabbit-sheet": {
+      "src": "/assets/wildlife/rabbit-sheet.png",
+      "width": 160,
+      "height": 40,
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 40,
+      "fps": 7,
+      "anchor": [
+        20,
+        34
+      ]
+    },
+    "wildlife/songbird-sheet": {
+      "src": "/assets/wildlife/songbird-sheet.png",
+      "width": 160,
+      "height": 40,
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 40,
+      "fps": 7,
+      "anchor": [
+        20,
+        34
+      ]
+    },
+    "wildlife/butterfly-sheet": {
+      "src": "/assets/wildlife/butterfly-sheet.png",
+      "width": 160,
+      "height": 40,
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 40,
+      "fps": 7,
+      "anchor": [
+        20,
+        34
+      ]
+    },
+    "wildlife/frog-sheet": {
+      "src": "/assets/wildlife/frog-sheet.png",
+      "width": 160,
+      "height": 40,
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 40,
+      "fps": 7,
+      "anchor": [
+        20,
+        34
+      ]
+    },
+    "wildlife/fish-sheet": {
+      "src": "/assets/wildlife/fish-sheet.png",
+      "width": 160,
+      "height": 40,
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 40,
+      "fps": 7,
+      "anchor": [
+        20,
+        34
+      ]
+    },
+    "wildlife/snake-sheet": {
+      "src": "/assets/wildlife/snake-sheet.png",
+      "width": 160,
+      "height": 40,
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 40,
+      "fps": 7,
+      "anchor": [
+        20,
+        34
+      ]
+    },
+    "wildlife/bat-sheet": {
+      "src": "/assets/wildlife/bat-sheet.png",
+      "width": 160,
+      "height": 40,
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 40,
+      "fps": 7,
+      "anchor": [
+        20,
+        34
+      ]
+    },
+    "wildlife/owl-sheet": {
+      "src": "/assets/wildlife/owl-sheet.png",
+      "width": 160,
+      "height": 40,
+      "frames": 4,
+      "frameWidth": 40,
+      "frameHeight": 40,
+      "fps": 7,
+      "anchor": [
+        20,
+        34
+      ]
+    }
+  }
+}

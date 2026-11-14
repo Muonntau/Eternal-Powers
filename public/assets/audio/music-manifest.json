@@ -1,0 +1,34 @@
+[
+  {
+    "id": "heaven",
+    "title": "The Unclouded Halls",
+    "duration": 24.0,
+    "bpm": 80,
+    "license": "Original project composition; no external samples",
+    "mood": "heaven"
+  },
+  {
+    "id": "hell",
+    "title": "Beneath the Ember Vault",
+    "duration": 24.0,
+    "bpm": 80,
+    "license": "Original project composition; no external samples",
+    "mood": "hell"
+  },
+  {
+    "id": "desert",
+    "title": "Stars Above the Dunes",
+    "duration": 24.0,
+    "bpm": 80,
+    "license": "Original project composition; no external samples",
+    "mood": "desert"
+  },
+  {
+    "id": "water",
+    "title": "Prismatic Tides",
+    "duration": 24.0,
+    "bpm": 80,
+    "license": "Original project composition; no external samples",
+    "mood": "water"
+  }
+]

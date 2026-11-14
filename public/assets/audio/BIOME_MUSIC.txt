@@ -1,0 +1,8 @@
+Original Eternal Powers regional scores
+The Unclouded Halls: heaven.ogg, 24-second seamless stereo loop, 80 BPM.
+Beneath the Ember Vault: hell.ogg, 24-second seamless stereo loop, 80 BPM.
+Stars Above the Dunes: desert.ogg, 24-second seamless stereo loop, 80 BPM.
+Prismatic Tides: water.ogg, 24-second seamless stereo loop, 80 BPM.
+
+Composed and synthesized by scripts/generate-biome-audio.py.
+No third-party recordings, melodies, or sample libraries.

@@ -1,0 +1,4 @@
+Original Eternal Powers environmental and action sound design.
+Six seamless stereo ambience loops; grass/stone/sand/water footsteps; six creature voice families;
+sixteen distinct power branches with preparation, release, and impact cues.
+All synthesized by scripts/generate-foley.py; no third-party samples or recordings.

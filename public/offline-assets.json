@@ -1,0 +1,4912 @@
+{
+  "version": "d4ae39b2418f7dace679",
+  "assetCount": 981,
+  "totalBytes": 28901405,
+  "files": [
+    {
+      "url": "/assets/angel-sheet.png",
+      "bytes": 846,
+      "sha256": "d6a95fb8f13a04da9c0cd857500c95d29f998579583facaf11665d0363f022e5"
+    },
+    {
+      "url": "/assets/angel.png",
+      "bytes": 539,
+      "sha256": "09b2b48c77ae5131832c7fd1a5f439e961a8d6b3fe6ed6d7d59a07b31ccfe75a"
+    },
+    {
+      "url": "/assets/ash.png",
+      "bytes": 1161,
+      "sha256": "1d396f8eb726fa0737e58c6cdd4465d6f95c7472ee852a1823dedbacfc9647ca"
+    },
+    {
+      "url": "/assets/audio/ambient-forest-night.ogg",
+      "bytes": 64896,
+      "sha256": "95498998e702eb9ca5c2a363c4227c194873daf06ebd2f826e108f591d412e8b"
+    },
+    {
+      "url": "/assets/audio/ambient-forest.ogg",
+      "bytes": 55627,
+      "sha256": "cd0d59fc16d6104a4470b9dce213a50639415a1ee613ed7e1e15920eb955e5f1"
+    },
+    {
+      "url": "/assets/audio/ambient-infernal.ogg",
+      "bytes": 61419,
+      "sha256": "82ba55572c59f9ee2e8a451ae16d3128ca983e69c1f791f6b3d7f0aebd89709c"
+    },
+    {
+      "url": "/assets/audio/ambient-rain.ogg",
+      "bytes": 81550,
+      "sha256": "a40978a3cf82c905e4d0c72335c2c772cc999e58a90165c7ccbf02c9e6c3015b"
+    },
+    {
+      "url": "/assets/audio/ambient-water.ogg",
+      "bytes": 64788,
+      "sha256": "123dd0086e4c89c7db138cbd3a81b7deb79707c08c9bbe1a488cbe26ddf274b0"
+    },
+    {
+      "url": "/assets/audio/ambient-wind.ogg",
+      "bytes": 54921,
+      "sha256": "a5b36917207a6d1fa5fcc68b0fd4869809900128916ce3855cdb9ec4bb5cce9b"
+    },
+    {
+      "url": "/assets/audio/cast.wav",
+      "bytes": 19888,
+      "sha256": "e277f807f3c53b343808c1d4a4337924c3bad9fa39ae83a9c27db68ff41a86c6"
+    },
+    {
+      "url": "/assets/audio/click.wav",
+      "bytes": 19888,
+      "sha256": "5c53ae69cc16a46ff29fdf601e5c7632fad6211f32b4283ffd115be652ec26cf"
+    },
+    {
+      "url": "/assets/audio/craft.wav",
+      "bytes": 33118,
+      "sha256": "dea5ceb5be953275c33a2a2e12fc76835e4ade52a4e8c15f3bf4f6c2b2c994f8"
+    },
+    {
+      "url": "/assets/audio/creature-chirp.wav",
+      "bytes": 19448,
+      "sha256": "f3c220731932f9d1502cad143c3dc12c71743f2f55daef8ece37f85a33cb1402"
+    },
+    {
+      "url": "/assets/audio/creature-deer.wav",
+      "bytes": 25622,
+      "sha256": "302f6b041388f2f23285a33b67df52e2b90f376e5b39ab23847ffda7212cd90d"
+    },
+    {
+      "url": "/assets/audio/creature-demon.wav",
+      "bytes": 46790,
+      "sha256": "027e64ce161437fbb4b1d28976725b6ca7f108d6e0864d53a94fb3aadeacb548"
+    },
+    {
+      "url": "/assets/audio/creature-golem.wav",
+      "bytes": 50758,
+      "sha256": "de33a5fd44c989d866deafb08b46f84ca75359487d19ba28ee518973c128b9ac"
+    },
+    {
+      "url": "/assets/audio/creature-growl.wav",
+      "bytes": 37970,
+      "sha256": "b783944cb8eb75b64c8d2ab3081aeb1a9c10612a22b2dac1f0ebce308366735b"
+    },
+    {
+      "url": "/assets/audio/creature-wisp.wav",
+      "bytes": 41498,
+      "sha256": "13fcfb7edac0dbd03abeee671a5a27b52f439db6e573b7ff5aae7f27ef6efac5"
+    },
+    {
+      "url": "/assets/audio/dash.wav",
+      "bytes": 19888,
+      "sha256": "f31fc8cce212d011db887c9222a339ccd6535e95c78fc9098adf2fe03905b8b5"
+    },
+    {
+      "url": "/assets/audio/death.wav",
+      "bytes": 52964,
+      "sha256": "cd4e71d1899e06102f1de0b5f972aded790303f703322402ecc2d699819ac5cf"
+    },
+    {
+      "url": "/assets/audio/desert.ogg",
+      "bytes": 110889,
+      "sha256": "287058bd2167e02ef55c9a0ea080378c1e3ba82d5e5e1043227b0f4df6cda5dd"
+    },
+    {
+      "url": "/assets/audio/error.wav",
+      "bytes": 19888,
+      "sha256": "937f1bb4f689aa25abc4a7babf9f2740d36e39a69114211c73c36ec96b3555c0"
+    },
+    {
+      "url": "/assets/audio/foley-manifest.json",
+      "bytes": 4827,
+      "sha256": "af116d26acc9700ad23d15b566909a0c09fe24a152eca41bd6cff36f5cd2ad9d"
+    },
+    {
+      "url": "/assets/audio/footstep-grass.wav",
+      "bytes": 9304,
+      "sha256": "f1225fff211ba62e4bb5f5665237d53ca033d5815e590587b5b12010bc6375da"
+    },
+    {
+      "url": "/assets/audio/footstep-sand.wav",
+      "bytes": 9304,
+      "sha256": "ed23f425c82fd05e9af42fedf05eeb45371540a68caa1291512461f0d0ca66a7"
+    },
+    {
+      "url": "/assets/audio/footstep-stone.wav",
+      "bytes": 9304,
+      "sha256": "6a928631e2423159e1c25a595056ba12006c75e8159103f074d9c8a22cdbef28"
+    },
+    {
+      "url": "/assets/audio/footstep-water.wav",
+      "bytes": 11510,
+      "sha256": "c8dc654d283ba2d9a6e0521b49efb743ea70c777d71e96dce6a27f7d63e445cb"
+    },
+    {
+      "url": "/assets/audio/heal.wav",
+      "bytes": 52964,
+      "sha256": "e9bfac576684fbdc470993f16a418a37feca459df814dccc304f85b75e3a40ee"
+    },
+    {
+      "url": "/assets/audio/heaven.ogg",
+      "bytes": 127360,
+      "sha256": "c817b7563aeed993c556123440c458788fc9d978269e6aa39fcc87f667467ac3"
+    },
+    {
+      "url": "/assets/audio/hell.ogg",
+      "bytes": 117683,
+      "sha256": "fe2e7726e0209deffff8d27c3e9eb7d03b29c9ce94df13efffbd7929664aa5e3"
+    },
+    {
+      "url": "/assets/audio/hit.wav",
+      "bytes": 19888,
+      "sha256": "9221ae9e4292e8dafbf8a7195832c0424a96c58a01fa2f78de32700b844c60ef"
+    },
+    {
+      "url": "/assets/audio/levelup.wav",
+      "bytes": 105884,
+      "sha256": "deca578cba18ce395fa6dd6d6c08c9a71163c2b23c7c2ba259d12ff43c6d7ac7"
+    },
+    {
+      "url": "/assets/audio/loot.wav",
+      "bytes": 19888,
+      "sha256": "0d69b0ca73bd25a2daa32ecf8b026d0cc6f05b7ea069623c148046388e0b7843"
+    },
+    {
+      "url": "/assets/audio/music-manifest.json",
+      "bytes": 763,
+      "sha256": "99ca6ccc0870bdf25704849f5d709b7cd8340f7a8adbe47e878e04bfeafeda16"
+    },
+    {
+      "url": "/assets/audio/portal.wav",
+      "bytes": 75014,
+      "sha256": "be21024a417fba7cb3f9787f15d0238efaaaf3fbc1f7cd0f0c1ab7b033699e0a"
+    },
+    {
+      "url": "/assets/audio/quest.wav",
+      "bytes": 79424,
+      "sha256": "ec410641cecb526fd24241f59b4f4ea51fca7b24b6d6603e7aefac8962da512e"
+    },
+    {
+      "url": "/assets/audio/sanctuary.ogg",
+      "bytes": 161837,
+      "sha256": "2aa6a4686cdd7265bbb66517857a2e8a7e72f3b1303ed3fa466e5f80580d0837"
+    },
+    {
+      "url": "/assets/audio/spell-air-move-cast.wav",
+      "bytes": 25622,
+      "sha256": "92bf53a3fa27c91ad6ba95be82c084768df6a9e3c3a9e7f70fff7dc0813da370"
+    },
+    {
+      "url": "/assets/audio/spell-air-move-hit.wav",
+      "bytes": 15920,
+      "sha256": "78321861e19d2413d44e857c830ede9b54696e56cd1c8f3c509cb4eb383c2b3f"
+    },
+    {
+      "url": "/assets/audio/spell-air-move-release.wav",
+      "bytes": 38852,
+      "sha256": "87aecc5290429387469003e2f44ebb48a09a6b227d67b5394733d81b02862b71"
+    },
+    {
+      "url": "/assets/audio/spell-air-stop-cast.wav",
+      "bytes": 25622,
+      "sha256": "63f0a73f6df6945472dbe22713df2ba1ff1e91089e557c448b51da0d7ab348ea"
+    },
+    {
+      "url": "/assets/audio/spell-air-stop-hit.wav",
+      "bytes": 15920,
+      "sha256": "46bec3aee3896b1b88b7f466afd5eb25c89e26a15067b411862b0770f75c9e84"
+    },
+    {
+      "url": "/assets/audio/spell-air-stop-release.wav",
+      "bytes": 38852,
+      "sha256": "1305ac91e8239646b03128e3a4074c8a3af9a44f681967a57c2efb9d3e1f607f"
+    },
+    {
+      "url": "/assets/audio/spell-dark-heal-cast.wav",
+      "bytes": 25622,
+      "sha256": "3a2d453084767ae9880794478140b786535ef79d6de60097480cd6fcb8720db0"
+    },
+    {
+      "url": "/assets/audio/spell-dark-heal-hit.wav",
+      "bytes": 15920,
+      "sha256": "0ca594e4705f05cd8f57b09a7d131becd753e1ffe47d5b11eccf31efcf0099f9"
+    },
+    {
+      "url": "/assets/audio/spell-dark-heal-release.wav",
+      "bytes": 38852,
+      "sha256": "ce2b7f3fae6ce1ea358cecbea9f7eedc4e4b5c96e49222e2c2332a7cf32a6b1f"
+    },
+    {
+      "url": "/assets/audio/spell-dark-pain-cast.wav",
+      "bytes": 25622,
+      "sha256": "c6cac2b33c0f99c9c46b7e42c26c66b99018f67a1950f2770ebe18438842da2c"
+    },
+    {
+      "url": "/assets/audio/spell-dark-pain-hit.wav",
+      "bytes": 15920,
+      "sha256": "3767f75f836c0e3bf04cf14f211f0c19b66f11fb6c6eb5e19c42aa1455bb9d68"
+    },
+    {
+      "url": "/assets/audio/spell-dark-pain-release.wav",
+      "bytes": 38852,
+      "sha256": "79c529fcda6f30cba3323ae5c4a4a84d8be0c2991804c2ee9f68a0c8f2931e8b"
+    },
+    {
+      "url": "/assets/audio/spell-earth-give-cast.wav",
+      "bytes": 25622,
+      "sha256": "3bc79ef1358fcff4cf55af2cb47c11ed3aa4b6f66e8e97da92bd6acd6d1ad920"
+    },
+    {
+      "url": "/assets/audio/spell-earth-give-hit.wav",
+      "bytes": 15920,
+      "sha256": "3ce419ba9d1142d3e7baf843e18e1ae271c25923a2cf200783d89f5f835d1bf8"
+    },
+    {
+      "url": "/assets/audio/spell-earth-give-release.wav",
+      "bytes": 38852,
+      "sha256": "f209da68e0e8a1f208b2015d240cb4528dd049db446d23ff4baa04fe1584a2cb"
+    },
+    {
+      "url": "/assets/audio/spell-earth-take-cast.wav",
+      "bytes": 25622,
+      "sha256": "8748a7b08f76650e1b770c657f6583538e0d046b05caa23dd4f854f905dcee79"
+    },
+    {
+      "url": "/assets/audio/spell-earth-take-hit.wav",
+      "bytes": 15920,
+      "sha256": "17bf48e4b5f8c2a5d8c71ca3fe9063a2bda6b9224ce0cf10e15fa64e98f37a1a"
+    },
+    {
+      "url": "/assets/audio/spell-earth-take-release.wav",
+      "bytes": 38852,
+      "sha256": "91d8e4f6acd14efa7dc006faad57b24ca4d893c0a18dda9dcd5496701d341590"
+    },
+    {
+      "url": "/assets/audio/spell-fire-create-cast.wav",
+      "bytes": 25622,
+      "sha256": "5a8f15c25d9f27a73cef0c124a4b1f9b9ddd13abce3332b54e96d35abcab0168"
+    },
+    {
+      "url": "/assets/audio/spell-fire-create-hit.wav",
+      "bytes": 15920,
+      "sha256": "e0f1c7905cd049be8724c1cc86bdf94983eab28bba26283f7f3e8c2bd385c88f"
+    },
+    {
+      "url": "/assets/audio/spell-fire-create-release.wav",
+      "bytes": 38852,
+      "sha256": "06fc1a8c3c23cca9e38f1e4062fcc54516df58d1b389b83b917fbc2e13f18cf4"
+    },
+    {
+      "url": "/assets/audio/spell-fire-destroy-cast.wav",
+      "bytes": 25622,
+      "sha256": "cb350237d031c892dc7b4e00a075ae690c9de1f9a20f5f3055367fd0e64bae4f"
+    },
+    {
+      "url": "/assets/audio/spell-fire-destroy-hit.wav",
+      "bytes": 15920,
+      "sha256": "3692e3a2be97db4a5e7d5078d32f0358a0f9457015010ed65b13b5dcd392e7af"
+    },
+    {
+      "url": "/assets/audio/spell-fire-destroy-release.wav",
+      "bytes": 38852,
+      "sha256": "69fe9baa2b38c16e9672d316ab358dd43da01b5dc02157d43b9c74a2c96c13bf"
+    },
+    {
+      "url": "/assets/audio/spell-hate-clean-cast.wav",
+      "bytes": 25622,
+      "sha256": "88433180b924b1e358824e8bd97bae178673f685df1911b3d736f7bc731993ab"
+    },
+    {
+      "url": "/assets/audio/spell-hate-clean-hit.wav",
+      "bytes": 15920,
+      "sha256": "50e40bf98e6f0ec6103dd2b6ce46045f7bf61a232389597c56663d796d1a5c23"
+    },
+    {
+      "url": "/assets/audio/spell-hate-clean-release.wav",
+      "bytes": 38852,
+      "sha256": "0b058e543da83f090c156d8082d08b1ccd5a3c4dfccaec46fc9c09da37e9cd3c"
+    },
+    {
+      "url": "/assets/audio/spell-hate-cry-cast.wav",
+      "bytes": 25622,
+      "sha256": "671024c14488f2450eb7c42099a2e987c36c619519e96b62391dc81d9f85e1c8"
+    },
+    {
+      "url": "/assets/audio/spell-hate-cry-hit.wav",
+      "bytes": 15920,
+      "sha256": "490b23c69d81a0470d62447774100c04a8364924b1ead0c3b88948c6f78dee7f"
+    },
+    {
+      "url": "/assets/audio/spell-hate-cry-release.wav",
+      "bytes": 38852,
+      "sha256": "90aa2f108b7f88bb5679ab685e507d5a3d177c2276be87e66c56bfbdf0cb7fb0"
+    },
+    {
+      "url": "/assets/audio/spell-light-harm-cast.wav",
+      "bytes": 25622,
+      "sha256": "6f71d9c25fc794af9ad99c9b48dc8676e996dc5c01321fc1390459e9462d89af"
+    },
+    {
+      "url": "/assets/audio/spell-light-harm-hit.wav",
+      "bytes": 15920,
+      "sha256": "9927bc5f8b51caf8cbedb5f23f42254c153a83d3ed512cd2f537c8668c92362e"
+    },
+    {
+      "url": "/assets/audio/spell-light-harm-release.wav",
+      "bytes": 38852,
+      "sha256": "52af0b695dfd24eec892dbded0164ec098a5a0ededbccdddcc7b675b5771a891"
+    },
+    {
+      "url": "/assets/audio/spell-light-pleasure-cast.wav",
+      "bytes": 25622,
+      "sha256": "8ee4e628a492fe48a4cef222b54246f4ce2028091e30f2c6b157315bbc52bfad"
+    },
+    {
+      "url": "/assets/audio/spell-light-pleasure-hit.wav",
+      "bytes": 15920,
+      "sha256": "ac66148d6cddfedb69022f12d2765098fe03bd95ae576265303ff705d72618b5"
+    },
+    {
+      "url": "/assets/audio/spell-light-pleasure-release.wav",
+      "bytes": 38852,
+      "sha256": "4fa79912e852528398100757101e55c13b825f9700ab9af6139eea0559c7b3f8"
+    },
+    {
+      "url": "/assets/audio/spell-love-dirty-cast.wav",
+      "bytes": 25622,
+      "sha256": "579bc0fe1b36695ac0ab854cac39ea8876b80f137863cd360885527731021da0"
+    },
+    {
+      "url": "/assets/audio/spell-love-dirty-hit.wav",
+      "bytes": 15920,
+      "sha256": "f10a6a485e2b1e6730e8bc4dac02467fcfb7f6ee8037b91da05b27db64a61885"
+    },
+    {
+      "url": "/assets/audio/spell-love-dirty-release.wav",
+      "bytes": 38852,
+      "sha256": "a155b2c7a999ff413623e4bdeb0be165973eb583e9a8c0c68fc42804f8d20ff3"
+    },
+    {
+      "url": "/assets/audio/spell-love-laugh-cast.wav",
+      "bytes": 25622,
+      "sha256": "4e4942374a4defcecbbf5a176b1fd4125afef79a5ac9607fff7e4ff3b9da78d6"
+    },
+    {
+      "url": "/assets/audio/spell-love-laugh-hit.wav",
+      "bytes": 15920,
+      "sha256": "29320d7f5d84201b5caa76c2aa2d1e18bcbd14a7d757f90b32e21cbc7338e8ba"
+    },
+    {
+      "url": "/assets/audio/spell-love-laugh-release.wav",
+      "bytes": 38852,
+      "sha256": "170961dc95931a7e01fae1fa3d081bdd88b944ac6f395cad0480ab242087750c"
+    },
+    {
+      "url": "/assets/audio/spell-water-decay-cast.wav",
+      "bytes": 25622,
+      "sha256": "bab541d529e9ba613e6d5928ab94d7b6b7575fc7a5bd2ab82e5252681cdfe654"
+    },
+    {
+      "url": "/assets/audio/spell-water-decay-hit.wav",
+      "bytes": 15920,
+      "sha256": "5ef9f5ce0f037b5da19bfbdaed69f352ebdc214d4c64f5061190c3aa1891a479"
+    },
+    {
+      "url": "/assets/audio/spell-water-decay-release.wav",
+      "bytes": 38852,
+      "sha256": "0fc11657e017f875e71dea512af566419f5b9cd20600715e1b1f2d884e017edf"
+    },
+    {
+      "url": "/assets/audio/spell-water-grow-cast.wav",
+      "bytes": 25622,
+      "sha256": "be6a8217f2635a3db3bde7971794f6433af63987dcd6de0a00b3ba05bda7b00a"
+    },
+    {
+      "url": "/assets/audio/spell-water-grow-hit.wav",
+      "bytes": 15920,
+      "sha256": "28e15a5ced43cf05526e9a7c12bdeca07684db2a7e5abdb8b8cb5b377a805f33"
+    },
+    {
+      "url": "/assets/audio/spell-water-grow-release.wav",
+      "bytes": 38852,
+      "sha256": "c6118c3f64b6d578c85822d3742567100e6da1763a1933bbac84ed6dd11abbcb"
+    },
+    {
+      "url": "/assets/audio/step.wav",
+      "bytes": 19888,
+      "sha256": "e0f6f1443b1d65aa7e406559df0ccdcf3d1a87e1c1aed7f4c768a953ce386e4e"
+    },
+    {
+      "url": "/assets/audio/water.ogg",
+      "bytes": 95624,
+      "sha256": "1b5a7eb3b34cc748b10406186fd7fbb4e7f35e9d1b581efd839cca185a1b8736"
+    },
+    {
+      "url": "/assets/brazier.png",
+      "bytes": 503,
+      "sha256": "cf8fe3b2f7680e72acf1bcc6a2ada76a6ae0731026dc17498337b542b92381b6"
+    },
+    {
+      "url": "/assets/bridge.png",
+      "bytes": 798,
+      "sha256": "72800e3ccba6e09fd0993c56481b624d2905c4da03dcfed7863103383f98e67d"
+    },
+    {
+      "url": "/assets/build-floor.png",
+      "bytes": 147,
+      "sha256": "3be52cc78c9b3de2fe78881daa56cb48ff291ffd5a7a4caa2c8db63939bb137e"
+    },
+    {
+      "url": "/assets/build-forge.png",
+      "bytes": 379,
+      "sha256": "d2825db13631aec5fae103f5eb6f4238d92b3ebf399745e2dafa1ea498891525"
+    },
+    {
+      "url": "/assets/build-garden.png",
+      "bytes": 330,
+      "sha256": "0b5a85229c27ebc78718b90ede43dc1484cce3afe97b2a8d4dd677f7220330d7"
+    },
+    {
+      "url": "/assets/build-light.png",
+      "bytes": 243,
+      "sha256": "53c5fccba8fa0525521813db7cc9353127bd2357974f8b57bb469d7858a788a1"
+    },
+    {
+      "url": "/assets/build-path.png",
+      "bytes": 162,
+      "sha256": "3a53022515f049742a2bd9b9aa4d70df030109063d5a1a94fc6da65faf8e4c50"
+    },
+    {
+      "url": "/assets/build-portal.png",
+      "bytes": 687,
+      "sha256": "e7a645f31bcc7a28c4a3aafec01e2d8a648f053e5370db0d4d21921179aa4700"
+    },
+    {
+      "url": "/assets/build-roof.png",
+      "bytes": 518,
+      "sha256": "231b8f8a6c101fd4d1186842c0b053caf28d0cd4ad3b4a84d990eaabd6dc321c"
+    },
+    {
+      "url": "/assets/build-storage.png",
+      "bytes": 235,
+      "sha256": "df4b48f5124f98b34b1e322072d92178ee5d79125024a5e58983a5c6d3446488"
+    },
+    {
+      "url": "/assets/build-wall.png",
+      "bytes": 216,
+      "sha256": "72d3ac4f0b31162a24b2129f479e2ca18a16ddce4cc330e690fa0a1c6c3e0a2b"
+    },
+    {
+      "url": "/assets/bush-berries.png",
+      "bytes": 523,
+      "sha256": "b5e4d60636139ec0bacffffa81ee7986b576766679338cff526b9a72737f3cee"
+    },
+    {
+      "url": "/assets/bush.png",
+      "bytes": 445,
+      "sha256": "188135c99eec65648863b1f6bd668e0611932bb931610c5c4c1ff9433c3a4946"
+    },
+    {
+      "url": "/assets/cactus.png",
+      "bytes": 711,
+      "sha256": "0d53a2d666b727322ae8a1238ef1f3f3600fa75c775d6d6d5204853c82f8c5eb"
+    },
+    {
+      "url": "/assets/celestial-sanctuary-keyart.png",
+      "bytes": 3345635,
+      "sha256": "0aceef4872aee5f0b6852600b9645c5e7084d016574f227ec90283bead3bd441"
+    },
+    {
+      "url": "/assets/chest-open.png",
+      "bytes": 417,
+      "sha256": "873c57972e450e1692a57d9f63539e0bb1ca5d478219640714e648d16ca32c86"
+    },
+    {
+      "url": "/assets/chest.png",
+      "bytes": 420,
+      "sha256": "1214850ee98587a7258ed0d331ac7ba8e9aec747550a25b0d8a15efb447f8182"
+    },
+    {
+      "url": "/assets/cliff.png",
+      "bytes": 1385,
+      "sha256": "754f55f1569d37b8591ee394fff960fd3f8c14e7f08c4ccef580422118ee1efc"
+    },
+    {
+      "url": "/assets/cloud.png",
+      "bytes": 630,
+      "sha256": "628526dae64c25508bfd1e1df904f8d31337b0229878ce4ae2dbb5695bfb8395"
+    },
+    {
+      "url": "/assets/contact-sheet.png",
+      "bytes": 197620,
+      "sha256": "ff16d417a2dd21b8fab880087d9f300cad3b77293fa3122cd7acde4b457fb272"
+    },
+    {
+      "url": "/assets/corruption.png",
+      "bytes": 1244,
+      "sha256": "564d9fc2321a1363b8e3eec513d78bbae173c4f7d49fe5d072c4349cd0f86233"
+    },
+    {
+      "url": "/assets/crag.png",
+      "bytes": 1350,
+      "sha256": "19228f1b646ba990c3a9eec8a8c4117ea153aa44ce87f62c3df0ef0ba25b96d1"
+    },
+    {
+      "url": "/assets/creature-ancestral-spirits-sheet.png",
+      "bytes": 829,
+      "sha256": "6786190083a33594e02b8538440ac4c522d199cf3c045bcc72b53fd72f3019c8"
+    },
+    {
+      "url": "/assets/creature-ancestral-spirits.png",
+      "bytes": 506,
+      "sha256": "87ae6f7f055e24c95a4b0b3a72f5e8cc578361f7b863c9527fca9aaf060f2e40"
+    },
+    {
+      "url": "/assets/creature-apocalyptic-hellfire-titans-sheet.png",
+      "bytes": 1103,
+      "sha256": "5decc9a361b1012401b0cedd6307701b165ab41d815aa048c532dc54c5393aef"
+    },
+    {
+      "url": "/assets/creature-apocalyptic-hellfire-titans.png",
+      "bytes": 683,
+      "sha256": "4cd169b00b9df777efa09eb966bc8e2e3e40a1e3cbd0ff2b5fc243c8c229bc9e"
+    },
+    {
+      "url": "/assets/creature-ascended-celestial-hierarchs-sheet.png",
+      "bytes": 1354,
+      "sha256": "276f603e29f23d5e3a1776acea2ce4cbc71d5dd63b0a9f3f734635e442cea846"
+    },
+    {
+      "url": "/assets/creature-ascended-celestial-hierarchs.png",
+      "bytes": 823,
+      "sha256": "9b388d6db59bcfa6a797ab582a2283aeb3a3b0b08fe3bc544660671f18bcc17d"
+    },
+    {
+      "url": "/assets/creature-astral-celestial-beasts-sheet.png",
+      "bytes": 852,
+      "sha256": "19a8f5c4f63b07bd1857f90e3bee3cb48d71a4e8c4dd05c6664685650e9c5d5d"
+    },
+    {
+      "url": "/assets/creature-astral-celestial-beasts.png",
+      "bytes": 532,
+      "sha256": "c7b2ec644fcd13964334a286152a6192bbf776ce4b721402a3cfdf77b8522da9"
+    },
+    {
+      "url": "/assets/creature-celestial-arbiters-sheet.png",
+      "bytes": 867,
+      "sha256": "3b28604bdd5e5d8a1728fa2d80f0933a4270958bc99728bb0bf7d7de0edc18e4"
+    },
+    {
+      "url": "/assets/creature-celestial-arbiters.png",
+      "bytes": 530,
+      "sha256": "f1614edeeb2954539f8052a1b8d6c0f0b9fee390badbc4149567fbbf88bc0cc5"
+    },
+    {
+      "url": "/assets/creature-celestial-bards-sheet.png",
+      "bytes": 751,
+      "sha256": "9462184b7e1ae8b9b7c686027d09e85a9daa0dd19f44b1e7ae00007049de03d2"
+    },
+    {
+      "url": "/assets/creature-celestial-bards.png",
+      "bytes": 497,
+      "sha256": "0cc68bf17c5ce17a2e3186767f13adf59b64c3a3f946a52139779a44dfc4a583"
+    },
+    {
+      "url": "/assets/creature-celestial-familiars-sheet.png",
+      "bytes": 855,
+      "sha256": "ee57b61323f08b35a25e1a7003b6f2ef4aa138b056d087a0cef5d8ad23a3c335"
+    },
+    {
+      "url": "/assets/creature-celestial-familiars.png",
+      "bytes": 526,
+      "sha256": "e01d1baf9f3b700f7b1a7ccda5fe4042eb57324532bfa3022694622e8a9b21fa"
+    },
+    {
+      "url": "/assets/creature-celestial-sages-sheet.png",
+      "bytes": 766,
+      "sha256": "ed38ce0d4a403e9f6616becf66d74145907aa1f03e689aa6e16b1c6dd191db7d"
+    },
+    {
+      "url": "/assets/creature-celestial-sages.png",
+      "bytes": 473,
+      "sha256": "6194257d26fced788c29306a31cfa16be23123bbaa13f6e964f056b14cfe65c2"
+    },
+    {
+      "url": "/assets/creature-celestial-stewards-sheet.png",
+      "bytes": 652,
+      "sha256": "a138b99d4d3d2c0df63a2b12b718162277dc3c9c09bfcb3b8366f6999d7341a5"
+    },
+    {
+      "url": "/assets/creature-celestial-stewards.png",
+      "bytes": 448,
+      "sha256": "fc42baf19970536a19b174fc6104c09f73985166c7a72c0a62abf530d9e569d7"
+    },
+    {
+      "url": "/assets/creature-celestial-wardens-sheet.png",
+      "bytes": 778,
+      "sha256": "bf2df8a6dc8e5cdd8064837532f39e7d2519828376dc1ee174e57e5239716606"
+    },
+    {
+      "url": "/assets/creature-celestial-wardens.png",
+      "bytes": 496,
+      "sha256": "0d72667489b273a65ee943a97925118d311f3cf2802f8d8ed2c9704d34ce2962"
+    },
+    {
+      "url": "/assets/creature-dark-shadow-stalkers-sheet.png",
+      "bytes": 882,
+      "sha256": "7fbcbafa882390817e9148ee5f7c9073b12257a1494117334e744926982b7024"
+    },
+    {
+      "url": "/assets/creature-dark-shadow-stalkers.png",
+      "bytes": 562,
+      "sha256": "d664c304adda550dde543b8679e2a3779ced98f28941b3923a30374e0350a2d0"
+    },
+    {
+      "url": "/assets/creature-diabolic-demonic-wardens-sheet.png",
+      "bytes": 933,
+      "sha256": "89afd89f487ee24072150acd457aaa4a6784accb1849bfe401c3d6d1be896211"
+    },
+    {
+      "url": "/assets/creature-diabolic-demonic-wardens.png",
+      "bytes": 569,
+      "sha256": "fb6d65473512af75f1337ff60a8ce722a1051e76a842d5b9c6c4c7232ca9b657"
+    },
+    {
+      "url": "/assets/creature-elemental-guardians-sheet.png",
+      "bytes": 866,
+      "sha256": "7dd5b84fa75caf3b91cec3c0d5f105c004b747631fcbf7c2420ce58bedee87b1"
+    },
+    {
+      "url": "/assets/creature-elemental-guardians.png",
+      "bytes": 548,
+      "sha256": "10a728c9ca8cdaa2e22c61dd78e1c743d849a6cfd392af1f343f1589c3c84445"
+    },
+    {
+      "url": "/assets/creature-empyreal-avatars-sheet.png",
+      "bytes": 1057,
+      "sha256": "dff787a302ffe669597690ec7b5fb5bcae7fa861471cb3d90e3db3ba7970e9e0"
+    },
+    {
+      "url": "/assets/creature-empyreal-avatars.png",
+      "bytes": 651,
+      "sha256": "51bf58af32552753ab80a919c4543da2562041c776a1e94ec5e9351816afbc00"
+    },
+    {
+      "url": "/assets/creature-ethereal-celestial-wardens-sheet.png",
+      "bytes": 879,
+      "sha256": "8baba16bea45a8a8810a9bffad9c3e3d25ebba71b1873aab54f48cd97a00657d"
+    },
+    {
+      "url": "/assets/creature-ethereal-celestial-wardens.png",
+      "bytes": 533,
+      "sha256": "f5057ea5372f02e0c796f25212cd546fe624fff0c23d4a0f9a935e09c4e5a41d"
+    },
+    {
+      "url": "/assets/creature-ethereal-earth-keepers-sheet.png",
+      "bytes": 869,
+      "sha256": "6d2d0284f71b409c9ac72d5697749658e654b2904a128bb5229c25bf43762f18"
+    },
+    {
+      "url": "/assets/creature-ethereal-earth-keepers.png",
+      "bytes": 549,
+      "sha256": "7c22b314cbbd73040f516a5beba984172cdc7095a9e60657fcaf2741ea730066"
+    },
+    {
+      "url": "/assets/creature-ethereal-shamans-sheet.png",
+      "bytes": 802,
+      "sha256": "5c211acaa8fb470bd815c28fc2b7085079e89bde4b4262c8534b66535d83a407"
+    },
+    {
+      "url": "/assets/creature-ethereal-shamans.png",
+      "bytes": 516,
+      "sha256": "2ed1cebd55036f1ab1d284b9bb9c63823bbcee3c6b285bba50205e05cf30b1b3"
+    },
+    {
+      "url": "/assets/creature-ethereal-virtue-keepers-sheet.png",
+      "bytes": 814,
+      "sha256": "f7b22bf702f1927215cb9b0c287ced6bd4256939624588ab567a34c1d617ccca"
+    },
+    {
+      "url": "/assets/creature-ethereal-virtue-keepers.png",
+      "bytes": 493,
+      "sha256": "9af442b78042017ed11e55e3a001d5d713c1c3c80e4dba71db5e32947e7f6b73"
+    },
+    {
+      "url": "/assets/creature-harmony-envoys-sheet.png",
+      "bytes": 1275,
+      "sha256": "b1d2254953e196095e138120adb648d0349b8574a420f6898d91b22564cbd594"
+    },
+    {
+      "url": "/assets/creature-harmony-envoys.png",
+      "bytes": 772,
+      "sha256": "e292fa71c99e7de3f849bc4d483146ef11793c8756b836198249242ed5e8ac73"
+    },
+    {
+      "url": "/assets/creature-hellish-demonic-hounds-sheet.png",
+      "bytes": 816,
+      "sha256": "7dfbf83d483fae6de56f0e7a58f2b603c289fe04804e66ae442c9ca4577425f2"
+    },
+    {
+      "url": "/assets/creature-hellish-demonic-hounds.png",
+      "bytes": 492,
+      "sha256": "4a5dbba8fe196f583090ad68de9be40d8c53d179f589660c17641d958ece6173"
+    },
+    {
+      "url": "/assets/creature-infernal-executioners-sheet.png",
+      "bytes": 784,
+      "sha256": "c918e4c099287b35ebfd4551b1a4fc581a49b3841cc57b30252161cc178f35c4"
+    },
+    {
+      "url": "/assets/creature-infernal-executioners.png",
+      "bytes": 506,
+      "sha256": "c380c2deb5140ac030b334e0d9c7c5a51682d2c7d3998cc42b4b4772aa605a7c"
+    },
+    {
+      "url": "/assets/creature-infernal-imps-sheet.png",
+      "bytes": 926,
+      "sha256": "c74b50526727a23ba99a406e74bcb0b9485f8762ff8f3e0a511e95f2f311fa07"
+    },
+    {
+      "url": "/assets/creature-infernal-imps.png",
+      "bytes": 547,
+      "sha256": "6c11a588d10c7d7cc88d45744391d7582397500dbee6d6ff217bcf63730e254e"
+    },
+    {
+      "url": "/assets/creature-luminous-cherublings-sheet.png",
+      "bytes": 1261,
+      "sha256": "0cf31c6239f7588de98e9bf2d368bbf944ba2670d2702839c91b0646d9419c57"
+    },
+    {
+      "url": "/assets/creature-luminous-cherublings.png",
+      "bytes": 761,
+      "sha256": "4eb3d8458eb40a079b83e0b41530fd8709b5ab2515ac56e003063927129e6eb0"
+    },
+    {
+      "url": "/assets/creature-luminous-elemental-sages-sheet.png",
+      "bytes": 814,
+      "sha256": "6251b962fceb4ebba888fe9c459d7e1289b399fc7f9460d0812f63f4a4f21af7"
+    },
+    {
+      "url": "/assets/creature-luminous-elemental-sages.png",
+      "bytes": 539,
+      "sha256": "88875d263b6c28acdbe8daa5ac5b2db128441461109cbc0e37b1548884946f20"
+    },
+    {
+      "url": "/assets/creature-maleficent-soul-harvesters-sheet.png",
+      "bytes": 1032,
+      "sha256": "c4546ee685074c46af8f91238e1201a46d4122422fe304f556870b5a6069c168"
+    },
+    {
+      "url": "/assets/creature-maleficent-soul-harvesters.png",
+      "bytes": 672,
+      "sha256": "6bdf1614bc28669eb5906b5aae216585497f4c66cfdddcc80e7b028893ac97bf"
+    },
+    {
+      "url": "/assets/creature-malevolent-archdemon-lords-sheet.png",
+      "bytes": 991,
+      "sha256": "3930c16d643b4cbb6f86929066a58fbc0d3d61ef0c81c692160e714bbfe4e1c1"
+    },
+    {
+      "url": "/assets/creature-malevolent-archdemon-lords.png",
+      "bytes": 591,
+      "sha256": "603bd18d6fe4ab44370b5d7e077cb0358cb1a8b56cde6ffa6d2875180fbe6109"
+    },
+    {
+      "url": "/assets/creature-malevolent-succubi-incubi-sheet.png",
+      "bytes": 930,
+      "sha256": "67f1368324a2df172c2fcc85ae3688a514ee1aa2f03bb394b520309d834b25aa"
+    },
+    {
+      "url": "/assets/creature-malevolent-succubi-incubi.png",
+      "bytes": 552,
+      "sha256": "8ffed31d91704ec0dc9126629dd65ab849ca6a2b3edeffd994b95f72a634c764"
+    },
+    {
+      "url": "/assets/creature-nature-sprites-sheet.png",
+      "bytes": 881,
+      "sha256": "0989ff86e9a163ac185e6128c0204a5a9e3e18906abab2f076a6c75372d641ce"
+    },
+    {
+      "url": "/assets/creature-nature-sprites.png",
+      "bytes": 542,
+      "sha256": "41d1794fe39b1d1f4d7707f070dc24ec003f5e2d10f1973cce53268e974ec7f5"
+    },
+    {
+      "url": "/assets/creature-radiant-seraphic-guardians-sheet.png",
+      "bytes": 1361,
+      "sha256": "f272869d90d1c7ce0eb023b61b3ba1302501830da4da0827f3ee5e938434ff54"
+    },
+    {
+      "url": "/assets/creature-radiant-seraphic-guardians.png",
+      "bytes": 812,
+      "sha256": "48cd3c2af8ae245e6199bc268769df68b7e513485c91c2daa948847738c0e2a0"
+    },
+    {
+      "url": "/assets/creature-tormented-souls-sheet.png",
+      "bytes": 751,
+      "sha256": "10e97851ea967b461cfe02948af8cfb400fa794b675e54abdfe0ac2c6c65329a"
+    },
+    {
+      "url": "/assets/creature-tormented-souls.png",
+      "bytes": 476,
+      "sha256": "15a3b6023d44e316dd727ade6eff5d128171ef52679e1fade011e7df66580521"
+    },
+    {
+      "url": "/assets/crystal-ember.png",
+      "bytes": 467,
+      "sha256": "1f24396968d56081fb9bc0ba03e2211c43ea82a9b32b93069ca14e258dfd2961"
+    },
+    {
+      "url": "/assets/crystal-void.png",
+      "bytes": 470,
+      "sha256": "28ca8b6c5ab11e25afd42972386ccd3277409f80d70f5d95368aa2866d6041b3"
+    },
+    {
+      "url": "/assets/crystal.png",
+      "bytes": 462,
+      "sha256": "761b848b826e35b90660d3fb9a78e2c340e285af2ae65847a4f22ea55b542134"
+    },
+    {
+      "url": "/assets/dead-tree.png",
+      "bytes": 888,
+      "sha256": "bec3750a54e5351b072239d8697a6147374a7dfd9d55734c1715cd6db31ac43b"
+    },
+    {
+      "url": "/assets/deer-sheet.png",
+      "bytes": 802,
+      "sha256": "270b97e5bd1096920a4ca5ea5d5399de82713f3c7a7bd29807a541d11da0061d"
+    },
+    {
+      "url": "/assets/deer.png",
+      "bytes": 492,
+      "sha256": "b1f3595f5eb3aadaf9438c378b3f1a87c8834410f329b4b0413df4f9b0b406b0"
+    },
+    {
+      "url": "/assets/demon-sheet.png",
+      "bytes": 823,
+      "sha256": "548268e8c8da714807966d322a508b52ce8c510913befcc93c7829997e355f86"
+    },
+    {
+      "url": "/assets/demon.png",
+      "bytes": 493,
+      "sha256": "fcbc20ccbf0697bc05c016c6d53a14cf46ee54656de9de5b8424253e90015a6d"
+    },
+    {
+      "url": "/assets/dune.png",
+      "bytes": 1355,
+      "sha256": "d58fd629cf4b8428f4484b8c4ca1f11eda95b9be86251c1b4974d5fc5068d4ba"
+    },
+    {
+      "url": "/assets/enhancement-icons/air-augmentation-1.png",
+      "bytes": 790,
+      "sha256": "9600355e1dc0013fc0bcab245bf0fb961bdaded2c758a6cc7d85d6dc36e25300"
+    },
+    {
+      "url": "/assets/enhancement-icons/air-augmentation-2.png",
+      "bytes": 961,
+      "sha256": "77ab6a0ce2a851d37b91c3cc823f291dc8664be9405cf36279b496984f6f9780"
+    },
+    {
+      "url": "/assets/enhancement-icons/air-augmentation-3.png",
+      "bytes": 911,
+      "sha256": "608cf87efac846bc1e850d603afdf1f9d13cde3f44bcc3dee97ba63f975ba3bd"
+    },
+    {
+      "url": "/assets/enhancement-icons/air-augmentation-4.png",
+      "bytes": 1081,
+      "sha256": "62db0a5ac97b72c866b33d3a297dfce14246136073fc23318946f909e48165dd"
+    },
+    {
+      "url": "/assets/enhancement-icons/air-augmentation-5.png",
+      "bytes": 1071,
+      "sha256": "fa481d7fd6a9b5b5f966f4de3972f949b0a454d39b4c19aa5d38f4a53619b02e"
+    },
+    {
+      "url": "/assets/enhancement-icons/dark-empowerment-1.png",
+      "bytes": 792,
+      "sha256": "a0acc7bb2b4c4c5b4e48692f2d981e9eaa2f2ce5b898cc7215c7ed72b1ccd52f"
+    },
+    {
+      "url": "/assets/enhancement-icons/dark-empowerment-2.png",
+      "bytes": 960,
+      "sha256": "1679575bf0acf615e71a019dc79845f79e81bd5c04703e8abdc1a4d8581b0bef"
+    },
+    {
+      "url": "/assets/enhancement-icons/dark-empowerment-3.png",
+      "bytes": 931,
+      "sha256": "17ad4fb1050b48d46a496278a7146ae2f3d4a72d209c611958da630998aaeadd"
+    },
+    {
+      "url": "/assets/enhancement-icons/dark-empowerment-4.png",
+      "bytes": 1066,
+      "sha256": "e9b26895b427b86b55d7ff1cda6f87ee02aa36c569e141bf75f11780db6c5541"
+    },
+    {
+      "url": "/assets/enhancement-icons/dark-empowerment-5.png",
+      "bytes": 1084,
+      "sha256": "8de8f9f9378d2b1367c82f30de40f9c6d5a0c74da7e1cee33d89309b2b0d0242"
+    },
+    {
+      "url": "/assets/enhancement-icons/earth-augmentation-1.png",
+      "bytes": 785,
+      "sha256": "d42760732191ef05b5efc1d0d0085fa8516f2484c0a6876f3b89f96c1350c4db"
+    },
+    {
+      "url": "/assets/enhancement-icons/earth-augmentation-2.png",
+      "bytes": 979,
+      "sha256": "26a49ebcf59314842c85be9353aeaa6291dc0ddd217f8a7f3e26c1d6ad269efc"
+    },
+    {
+      "url": "/assets/enhancement-icons/earth-augmentation-3.png",
+      "bytes": 951,
+      "sha256": "88383209a256f1f8e0e3fff3e55f8177ebec70b2a3f13d28a5abfcf404743a0f"
+    },
+    {
+      "url": "/assets/enhancement-icons/earth-augmentation-4.png",
+      "bytes": 1113,
+      "sha256": "011bc462d694e8473cef31d62dfd6629dafbaccd801b6bccdc511a7f2537df8b"
+    },
+    {
+      "url": "/assets/enhancement-icons/earth-augmentation-5.png",
+      "bytes": 1114,
+      "sha256": "fd7d27c4e684c8d974c2cafb315e9d23896148541722b4080c72ea406c3475a7"
+    },
+    {
+      "url": "/assets/enhancement-icons/fire-reinforcement-1.png",
+      "bytes": 784,
+      "sha256": "d2d445a73c05b07beff35ef74857fe086077dacd6cd3cc8773816d4bdfd84ebf"
+    },
+    {
+      "url": "/assets/enhancement-icons/fire-reinforcement-2.png",
+      "bytes": 967,
+      "sha256": "b6ac34fc218b685eef21c61637fe5a3215104188380ec5be599a719c895b370d"
+    },
+    {
+      "url": "/assets/enhancement-icons/fire-reinforcement-3.png",
+      "bytes": 930,
+      "sha256": "d82b8c7aec5fef4ad48268b15cc789f8e633f5f52a536dcb080d59d57284432b"
+    },
+    {
+      "url": "/assets/enhancement-icons/fire-reinforcement-4.png",
+      "bytes": 1080,
+      "sha256": "e7e49a17150d7ba62d3600e29d2dc173b0aafb3db89a5501a5ab5067559f1d51"
+    },
+    {
+      "url": "/assets/enhancement-icons/fire-reinforcement-5.png",
+      "bytes": 1080,
+      "sha256": "b5a212dbe473aadc307a5aeff891c60f1d607fbfe51bd1301a9503d2a6683b09"
+    },
+    {
+      "url": "/assets/enhancement-icons/hate-augmentation-1.png",
+      "bytes": 805,
+      "sha256": "7431b011968a659ad3ca28a17e652a5ab7ab2879aa11b9e8860cde20ba2d907c"
+    },
+    {
+      "url": "/assets/enhancement-icons/hate-augmentation-2.png",
+      "bytes": 951,
+      "sha256": "defc052a9d550deb8b53811a605acca24ed7d090a12ac995a0248ac23a1a215b"
+    },
+    {
+      "url": "/assets/enhancement-icons/hate-augmentation-3.png",
+      "bytes": 916,
+      "sha256": "8397b5225c6669640bbf71cfd4403b64c82f13b15edf89c0c739feac1ae0048d"
+    },
+    {
+      "url": "/assets/enhancement-icons/hate-augmentation-4.png",
+      "bytes": 1069,
+      "sha256": "e11760e52852be63b57bb60eb42a5b97f8a4fa08d9992bedbaf622c3bf700b09"
+    },
+    {
+      "url": "/assets/enhancement-icons/hate-augmentation-5.png",
+      "bytes": 1066,
+      "sha256": "de59460b10c3afbe315b1bc76652ce1da3440b8452899fade72ed839973d3841"
+    },
+    {
+      "url": "/assets/enhancement-icons/light-empowerment-1.png",
+      "bytes": 812,
+      "sha256": "d767e2e1ab3e4c7a06524668b58c2e99f901482c38cbf55a4d9dc80f1d6e2b19"
+    },
+    {
+      "url": "/assets/enhancement-icons/light-empowerment-2.png",
+      "bytes": 994,
+      "sha256": "3d6f6f00ea72f718fd32e3cddb00f228fb0dc96eb551096468471f8d2e8b61f3"
+    },
+    {
+      "url": "/assets/enhancement-icons/light-empowerment-3.png",
+      "bytes": 942,
+      "sha256": "45944e05c14b04163f7b989172d42fb4366d6021598343cc8eb0d7ebcffd37d2"
+    },
+    {
+      "url": "/assets/enhancement-icons/light-empowerment-4.png",
+      "bytes": 1135,
+      "sha256": "cd4717a4ff4ef30a2138f28a5bc77e7e97e5d8f1b81be771f8f6913dc84ec211"
+    },
+    {
+      "url": "/assets/enhancement-icons/light-empowerment-5.png",
+      "bytes": 1153,
+      "sha256": "f33e78f54ed6501522e11d1c46eff6d1f808e0983ff12d883a1487cb5b02119d"
+    },
+    {
+      "url": "/assets/enhancement-icons/love-enhancement-1.png",
+      "bytes": 759,
+      "sha256": "001f9b495ec507823b7044d77171c8896183486314a8577ebde61891ab607580"
+    },
+    {
+      "url": "/assets/enhancement-icons/love-enhancement-2.png",
+      "bytes": 956,
+      "sha256": "fe35cd5397b23c8e487a369f1cf1315375d505e7e2aba71537c56d8ef7daef0e"
+    },
+    {
+      "url": "/assets/enhancement-icons/love-enhancement-3.png",
+      "bytes": 919,
+      "sha256": "d802d6bf6dcda5d1c881663503e8c6f78faf82ff7bad85637c24d08266573afa"
+    },
+    {
+      "url": "/assets/enhancement-icons/love-enhancement-4.png",
+      "bytes": 1066,
+      "sha256": "4541285f950e15ccc732c94fe2430bc34f44ad15fccaeeeaef35869896266643"
+    },
+    {
+      "url": "/assets/enhancement-icons/love-enhancement-5.png",
+      "bytes": 1081,
+      "sha256": "d06de5fbea5e982aa5e470fc15f859206ac910d5bba059ad25ef215d08ee51ae"
+    },
+    {
+      "url": "/assets/enhancement-icons/water-reinforcement-1.png",
+      "bytes": 804,
+      "sha256": "53da0a3d0480c878717521f0df2c45b97851eb5fd86cbbd7d3ed4214f1febc4c"
+    },
+    {
+      "url": "/assets/enhancement-icons/water-reinforcement-2.png",
+      "bytes": 930,
+      "sha256": "ca9526921c5fd2188e057ed0b61e636594aecfa66dc7708556d870c8c9af963d"
+    },
+    {
+      "url": "/assets/enhancement-icons/water-reinforcement-3.png",
+      "bytes": 915,
+      "sha256": "669b6c588d78f3488fb47643cecb0e8bbb4e2fdd3c14e002cda5b6ab321982af"
+    },
+    {
+      "url": "/assets/enhancement-icons/water-reinforcement-4.png",
+      "bytes": 1032,
+      "sha256": "940804df59d47c16e3d7b1be9bfba4937fd78aa7bab71b3eb7e4172751181102"
+    },
+    {
+      "url": "/assets/enhancement-icons/water-reinforcement-5.png",
+      "bytes": 1128,
+      "sha256": "8c036b775296cc7a822bd97cda8b1aa2a2e5c348ef164b28afb2a165cbbca65f"
+    },
+    {
+      "url": "/assets/equipment-icons/focus-1.png",
+      "bytes": 718,
+      "sha256": "8a63fae073c578bc769b20f77cef74c8cae4cf7fdd3f55d52fd554e3153f028e"
+    },
+    {
+      "url": "/assets/equipment-icons/focus-10.png",
+      "bytes": 1261,
+      "sha256": "485c683d5e293eeafbe381ba713c3566ca60692bd08cdc777d57f6e0dc1c33e4"
+    },
+    {
+      "url": "/assets/equipment-icons/focus-2.png",
+      "bytes": 908,
+      "sha256": "275d58f1b1c8e4498555852e7b1365ccc0a999ea77d8299daf1cddd51a65929c"
+    },
+    {
+      "url": "/assets/equipment-icons/focus-3.png",
+      "bytes": 946,
+      "sha256": "c8210aeec2824408f681e8601eb1d2428a7f035ca7fa08fceb8c4d02642cfb6c"
+    },
+    {
+      "url": "/assets/equipment-icons/focus-4.png",
+      "bytes": 1101,
+      "sha256": "5f2aaec2fc2fae5d8c403ea34bcd9710bcd74bf39937a9201ccc074b087730b2"
+    },
+    {
+      "url": "/assets/equipment-icons/focus-5.png",
+      "bytes": 1061,
+      "sha256": "6285cabc066f027f380b4daeab0fb91401fad405ff67dbfcf7fb41935b2e2d6d"
+    },
+    {
+      "url": "/assets/equipment-icons/focus-6.png",
+      "bytes": 1102,
+      "sha256": "2430514a1c2883560e8a151787045f61e86a45d0cc94d2c95f6816dada8a632b"
+    },
+    {
+      "url": "/assets/equipment-icons/focus-7.png",
+      "bytes": 1238,
+      "sha256": "6692b3858e47b685dcd4eec3db44af44bab4f77b82c31cc210cc2a05437194b1"
+    },
+    {
+      "url": "/assets/equipment-icons/focus-8.png",
+      "bytes": 1251,
+      "sha256": "e05ede5cc92e6ea59b090320da4fb7d10f6b0ec197acb71df783d08ffbe0f2bb"
+    },
+    {
+      "url": "/assets/equipment-icons/focus-9.png",
+      "bytes": 1316,
+      "sha256": "17cbea5e6c3ebad1338a05945cc288673918c37635f66cb6534520eed844e096"
+    },
+    {
+      "url": "/assets/equipment-icons/utility-1.png",
+      "bytes": 581,
+      "sha256": "6f9adc871e3c11f194cef5596a84f9b248de9e309e62bf1b47f60eb81d5cc902"
+    },
+    {
+      "url": "/assets/equipment-icons/utility-10.png",
+      "bytes": 985,
+      "sha256": "1a75720fa9674896c646d7983eafb770b8678e775b2a7efb56179c059351beed"
+    },
+    {
+      "url": "/assets/equipment-icons/utility-2.png",
+      "bytes": 729,
+      "sha256": "32dd607d7a0e3fc2c128d2f14f9fd4ba90a252ba33128259a3530fe49bcebe1f"
+    },
+    {
+      "url": "/assets/equipment-icons/utility-3.png",
+      "bytes": 729,
+      "sha256": "53ca8b2341ece7b759fcb0714737e2c2d151df13ea2a56ee23291147a5bfc8e8"
+    },
+    {
+      "url": "/assets/equipment-icons/utility-4.png",
+      "bytes": 865,
+      "sha256": "9d986f2a58de6034f73d936e8865c070a3a28dd7cf6627fbb39950c1dd653df6"
+    },
+    {
+      "url": "/assets/equipment-icons/utility-5.png",
+      "bytes": 781,
+      "sha256": "d0a75af782a093902f3a82fb4c5917dabe48b8a1f4929c4cfafdfcbe46b760da"
+    },
+    {
+      "url": "/assets/equipment-icons/utility-6.png",
+      "bytes": 836,
+      "sha256": "2d5ffea276a201c6a2adc6b73ab550c0e3d4097a1980be8a5b357d6defa7cf27"
+    },
+    {
+      "url": "/assets/equipment-icons/utility-7.png",
+      "bytes": 963,
+      "sha256": "fa0ecfc00bec4e9956c173d37830bbe4ded41236b7867c269ae3504cad7876c9"
+    },
+    {
+      "url": "/assets/equipment-icons/utility-8.png",
+      "bytes": 1005,
+      "sha256": "58aa8f7664acb40d05db126feaf58abbcd22c55665daee194b46d9cfdb36092f"
+    },
+    {
+      "url": "/assets/equipment-icons/utility-9.png",
+      "bytes": 991,
+      "sha256": "3f03a9bc033ea3f115ca44f96cd9ad0b26a1b1d77f0123860b39c270ce493704"
+    },
+    {
+      "url": "/assets/equipment-icons/ward-1.png",
+      "bytes": 692,
+      "sha256": "df4b962ed8703174901ec94fbecfd35ead5ec1ce6ff82a3d5d14b86be3895b3b"
+    },
+    {
+      "url": "/assets/equipment-icons/ward-10.png",
+      "bytes": 1174,
+      "sha256": "028a87b1a10d736e2e4e76a70f24604f613bf2b814f45c50e230e31883570055"
+    },
+    {
+      "url": "/assets/equipment-icons/ward-2.png",
+      "bytes": 827,
+      "sha256": "f014ae782554a94f974eb86c5931336c86c00d16e6447d29a24de9a1e92fbcc1"
+    },
+    {
+      "url": "/assets/equipment-icons/ward-3.png",
+      "bytes": 818,
+      "sha256": "466ec17d7aa3b550fed4f3df4f5858bfad9963d66110aaf2471c0b70513277cf"
+    },
+    {
+      "url": "/assets/equipment-icons/ward-4.png",
+      "bytes": 1000,
+      "sha256": "a24c6b1194c42214b4d191a0c8ff7f01bcfcfb078ea394c97616aff15ac34f37"
+    },
+    {
+      "url": "/assets/equipment-icons/ward-5.png",
+      "bytes": 1004,
+      "sha256": "5c4acbab29be3c76fe3e77296402826e5eaab6ff7ffb0d56afd8b0c9d7040b62"
+    },
+    {
+      "url": "/assets/equipment-icons/ward-6.png",
+      "bytes": 992,
+      "sha256": "6763cad20b446b898a9b27f2409a2c063a40e729181febe2ec5b48d6bcc6874e"
+    },
+    {
+      "url": "/assets/equipment-icons/ward-7.png",
+      "bytes": 1160,
+      "sha256": "2f812c5aa6ad39015fd96b83cd28434a733117d6ddbd16f28a94968e1da999a6"
+    },
+    {
+      "url": "/assets/equipment-icons/ward-8.png",
+      "bytes": 1192,
+      "sha256": "e210730596b97dc5db326b297971cc7053205cf7419c1c64f42779c9d767772b"
+    },
+    {
+      "url": "/assets/equipment-icons/ward-9.png",
+      "bytes": 1136,
+      "sha256": "8c285b00eab80720e5ff9fedb1a1a754f638dabdc5732fa881f599905061039d"
+    },
+    {
+      "url": "/assets/expanded-manifest.json",
+      "bytes": 135950,
+      "sha256": "96e71228691f3346cdb636fa85f682eeac35b5f9c4305555b31f6e15f3961283"
+    },
+    {
+      "url": "/assets/fallen-log.png",
+      "bytes": 466,
+      "sha256": "2c3ff3fe101a00bffc5a375bf675747de037b8f6a0613332fbf9f6f18846baa8"
+    },
+    {
+      "url": "/assets/firefly-sheet.png",
+      "bytes": 645,
+      "sha256": "d91093fb16b616fdc44fcd41b6f9bdcc60350df83555783c49a4d17f4456fe9c"
+    },
+    {
+      "url": "/assets/firefly.png",
+      "bytes": 394,
+      "sha256": "3a2434f2e41968f5af8d773bf065b59d50a51a7d1df00504e53ffd3f344522d8"
+    },
+    {
+      "url": "/assets/floating-island.png",
+      "bytes": 1454,
+      "sha256": "876f36eb933855211cd46670ea6d5a4736f919b3a2263a17429062aa52d7b31d"
+    },
+    {
+      "url": "/assets/flowers-blue.png",
+      "bytes": 499,
+      "sha256": "aa90cecc0f6835584fb3b275ba9f96c99d40f64fe0914b300619872c1e203b60"
+    },
+    {
+      "url": "/assets/flowers.png",
+      "bytes": 503,
+      "sha256": "1db3ca01bbf47e48e19843bf4ca06ac4dd39888e1aa02d30b6c19ecafe8a003b"
+    },
+    {
+      "url": "/assets/fountain.png",
+      "bytes": 1067,
+      "sha256": "625f9bd74bb9b407170f41cf8a97cec411bdde6a3a4409f4aca0709d46ab3619"
+    },
+    {
+      "url": "/assets/fox-sheet.png",
+      "bytes": 717,
+      "sha256": "7f37801617fd0435727ec638242b1e8f304c0539ac8a28797b3b0d3d06cac089"
+    },
+    {
+      "url": "/assets/fox.png",
+      "bytes": 433,
+      "sha256": "8322c9ca840e0cdc2de5796fab9cc4a0d28e260981a838b871d552a4421b1ac1"
+    },
+    {
+      "url": "/assets/golem-sheet.png",
+      "bytes": 688,
+      "sha256": "d05c401c9bb939d1b8cb00307c40a76278062e34468c100f8726a8c7b410fc08"
+    },
+    {
+      "url": "/assets/golem.png",
+      "bytes": 444,
+      "sha256": "45b5232fd6720f4c96d1c2b1dbd52da0d9563201499b134034faae6fa0d024e2"
+    },
+    {
+      "url": "/assets/grass-dark.png",
+      "bytes": 1338,
+      "sha256": "2ac4e9d2aa289e645c4953fb9a87c0297637c56fedabec5d2291ddcdd57d93a4"
+    },
+    {
+      "url": "/assets/grass-light.png",
+      "bytes": 1297,
+      "sha256": "00f87f18fd129c2fc22873f924d185b293859fdd88764eabe5d62eac0f2848d2"
+    },
+    {
+      "url": "/assets/grass.png",
+      "bytes": 1351,
+      "sha256": "a64709647db9c94136f40e9f37f9398329b122e565acd1804f5b29d786c2cd87"
+    },
+    {
+      "url": "/assets/guardian-sheet.png",
+      "bytes": 688,
+      "sha256": "d05c401c9bb939d1b8cb00307c40a76278062e34468c100f8726a8c7b410fc08"
+    },
+    {
+      "url": "/assets/guardian.png",
+      "bytes": 444,
+      "sha256": "45b5232fd6720f4c96d1c2b1dbd52da0d9563201499b134034faae6fa0d024e2"
+    },
+    {
+      "url": "/assets/hero-angel-sheet.png",
+      "bytes": 2580,
+      "sha256": "7d4cd49aeb78de7a44440e9537b2522092fdca06f2c38344062a778a4d2e3688"
+    },
+    {
+      "url": "/assets/hero-demon-down-0.png",
+      "bytes": 771,
+      "sha256": "7da4b268c896fe6dc2d23689b7ee21907966c3a5d6d3d82c654196cd8e4a6f9f"
+    },
+    {
+      "url": "/assets/hero-demon-down-1.png",
+      "bytes": 790,
+      "sha256": "307a6a70c2e34ded1d65861ffce1a7d5c92e9fbda1d33ee1a1bc38666a89be24"
+    },
+    {
+      "url": "/assets/hero-demon-down-2.png",
+      "bytes": 771,
+      "sha256": "7da4b268c896fe6dc2d23689b7ee21907966c3a5d6d3d82c654196cd8e4a6f9f"
+    },
+    {
+      "url": "/assets/hero-demon-down-3.png",
+      "bytes": 811,
+      "sha256": "7aab71b363bb3538ab0688b2dfe79f6589cd752fb2db59ba4af48877796e9578"
+    },
+    {
+      "url": "/assets/hero-demon-left-0.png",
+      "bytes": 757,
+      "sha256": "49b5c7fa27fee9c99471175b9f3b0fed9d985fd04bcd4977672adf60c0d9cc80"
+    },
+    {
+      "url": "/assets/hero-demon-left-1.png",
+      "bytes": 777,
+      "sha256": "c754d7e6919e65e5538265144e369f4235dc766bcd430f1a68bb0e3d52627546"
+    },
+    {
+      "url": "/assets/hero-demon-left-2.png",
+      "bytes": 757,
+      "sha256": "49b5c7fa27fee9c99471175b9f3b0fed9d985fd04bcd4977672adf60c0d9cc80"
+    },
+    {
+      "url": "/assets/hero-demon-left-3.png",
+      "bytes": 798,
+      "sha256": "c42e6bc8e636549d6da6299bbf9b28b08a43991e384d5ed4ca987b0d578deff9"
+    },
+    {
+      "url": "/assets/hero-demon-right-0.png",
+      "bytes": 743,
+      "sha256": "d7650d30b816c5dc2f41fb2e7a84bdd99769c8c08c41c3728819bfbf6e783399"
+    },
+    {
+      "url": "/assets/hero-demon-right-1.png",
+      "bytes": 762,
+      "sha256": "98f0ff9a94e0a5912b3b2763a13908b38e432f777489100395909ef9e82b50e0"
+    },
+    {
+      "url": "/assets/hero-demon-right-2.png",
+      "bytes": 743,
+      "sha256": "d7650d30b816c5dc2f41fb2e7a84bdd99769c8c08c41c3728819bfbf6e783399"
+    },
+    {
+      "url": "/assets/hero-demon-right-3.png",
+      "bytes": 782,
+      "sha256": "a79f2d13a1108682ce3ed49054aa1ca2fb2334f5fc1899ea3b756a15c9a58ffd"
+    },
+    {
+      "url": "/assets/hero-demon-sheet.png",
+      "bytes": 2846,
+      "sha256": "fd96bfaf5c0372d92107daaf34ba93459b7b223a03158758d3d770c1b196d4bf"
+    },
+    {
+      "url": "/assets/hero-demon-up-0.png",
+      "bytes": 651,
+      "sha256": "62abb515d16bd50d9c82f953a1fbbad01ab1d6f1c069120851f5e01ac11261d2"
+    },
+    {
+      "url": "/assets/hero-demon-up-1.png",
+      "bytes": 674,
+      "sha256": "d53ca5c0f4b6ba06cabf2028d7faeb866d20035a8213dff7c0a9f5ac9d653369"
+    },
+    {
+      "url": "/assets/hero-demon-up-2.png",
+      "bytes": 651,
+      "sha256": "62abb515d16bd50d9c82f953a1fbbad01ab1d6f1c069120851f5e01ac11261d2"
+    },
+    {
+      "url": "/assets/hero-demon-up-3.png",
+      "bytes": 674,
+      "sha256": "6e3cdd3446782b9de7834a056c2b04173e2986c61547e5392a8585021212c7d2"
+    },
+    {
+      "url": "/assets/hero-down-0.png",
+      "bytes": 679,
+      "sha256": "187e87e9e197a51b4cf95f01d92f5a940aa9cb8efd5e6430826d1cabe5f6ba24"
+    },
+    {
+      "url": "/assets/hero-down-1.png",
+      "bytes": 701,
+      "sha256": "82cc734779acc8c6620ac9009bb364518f7dc4255743b2754f8d37d0d5f73b0f"
+    },
+    {
+      "url": "/assets/hero-down-2.png",
+      "bytes": 679,
+      "sha256": "187e87e9e197a51b4cf95f01d92f5a940aa9cb8efd5e6430826d1cabe5f6ba24"
+    },
+    {
+      "url": "/assets/hero-down-3.png",
+      "bytes": 712,
+      "sha256": "abafc677d04787a8c8ca915c53e0ca59dd2b9a9027d29b266bccade4ba731f1a"
+    },
+    {
+      "url": "/assets/hero-left-0.png",
+      "bytes": 653,
+      "sha256": "4811136dfdd1990bba2108fc757c8c30ba8b2f027f7f4377c0b6d8133bf51b7a"
+    },
+    {
+      "url": "/assets/hero-left-1.png",
+      "bytes": 677,
+      "sha256": "c2b3d218e962aab8aa0ccf04ae412ed29ca42783bc072714f0bdd4cd7dbcf07c"
+    },
+    {
+      "url": "/assets/hero-left-2.png",
+      "bytes": 653,
+      "sha256": "4811136dfdd1990bba2108fc757c8c30ba8b2f027f7f4377c0b6d8133bf51b7a"
+    },
+    {
+      "url": "/assets/hero-left-3.png",
+      "bytes": 691,
+      "sha256": "2a2de734625fea3fe71f8a48917986cb4333a8c29ebaf7143a317e85c4c744bf"
+    },
+    {
+      "url": "/assets/hero-right-0.png",
+      "bytes": 655,
+      "sha256": "7c82c1fb180ab525cbcc5b1801718028ee2e6236250fed257187b3a530f0ed02"
+    },
+    {
+      "url": "/assets/hero-right-1.png",
+      "bytes": 681,
+      "sha256": "2726c520cfdbd392fad1078715ea6a2e8276996ebf7f7fde0c2d9013d94d5765"
+    },
+    {
+      "url": "/assets/hero-right-2.png",
+      "bytes": 655,
+      "sha256": "7c82c1fb180ab525cbcc5b1801718028ee2e6236250fed257187b3a530f0ed02"
+    },
+    {
+      "url": "/assets/hero-right-3.png",
+      "bytes": 688,
+      "sha256": "7d221d95b8e1b1d9f99436b3be47421710401c8b864545612373ff9cfec9f605"
+    },
+    {
+      "url": "/assets/hero-sheet.png",
+      "bytes": 2580,
+      "sha256": "7d4cd49aeb78de7a44440e9537b2522092fdca06f2c38344062a778a4d2e3688"
+    },
+    {
+      "url": "/assets/hero-up-0.png",
+      "bytes": 562,
+      "sha256": "b300d09485e73f7dedc176c15932b1f664b8ff568cdc748cbdfdafa28ec3e006"
+    },
+    {
+      "url": "/assets/hero-up-1.png",
+      "bytes": 564,
+      "sha256": "1dfb311c3475e099ec9fed3cec699dd2ff5694065f88c4e9ea4b2a1412e9cc77"
+    },
+    {
+      "url": "/assets/hero-up-2.png",
+      "bytes": 562,
+      "sha256": "b300d09485e73f7dedc176c15932b1f664b8ff568cdc748cbdfdafa28ec3e006"
+    },
+    {
+      "url": "/assets/hero-up-3.png",
+      "bytes": 570,
+      "sha256": "868110cd8309bf530e7f6adf23d9fdac9da1f71c3b982651b608e1584535af08"
+    },
+    {
+      "url": "/assets/hero.png",
+      "bytes": 679,
+      "sha256": "187e87e9e197a51b4cf95f01d92f5a940aa9cb8efd5e6430826d1cabe5f6ba24"
+    },
+    {
+      "url": "/assets/house-0.png",
+      "bytes": 1348,
+      "sha256": "1fb362f6ed6f13a3e2e4ae68c9dd9cd5d78c4afaf4d3db71cc623fe4f91eb92c"
+    },
+    {
+      "url": "/assets/house-1.png",
+      "bytes": 1355,
+      "sha256": "5aa2865a6f303ef7524cbf4ac88f8b8c57f97a13f37bb14e923473fdcee15a08"
+    },
+    {
+      "url": "/assets/house-2.png",
+      "bytes": 1425,
+      "sha256": "6ffd78e91927a3d690b15d2bbec38c13847b75be75b1e003bed187b4d9b16575"
+    },
+    {
+      "url": "/assets/house-heaven-0.png",
+      "bytes": 1332,
+      "sha256": "7f4952a0124edd7a07bafe28a3bfd742e3e6dbc43f184a4b5e2fe1cc5048499a"
+    },
+    {
+      "url": "/assets/house-heaven-1.png",
+      "bytes": 1336,
+      "sha256": "ec04a051323fd9981cce0c979ee4bdd74f656fce85eba30657418ec4833d9de9"
+    },
+    {
+      "url": "/assets/house-heaven-2.png",
+      "bytes": 1406,
+      "sha256": "1ae06d2d8b720df2cf96db235905ee431bb4c868144548faf0dc4f9c30dc29b6"
+    },
+    {
+      "url": "/assets/imp-sheet.png",
+      "bytes": 823,
+      "sha256": "548268e8c8da714807966d322a508b52ce8c510913befcc93c7829997e355f86"
+    },
+    {
+      "url": "/assets/imp.png",
+      "bytes": 493,
+      "sha256": "fcbc20ccbf0697bc05c016c6d53a14cf46ee54656de9de5b8424253e90015a6d"
+    },
+    {
+      "url": "/assets/infernal-sanctuary-keyart.png",
+      "bytes": 3059180,
+      "sha256": "b529d9e2fbd8b9f34dbb696c65d859ff03afa1f70e453ae8efaab275b5f82a8c"
+    },
+    {
+      "url": "/assets/item-bad-karma.png",
+      "bytes": 491,
+      "sha256": "8e5bf3341f3b25fcad762a8e3e151016adf4363a0f2239b62b508a664c070218"
+    },
+    {
+      "url": "/assets/item-crystal.png",
+      "bytes": 413,
+      "sha256": "8f06b3613acc1e176c0dbb8b0dc4f4099ee3b532a465abf6aee98b77d16cd007"
+    },
+    {
+      "url": "/assets/item-ember.png",
+      "bytes": 425,
+      "sha256": "e368b8ab10e718594dafac81a4f0b4e2207849118dd0383852e097b636b2a3bc"
+    },
+    {
+      "url": "/assets/item-essence-tonic.png",
+      "bytes": 322,
+      "sha256": "e80807ff379ccb87c7b2ed495400bd7a2586bae1d8283573b533bf019f50bad7"
+    },
+    {
+      "url": "/assets/item-essence.png",
+      "bytes": 522,
+      "sha256": "b3350084c7e478c0600d31d55986ecefee031a6735708ee750b51845f94e75b9"
+    },
+    {
+      "url": "/assets/item-good-karma.png",
+      "bytes": 494,
+      "sha256": "8d72657d7b0c92b662a872e54c828a57fb314a8cd714e415b73a0983cbdef957"
+    },
+    {
+      "url": "/assets/item-health.png",
+      "bytes": 323,
+      "sha256": "07c51c06b3f8dcf059ea7962b16e1133b5ed92505dd27113d68433845474409b"
+    },
+    {
+      "url": "/assets/item-herb.png",
+      "bytes": 411,
+      "sha256": "7c157d9be832a061b151f7e5137189b7736dabaa7779ca31e1b6513706a90bd5"
+    },
+    {
+      "url": "/assets/item-metal.png",
+      "bytes": 350,
+      "sha256": "9bc27ab80f3a526cdea31c9a271ce729198783c97bd040fe00cf48d17f22f25e"
+    },
+    {
+      "url": "/assets/item-residue.png",
+      "bytes": 324,
+      "sha256": "58078b12ac2cb756e475a05fdc6eebf957f4ba2b62dc54f544b884af8ccffddf"
+    },
+    {
+      "url": "/assets/item-scroll.png",
+      "bytes": 366,
+      "sha256": "616cd58f0efcaec03105c0e5d75643eb72b9b6d7fd8ab88aeca27c5fc7735988"
+    },
+    {
+      "url": "/assets/item-seed.png",
+      "bytes": 409,
+      "sha256": "14acf53274007a79516a11852b970a66c04e2d7e2c3b2d03fe13acc41c4dccde"
+    },
+    {
+      "url": "/assets/item-stone.png",
+      "bytes": 519,
+      "sha256": "1c593d705291a2fcae924648caf89ec4a2b3401dfe9e15a9aa9ec3903e8669de"
+    },
+    {
+      "url": "/assets/item-timber.png",
+      "bytes": 521,
+      "sha256": "8f5b19cf96fbf4b0b042c8f68cacd3729e8e1943f565594c78d413429fa715ec"
+    },
+    {
+      "url": "/assets/item-void-shard.png",
+      "bytes": 416,
+      "sha256": "6f04b255bb9ffc5ab5f76f5669ad8356f892de86d54a66b9da4fe334442fda45"
+    },
+    {
+      "url": "/assets/lantern-heaven.png",
+      "bytes": 332,
+      "sha256": "ab05f258f8a00fb059c3d6765ab05d8a3ca4f8394312897d5df545b7b1a4b861"
+    },
+    {
+      "url": "/assets/lantern-infernal.png",
+      "bytes": 320,
+      "sha256": "0b84bd05de3878fbea587a6d9a9f2e867ffef897ddc9a3bcc63b483b6c474d84"
+    },
+    {
+      "url": "/assets/lantern.png",
+      "bytes": 319,
+      "sha256": "9d0428246842197698ce12ef81ce09abd8e2a9ae0964955f0a613d5686a37183"
+    },
+    {
+      "url": "/assets/lily-pads.png",
+      "bytes": 437,
+      "sha256": "22d2b376244131e072403289c16840a120a5c7f63e9ff4e25f14e3728b3eb6cd"
+    },
+    {
+      "url": "/assets/magic-herb.png",
+      "bytes": 453,
+      "sha256": "ebf89e536c4fe63666cc03df2e5f43eed01d310becc798bf7948d8ee5696299d"
+    },
+    {
+      "url": "/assets/manifest.json",
+      "bytes": 36779,
+      "sha256": "e7ecae8a9d60be8431afef8b8e459770c697b67d20458ebcb57dd41d22704085"
+    },
+    {
+      "url": "/assets/moth-sheet.png",
+      "bytes": 794,
+      "sha256": "1e500c403faf7d1f55f75d6df7b27767b736dc3646ab656b5152fa7bb2f2966b"
+    },
+    {
+      "url": "/assets/moth.png",
+      "bytes": 458,
+      "sha256": "bab0d15deec3bc903cf8ce13d2df9e29b97e2e972b52a57721fc0e6a3b365889"
+    },
+    {
+      "url": "/assets/mushrooms-0.png",
+      "bytes": 441,
+      "sha256": "638321bf5f6445fba9e0d8f9fd5ac93152dee69aebef55c7899f2ed4bcddb69f"
+    },
+    {
+      "url": "/assets/mushrooms-1.png",
+      "bytes": 439,
+      "sha256": "01c675f551b6c73ba7a296eb695b4470358bdfbdb5fe797cf95406106aff932e"
+    },
+    {
+      "url": "/assets/mushrooms-2.png",
+      "bytes": 440,
+      "sha256": "c9d4ba07429b063eb979650b77a60862236d558bbacf69176e36fa07046cd517"
+    },
+    {
+      "url": "/assets/npc-jobs/alchemist-sheet.png",
+      "bytes": 647,
+      "sha256": "ae238125f1bf8ef6a68f9f02bb2009c2de99bad49490a05eddddf733ca4be8ba"
+    },
+    {
+      "url": "/assets/npc-jobs/bard-sheet.png",
+      "bytes": 687,
+      "sha256": "3c83a929985d87c261e1f6edd9a9633e5ed174ad87c18106a68cc3167e883f30"
+    },
+    {
+      "url": "/assets/npc-jobs/blacksmith-sheet.png",
+      "bytes": 637,
+      "sha256": "94e1f834605dd146d08ab206edaa41b3c87dcfd4843c2ec81b55fbfcaaff5bba"
+    },
+    {
+      "url": "/assets/npc-jobs/courier-sheet.png",
+      "bytes": 689,
+      "sha256": "11e923ddfdd029a67cb34e1eb095f39cef321d2193110122f02ca7ac084009be"
+    },
+    {
+      "url": "/assets/npc-jobs/farmer-sheet.png",
+      "bytes": 682,
+      "sha256": "e584cb655876211be49655a3c7faa4686f8ab7b802040d0a34dbd2e847a82a4b"
+    },
+    {
+      "url": "/assets/npc-jobs/fisher-sheet.png",
+      "bytes": 772,
+      "sha256": "89c12c2c4f6d7dd9694ef26206167126e7000a5637a8fb8d3c2c44548dfdf4cb"
+    },
+    {
+      "url": "/assets/npc-jobs/gardener-sheet.png",
+      "bytes": 682,
+      "sha256": "e584cb655876211be49655a3c7faa4686f8ab7b802040d0a34dbd2e847a82a4b"
+    },
+    {
+      "url": "/assets/npc-jobs/guard-sheet.png",
+      "bytes": 617,
+      "sha256": "4f1db73ff43fbedb2430a2b32b55363f74b4428efb947f6daff0c778aec2dfba"
+    },
+    {
+      "url": "/assets/npc-jobs/medic-sheet.png",
+      "bytes": 594,
+      "sha256": "75635d3f9fcc707e566bb77a03591b56b3ccf69e38209712245410b8e3cdbce8"
+    },
+    {
+      "url": "/assets/npc-jobs/scholar-sheet.png",
+      "bytes": 597,
+      "sha256": "2c8f1f48ccc423ed45fb9e52555ad5ed5cceae9615a274b8b7946c00dec6d09e"
+    },
+    {
+      "url": "/assets/npc-jobs/scout-sheet.png",
+      "bytes": 724,
+      "sha256": "e2e19f10663d8a6eb1eb4c24ff4bc8e9d0fa5fccb9b1ef36cdefb4655421337d"
+    },
+    {
+      "url": "/assets/npc-jobs/trader-sheet.png",
+      "bytes": 598,
+      "sha256": "ae2dae8e8a0ea99a2cd810cf73784baf9741d8c677f84df9824fee7aa4c5b96f"
+    },
+    {
+      "url": "/assets/npc-sheet.png",
+      "bytes": 588,
+      "sha256": "75f196f1fc64caa35d9075517915359d2d3e27f67f3052610e39d23ef481503c"
+    },
+    {
+      "url": "/assets/npc.png",
+      "bytes": 374,
+      "sha256": "8b23a9a1e68c17515af9dce515d5565a8e9a597ba935c804260cae8eb7d7bc77"
+    },
+    {
+      "url": "/assets/obsidian-spire.png",
+      "bytes": 901,
+      "sha256": "bd64b65a93219d115ca59cb767ed87aca00bc61be2ce300c68cda2ae1fc692c1"
+    },
+    {
+      "url": "/assets/palm.png",
+      "bytes": 1938,
+      "sha256": "13f31ee87225b54e3cf0ac29d56e36e0f1f581205752526c95620bb47f7fac3f"
+    },
+    {
+      "url": "/assets/path.png",
+      "bytes": 1275,
+      "sha256": "a6292598b6723488e6f9b6997a06449ff6a4239988a5a07a8f76b645fe8291f1"
+    },
+    {
+      "url": "/assets/portal-heaven.png",
+      "bytes": 973,
+      "sha256": "f050ee8e0c4ab1204c22aba51c8c48d86f533dee6204686a99e08a9c2e75cd87"
+    },
+    {
+      "url": "/assets/portal-infernal.png",
+      "bytes": 967,
+      "sha256": "c102125321111c8c0af19ea6deb8aa54143249a234f4aa4d30991dd6e8ca2eef"
+    },
+    {
+      "url": "/assets/portal.png",
+      "bytes": 974,
+      "sha256": "6e1bb0fe38600112dd1b51a740fb5f38104ca485df489131e84cb415b709c065"
+    },
+    {
+      "url": "/assets/power-air-move.png",
+      "bytes": 324,
+      "sha256": "a880c396b1fa2aebe65b5864b20791fec36cd9d3b900e1544cb322ab4deaa601"
+    },
+    {
+      "url": "/assets/power-air-stop.png",
+      "bytes": 325,
+      "sha256": "c6a58fa6bbe6658121661938bc7b1a7bae15c21b9187b86117c5fcae57ee3306"
+    },
+    {
+      "url": "/assets/power-dark-heal.png",
+      "bytes": 333,
+      "sha256": "1af767ab7865f9db21645c170305654c58620e10ed2c8ae1a53a0bb0b886ff09"
+    },
+    {
+      "url": "/assets/power-dark-pain.png",
+      "bytes": 335,
+      "sha256": "0453a2031679032c92ef3eb8e3b48e6943aae467324e0fd1e1404e537b989f00"
+    },
+    {
+      "url": "/assets/power-earth-give.png",
+      "bytes": 401,
+      "sha256": "2e33f3a46422db4e4cd99056d14984fe624d43d82442dbcf88ccf25610c410a5"
+    },
+    {
+      "url": "/assets/power-earth-take.png",
+      "bytes": 370,
+      "sha256": "3cef881c75998e658af7aec865e7cb1da9e9c8af3e75e8dfb18d52992dea04d6"
+    },
+    {
+      "url": "/assets/power-fire-create.png",
+      "bytes": 376,
+      "sha256": "27024ab1d96f9c894b8f2eead1e95171a3383ce5c4c180c8a29ee3a857c8d405"
+    },
+    {
+      "url": "/assets/power-fire-destroy.png",
+      "bytes": 376,
+      "sha256": "9a565686755232176a5b327d0cb4bc465013eb1188dba64f328189f7d32f71bb"
+    },
+    {
+      "url": "/assets/power-hate-clean.png",
+      "bytes": 315,
+      "sha256": "55a5af69f0d4e88c04c6eaa89de73fb77e11c9faf335e461818b7933ec04efcc"
+    },
+    {
+      "url": "/assets/power-hate-cry.png",
+      "bytes": 357,
+      "sha256": "a50ba23f9d04e0f51172027b853184948a324e74b2c6a6ed43b520a8300bc5e0"
+    },
+    {
+      "url": "/assets/power-icons/air-move-1.png",
+      "bytes": 595,
+      "sha256": "45d561ccd8339dfe6a60baf84f688ef912e892ef3242981753a3546ad6905c5e"
+    },
+    {
+      "url": "/assets/power-icons/air-move-10.png",
+      "bytes": 1041,
+      "sha256": "3cb2e6d1e62c545fef49ef598bfacad9c9009b47f8efc844cc3fa16dc8f7e335"
+    },
+    {
+      "url": "/assets/power-icons/air-move-2.png",
+      "bytes": 707,
+      "sha256": "e0236eb65e2b89dac65eca0ba27578f86c7b0676d22ec6d60f06324f291125e9"
+    },
+    {
+      "url": "/assets/power-icons/air-move-3.png",
+      "bytes": 730,
+      "sha256": "85306ce00ae263f8390104269c179de4ca140fb4400e003fa0a4bf2265cd1f6f"
+    },
+    {
+      "url": "/assets/power-icons/air-move-4.png",
+      "bytes": 889,
+      "sha256": "24493c0a20066f7295ddd0fd31aad56de06bed861c1ab0ccf1bc558bfa2df11b"
+    },
+    {
+      "url": "/assets/power-icons/air-move-5.png",
+      "bytes": 873,
+      "sha256": "2f1381eebf5830263f6e75dcc5256ec31f994f308aa83c4d85f8f85c773a654b"
+    },
+    {
+      "url": "/assets/power-icons/air-move-6.png",
+      "bytes": 854,
+      "sha256": "1684f347806bff63de92d6b0e1b7f0842039a13c40cae9b85b005e028020df4f"
+    },
+    {
+      "url": "/assets/power-icons/air-move-7.png",
+      "bytes": 1045,
+      "sha256": "84ae44a74e7bca142b7fc1fc569e1cde3d7921fa88ad372910c6757f0fd1384d"
+    },
+    {
+      "url": "/assets/power-icons/air-move-8.png",
+      "bytes": 1053,
+      "sha256": "8f92f5107a52e94011a68567d9283992cca50aca42ec3f923216d11b7cc1df61"
+    },
+    {
+      "url": "/assets/power-icons/air-move-9.png",
+      "bytes": 1024,
+      "sha256": "c186011085546557eaff367fe825588cf455b25ca3c67923dc38983e61917e0b"
+    },
+    {
+      "url": "/assets/power-icons/air-stop-1.png",
+      "bytes": 564,
+      "sha256": "5db5ef2084da58ce54b4480e772696f43572083c568ea3303888cb739881b812"
+    },
+    {
+      "url": "/assets/power-icons/air-stop-10.png",
+      "bytes": 1108,
+      "sha256": "2e014a793cc29c153bce49845f44319cbac465772772a9584cb124168f2520c0"
+    },
+    {
+      "url": "/assets/power-icons/air-stop-2.png",
+      "bytes": 737,
+      "sha256": "a69afc430746b2951f736072099d292ce8d398632cb5c50897b6b3cf0a1ef623"
+    },
+    {
+      "url": "/assets/power-icons/air-stop-3.png",
+      "bytes": 720,
+      "sha256": "0737f2b181ff55921f0910a121b5f891a885a32c50aaef27f9646515bb56a194"
+    },
+    {
+      "url": "/assets/power-icons/air-stop-4.png",
+      "bytes": 848,
+      "sha256": "a32a54f804ef72c502fa654450f382f4ee5c448f49ec7dff1ddb45bb20acfb69"
+    },
+    {
+      "url": "/assets/power-icons/air-stop-5.png",
+      "bytes": 854,
+      "sha256": "c8e0c5157459eae2610e587c985e283004b4e1d9319ce1a98527c4c47a492885"
+    },
+    {
+      "url": "/assets/power-icons/air-stop-6.png",
+      "bytes": 878,
+      "sha256": "417fcdab55949566af54b93c54669d95329d6d10163d307d39fa1101dfcfde47"
+    },
+    {
+      "url": "/assets/power-icons/air-stop-7.png",
+      "bytes": 1012,
+      "sha256": "38f9ff8846d2661ac13394fc15209f3c7d708043e10f9f54e584232613f32331"
+    },
+    {
+      "url": "/assets/power-icons/air-stop-8.png",
+      "bytes": 1071,
+      "sha256": "f8f3d6e4aa9625d630791e4de33a2b0f8ae08161f095375eba2a9956af314629"
+    },
+    {
+      "url": "/assets/power-icons/air-stop-9.png",
+      "bytes": 1044,
+      "sha256": "9701a1b390951120ee98b065e20212ef70b7229fd0de08073e6c5656503c3588"
+    },
+    {
+      "url": "/assets/power-icons/dark-heal-1.png",
+      "bytes": 576,
+      "sha256": "e98f99c8331e59ba56f5097b314dcaec557d7723d9849215f9344cea1d0d39f2"
+    },
+    {
+      "url": "/assets/power-icons/dark-heal-10.png",
+      "bytes": 1072,
+      "sha256": "39b9d69edb8954f61ba85554d51f36f7ef1b989f209a2794a519d04f8f481f2a"
+    },
+    {
+      "url": "/assets/power-icons/dark-heal-2.png",
+      "bytes": 709,
+      "sha256": "826b88946bfc652a76f24ffbb52d251e9e1e0439621754c88f8c1aed18a024c7"
+    },
+    {
+      "url": "/assets/power-icons/dark-heal-3.png",
+      "bytes": 727,
+      "sha256": "e55db852736fe4ca1f74bb978949da6caaf245a112be0b072c981ea483e5b322"
+    },
+    {
+      "url": "/assets/power-icons/dark-heal-4.png",
+      "bytes": 852,
+      "sha256": "95f98b725b60446cc56c081694d9ee20e164867b15aa380c34ab8c7598a53f4f"
+    },
+    {
+      "url": "/assets/power-icons/dark-heal-5.png",
+      "bytes": 853,
+      "sha256": "977ffa0efb8355f493e2f7e66da2a265b2202b461e6e9ffe8743e016f2670f8c"
+    },
+    {
+      "url": "/assets/power-icons/dark-heal-6.png",
+      "bytes": 821,
+      "sha256": "7bdd5d90dbd3188648f7ef5a77c469dba36ef14932d1088e2397110810045e35"
+    },
+    {
+      "url": "/assets/power-icons/dark-heal-7.png",
+      "bytes": 1017,
+      "sha256": "bd5b4942f1b8bdb921fcbca4c71a17f5dda66bf5a88f2e4fb511fb4ad299a741"
+    },
+    {
+      "url": "/assets/power-icons/dark-heal-8.png",
+      "bytes": 1066,
+      "sha256": "cc58d42d4d24d7abbcb43895ede4b56f7b4d78b58927358725b2b581d9e740a2"
+    },
+    {
+      "url": "/assets/power-icons/dark-heal-9.png",
+      "bytes": 1026,
+      "sha256": "0d64b66ef6661124a58f586f676a61424daa3843d0e5405d66cb41638a3936a9"
+    },
+    {
+      "url": "/assets/power-icons/dark-pain-1.png",
+      "bytes": 570,
+      "sha256": "c9abfe0bacfc7be9dc684dff863ba6b029fae975d36c1daf66a413e50238b027"
+    },
+    {
+      "url": "/assets/power-icons/dark-pain-10.png",
+      "bytes": 1050,
+      "sha256": "bf6dfc3f38db1c8cf0bdbc1e492ddf4a66fbe0812f6497a426df79e1fb9758d8"
+    },
+    {
+      "url": "/assets/power-icons/dark-pain-2.png",
+      "bytes": 685,
+      "sha256": "d5ad7a227e9e739a655ee836966e6e1a9d564f535d94cb1bce6c116477091b39"
+    },
+    {
+      "url": "/assets/power-icons/dark-pain-3.png",
+      "bytes": 718,
+      "sha256": "9d3c16eab87f4c2c2d4f5e335877b8155f21ccfce2371c39ebfd3fd023f455ce"
+    },
+    {
+      "url": "/assets/power-icons/dark-pain-4.png",
+      "bytes": 866,
+      "sha256": "661f81ab325aa7f8cc1553d2e929fc667ede32c39c13f4caa2da2a84b7d11f87"
+    },
+    {
+      "url": "/assets/power-icons/dark-pain-5.png",
+      "bytes": 850,
+      "sha256": "8133d267e6d9a2502cba1c5fa99e578e57c3d8fa77b493f4e4333861a300db18"
+    },
+    {
+      "url": "/assets/power-icons/dark-pain-6.png",
+      "bytes": 815,
+      "sha256": "167aceb02346733a2140b58b7c85c256361f436d8738b04f7f9f5ead11997d11"
+    },
+    {
+      "url": "/assets/power-icons/dark-pain-7.png",
+      "bytes": 1018,
+      "sha256": "d5504e1d6ca41b3e112062f2be1c36384bf3f605fbaf0bf557a4275659dad85b"
+    },
+    {
+      "url": "/assets/power-icons/dark-pain-8.png",
+      "bytes": 1020,
+      "sha256": "33237c0fe524245935a132d5898558b3fa0ec731e5ffa49da58ade83178cb174"
+    },
+    {
+      "url": "/assets/power-icons/dark-pain-9.png",
+      "bytes": 1014,
+      "sha256": "41f794d8bc8daed93dbb82ebe3a3c56c2cfed0f0cfd98fe0657d9ff532e2f978"
+    },
+    {
+      "url": "/assets/power-icons/earth-give-1.png",
+      "bytes": 610,
+      "sha256": "85ac4841e31351d5a3b00a8ed1707d27f69796cd7b2619c3acae414e4fb6a71f"
+    },
+    {
+      "url": "/assets/power-icons/earth-give-10.png",
+      "bytes": 1093,
+      "sha256": "40602f45fcc399780af40a70db9d5da287a0448097cf28649f2c8e6d2ab99a94"
+    },
+    {
+      "url": "/assets/power-icons/earth-give-2.png",
+      "bytes": 745,
+      "sha256": "cb029f43c1679007cf3637a31f98a8e656f137694dd85f518178869f4440a795"
+    },
+    {
+      "url": "/assets/power-icons/earth-give-3.png",
+      "bytes": 742,
+      "sha256": "f8eceb44337c72b14113022c765ea85f63f12ad09cd037b73362fc95b32d9614"
+    },
+    {
+      "url": "/assets/power-icons/earth-give-4.png",
+      "bytes": 960,
+      "sha256": "eddae8dd0b12840291b6253948327adc541da03dcf5ceef9d001563134517494"
+    },
+    {
+      "url": "/assets/power-icons/earth-give-5.png",
+      "bytes": 900,
+      "sha256": "640a4df7bcc478f4928ce8ac2c0bb25fe7020f2c7f9f714e2791729d7042ed56"
+    },
+    {
+      "url": "/assets/power-icons/earth-give-6.png",
+      "bytes": 868,
+      "sha256": "f654ae5b0d579348c2f13f45ba4b2ce5b5e4959ee7a541494eb91090d1b4af6b"
+    },
+    {
+      "url": "/assets/power-icons/earth-give-7.png",
+      "bytes": 1074,
+      "sha256": "420fb487113dddbd298377d2b9651b9844e45c43952e7d7f52a82234866625f6"
+    },
+    {
+      "url": "/assets/power-icons/earth-give-8.png",
+      "bytes": 1063,
+      "sha256": "aae220eace9bf312ae7b07b581b4cb4d2fb68ef20c25ea683aa0c75f6a79631a"
+    },
+    {
+      "url": "/assets/power-icons/earth-give-9.png",
+      "bytes": 1090,
+      "sha256": "0e73670798de21c69682bfcdad28591c5a8b3959a2aec86dc73f0fd99c58fc40"
+    },
+    {
+      "url": "/assets/power-icons/earth-take-1.png",
+      "bytes": 566,
+      "sha256": "e72e1d05cab16952ae95551feaac71fed1659665fa7449123dc8c1d6cdeee117"
+    },
+    {
+      "url": "/assets/power-icons/earth-take-10.png",
+      "bytes": 1051,
+      "sha256": "0c6d27d03592eef2c5d329b9564d9b2a5cf96f56bcd6f03b960efd8cfd73d0d2"
+    },
+    {
+      "url": "/assets/power-icons/earth-take-2.png",
+      "bytes": 697,
+      "sha256": "f0fcb04a3ff136a324b817f14121760f653ad22d31d7f18e8b083e5ac2be3ccb"
+    },
+    {
+      "url": "/assets/power-icons/earth-take-3.png",
+      "bytes": 742,
+      "sha256": "93e554ab4423e4ed0cf3709980fdabba9d615a72267041018237087ce4b0cf9e"
+    },
+    {
+      "url": "/assets/power-icons/earth-take-4.png",
+      "bytes": 897,
+      "sha256": "263d46b427d9b5712e81a5621d00ec4fbea5d3b35bc7e7ab15a9bb3b8b8be973"
+    },
+    {
+      "url": "/assets/power-icons/earth-take-5.png",
+      "bytes": 877,
+      "sha256": "8c7c754568548807fe90968a81bc26650bc9963a727c26b046ec50728b0f6c47"
+    },
+    {
+      "url": "/assets/power-icons/earth-take-6.png",
+      "bytes": 903,
+      "sha256": "04ef795a1f45c68dbe629a1e0d4a7fd4678e510f5a10b4b47d74d3fc948cf4ab"
+    },
+    {
+      "url": "/assets/power-icons/earth-take-7.png",
+      "bytes": 1043,
+      "sha256": "231f3a6a0f18f502559c4134b4abc51c174d78ac57e418d579b9667c98371635"
+    },
+    {
+      "url": "/assets/power-icons/earth-take-8.png",
+      "bytes": 1020,
+      "sha256": "6a09cfb28b9ec3e23ec1f98a92da03841119ee6b790d2bbf04a3900c8d1ea221"
+    },
+    {
+      "url": "/assets/power-icons/earth-take-9.png",
+      "bytes": 1057,
+      "sha256": "58b379c71e589748b8229608d97a40eb7b8c62f0e700dd552fd4f45196f812a0"
+    },
+    {
+      "url": "/assets/power-icons/fire-create-1.png",
+      "bytes": 558,
+      "sha256": "1598186c9c4293ceaee96e74ead3a9bb98f15393e72cd62941edd56ed1fb4dbe"
+    },
+    {
+      "url": "/assets/power-icons/fire-create-10.png",
+      "bytes": 1034,
+      "sha256": "ad2ba2a9e5d5ff89aec56f9f759f2fe50be324bc6f0b89a07b2a47fb289cb3f9"
+    },
+    {
+      "url": "/assets/power-icons/fire-create-2.png",
+      "bytes": 724,
+      "sha256": "8e760e0f9500c0bf90b63f9d187254d9b611c9eb16472731f58d86c21c655d5b"
+    },
+    {
+      "url": "/assets/power-icons/fire-create-3.png",
+      "bytes": 740,
+      "sha256": "0eaf41861a9af1b967263ed516e36e1b0474abd30f9fff860654fab9091862b2"
+    },
+    {
+      "url": "/assets/power-icons/fire-create-4.png",
+      "bytes": 907,
+      "sha256": "f70a36a151a97177364c1cda0775c0edebe9ef487f146ffe62f26a4234aae1e0"
+    },
+    {
+      "url": "/assets/power-icons/fire-create-5.png",
+      "bytes": 867,
+      "sha256": "c454a948c10b1444302d046a6994271513da8c8f467686b47b0a1a07d6c66f39"
+    },
+    {
+      "url": "/assets/power-icons/fire-create-6.png",
+      "bytes": 840,
+      "sha256": "f3e1f007bea5050020658f81c58931b369dee3ca1e9db033e64b9e3c544251f3"
+    },
+    {
+      "url": "/assets/power-icons/fire-create-7.png",
+      "bytes": 1010,
+      "sha256": "ba57ad864560db67332fcdd8096e1d1d90246706535a7b0a46f5aeaa48911e01"
+    },
+    {
+      "url": "/assets/power-icons/fire-create-8.png",
+      "bytes": 1040,
+      "sha256": "19edecaaf816dd3a60e944345b23f688ea2c28e13fe8a610f20dc919f547e41d"
+    },
+    {
+      "url": "/assets/power-icons/fire-create-9.png",
+      "bytes": 998,
+      "sha256": "a9ad0811d4ebca6d78270c548818d0f5361ffca2fb92b60d3d51e296db788f55"
+    },
+    {
+      "url": "/assets/power-icons/fire-destroy-1.png",
+      "bytes": 564,
+      "sha256": "3f0b7978fc26983fab2dbfedf6ef00eb51884a502d1c479ceb739e1d20d3d9f4"
+    },
+    {
+      "url": "/assets/power-icons/fire-destroy-10.png",
+      "bytes": 1066,
+      "sha256": "b88554e073e1ef7117e0bad0da5bc3f0647dc7455c61faea1d6aec4263ca130e"
+    },
+    {
+      "url": "/assets/power-icons/fire-destroy-2.png",
+      "bytes": 720,
+      "sha256": "47d6dddcaa58e549cfe20ffafce57fecb36a846d78b889f89106082b0769ecbe"
+    },
+    {
+      "url": "/assets/power-icons/fire-destroy-3.png",
+      "bytes": 725,
+      "sha256": "60045973b9d112e5312747312749d22292521a353e00fcd7abb58667f16260e0"
+    },
+    {
+      "url": "/assets/power-icons/fire-destroy-4.png",
+      "bytes": 882,
+      "sha256": "e828637ea8377097656e0e9e8f51af5ac2777613c3a6a9270c2ed12e0490a420"
+    },
+    {
+      "url": "/assets/power-icons/fire-destroy-5.png",
+      "bytes": 873,
+      "sha256": "95c8125c7838bc72854ee01dd616ad085b12de4def97caf2e840e30a78cb90fc"
+    },
+    {
+      "url": "/assets/power-icons/fire-destroy-6.png",
+      "bytes": 871,
+      "sha256": "355d231537b28dffde067bd60e5356ed479f293815a4c4ff0549c5e8b669a351"
+    },
+    {
+      "url": "/assets/power-icons/fire-destroy-7.png",
+      "bytes": 1009,
+      "sha256": "1cb539f2e903c8d2a58d59929e4afb6ee62de241101e29d8ec9447d4726b4a4d"
+    },
+    {
+      "url": "/assets/power-icons/fire-destroy-8.png",
+      "bytes": 1031,
+      "sha256": "3a093bcc68ef1facfac8e21eb75d1fca37167131f0219cf52e44556a3a85ffc4"
+    },
+    {
+      "url": "/assets/power-icons/fire-destroy-9.png",
+      "bytes": 1060,
+      "sha256": "fdbf0eccaf6f611bad3fa1159eade2f69e6b39781c634421cc579740f78ff907"
+    },
+    {
+      "url": "/assets/power-icons/hate-clean-1.png",
+      "bytes": 542,
+      "sha256": "d9ae051c685ad742e0757143ea21a20ea30ca6431cd2a1539680f6152d14dd1b"
+    },
+    {
+      "url": "/assets/power-icons/hate-clean-10.png",
+      "bytes": 1020,
+      "sha256": "95ae88faf18baa6aaebdf0a61f0e0dc3bab831c339ad4d4fda0fc7ae049149cd"
+    },
+    {
+      "url": "/assets/power-icons/hate-clean-2.png",
+      "bytes": 734,
+      "sha256": "dda723659c4567b3acd9330e6c2821a9fed2331f9d901aaf02938a084fbef3d1"
+    },
+    {
+      "url": "/assets/power-icons/hate-clean-3.png",
+      "bytes": 724,
+      "sha256": "3f1d519190748cfa35a225ad7679b835aca7a5dd823ad7eb1c3f564bfa455901"
+    },
+    {
+      "url": "/assets/power-icons/hate-clean-4.png",
+      "bytes": 874,
+      "sha256": "7772f846110a608b6c9e6f18a310dd63da1aa2ee18c3c3084bfba915c25779df"
+    },
+    {
+      "url": "/assets/power-icons/hate-clean-5.png",
+      "bytes": 888,
+      "sha256": "07fd9c545d29068fb9436cb49afaf73a3ec81f898358c2aa1bc4e19fe1defaac"
+    },
+    {
+      "url": "/assets/power-icons/hate-clean-6.png",
+      "bytes": 825,
+      "sha256": "4dc7488cb4efcdf68051cba5ccccdde768937e2187ac761fe2f02aaf599459d0"
+    },
+    {
+      "url": "/assets/power-icons/hate-clean-7.png",
+      "bytes": 999,
+      "sha256": "4a2d6ad649d28b90e7575a3eec76dcebd5428c55257a199978509f05458696e3"
+    },
+    {
+      "url": "/assets/power-icons/hate-clean-8.png",
+      "bytes": 1056,
+      "sha256": "0e18b26a9c34f0177e89d01104f4c676a6fe1cd06c2e1992c7efe2ddfe340887"
+    },
+    {
+      "url": "/assets/power-icons/hate-clean-9.png",
+      "bytes": 1019,
+      "sha256": "8f5d1844f47f04e6ef8625dd0b6b40a99ca4aee9055c508d317b4acd983268b2"
+    },
+    {
+      "url": "/assets/power-icons/hate-cry-1.png",
+      "bytes": 572,
+      "sha256": "4ad95ff37e80ff28f9c0cc0348ea16f80e957b520cdc4074c7cab9ccfe5678ef"
+    },
+    {
+      "url": "/assets/power-icons/hate-cry-10.png",
+      "bytes": 1058,
+      "sha256": "e1dc2a8a34e264a537fbdce3b47c6daf971341d75b1201b43fd3f0231ff2a6f8"
+    },
+    {
+      "url": "/assets/power-icons/hate-cry-2.png",
+      "bytes": 712,
+      "sha256": "eec59ddf46edd669d31f235e3e447812c7cd1e61381b242d13461e3dae900790"
+    },
+    {
+      "url": "/assets/power-icons/hate-cry-3.png",
+      "bytes": 708,
+      "sha256": "9808f22eb9efa747c6f4059e5e71f8c373c7bb71e3ffe401a7544f551a26dbf7"
+    },
+    {
+      "url": "/assets/power-icons/hate-cry-4.png",
+      "bytes": 858,
+      "sha256": "2df86c8de87a44091eb926a15a6e403bea8db35c1345bb5a2afaf3a70fe925e3"
+    },
+    {
+      "url": "/assets/power-icons/hate-cry-5.png",
+      "bytes": 843,
+      "sha256": "b2bde79ab905b46628d404790e93888adb01ed85bd65657974a9168386cb3e35"
+    },
+    {
+      "url": "/assets/power-icons/hate-cry-6.png",
+      "bytes": 806,
+      "sha256": "08ccb5d1f5a66e55e9a52e4cb7ef59479d2d97b71c9a18a38c3d0282b043fa5d"
+    },
+    {
+      "url": "/assets/power-icons/hate-cry-7.png",
+      "bytes": 1028,
+      "sha256": "8fa629174c7cded283d8895bb5da81b5ce545c0f5cbf158a604ecc74077a74ae"
+    },
+    {
+      "url": "/assets/power-icons/hate-cry-8.png",
+      "bytes": 999,
+      "sha256": "79300d7c083b364549e249a717dd80a61643627bfb1ca8a3da61f9bf82d1b2e5"
+    },
+    {
+      "url": "/assets/power-icons/hate-cry-9.png",
+      "bytes": 982,
+      "sha256": "dad3f898ed6e58d35bb24939ad723aa5af6c431668002f11ff1ad9816c0cb7a1"
+    },
+    {
+      "url": "/assets/power-icons/light-harm-1.png",
+      "bytes": 627,
+      "sha256": "ca2a1a4ad5b3fd2b4c406d8115613c680c0dd2666f6daaa82f22db463104f10b"
+    },
+    {
+      "url": "/assets/power-icons/light-harm-10.png",
+      "bytes": 1088,
+      "sha256": "f242642f322056befcde998b2a159a7e93136af269dc4f5a963daaa764b1ce65"
+    },
+    {
+      "url": "/assets/power-icons/light-harm-2.png",
+      "bytes": 792,
+      "sha256": "e71620bc78bff1800aa7a551b218dc98469a2ff70038981401241b40dbe41751"
+    },
+    {
+      "url": "/assets/power-icons/light-harm-3.png",
+      "bytes": 732,
+      "sha256": "21b64d1a9401dafea0630780d1b11d184110ca25ab513b4d70842a342205d162"
+    },
+    {
+      "url": "/assets/power-icons/light-harm-4.png",
+      "bytes": 920,
+      "sha256": "6933bc0e477d226029106c3a1788da46ccaf622672f6ef08d51216e65105af01"
+    },
+    {
+      "url": "/assets/power-icons/light-harm-5.png",
+      "bytes": 911,
+      "sha256": "351a0333f2ab0a8d65baca4231742e4f7471d2ffcaada98158c5b1d2e7ab549f"
+    },
+    {
+      "url": "/assets/power-icons/light-harm-6.png",
+      "bytes": 913,
+      "sha256": "5d30cd2279c0bfdeb202d27578afebe569bdcf8f6801054279edb587ffeec92c"
+    },
+    {
+      "url": "/assets/power-icons/light-harm-7.png",
+      "bytes": 1051,
+      "sha256": "23acdb1d567761e3c045caff7a42ba72c4b3a45fd4fd81cac3f69426534ed76c"
+    },
+    {
+      "url": "/assets/power-icons/light-harm-8.png",
+      "bytes": 1081,
+      "sha256": "27c1cfba0e7e72e6bef103260ab1d23418a1577a6fd4968b02c58c3abe4e0add"
+    },
+    {
+      "url": "/assets/power-icons/light-harm-9.png",
+      "bytes": 1103,
+      "sha256": "11a5ade457124f836e7d8195a5a1e4b9b6569c207b6788ce870c5d7acc2363ae"
+    },
+    {
+      "url": "/assets/power-icons/light-pleasure-1.png",
+      "bytes": 639,
+      "sha256": "04fef5f9637b63d2bbb12af50919be850d7f07c6dd63bf708c2834d6a83e1cde"
+    },
+    {
+      "url": "/assets/power-icons/light-pleasure-10.png",
+      "bytes": 1100,
+      "sha256": "de6d68c2b043c5fb197be6c3d6a7e7206a8d7c5faafd401c98714fe907cb127a"
+    },
+    {
+      "url": "/assets/power-icons/light-pleasure-2.png",
+      "bytes": 762,
+      "sha256": "3aa030e50f30d3a5d4a40e3602e01eb49141a14d763dc3653093f04b84b177be"
+    },
+    {
+      "url": "/assets/power-icons/light-pleasure-3.png",
+      "bytes": 801,
+      "sha256": "772bfce72f6d0de185a361219e3a02aed1fbb5418fba24048186f5fb46f24626"
+    },
+    {
+      "url": "/assets/power-icons/light-pleasure-4.png",
+      "bytes": 922,
+      "sha256": "8f66ce82c8f6ee201d6ec7c3ec8c4ab1cd0daa29e74956077f1ae01d6137a8a8"
+    },
+    {
+      "url": "/assets/power-icons/light-pleasure-5.png",
+      "bytes": 912,
+      "sha256": "492e6f2442535a30a6b58798555213bf84de03938d7a86c48526ed2027a002b7"
+    },
+    {
+      "url": "/assets/power-icons/light-pleasure-6.png",
+      "bytes": 899,
+      "sha256": "68c157b873cfdb2f8725e5d04a400471901ddfcf781fd04f1bc7ec2b61df0823"
+    },
+    {
+      "url": "/assets/power-icons/light-pleasure-7.png",
+      "bytes": 1049,
+      "sha256": "5f3ba184017d45f76d5628c0aa03c3bf0af33357999457cb0d9d91d2e492f3f8"
+    },
+    {
+      "url": "/assets/power-icons/light-pleasure-8.png",
+      "bytes": 1061,
+      "sha256": "25fa4e93ebade0a3e6de368ba3b428a57d6391b8293c729ba2b6f2a231f1a3fa"
+    },
+    {
+      "url": "/assets/power-icons/light-pleasure-9.png",
+      "bytes": 1069,
+      "sha256": "757a7ee33daaf9ec8e5471978e5c2f3a2b72f93bc98d83a500f9e52a634970b9"
+    },
+    {
+      "url": "/assets/power-icons/love-dirty-1.png",
+      "bytes": 571,
+      "sha256": "5035cc9fcfc96c8071aa6a22b863a882039edae56ee69ad228fdb5b3615127b0"
+    },
+    {
+      "url": "/assets/power-icons/love-dirty-10.png",
+      "bytes": 1042,
+      "sha256": "77a837128858cfef13839d7b2d9f0a1ede6a52ccc516f20cbf26ec01ceb03340"
+    },
+    {
+      "url": "/assets/power-icons/love-dirty-2.png",
+      "bytes": 724,
+      "sha256": "d1196400e3790e743b625d809224e2a8d669815af18a12de8910e57326115f3e"
+    },
+    {
+      "url": "/assets/power-icons/love-dirty-3.png",
+      "bytes": 730,
+      "sha256": "712f46b517612c0696e3e433949ce36950008e33ac7c683ecdfda5a2a5839a9b"
+    },
+    {
+      "url": "/assets/power-icons/love-dirty-4.png",
+      "bytes": 866,
+      "sha256": "ee35f84b169bdd9aad6c688b0e8f6a590c7068e3134484666baf0bf9f7159b6f"
+    },
+    {
+      "url": "/assets/power-icons/love-dirty-5.png",
+      "bytes": 862,
+      "sha256": "77744514f9a7eefe6014b75b84f729728b848bfc2a7dddc541c3b1491bba62c2"
+    },
+    {
+      "url": "/assets/power-icons/love-dirty-6.png",
+      "bytes": 828,
+      "sha256": "69e94fd699d66bac883efa3de411f36facf1221aed6a53363b6902035e0ac155"
+    },
+    {
+      "url": "/assets/power-icons/love-dirty-7.png",
+      "bytes": 1010,
+      "sha256": "f6711aa92c5b6657af2df88bcbf64a2e4cf0bbfe02b08dbc5bc9d5f28096c043"
+    },
+    {
+      "url": "/assets/power-icons/love-dirty-8.png",
+      "bytes": 1030,
+      "sha256": "e983e0d7b5d03aab08173c368c4992a05e390a2671774d152958ced275161692"
+    },
+    {
+      "url": "/assets/power-icons/love-dirty-9.png",
+      "bytes": 1032,
+      "sha256": "d455f79c90e557f6cb38dc34aa1588a144c756fbddf35880d089b72681c9a04f"
+    },
+    {
+      "url": "/assets/power-icons/love-laugh-1.png",
+      "bytes": 565,
+      "sha256": "70d956177797a7fb04779f5c958277477132da7e16581835775139da0e286a86"
+    },
+    {
+      "url": "/assets/power-icons/love-laugh-10.png",
+      "bytes": 1023,
+      "sha256": "2bc6b804ed8336e903d2aa459c1a6247fea6ae612db8d34cfc4e5616c7123cd3"
+    },
+    {
+      "url": "/assets/power-icons/love-laugh-2.png",
+      "bytes": 723,
+      "sha256": "d2a9d669875cbb3d63cb5f41dcf3456e714110d7af676b6ac733c2824064b4bd"
+    },
+    {
+      "url": "/assets/power-icons/love-laugh-3.png",
+      "bytes": 707,
+      "sha256": "5ff5448f09ff2073ad46bdb182aa6340d3d35cf011a4e4dd72e9efd5b84bf4c5"
+    },
+    {
+      "url": "/assets/power-icons/love-laugh-4.png",
+      "bytes": 872,
+      "sha256": "a663f4d0d571abe94b51d4cb2d147b8b7d8f3c29f11b6429ebd6d8e048e7f2cb"
+    },
+    {
+      "url": "/assets/power-icons/love-laugh-5.png",
+      "bytes": 832,
+      "sha256": "bcc00d0dab52d5255ad1ae12fe7fce0ca330d9360eb6a73e40742774e5f66b38"
+    },
+    {
+      "url": "/assets/power-icons/love-laugh-6.png",
+      "bytes": 805,
+      "sha256": "ef0ca8e531802778cbd9dd4398557cb8baaffab07ae7f5bd484b64ae60c25df3"
+    },
+    {
+      "url": "/assets/power-icons/love-laugh-7.png",
+      "bytes": 1019,
+      "sha256": "d224b25891543d6d14b54d5cf44175323fd9d8e968c1ac74cfc25c4b60d74c46"
+    },
+    {
+      "url": "/assets/power-icons/love-laugh-8.png",
+      "bytes": 1012,
+      "sha256": "efe0ce59d8398c11b2422bf5b92d8871a39203b63fc4d29314b7d9328844ea51"
+    },
+    {
+      "url": "/assets/power-icons/love-laugh-9.png",
+      "bytes": 1023,
+      "sha256": "385882c2747b5105607fe9974396cf48fd7a93626f4714a7a2c6f309fe52ac00"
+    },
+    {
+      "url": "/assets/power-icons/water-decay-1.png",
+      "bytes": 589,
+      "sha256": "53f66ddef9886383ea7f32aadce50ce42eb02b15f468290bdd41960343731bb7"
+    },
+    {
+      "url": "/assets/power-icons/water-decay-10.png",
+      "bytes": 1092,
+      "sha256": "d566af82058a2ed328f6759e1ca889b3308b23a3a7efdee53abda2fb22ac33a6"
+    },
+    {
+      "url": "/assets/power-icons/water-decay-2.png",
+      "bytes": 721,
+      "sha256": "7938f9cfda5e02d4627e699426b50fce953bc6c4daebad6293f1d2732c886dab"
+    },
+    {
+      "url": "/assets/power-icons/water-decay-3.png",
+      "bytes": 734,
+      "sha256": "1108730a2abb6dbfcefcfcb97f8dd8597e403df85588682a4455f6d445414677"
+    },
+    {
+      "url": "/assets/power-icons/water-decay-4.png",
+      "bytes": 923,
+      "sha256": "ff745ec750c1de1328aaee66d9078d7dfe567d17f2e28d28b140e995e1b15568"
+    },
+    {
+      "url": "/assets/power-icons/water-decay-5.png",
+      "bytes": 872,
+      "sha256": "e742814f39f61072a48402051766ec03774af7ae836581c8ea2b0863f186ceb9"
+    },
+    {
+      "url": "/assets/power-icons/water-decay-6.png",
+      "bytes": 827,
+      "sha256": "977d60171a4e6f6a577da5e4014792a71709f9127fe177f66d39e74798b085d7"
+    },
+    {
+      "url": "/assets/power-icons/water-decay-7.png",
+      "bytes": 1012,
+      "sha256": "8e6048712c5b090dcac47e4b76da28cc55b9f501538b5783d376a93178f7a266"
+    },
+    {
+      "url": "/assets/power-icons/water-decay-8.png",
+      "bytes": 1051,
+      "sha256": "f05ff2761a8acb06a2f052a1aa37bbabe0a01d119585803bf8c9824bc274d92c"
+    },
+    {
+      "url": "/assets/power-icons/water-decay-9.png",
+      "bytes": 1032,
+      "sha256": "0be698424a90bff1b5dc3b54744e05b2ddf94302d17572b33916be56322f5eea"
+    },
+    {
+      "url": "/assets/power-icons/water-grow-1.png",
+      "bytes": 590,
+      "sha256": "0b7b11e8992737cd7a7e7917fd2ae16834cfba9f6a89a2b48a35efe794c90e0d"
+    },
+    {
+      "url": "/assets/power-icons/water-grow-10.png",
+      "bytes": 1055,
+      "sha256": "5f9d774b6147def96f46099ec33eab4f8afbb2064e27b7e58ce79c481086862e"
+    },
+    {
+      "url": "/assets/power-icons/water-grow-2.png",
+      "bytes": 745,
+      "sha256": "03fdf4d5e6bc9c94a73a0c0a8226bba3d822a78aed3397fa25f6da7b76b428a3"
+    },
+    {
+      "url": "/assets/power-icons/water-grow-3.png",
+      "bytes": 793,
+      "sha256": "6105a2bdbd400b1616ac4c1867ce8ac4278230f4622214cd27db85f48cdfc271"
+    },
+    {
+      "url": "/assets/power-icons/water-grow-4.png",
+      "bytes": 899,
+      "sha256": "6f44e1ad768d4c7e2da19528573339e2333ff4c9019b318ac30f6e1fb8137c07"
+    },
+    {
+      "url": "/assets/power-icons/water-grow-5.png",
+      "bytes": 821,
+      "sha256": "3a9349a0e0f331ee99a39785152151116464d7cc1b4ea1b34db8958fff600f46"
+    },
+    {
+      "url": "/assets/power-icons/water-grow-6.png",
+      "bytes": 852,
+      "sha256": "c933ffd3241cf6bcf6c85ab39fe499aeaaaa37e6cd2fb898388cb8f2b3dfe476"
+    },
+    {
+      "url": "/assets/power-icons/water-grow-7.png",
+      "bytes": 1040,
+      "sha256": "248f1fb2a65177120e1f00ba5692b990912bf0c01ab967ee30cd30432a12184a"
+    },
+    {
+      "url": "/assets/power-icons/water-grow-8.png",
+      "bytes": 1030,
+      "sha256": "81615733afb122837133af2d111ea4a1a32f44c598dbdd62a6602e91a660d8f7"
+    },
+    {
+      "url": "/assets/power-icons/water-grow-9.png",
+      "bytes": 1045,
+      "sha256": "453d82c922604a1df0810ad01b751c132b72b169824b40d912c04e7b1fab0436"
+    },
+    {
+      "url": "/assets/power-light-harm.png",
+      "bytes": 387,
+      "sha256": "b83f26a775d98d4a7a7d648bc7878d85fef034f8a820181196f4bea9e602edee"
+    },
+    {
+      "url": "/assets/power-light-pleasure.png",
+      "bytes": 387,
+      "sha256": "6ebf6f97781f71e75fdeb77ae50f9d2494f6733069fd0c540b31293c1110ef6c"
+    },
+    {
+      "url": "/assets/power-love-dirty.png",
+      "bytes": 353,
+      "sha256": "ed58b486e67b22b3188271f43af65fb7fa1398477925a6b9609fa601a7f1baae"
+    },
+    {
+      "url": "/assets/power-love-laugh.png",
+      "bytes": 355,
+      "sha256": "e665cbbf04fb7ca0e7d4b3f6072b98575d3af00b3d5579e2e52d682cd12d79dd"
+    },
+    {
+      "url": "/assets/power-water-decay.png",
+      "bytes": 355,
+      "sha256": "b502410594d8defd233fd634825e10177f8fa6346e9f3e33b205cf83abfe3826"
+    },
+    {
+      "url": "/assets/power-water-grow.png",
+      "bytes": 357,
+      "sha256": "6c40f76b7bc161e25fbd16566eb160c5fe57fcde28023575fa3d0c525020e725"
+    },
+    {
+      "url": "/assets/reeds.png",
+      "bytes": 666,
+      "sha256": "0f9383c4702a5d8a0fe09253359170df8f3eb18d77344817853469c247cf6c96"
+    },
+    {
+      "url": "/assets/rock-0.png",
+      "bytes": 560,
+      "sha256": "3175dd9285a6ed0efecf0d9ed9380d21db655d2b2ad5e59f5bde470d001a926a"
+    },
+    {
+      "url": "/assets/rock-1.png",
+      "bytes": 616,
+      "sha256": "b5a622d0d24de6a29b998e5a51ac8bdaafa7461e48c62b5f524c252c311371f9"
+    },
+    {
+      "url": "/assets/rock-2.png",
+      "bytes": 560,
+      "sha256": "59380feed7a759b3697848ee457bd6b7aba72c08ca205b59a827663c1a2cf4c4"
+    },
+    {
+      "url": "/assets/rock-3.png",
+      "bytes": 561,
+      "sha256": "b40753e3312fd768ca1931d74425415c70b36cc3bb270f26e040c6221f8e2b9c"
+    },
+    {
+      "url": "/assets/rock-obsidian.png",
+      "bytes": 539,
+      "sha256": "200f4552cd147a51b610850c43ddfebeb4293140b6fab0408d9e8c9ae5bd5817"
+    },
+    {
+      "url": "/assets/rock-sandstone.png",
+      "bytes": 545,
+      "sha256": "e948dd213ed6c690ee2db31664a481d6d6eb9a459f8100fae6af178ad981cc2f"
+    },
+    {
+      "url": "/assets/ruin-desert.png",
+      "bytes": 617,
+      "sha256": "d89f2007515498fb09a0434498eb3d2459d60e71bd91c7b0d240fa1c2b8a8e28"
+    },
+    {
+      "url": "/assets/ruin-heaven.png",
+      "bytes": 615,
+      "sha256": "6555ffe41fcfbd135269c0f8832b5bfad837bbe86bb4973dff590df7a17572ca"
+    },
+    {
+      "url": "/assets/ruin-infernal.png",
+      "bytes": 616,
+      "sha256": "9c2240be89440cf31ea09aa486d1ba9f6c65a8e81f89c71896f279e764c4c268"
+    },
+    {
+      "url": "/assets/ruin.png",
+      "bytes": 630,
+      "sha256": "564023d23f2de99b24530dc6e21d7dae8a520b6ad6f95f0e90e60d9fcf536f88"
+    },
+    {
+      "url": "/assets/sacred-grove-keyart.png",
+      "bytes": 3883985,
+      "sha256": "46ea860fee7e0ba8193d342605250931878815d2383d82cb25534104d23d2b54"
+    },
+    {
+      "url": "/assets/sand.png",
+      "bytes": 1166,
+      "sha256": "61ef948a80940e5bd97f1d23fc51e36dba3f8fa0588d99080a937c4b25aeb0a8"
+    },
+    {
+      "url": "/assets/sentinel-sheet.png",
+      "bytes": 688,
+      "sha256": "d05c401c9bb939d1b8cb00307c40a76278062e34468c100f8726a8c7b410fc08"
+    },
+    {
+      "url": "/assets/sentinel.png",
+      "bytes": 444,
+      "sha256": "45b5232fd6720f4c96d1c2b1dbd52da0d9563201499b134034faae6fa0d024e2"
+    },
+    {
+      "url": "/assets/serpent-sheet.png",
+      "bytes": 902,
+      "sha256": "937424986c6d05922344df44fc0ccd64ceac4c5ed91b8fa106b1ba1b4d11d83d"
+    },
+    {
+      "url": "/assets/serpent.png",
+      "bytes": 566,
+      "sha256": "a8bc880d6756f37227a04ed7e36329f4a72e19650abf0c7cc2bf1f332c5bacf8"
+    },
+    {
+      "url": "/assets/shadow-sheet.png",
+      "bytes": 823,
+      "sha256": "548268e8c8da714807966d322a508b52ce8c510913befcc93c7829997e355f86"
+    },
+    {
+      "url": "/assets/shadow.png",
+      "bytes": 493,
+      "sha256": "fcbc20ccbf0697bc05c016c6d53a14cf46ee54656de9de5b8424253e90015a6d"
+    },
+    {
+      "url": "/assets/shrine-desert.png",
+      "bytes": 1476,
+      "sha256": "e19d7bb20be04b4915928dd029ef0d329826132cb5f7105b53d648e5add3675c"
+    },
+    {
+      "url": "/assets/shrine-heaven.png",
+      "bytes": 1471,
+      "sha256": "dbb5471a0ae6ab4208bef1d6775c5af4716dc3b31646f3e38e6982ad2f272bbb"
+    },
+    {
+      "url": "/assets/shrine-infernal.png",
+      "bytes": 1470,
+      "sha256": "647e5eb56a62d40e7ec84f9886b6e6de463fd3efc1bb220ecd0b3aaa40627da2"
+    },
+    {
+      "url": "/assets/shrine.png",
+      "bytes": 1507,
+      "sha256": "1283ac489f69d09a77c2f2517c731f57d56ab9018e3e0cf9bcc42d65c57caed0"
+    },
+    {
+      "url": "/assets/slime-sheet.png",
+      "bytes": 651,
+      "sha256": "bb1990c5e1cc3dc234244c816d965b8fb8708888a07794f1947a8c03d58afcaf"
+    },
+    {
+      "url": "/assets/slime.png",
+      "bytes": 401,
+      "sha256": "723a942a5919cb4de4ca0bfddbcd109455300897b74087f44cb8fc0b963e8ce6"
+    },
+    {
+      "url": "/assets/snow.png",
+      "bytes": 1023,
+      "sha256": "48adf00247c3dcee3704e81aaf23bc82bb5b0872b1767a3b0bda9f34671cac6e"
+    },
+    {
+      "url": "/assets/spirit-sheet.png",
+      "bytes": 652,
+      "sha256": "14cbe0427fb3082a211728530e8554c57fd7bd9157506ec87074f16fa457f216"
+    },
+    {
+      "url": "/assets/spirit.png",
+      "bytes": 396,
+      "sha256": "a554f7788e1cc96a1b4194cd4565245316e105fffa95966fb29ba01f7e7cfc23"
+    },
+    {
+      "url": "/assets/stone.png",
+      "bytes": 1292,
+      "sha256": "cfe5895e895d5b0df53595fe6fd8248313cc58b3907dbf326159223c065b9eac"
+    },
+    {
+      "url": "/assets/stump.png",
+      "bytes": 385,
+      "sha256": "9374875aeeaeee2257e0efdb8e833b1637c45fc77cf0dea45d71ddbf3ba5a6a6"
+    },
+    {
+      "url": "/assets/technique-icons/benevolent-catalyst.png",
+      "bytes": 1004,
+      "sha256": "e3fed33b086d2c24c933951d0e02edf26fbb2cd49a2ade45331503cbf585e9e5"
+    },
+    {
+      "url": "/assets/technique-icons/benevolent-deception.png",
+      "bytes": 857,
+      "sha256": "86459167606cfd848692d6afffd3aad0245165a342429cb733c3b480789c600c"
+    },
+    {
+      "url": "/assets/technique-icons/benevolent-empowerment.png",
+      "bytes": 908,
+      "sha256": "37825e3aa8bab7e72e75101efbaa9c2560c15a216c79fc7677d4bf87469ab7ab"
+    },
+    {
+      "url": "/assets/technique-icons/benevolent-forge.png",
+      "bytes": 689,
+      "sha256": "a3bc1687858aa090b57aaed8630ba1c556256ed6f2ae83a1d38de74e6be27156"
+    },
+    {
+      "url": "/assets/technique-icons/benevolent-manipulation.png",
+      "bytes": 1035,
+      "sha256": "381236b8548fceee737a764d1f07d2cc18945ccbad909690456995d38679e2a1"
+    },
+    {
+      "url": "/assets/technique-icons/benevolent-yield.png",
+      "bytes": 920,
+      "sha256": "d6d211682f385a52142f180af48c1d4fa7138e7f7c4952b0c532dc2b1b57d075"
+    },
+    {
+      "url": "/assets/technique-icons/celestial-offering.png",
+      "bytes": 797,
+      "sha256": "05045874fe591943356c4a352ff972c846685f3e731d46ddad31140308381ae4"
+    },
+    {
+      "url": "/assets/technique-icons/corrupted-interdiction.png",
+      "bytes": 1073,
+      "sha256": "594e35989ef5775899cbd9b60540329d261ac4f8b9b4b430b0228e6140e35e8e"
+    },
+    {
+      "url": "/assets/technique-icons/cursed-radiance.png",
+      "bytes": 940,
+      "sha256": "d931c7480ce9e0bdb2090c19d519621cd6f65efa28e1782729f76ebf62f3217c"
+    },
+    {
+      "url": "/assets/technique-icons/demonic-desiccation.png",
+      "bytes": 887,
+      "sha256": "58a40c34a845131c9bbd9eddf807eb6da53b47d4a4d9cefb3add3a4f30e285a9"
+    },
+    {
+      "url": "/assets/technique-icons/demonic-paralysis.png",
+      "bytes": 1002,
+      "sha256": "48e0275abab31466a1a77cca6aca13f5388604c6432f95901a2875fb5eb04281"
+    },
+    {
+      "url": "/assets/technique-icons/divine-renewal.png",
+      "bytes": 759,
+      "sha256": "514b65ebaa242724ce4d16891296323adedcacc3b7e46c275dc9bdd24a195c08"
+    },
+    {
+      "url": "/assets/technique-icons/divine-retaliation.png",
+      "bytes": 941,
+      "sha256": "d057ffa23d85fb5d878ce1f2d2bda0f1994f7e7ce4de8bde90a00ab1653e3fe2"
+    },
+    {
+      "url": "/assets/technique-icons/ethereal-incandescence.png",
+      "bytes": 1078,
+      "sha256": "4e6b9db9cfa1afd63c465d672b7df28e096cf28d42eb096d8419b18ff918f7c6"
+    },
+    {
+      "url": "/assets/technique-icons/ethereal-retribution.png",
+      "bytes": 1048,
+      "sha256": "c21e99ad75ba038624191ce4e138e18a9d4d5eec5b5596e8fe84cf96154c2902"
+    },
+    {
+      "url": "/assets/technique-icons/harmonious-creation.png",
+      "bytes": 930,
+      "sha256": "1117eea579ceb32956158f47f7e6a670cf208a74f10c099f2ddc66bafd052cdf"
+    },
+    {
+      "url": "/assets/technique-icons/harmonious-growth.png",
+      "bytes": 1050,
+      "sha256": "a6bc5fe56e0302f58968b1e19b1c108d02569c78ac8eb69716981419acf85a8e"
+    },
+    {
+      "url": "/assets/technique-icons/harmony-disruption.png",
+      "bytes": 916,
+      "sha256": "93dcd25cc91bb0b31dc5a478ac890e259af74301cf6d9f60810367ad5ea09343"
+    },
+    {
+      "url": "/assets/technique-icons/malefic-erosion.png",
+      "bytes": 1013,
+      "sha256": "28792410e03db50a5db78ea6d79eadd02f9738793e216bee87074d1cf1e8f07c"
+    },
+    {
+      "url": "/assets/technique-icons/maleficent-affliction.png",
+      "bytes": 1037,
+      "sha256": "276110c96b392348898440e3c1f255cb19b214fb51bc17da7ef29d60bce09880"
+    },
+    {
+      "url": "/assets/technique-icons/maleficent-wind-gust.png",
+      "bytes": 1099,
+      "sha256": "209eb98d1c7538f931c5d38948b6ed8606153fbebdd3bccdc12fbd6f99b8bf6d"
+    },
+    {
+      "url": "/assets/technique-icons/malevolent-manipulation.png",
+      "bytes": 771,
+      "sha256": "08fea56e3a7960fa327ed84eaf12098ee0332f54bed05f6d57853e53fe65afb0"
+    },
+    {
+      "url": "/assets/technique-icons/malevolent-retribution.png",
+      "bytes": 810,
+      "sha256": "8240ec7e08d200cb909ece7d0a99c7b6f2aa29250ae58044c8ca6ec62df914b0"
+    },
+    {
+      "url": "/assets/technique-icons/malevolent-rot.png",
+      "bytes": 728,
+      "sha256": "ec6877f76b869f9a3a1979df8994e84c73b6a9131818723d7e29c9fcb104963e"
+    },
+    {
+      "url": "/assets/technique-icons/malevolent-stasis.png",
+      "bytes": 756,
+      "sha256": "86f3114c7ba34e9f80f87e0e7747240d2f7c8a680a7e6d49954a127e41b56ba4"
+    },
+    {
+      "url": "/assets/technique-icons/malignant-putrefaction.png",
+      "bytes": 860,
+      "sha256": "7c6617752c0a19f4ccca88575b7b5be4a8dd23611f82d50b1aae800cf9fc9ac1"
+    },
+    {
+      "url": "/assets/technique-icons/nurturing-shelter.png",
+      "bytes": 866,
+      "sha256": "bccdf3c77eb3d821fabd45c74fa4f060d9ec2e256fd75444fe63295302760f68"
+    },
+    {
+      "url": "/assets/technique-icons/purging-redemption.png",
+      "bytes": 755,
+      "sha256": "a7a0775646ee088c83dfc2021357ae492b5545f7dc2a081cd0387269643610a7"
+    },
+    {
+      "url": "/assets/technique-icons/purifying-ignition.png",
+      "bytes": 901,
+      "sha256": "28620a370f31fb134d5e8de3be26cbdbd72538f1224db72b6ce52de592e73eaa"
+    },
+    {
+      "url": "/assets/technique-icons/purifying-nourishment.png",
+      "bytes": 1029,
+      "sha256": "e56680b1783faecac7086f75e024a615298073cfe81640ac76d4c5b460dd863b"
+    },
+    {
+      "url": "/assets/technique-icons/purifying-reprieve.png",
+      "bytes": 899,
+      "sha256": "20db71cacd03be123c2dd10932f0bd57c3df8573e7a568c1e8319149984e028e"
+    },
+    {
+      "url": "/assets/technique-icons/purifying-torment.png",
+      "bytes": 1055,
+      "sha256": "f856918a7d8454c79efd0aa4356eea3050193a05e1fd046a0a7e46e5d1fbd9c4"
+    },
+    {
+      "url": "/assets/technique-icons/redemptive-embrace.png",
+      "bytes": 1089,
+      "sha256": "6398227f6b38bb8fee18b231da52da5c2efa7650514a746618b1eaa48c57177d"
+    },
+    {
+      "url": "/assets/technique-icons/seductive-malevolence.png",
+      "bytes": 1060,
+      "sha256": "0889c9ddf56fd8c68982436cface8f1589ec2a57e35ba20b843a93c8034acc0f"
+    },
+    {
+      "url": "/assets/technique-icons/tainted-embrace.png",
+      "bytes": 1009,
+      "sha256": "d283e3298fdf45c61d35d7a7fb4b2a720837f37952b64d77438ad6c7c9203f83"
+    },
+    {
+      "url": "/assets/technique-icons/tainted-regeneration.png",
+      "bytes": 995,
+      "sha256": "21f15be50e0a6aca5086ee6531c3523ee5d0126b50d404bbdbd72128a7da5ca1"
+    },
+    {
+      "url": "/assets/technique-icons/temporal-disruption.png",
+      "bytes": 879,
+      "sha256": "ec8e56e93217e2602db953be88fb2e6fed91c65f8efd2bee1f2b3df8a72b362b"
+    },
+    {
+      "url": "/assets/technique-icons/tenebrous-agony.png",
+      "bytes": 953,
+      "sha256": "6ed3bd3de94d8f2869cf09ab546426422d3a0164fcbac6d508f42c9cd4f2bb42"
+    },
+    {
+      "url": "/assets/technique-icons/tenebrous-blessing.png",
+      "bytes": 1035,
+      "sha256": "96321195fa5802d4b453a4e02c16e1149a81d41f68f546a7ad3e00b9b028d789"
+    },
+    {
+      "url": "/assets/technique-icons/twisted-affection.png",
+      "bytes": 903,
+      "sha256": "1b66c446ecffdafcb3ad3ea4147f1b9e6d5e3dd47654fed80967bf02704cffe5"
+    },
+    {
+      "url": "/assets/temple-desert.png",
+      "bytes": 1656,
+      "sha256": "40f4a80b61047089765096a6b679665c65b8aebc49964604f0f943767b3c931f"
+    },
+    {
+      "url": "/assets/temple-forest.png",
+      "bytes": 1669,
+      "sha256": "70232d436b670679ea043092ba2cfebabc9c39490f7ff5eb0e3fc31c122bd355"
+    },
+    {
+      "url": "/assets/temple-heaven.png",
+      "bytes": 1660,
+      "sha256": "45deb619eebe176d23323a3bc1ee5daad68a45c3f4ee068844e1219e38230686"
+    },
+    {
+      "url": "/assets/temple-infernal.png",
+      "bytes": 1658,
+      "sha256": "f356655dde92bc09910d4bbc3977f0b6806dbaa28126902ffabca4b1a7a8e7ae"
+    },
+    {
+      "url": "/assets/tree-corrupt.png",
+      "bytes": 1493,
+      "sha256": "543973534b2784f880a1e63a49da112d7a2f5fbf3ca2f6743d1740d62d86ad6c"
+    },
+    {
+      "url": "/assets/tree-heaven.png",
+      "bytes": 1486,
+      "sha256": "da43388e3b6f6ad6c344410047dfb4afbb4b74a0ed1509c028db196dbeead90d"
+    },
+    {
+      "url": "/assets/tree-oak-gold.png",
+      "bytes": 1458,
+      "sha256": "da7483669d4cb627d756b30df8bf2a13319d41adc913590320dc4b404595c10c"
+    },
+    {
+      "url": "/assets/tree-oak.png",
+      "bytes": 1488,
+      "sha256": "53c418d660d423aa07344fa8d64298cc1363f3d04fcb7142462714abf326510a"
+    },
+    {
+      "url": "/assets/tree-pine-blue.png",
+      "bytes": 1414,
+      "sha256": "7511bc7a8d9c179c308e240acc0e0af445ea9106cd93684d0a6977a34904a94c"
+    },
+    {
+      "url": "/assets/tree-pine.png",
+      "bytes": 1374,
+      "sha256": "19c7a2af10bea31eb05c2bf644448f57301bd508f4abce6993300d64ef70fe7c"
+    },
+    {
+      "url": "/assets/tree-snow.png",
+      "bytes": 1379,
+      "sha256": "3c0cde0fb6d0fa600672b39e5976609d4b1db9431eb7e360464bae3c96094acf"
+    },
+    {
+      "url": "/assets/vendor/superpowers/animals/0-animals.png",
+      "bytes": 620,
+      "sha256": "e953d96beb5621baa8aef73933d684e8863b215caebb0aafc33c5a5f995920c5"
+    },
+    {
+      "url": "/assets/vendor/superpowers/animals/1.png",
+      "bytes": 2940,
+      "sha256": "d1c72f8d7648ac574093886920e79fa7b1aee244cc7edf9302c3a807e47f41c1"
+    },
+    {
+      "url": "/assets/vendor/superpowers/animals/2.png",
+      "bytes": 2944,
+      "sha256": "eb495bcd875c3ed75182fb5fed13c8a030a7967cabeef3dfd164dc4281b02b7b"
+    },
+    {
+      "url": "/assets/vendor/superpowers/animals/3.png",
+      "bytes": 2927,
+      "sha256": "7af7ad8687e2f629a7a76b94f16921d0df413cc53951e55158e411d6c941dc1b"
+    },
+    {
+      "url": "/assets/vendor/superpowers/animals/4.png",
+      "bytes": 3036,
+      "sha256": "545dd9492ba4596125c30b38751f9758fd850c08bdc42f92be961f0a96fbb52f"
+    },
+    {
+      "url": "/assets/vendor/superpowers/animals/5.png",
+      "bytes": 3032,
+      "sha256": "a9d8a0781f1cc108ee711c8a7edb4a18f6a3344e914ad26e10c81612e29f0858"
+    },
+    {
+      "url": "/assets/vendor/superpowers/animals/6.png",
+      "bytes": 2958,
+      "sha256": "ae45db1195537306f8597a822da58a0a22fe50a5da4790a820e56fd386b7e73c"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/0-tileset.png",
+      "bytes": 21422,
+      "sha256": "ff01fdc39190d5d118f33be10e6c949dd4a47f7dccd62dfe9b90ed21263073d9"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/1.png",
+      "bytes": 3494,
+      "sha256": "fb08f738e8ddf938af596ce0154eb5104d03931a5defac8a3fab40c69c876c4d"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/10.png",
+      "bytes": 3002,
+      "sha256": "7d81c272bd78f45ef3211eb8cb5cd8fb18d914e25789c718961a3f7358989894"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/11.png",
+      "bytes": 3074,
+      "sha256": "30e8bc7d01337a5538ebfdcf641e7587735a837cda0f43ac91f98e67edba22e6"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/12.png",
+      "bytes": 3177,
+      "sha256": "9686e0b93dd0426bb453b5270e52e55bbf2834496ef8e72015da062d35974b14"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/13.png",
+      "bytes": 3042,
+      "sha256": "273ea63ad65ff9bd64106b94cfb1526b049aeb39375e271737eafbe2985677e8"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/14.png",
+      "bytes": 3342,
+      "sha256": "3f380e957ad33b713306a7c640cb7f75fa3b6db44680f8fc38f1685814596771"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/15.png",
+      "bytes": 3108,
+      "sha256": "249daf76abb82dbbeedd5b51198222c2d3c826fe6ce163bbda1ea23053272079"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/16.png",
+      "bytes": 3180,
+      "sha256": "a3f3ebda9500b54a56e17bc82846b3c950e8601b33054e8c66dfa04f53cfdaa3"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/17.png",
+      "bytes": 3768,
+      "sha256": "55c21db8d7cd761c54185b6cdb8b5ca31f54f954839fed6f6a9fce11adda612a"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/18.png",
+      "bytes": 3427,
+      "sha256": "eb9000dd48cc1fa6bf89e82c388e9765d8f8482dd48304e43cba00ad16758159"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/19.png",
+      "bytes": 3132,
+      "sha256": "36bb21b41f8d031286572277e5ef00185e926217e15f1eed63ce6d59516cdf69"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/2.png",
+      "bytes": 3264,
+      "sha256": "e22b6822633a3b20303c51b02ef0b6ef341ce728f09515c7af7867a77cd6e63e"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/20.png",
+      "bytes": 3064,
+      "sha256": "44e3a4ee017a94cda56f5c0e02950824a772425c5ba748057b7141d19d02f867"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/21.png",
+      "bytes": 3533,
+      "sha256": "901efb8cb0c150e66cdc23ed5d0c2c6d5bf74674c9500510543971ae55d1da7e"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/3.png",
+      "bytes": 3028,
+      "sha256": "43ce3ce61591218573c4939db5647349c55fb639b5837a5369b4a905551d368c"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/4.png",
+      "bytes": 3003,
+      "sha256": "e360d5282a1482214c894c6ad5bf35e65a5e9389bdccbb8fb107c52bafcb5794"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/5.png",
+      "bytes": 2970,
+      "sha256": "8988d003cc248344ca2686043efffb1117fe4b6fe4c1a04d84259b3a1357cf88"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/6.png",
+      "bytes": 3027,
+      "sha256": "260ffabbdfc04a6571aa4b2322b0e4df296b17476a9f1fe037ad64ffa2329cc4"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/7.png",
+      "bytes": 3138,
+      "sha256": "959eb0e35ef1a12f291411256befa82782db774a1e6dccd192070e47599a45f6"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/8.png",
+      "bytes": 3020,
+      "sha256": "c72e1ed696065efebf48b1c8c80dc0dce61c3c14c0f0edb3d338515fa4f5f0fa"
+    },
+    {
+      "url": "/assets/vendor/superpowers/background-elements/9.png",
+      "bytes": 3065,
+      "sha256": "5a1dafc82bbba137dbe55220ff29e36beb0b095bc9bf9203922aacac29cd8aee"
+    },
+    {
+      "url": "/assets/vendor/superpowers/characters/0-characters.png",
+      "bytes": 1164,
+      "sha256": "0634652574a2e05f8257e42a19591d179977dd8f7ec042b6cf893f9fb21f9585"
+    },
+    {
+      "url": "/assets/vendor/superpowers/characters/1.png",
+      "bytes": 3028,
+      "sha256": "95d0e3cce27118a0239b71decc12171773c40d9d352f1237d6120d8eb461e44f"
+    },
+    {
+      "url": "/assets/vendor/superpowers/characters/10.png",
+      "bytes": 3111,
+      "sha256": "3c23b1f93f4d84a6f98795f3c718b74a0e6f3f5c8f8c4097e1180ec126aa44c2"
+    },
+    {
+      "url": "/assets/vendor/superpowers/characters/2.png",
+      "bytes": 2951,
+      "sha256": "66339f0d4dac950f7d9e8f2c357db3c91772ba72424be4ef6a7768a63bb07f05"
+    },
+    {
+      "url": "/assets/vendor/superpowers/characters/3.png",
+      "bytes": 3023,
+      "sha256": "872c7ff22140885bac8c4881eec237d65559c1aa1f408634d2ad6508a5217bde"
+    },
+    {
+      "url": "/assets/vendor/superpowers/characters/4.png",
+      "bytes": 3019,
+      "sha256": "5cf0366556d7f3cc9fc36a2a527f3033eed14571151c0fe50503eee0345f8c98"
+    },
+    {
+      "url": "/assets/vendor/superpowers/characters/5.png",
+      "bytes": 3015,
+      "sha256": "8553ea00588f388e4212f1fb913447429cb681822d80b2885256cb1f4916bcf2"
+    },
+    {
+      "url": "/assets/vendor/superpowers/characters/6.png",
+      "bytes": 3007,
+      "sha256": "203684740bef3310770051e66877b9111492ae8f35795249dd47fd77f1abb37c"
+    },
+    {
+      "url": "/assets/vendor/superpowers/characters/7.png",
+      "bytes": 3084,
+      "sha256": "dca9931798abc13d500ef7b2d7c236d098500750330e57f442dc73251d2ea3ed"
+    },
+    {
+      "url": "/assets/vendor/superpowers/characters/8.png",
+      "bytes": 3051,
+      "sha256": "9897065b60a878f0e89a2dfc9bdc15671e86edeb248d9795bec756e05bb7358d"
+    },
+    {
+      "url": "/assets/vendor/superpowers/characters/9.png",
+      "bytes": 3078,
+      "sha256": "cf774d3257143adddef0fa9b37a58e60a868b3fe5bba6121eb14a44efa3c0e5a"
+    },
+    {
+      "url": "/assets/vendor/superpowers/fx/1.png",
+      "bytes": 142,
+      "sha256": "7fdf8952f87d77ea325763f6f46601779e08842cf4ea3ddea1361df8242fd0b2"
+    },
+    {
+      "url": "/assets/vendor/superpowers/fx/10.png",
+      "bytes": 258,
+      "sha256": "3eda92ffb318e3ea80b80703a49122b7235254ae3b84d3a9cc9faa0fd3eb7e8d"
+    },
+    {
+      "url": "/assets/vendor/superpowers/fx/11.png",
+      "bytes": 278,
+      "sha256": "983dcbe572a7fd56013f4370c27d1cfe34e823e8cf599b8c318de599515a410d"
+    },
+    {
+      "url": "/assets/vendor/superpowers/fx/2.png",
+      "bytes": 161,
+      "sha256": "93509a215a50ce3bfd01732c7f6994e2b73561881c95cf5cd6b656d537a1676a"
+    },
+    {
+      "url": "/assets/vendor/superpowers/fx/3.png",
+      "bytes": 167,
+      "sha256": "22b626e8bc1c1a00b999e5e7155f23b117f543159691db567b9d7b6c9d22ceab"
+    },
+    {
+      "url": "/assets/vendor/superpowers/fx/4.png",
+      "bytes": 183,
+      "sha256": "9c8cea819183c48fac384f18e8f50c6baffbdb25f99bea1ef69fb3ab8225c565"
+    },
+    {
+      "url": "/assets/vendor/superpowers/fx/5.png",
+      "bytes": 264,
+      "sha256": "20503540ddf955c9ae26f038fd237abbad75b4c7b74271581277333652e67b05"
+    },
+    {
+      "url": "/assets/vendor/superpowers/fx/6.png",
+      "bytes": 327,
+      "sha256": "a7c2bff6ffe8d63ca3486818816a4c1e2ec8492a8d1374df407a10d1867e4dc4"
+    },
+    {
+      "url": "/assets/vendor/superpowers/fx/7.png",
+      "bytes": 448,
+      "sha256": "1c4f246d530e74c162fbe3189c755f5ca0a61a242caed6ef106a476b82d8caad"
+    },
+    {
+      "url": "/assets/vendor/superpowers/fx/8.png",
+      "bytes": 405,
+      "sha256": "11f7a1e5d595a3bc625418ba7303c82f6baf0b6d4fb03bdfe9bcc9cbf9847372"
+    },
+    {
+      "url": "/assets/vendor/superpowers/fx/9.png",
+      "bytes": 318,
+      "sha256": "68a3f004b2182cbfcddaea72e55f7e2d0f2bc7d8c62ba64334cf5efeee5d604b"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/1.png",
+      "bytes": 2923,
+      "sha256": "c5f85fc169be94c2cfd6a1dd658c7a105176dc3257f932a79457d850bda62b1e"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/10.png",
+      "bytes": 2909,
+      "sha256": "86db4e2703cce194abeb2f7f125dfda21678085cc955d8b697edaa053a119816"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/11.png",
+      "bytes": 2913,
+      "sha256": "642da7a23450693bb4e93c2b876193a0fd4b4f670cb782a87775e0b47cc6894e"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/12.png",
+      "bytes": 3021,
+      "sha256": "0495ed911b68a6d8fa1c6771895d7505ea98317b17f373940d5d0d529fc5531f"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/13.png",
+      "bytes": 3026,
+      "sha256": "291b5d295bd6ebc749c8100878d9d4558616cc76e5ddcec1e080b4104c37650d"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/14.png",
+      "bytes": 3041,
+      "sha256": "692210db67aeab4d829eb3df822b50273efb3ba9b4d5b69fa015cb9a0eb08f7d"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/15.png",
+      "bytes": 2871,
+      "sha256": "7158e676103f812470da0e60bc46f4bab2462ae790f1ee67870af67c255e82dd"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/16.png",
+      "bytes": 2882,
+      "sha256": "f938ffe213a0d9018c3ed22d433a6e6bd4f6bbee8f02d2578c4908145f12d74b"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/17.png",
+      "bytes": 2895,
+      "sha256": "c171a9ea0fad2b00a79525b0d2d28288062baad60d826a4cc9c19d0a20ffdbdc"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/18.png",
+      "bytes": 2881,
+      "sha256": "0b1fb7c3d8cba4418950351a065b258dfc0caba90e36150bcf78b74d408bec08"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/19.png",
+      "bytes": 2914,
+      "sha256": "701d6db016a7f97220779db4b178faa394def1cf6482ebb98d7041d5fdb9eef4"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/2.png",
+      "bytes": 2972,
+      "sha256": "cf4ac17990cc817745615c2bcba666b932c1e6aaab3e96cd6d41327a63b2929e"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/3.png",
+      "bytes": 2959,
+      "sha256": "089e652b969c865614423613a4b3bfd6ba9fa22a43b508dbaaf99b3171210227"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/4.png",
+      "bytes": 2926,
+      "sha256": "0c2d12781364d0c1930ea60b8158c291d83a6272b8c7d0a4107e44aac0064a46"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/5.png",
+      "bytes": 2900,
+      "sha256": "9a7ad73bcf071f8c8300b3d284e16b8d92ceada0e458c3081e444748b26e604a"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/6.png",
+      "bytes": 2906,
+      "sha256": "2abc2ff16f8322a6c021d979f2f0a8386c8a853b04b79040ddd5d6102d10731e"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/7.png",
+      "bytes": 2951,
+      "sha256": "b8bf5a6bb530e7465cf67ea2df649a997179d66511d2f251a714c5fee75481d7"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/8.png",
+      "bytes": 2872,
+      "sha256": "fa4dbd073018123547d7600744c79e896c5790e5593caeb48cb612544981adef"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/9.png",
+      "bytes": 2854,
+      "sha256": "f8aa9b0fdba239ceeca88847325a78c549aa074945dbf4874aff3bd9d1ac2abd"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/barrel.png",
+      "bytes": 2950,
+      "sha256": "09806d7f28530ccf6b172496528de3b10c27225f2746eb9afc907adcdad599bf"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/crate.png",
+      "bytes": 2897,
+      "sha256": "7b52ec3f2180f71e72c17578e623f88b07607f4dd3225d53b213d61bddd1ad8e"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/element/1.png",
+      "bytes": 2947,
+      "sha256": "f8f89c893bb0192e199cfd2abd60726858064b3fe748ad995904ab094c11730a"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/element/2.png",
+      "bytes": 2963,
+      "sha256": "dfc1d10af06c7267c09c49077ed47d1792c16e5cefce398f42590bc4e0513e7d"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/element/3.png",
+      "bytes": 2949,
+      "sha256": "4c2ec0bbfb9b57be8b02ddae1485ac0b5d34a907c68da451603fa83bde48f87e"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/element/4.png",
+      "bytes": 2947,
+      "sha256": "4f3e5cf5f30dacf62d3d3f6615480f6655ae2667b4a6c7e893e705b692c154ff"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/element/5.png",
+      "bytes": 2980,
+      "sha256": "b5c08877c2c593c7be3921ad6f8886f76d08a6b6dd97095b82fd509f50ae9d8f"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/element/6.png",
+      "bytes": 3018,
+      "sha256": "dfca8d4ffd3754138d77cca9cde6f55b45b296abd05a3a52df20755105a619d5"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/element/7.png",
+      "bytes": 2892,
+      "sha256": "8269f86050dece5c8efe772460b090573274d56f7e182758074a29b1ca14aa64"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/element/8.png",
+      "bytes": 2976,
+      "sha256": "2fb76d5516da0a9cbb462d44b8715db34294c06ae960375043d96cdae73beefc"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/element/elements.png",
+      "bytes": 729,
+      "sha256": "f74cb6f67643ae8f3ba532161ad873bd384c9a5086ab98d75ca4e757dde21afd"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/emblem/1.png",
+      "bytes": 3300,
+      "sha256": "9fc554897d130a6513fa351c3199dc9cf5a648ed55dc6a00a70e6b559d5f1e34"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/emblem/2.png",
+      "bytes": 3195,
+      "sha256": "ff0ad84bb191637aa8719371dfd5b3caa1bec80d708fcbb4d59eb1f5acb7692c"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/emblem/3.png",
+      "bytes": 3222,
+      "sha256": "7e0db54472d8699d33b7bd404e86f65abf4510085519ce2b8486487fae306940"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/emblem/4.png",
+      "bytes": 3455,
+      "sha256": "237ce1cdb9bf382f62b14f4a4c5988c906ce6a36ede7ac3f999268930c90e6d1"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/emblem/5.png",
+      "bytes": 3378,
+      "sha256": "9f4c2fd082d2894b1c9ccf54e4ca3cfab118ddb4bc1b0ddaa910effab382cea3"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/emblem/6.png",
+      "bytes": 3455,
+      "sha256": "a7cefefdc22b1af4488f9dd0f89f15302b7b906c00099e4e974ba623de4b0126"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/emblem/all.png",
+      "bytes": 1799,
+      "sha256": "d6d0e0003f1152a6da7225a77a2ccce323f57fbe39d96981762230993cfaf837"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/food-%26-potion/food.png",
+      "bytes": 655,
+      "sha256": "ad613804747b447bbe8516bb20e831997245404dc5558df41955ee5a61f10cde"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/food-%26-potion/potion.png",
+      "bytes": 359,
+      "sha256": "c63c27e8d4b8770fdc3374990bb07e0c0b1789acb726a60dd22fa9f1c8277012"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/gold-%26-gem/coin.png",
+      "bytes": 2921,
+      "sha256": "4e504b230a9de25df74cb6d541539fa594e7c92f70570d88cbbe776e46aa99b9"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/gold-%26-gem/gem-1.png",
+      "bytes": 2900,
+      "sha256": "a4af46951cd3a4bd5d825352ab29b2ecd12684122ab649eab44a4dad79e1adc6"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/gold-%26-gem/gem-2.png",
+      "bytes": 2857,
+      "sha256": "6c3268561592678f0f7568b2a27fb6c1e1f5dcef408b565be2c548e9e7e382b1"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/gold-%26-gem/gem-3.png",
+      "bytes": 2859,
+      "sha256": "b020556264cb36059ffde22d98372b00613fa4b562ac8111ddc0a186a411573e"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/gold-%26-gem/gem-4.png",
+      "bytes": 2846,
+      "sha256": "12dc0f585d4c93c1087e3905a8d97e8576c1af853f168d970f0e7c7f1f899652"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/gold-%26-gem/gold-cup.png",
+      "bytes": 2952,
+      "sha256": "db4110093048321418dec10524d2ac08442ffa53e2c4586f18981a46a772d7a4"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/gold-%26-gem/gold.png",
+      "bytes": 3144,
+      "sha256": "6b9f9daf17f8257ad6f39982f17790989ab8c7296cc337b77e93c856e929a39a"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/gold-chest-close.png",
+      "bytes": 2917,
+      "sha256": "c0ced82a649ee192fa906ab6140c2397a8450db2e87a5bc0cd1b4c73c56ffeab"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/gold-chest-open.png",
+      "bytes": 2906,
+      "sha256": "0eef6fcbd72eab214bc52f29a38622aeafb6d1798e391ef56388d29f818f2f4e"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/other.png",
+      "bytes": 3922,
+      "sha256": "5e31bd2f1d1194ac62ac021598c05ec55dd7154e80a7c88c7741f1a5004d3554"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/projectile/1.png",
+      "bytes": 2911,
+      "sha256": "c8ed2774ef9196d9507d5c3b095f8b97cfbdbee736b489f9784037533c74e4a2"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/projectile/2.png",
+      "bytes": 2921,
+      "sha256": "c0d15e4b6936ce24530b2baf44d5600c52f8e84aae7b3417660ba025ba8cc64b"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/projectile/3.png",
+      "bytes": 2860,
+      "sha256": "d6de27b9e495353c88ea97bd73f4a89002d38d73a49fe9a8ec830f51e92a0928"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/projectile/4.png",
+      "bytes": 2911,
+      "sha256": "c6c7b3cb45305033c6ce74a6449bb1a843d4060e049ebed800f36a8e180efa09"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/projectile/5.png",
+      "bytes": 2870,
+      "sha256": "20f14cf53b4ab1db7eeeee96783ef2bdefcc07020f5212a294d7d13888de297e"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/projectile/6.png",
+      "bytes": 2875,
+      "sha256": "0f01204ef3226d70e4a53a0af5ebff0ce99e336b5dea338bb0841dbc0b70a4ac"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/projectile/7.png",
+      "bytes": 2847,
+      "sha256": "0b95bb983b3949343618df1999cad79d61d80559d579d0754537330bcb959b01"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/projectile/8.png",
+      "bytes": 3017,
+      "sha256": "b6ee70a913926be5474de14366af2c77ce0659b953dea302b7943b06b02e9e4f"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/weapon/1.png",
+      "bytes": 2952,
+      "sha256": "dbc37d53962b2644b262bf8074ead0632afb699cf02cdecc40ac8d10ed40eb40"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/weapon/10.png",
+      "bytes": 2913,
+      "sha256": "0545a252dd4db4771568e781dca8f2f60c6baf825ef251fa82c1e90f21c21c40"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/weapon/11.png",
+      "bytes": 2875,
+      "sha256": "0e6d8fba313009ea697ac3a79ad6394cc668a74c88673d92371b91c299c9953a"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/weapon/2.png",
+      "bytes": 2909,
+      "sha256": "8f1489f1142078fa7c613f6b7e736a86486994eb53a7a58942513461d342743e"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/weapon/3.png",
+      "bytes": 2966,
+      "sha256": "9c02959a283a238efa229655bf45376f2decf23eb519eae457994f6e584308b0"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/weapon/4.png",
+      "bytes": 2943,
+      "sha256": "6b3242e6ec6e01a2396edd77766651f4f6d4f781f7d80249f6b2f356d3d41227"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/weapon/5.png",
+      "bytes": 2952,
+      "sha256": "c68195ce1960f1327c43a9010736fab0ff8c1a6b1ba7e18d8201efa77363c808"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/weapon/6.png",
+      "bytes": 2948,
+      "sha256": "d34d87a262df1e644625f28c117006704f8d5eda3812764145577ce11d647877"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/weapon/7.png",
+      "bytes": 2970,
+      "sha256": "f37648495fc809d8ba39955f6da033959adf7e498c5f0d625644228dabfb2461"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/weapon/8.png",
+      "bytes": 2952,
+      "sha256": "868c52f3bfe023c2ad3661b6af1e0ca58336e58ec5f50ab10f303253d6dc9e80"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/weapon/9.png",
+      "bytes": 2868,
+      "sha256": "7af52e6913c1d68f473a584edd9c4f684ffa67f8a117bacf5cbb85efb226d3a4"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/weapon/weapon.png",
+      "bytes": 726,
+      "sha256": "07be4205a77af632f75d3a9c67fb5b68411a486c9fa433da3fee4f306fe9114c"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/wood-chest-close.png",
+      "bytes": 2927,
+      "sha256": "ed914bb0648c98677c6534443bcb45c2d2e8f72e2c732faaad6ad7218bdc734d"
+    },
+    {
+      "url": "/assets/vendor/superpowers/items/wood-chest-open.png",
+      "bytes": 2948,
+      "sha256": "7f58d908a3b9aab3b5b86eb1639fded3f971030a3d86a8191ae313fa0ce4d9dc"
+    },
+    {
+      "url": "/assets/vendor/superpowers/manifest.json",
+      "bytes": 24223,
+      "sha256": "122292e7e5ec000f26e2b71022c6f92b212d58c58549b36be97ae6fd29664a0d"
+    },
+    {
+      "url": "/assets/vendor/superpowers/music/theme-1.ogg",
+      "bytes": 1563653,
+      "sha256": "57cefd68c0be300c769f4262172f03b82189f7dc424fa1f66d26bde4e0785797"
+    },
+    {
+      "url": "/assets/vendor/superpowers/music/theme-3.ogg",
+      "bytes": 610970,
+      "sha256": "7d1fb73f6999b98fcb9ae55fa1b6b1a2d7d071b4b543d57d7e19554fc8f7c09c"
+    },
+    {
+      "url": "/assets/vendor/superpowers/music/theme-6.ogg",
+      "bytes": 1297738,
+      "sha256": "020e8b13d91d23e33664402fe7da9bf864217b979eb9fb46736a30650fddae61"
+    },
+    {
+      "url": "/assets/vendor/superpowers/sounds/forest-ambience.wav",
+      "bytes": 5292076,
+      "sha256": "cba9b9f6e999ad9ca54458e557759d0b0c49a3893c43de42696ac236734db7b0"
+    },
+    {
+      "url": "/assets/vendor/superpowers/sounds/monster-1.wav",
+      "bytes": 61804,
+      "sha256": "e869de88ca6e08b49f3a474aa23090d440ab184b4b90a3d6d3e965ddc6125820"
+    },
+    {
+      "url": "/assets/vendor/superpowers/sounds/monster-2.wav",
+      "bytes": 57856,
+      "sha256": "09ad1d322e373d3bf13ca4a55d920501fb7a21c1bd1496088873a3e3db9adf6c"
+    },
+    {
+      "url": "/assets/vendor/superpowers/sounds/victory-2.wav",
+      "bytes": 423538,
+      "sha256": "d01b8d02faef96215dd989ff42a2087a93a663b6003d1973bcebe03219486111"
+    },
+    {
+      "url": "/assets/vendor/superpowers/sounds/woosh-1.wav",
+      "bytes": 37100,
+      "sha256": "b4d339ca7703a039f52a7ad553662a4eed17a2ddbf8ac7e42440a6a7c458affc"
+    },
+    {
+      "url": "/assets/vendor/superpowers/sounds/woosh-2.wav",
+      "bytes": 59812,
+      "sha256": "39ef5123b248991019aed95efbc78246de1a529e4614f391c0d4c41e49a9ccbb"
+    },
+    {
+      "url": "/assets/vfx/air-move-1.png",
+      "bytes": 3231,
+      "sha256": "c0c5b3ded77f0bbf0c156744e630984d91e6bc03bc61d77dcb4ee19faeca76ac"
+    },
+    {
+      "url": "/assets/vfx/air-move-2.png",
+      "bytes": 3231,
+      "sha256": "c0c5b3ded77f0bbf0c156744e630984d91e6bc03bc61d77dcb4ee19faeca76ac"
+    },
+    {
+      "url": "/assets/vfx/air-move-3.png",
+      "bytes": 3231,
+      "sha256": "c0c5b3ded77f0bbf0c156744e630984d91e6bc03bc61d77dcb4ee19faeca76ac"
+    },
+    {
+      "url": "/assets/vfx/air-move-4.png",
+      "bytes": 3231,
+      "sha256": "c0c5b3ded77f0bbf0c156744e630984d91e6bc03bc61d77dcb4ee19faeca76ac"
+    },
+    {
+      "url": "/assets/vfx/air-move-5.png",
+      "bytes": 3231,
+      "sha256": "c0c5b3ded77f0bbf0c156744e630984d91e6bc03bc61d77dcb4ee19faeca76ac"
+    },
+    {
+      "url": "/assets/vfx/air-move-6.png",
+      "bytes": 3231,
+      "sha256": "c0c5b3ded77f0bbf0c156744e630984d91e6bc03bc61d77dcb4ee19faeca76ac"
+    },
+    {
+      "url": "/assets/vfx/air-stop-1.png",
+      "bytes": 3907,
+      "sha256": "db70ed3c34cbb165962dbb238549e7143f4b05d3df7f379ccf920a15d19a8f37"
+    },
+    {
+      "url": "/assets/vfx/air-stop-2.png",
+      "bytes": 3907,
+      "sha256": "db70ed3c34cbb165962dbb238549e7143f4b05d3df7f379ccf920a15d19a8f37"
+    },
+    {
+      "url": "/assets/vfx/air-stop-3.png",
+      "bytes": 3907,
+      "sha256": "db70ed3c34cbb165962dbb238549e7143f4b05d3df7f379ccf920a15d19a8f37"
+    },
+    {
+      "url": "/assets/vfx/air-stop-4.png",
+      "bytes": 3907,
+      "sha256": "db70ed3c34cbb165962dbb238549e7143f4b05d3df7f379ccf920a15d19a8f37"
+    },
+    {
+      "url": "/assets/vfx/air-stop-5.png",
+      "bytes": 3907,
+      "sha256": "db70ed3c34cbb165962dbb238549e7143f4b05d3df7f379ccf920a15d19a8f37"
+    },
+    {
+      "url": "/assets/vfx/air-stop-6.png",
+      "bytes": 3907,
+      "sha256": "db70ed3c34cbb165962dbb238549e7143f4b05d3df7f379ccf920a15d19a8f37"
+    },
+    {
+      "url": "/assets/vfx/dark-heal-1.png",
+      "bytes": 3584,
+      "sha256": "83d5ed385a36d995625723f4435512b76d21d7d891c258e1579025005805e14b"
+    },
+    {
+      "url": "/assets/vfx/dark-heal-2.png",
+      "bytes": 3584,
+      "sha256": "83d5ed385a36d995625723f4435512b76d21d7d891c258e1579025005805e14b"
+    },
+    {
+      "url": "/assets/vfx/dark-heal-3.png",
+      "bytes": 3584,
+      "sha256": "83d5ed385a36d995625723f4435512b76d21d7d891c258e1579025005805e14b"
+    },
+    {
+      "url": "/assets/vfx/dark-heal-4.png",
+      "bytes": 3584,
+      "sha256": "83d5ed385a36d995625723f4435512b76d21d7d891c258e1579025005805e14b"
+    },
+    {
+      "url": "/assets/vfx/dark-heal-5.png",
+      "bytes": 3584,
+      "sha256": "83d5ed385a36d995625723f4435512b76d21d7d891c258e1579025005805e14b"
+    },
+    {
+      "url": "/assets/vfx/dark-heal-7.png",
+      "bytes": 3584,
+      "sha256": "83d5ed385a36d995625723f4435512b76d21d7d891c258e1579025005805e14b"
+    },
+    {
+      "url": "/assets/vfx/dark-pain-1.png",
+      "bytes": 3966,
+      "sha256": "d2c4710eaca8fd512c8e9789bb4e6c69c236d56991de2b7ea0f27fb865291cc5"
+    },
+    {
+      "url": "/assets/vfx/dark-pain-2.png",
+      "bytes": 4179,
+      "sha256": "c7d078df13c90241e95a70aefbf7c83e0db2c024e41f7499051a11acc02f8549"
+    },
+    {
+      "url": "/assets/vfx/dark-pain-3.png",
+      "bytes": 4431,
+      "sha256": "3ea8b14f6ed2db469cbb8c9df5983727db5be960464495122092ded411e055f7"
+    },
+    {
+      "url": "/assets/vfx/dark-pain-4.png",
+      "bytes": 4639,
+      "sha256": "f34e81df83e44c4528dd6cdf6c4c20cd6b46613d588ec514e7d44dcdc817e94f"
+    },
+    {
+      "url": "/assets/vfx/dark-pain-5.png",
+      "bytes": 4870,
+      "sha256": "729e01286937f8e3ff4bc4415f59673909275d0dc6c1d9f8e72a861bfa603655"
+    },
+    {
+      "url": "/assets/vfx/dark-pain-6.png",
+      "bytes": 4920,
+      "sha256": "796cf7bce58ec28f7356872e358222a766ec86a6645fd521ccbf25b8d57b282b"
+    },
+    {
+      "url": "/assets/vfx/earth-give-1.png",
+      "bytes": 3721,
+      "sha256": "e642c15afd479e51ebca136ba538214bb4d337663dd32089964327b18704d588"
+    },
+    {
+      "url": "/assets/vfx/earth-give-2.png",
+      "bytes": 3803,
+      "sha256": "ad85288d916066e0f84bff78976aa5a97b513e54d16af12a395bd1d72928fb91"
+    },
+    {
+      "url": "/assets/vfx/earth-give-3.png",
+      "bytes": 3878,
+      "sha256": "64931c04850d529ff2da71dea4158c4a5f0ed869a10073868c3e834324e578e7"
+    },
+    {
+      "url": "/assets/vfx/earth-give-4.png",
+      "bytes": 3918,
+      "sha256": "5d73cebc773230d81203e7a98d5b3e69777a0a062736470b52cc975de8e7ad61"
+    },
+    {
+      "url": "/assets/vfx/earth-take-1.png",
+      "bytes": 3302,
+      "sha256": "768665fcde502e78998cec0440fa3459d9183d2e1d8f757388b8331976e41ab1"
+    },
+    {
+      "url": "/assets/vfx/earth-take-2.png",
+      "bytes": 3503,
+      "sha256": "76608dfa74e3918ffe8763770102f9a06738ac6413cf38fc970dedd2633bde07"
+    },
+    {
+      "url": "/assets/vfx/earth-take-3.png",
+      "bytes": 3727,
+      "sha256": "8c2ac4ebb26a158826a8c577b6fb224de3876c4b1be20f94ce6880232cec0058"
+    },
+    {
+      "url": "/assets/vfx/earth-take-4.png",
+      "bytes": 3784,
+      "sha256": "95c1669ac38bf346e36c0b314111f4fc4e359513c70a0778a220161016602cc4"
+    },
+    {
+      "url": "/assets/vfx/earth-take-5.png",
+      "bytes": 3968,
+      "sha256": "8251ee66f4e62bd1cea19b82b44d04fc4faafca310a3cc5cb859c25cdb1a3562"
+    },
+    {
+      "url": "/assets/vfx/earth-take-6.png",
+      "bytes": 4033,
+      "sha256": "8522f7a898677c104edb48aa9d3b0b373fd447e3df068c5e1c4ce5f2c292ea5a"
+    },
+    {
+      "url": "/assets/vfx/family-air-move.png",
+      "bytes": 3231,
+      "sha256": "c0c5b3ded77f0bbf0c156744e630984d91e6bc03bc61d77dcb4ee19faeca76ac"
+    },
+    {
+      "url": "/assets/vfx/family-air-stop.png",
+      "bytes": 3907,
+      "sha256": "db70ed3c34cbb165962dbb238549e7143f4b05d3df7f379ccf920a15d19a8f37"
+    },
+    {
+      "url": "/assets/vfx/family-dark-heal.png",
+      "bytes": 3584,
+      "sha256": "83d5ed385a36d995625723f4435512b76d21d7d891c258e1579025005805e14b"
+    },
+    {
+      "url": "/assets/vfx/family-dark-pain.png",
+      "bytes": 4431,
+      "sha256": "3ea8b14f6ed2db469cbb8c9df5983727db5be960464495122092ded411e055f7"
+    },
+    {
+      "url": "/assets/vfx/family-earth-give.png",
+      "bytes": 3878,
+      "sha256": "64931c04850d529ff2da71dea4158c4a5f0ed869a10073868c3e834324e578e7"
+    },
+    {
+      "url": "/assets/vfx/family-earth-take.png",
+      "bytes": 3727,
+      "sha256": "8c2ac4ebb26a158826a8c577b6fb224de3876c4b1be20f94ce6880232cec0058"
+    },
+    {
+      "url": "/assets/vfx/family-fire-create.png",
+      "bytes": 2326,
+      "sha256": "6e65a70c78cb360842a11621e2140090a517a2f42c73e2708a4c9e4ab72e6f2d"
+    },
+    {
+      "url": "/assets/vfx/family-fire-destroy.png",
+      "bytes": 4266,
+      "sha256": "32007d46f1e9fc87bab15d6caa95ac54ba404eb5491b7fa28b2de31cc0c20304"
+    },
+    {
+      "url": "/assets/vfx/family-hate-clean.png",
+      "bytes": 3916,
+      "sha256": "237730047d0cee018157add29a9a2af1ee47b2cd50e1d20f3bf31509982462e6"
+    },
+    {
+      "url": "/assets/vfx/family-hate-cry.png",
+      "bytes": 4200,
+      "sha256": "7ae38a13540a0b900dd81573960a0abb397eaab063950718396796ce115d4f48"
+    },
+    {
+      "url": "/assets/vfx/family-light-harm.png",
+      "bytes": 2345,
+      "sha256": "ca7de797ac785656ff5a15dbb8e89283120e302da8275f6bd80e89516d4eb070"
+    },
+    {
+      "url": "/assets/vfx/family-light-pleasure.png",
+      "bytes": 3850,
+      "sha256": "e282055e25d4ae80ed32592c65da3f540bed75238f0630ebfde0d8881abe6c07"
+    },
+    {
+      "url": "/assets/vfx/family-love-dirty.png",
+      "bytes": 3494,
+      "sha256": "cab3c6357775493f60daafcce718ffc0ef822d7b3057e934a1f366a0bee2a5c0"
+    },
+    {
+      "url": "/assets/vfx/family-love-laugh.png",
+      "bytes": 3562,
+      "sha256": "3ea127b27c73806d88e54d9124477480bfdfba675c9f79aa6934a9fd93850c33"
+    },
+    {
+      "url": "/assets/vfx/family-water-decay.png",
+      "bytes": 2007,
+      "sha256": "0629a979f3a56ec1c2a35f9d5c837bc01c7e4df1031bc473bf552de3ab77e3fe"
+    },
+    {
+      "url": "/assets/vfx/family-water-grow.png",
+      "bytes": 3421,
+      "sha256": "1bb2c95863dbb6ff87bb72be69a2bfa67c32b60d5efa9dcc43f42b0e5ea5f98a"
+    },
+    {
+      "url": "/assets/vfx/fire-create-1.png",
+      "bytes": 1913,
+      "sha256": "5b28c23a2e0aa1735d7ca9a81e17acbab9d7e9de32ef0cbeee3991e07cc885da"
+    },
+    {
+      "url": "/assets/vfx/fire-create-2.png",
+      "bytes": 2193,
+      "sha256": "2d5bb2e6cde44900f6a6a8faf5d86378e50aec8a2e6476ffc4a558c513e91f85"
+    },
+    {
+      "url": "/assets/vfx/fire-create-3.png",
+      "bytes": 2326,
+      "sha256": "6e65a70c78cb360842a11621e2140090a517a2f42c73e2708a4c9e4ab72e6f2d"
+    },
+    {
+      "url": "/assets/vfx/fire-create-4.png",
+      "bytes": 2318,
+      "sha256": "b76085c51531e29789ad260f034c73af5864e3376047e26f727ff7b6339cb3b5"
+    },
+    {
+      "url": "/assets/vfx/fire-create-5.png",
+      "bytes": 2267,
+      "sha256": "f3a9de6ca98c07f95e27c50f3fe98dec31005a4219cdb507b97026eea098a833"
+    },
+    {
+      "url": "/assets/vfx/fire-create-6.png",
+      "bytes": 2492,
+      "sha256": "a73f0bb010d1e2e58c057b291b01d2fb46b5d3655643f603c86bb5f39ac251be"
+    },
+    {
+      "url": "/assets/vfx/fire-create-7.png",
+      "bytes": 2502,
+      "sha256": "4cdde529932737e534e84de4f61eae88609cd16c2fc3bea116f53addb3dcc00d"
+    },
+    {
+      "url": "/assets/vfx/fire-destroy-1.png",
+      "bytes": 4073,
+      "sha256": "52d77916033325582e8e7be3d248be74aa287120a69b55a62d679c85c685bc2e"
+    },
+    {
+      "url": "/assets/vfx/fire-destroy-2.png",
+      "bytes": 4051,
+      "sha256": "0cbd1e509aa954ec1f4e3fbbc680bc72fb7b9fb5fc53593f318da8f72446db72"
+    },
+    {
+      "url": "/assets/vfx/fire-destroy-3.png",
+      "bytes": 4266,
+      "sha256": "32007d46f1e9fc87bab15d6caa95ac54ba404eb5491b7fa28b2de31cc0c20304"
+    },
+    {
+      "url": "/assets/vfx/fire-destroy-4.png",
+      "bytes": 4235,
+      "sha256": "bf97b44303f0238b9f656bffb87aa56ae8f351443f64c985ebf8b3c410956ec2"
+    },
+    {
+      "url": "/assets/vfx/fire-destroy-5.png",
+      "bytes": 4336,
+      "sha256": "89f57a1251e07ceb6a1d29d196249c90248bf30e715618c936cca0a8159c15c9"
+    },
+    {
+      "url": "/assets/vfx/hate-clean-1.png",
+      "bytes": 3624,
+      "sha256": "e892f2cfed3f4afb189cad653d0a4c7d22b8e1d72437c186d4f14822ff5c8406"
+    },
+    {
+      "url": "/assets/vfx/hate-clean-2.png",
+      "bytes": 3889,
+      "sha256": "4dab23d72f54cb802dd836ffe4730bb8613e3fe5f0414c953d6c70b09337a343"
+    },
+    {
+      "url": "/assets/vfx/hate-clean-3.png",
+      "bytes": 3916,
+      "sha256": "237730047d0cee018157add29a9a2af1ee47b2cd50e1d20f3bf31509982462e6"
+    },
+    {
+      "url": "/assets/vfx/hate-clean-4.png",
+      "bytes": 4103,
+      "sha256": "127f121d98cda1f8529e9286b1a5e97ef4d8f4afd3558c436c1567f82d9a44fe"
+    },
+    {
+      "url": "/assets/vfx/hate-clean-5.png",
+      "bytes": 4142,
+      "sha256": "37667769a66d5a4860be774896d4f4e6d4333c53ef5a57ccf8c3f09d15d00518"
+    },
+    {
+      "url": "/assets/vfx/hate-cry-1.png",
+      "bytes": 3933,
+      "sha256": "157d3cb3e84393d9f5390e725c655925ae140146047c73cb94ba529aef96331a"
+    },
+    {
+      "url": "/assets/vfx/hate-cry-2.png",
+      "bytes": 4182,
+      "sha256": "8b66ba96d8b971dda523a16f05203ea8e6551ab54c5d37a9591263257b10eca2"
+    },
+    {
+      "url": "/assets/vfx/hate-cry-3.png",
+      "bytes": 4200,
+      "sha256": "7ae38a13540a0b900dd81573960a0abb397eaab063950718396796ce115d4f48"
+    },
+    {
+      "url": "/assets/vfx/hate-cry-4.png",
+      "bytes": 4335,
+      "sha256": "e5fc6a4156f623464c1859ae1a9f4b84814c621352ff21f17311cb9c3bec9188"
+    },
+    {
+      "url": "/assets/vfx/hate-cry-5.png",
+      "bytes": 4531,
+      "sha256": "e59eada42f63c8631f93551b227744a7425e58536696c3b519f46e79d35c353a"
+    },
+    {
+      "url": "/assets/vfx/hate-cry-6.png",
+      "bytes": 4482,
+      "sha256": "12b5ddf685611d015730e2dd808012eae6fd38c5d7ac86dde19ea190fa622832"
+    },
+    {
+      "url": "/assets/vfx/light-harm-1.png",
+      "bytes": 2345,
+      "sha256": "ca7de797ac785656ff5a15dbb8e89283120e302da8275f6bd80e89516d4eb070"
+    },
+    {
+      "url": "/assets/vfx/light-harm-2.png",
+      "bytes": 2345,
+      "sha256": "ca7de797ac785656ff5a15dbb8e89283120e302da8275f6bd80e89516d4eb070"
+    },
+    {
+      "url": "/assets/vfx/light-harm-3.png",
+      "bytes": 2345,
+      "sha256": "ca7de797ac785656ff5a15dbb8e89283120e302da8275f6bd80e89516d4eb070"
+    },
+    {
+      "url": "/assets/vfx/light-harm-4.png",
+      "bytes": 2345,
+      "sha256": "ca7de797ac785656ff5a15dbb8e89283120e302da8275f6bd80e89516d4eb070"
+    },
+    {
+      "url": "/assets/vfx/light-harm-5.png",
+      "bytes": 2345,
+      "sha256": "ca7de797ac785656ff5a15dbb8e89283120e302da8275f6bd80e89516d4eb070"
+    },
+    {
+      "url": "/assets/vfx/light-harm-6.png",
+      "bytes": 2345,
+      "sha256": "ca7de797ac785656ff5a15dbb8e89283120e302da8275f6bd80e89516d4eb070"
+    },
+    {
+      "url": "/assets/vfx/light-pleasure-1.png",
+      "bytes": 3553,
+      "sha256": "0041fd533225d919d71aa92e6d63e3402af58a06114b73cbccd11fab325d5509"
+    },
+    {
+      "url": "/assets/vfx/light-pleasure-2.png",
+      "bytes": 3688,
+      "sha256": "b0eae2d7de6656210520d8f2d3247a8dacf246855b7d30f793001404fbc53db5"
+    },
+    {
+      "url": "/assets/vfx/light-pleasure-3.png",
+      "bytes": 3850,
+      "sha256": "e282055e25d4ae80ed32592c65da3f540bed75238f0630ebfde0d8881abe6c07"
+    },
+    {
+      "url": "/assets/vfx/light-pleasure-4.png",
+      "bytes": 4074,
+      "sha256": "89029aa53922e52268cfb062f821ff1d8b3c94a1bd130c75e85b0a552d22a267"
+    },
+    {
+      "url": "/assets/vfx/light-pleasure-5.png",
+      "bytes": 4305,
+      "sha256": "02e1e5c065d5379e4dd321771027942781857f8252f20922126f62d3a3a0d3e5"
+    },
+    {
+      "url": "/assets/vfx/love-dirty-1.png",
+      "bytes": 3172,
+      "sha256": "7ff0928ec7ff514fe73d56e9a37e1fd7f3305f648ce1cb642f6a2962f2323d37"
+    },
+    {
+      "url": "/assets/vfx/love-dirty-2.png",
+      "bytes": 3376,
+      "sha256": "12ee4d9569e5787bfc304f55e7c04d9ef06aecc8990210dac16ad91df88cc846"
+    },
+    {
+      "url": "/assets/vfx/love-dirty-3.png",
+      "bytes": 3494,
+      "sha256": "cab3c6357775493f60daafcce718ffc0ef822d7b3057e934a1f366a0bee2a5c0"
+    },
+    {
+      "url": "/assets/vfx/love-dirty-4.png",
+      "bytes": 3592,
+      "sha256": "f26f39fa2ad1a04fe5491c5f6fa3aa8b8f975efa7f0ca0c3b3235c42b4ed546e"
+    },
+    {
+      "url": "/assets/vfx/love-dirty-5.png",
+      "bytes": 3634,
+      "sha256": "2c9800abc336459b648a123de8c7ed7715646898d36ad1011270618931e6b863"
+    },
+    {
+      "url": "/assets/vfx/love-laugh-1.png",
+      "bytes": 3040,
+      "sha256": "b58aa69df2176a08874bc9d15bdddff1fcbb968ca9e1ea30e768b374d7a92393"
+    },
+    {
+      "url": "/assets/vfx/love-laugh-2.png",
+      "bytes": 3323,
+      "sha256": "ad6771842fe4d65fc0aa776067c0ca7fb7a413940d6a1a3df1d580e270aef04a"
+    },
+    {
+      "url": "/assets/vfx/love-laugh-3.png",
+      "bytes": 3562,
+      "sha256": "3ea127b27c73806d88e54d9124477480bfdfba675c9f79aa6934a9fd93850c33"
+    },
+    {
+      "url": "/assets/vfx/love-laugh-4.png",
+      "bytes": 3639,
+      "sha256": "71f80953517d5090457f3ebb9fd10da420b6bc5c96b1ddde152c0d5db89757c7"
+    },
+    {
+      "url": "/assets/vfx/water-decay-1.png",
+      "bytes": 1885,
+      "sha256": "f84fcd5af3fb892f1a1386b6c0360b037ea15f6d4e2942398009331ae47d1a28"
+    },
+    {
+      "url": "/assets/vfx/water-decay-2.png",
+      "bytes": 2020,
+      "sha256": "36d89457855a8e022ef09bd060c6c46f395cc675382e29bacc9b2f869153101d"
+    },
+    {
+      "url": "/assets/vfx/water-decay-3.png",
+      "bytes": 2007,
+      "sha256": "0629a979f3a56ec1c2a35f9d5c837bc01c7e4df1031bc473bf552de3ab77e3fe"
+    },
+    {
+      "url": "/assets/vfx/water-decay-4.png",
+      "bytes": 2049,
+      "sha256": "417f02e627eacade828a328448067134afcb3d063eb008125f8a8096cb1333be"
+    },
+    {
+      "url": "/assets/vfx/water-decay-5.png",
+      "bytes": 2056,
+      "sha256": "58afda93662a4fc5604d1aeea429ecee4950b172efda5f61e28ddf702ec9440e"
+    },
+    {
+      "url": "/assets/vfx/water-decay-6.png",
+      "bytes": 2153,
+      "sha256": "3fc14f1578a75e817edb35053253496a2e08a4cb9851a216e2faca4740742067"
+    },
+    {
+      "url": "/assets/vfx/water-grow-1.png",
+      "bytes": 3161,
+      "sha256": "44394ece1cba7767cecc3b6c6488e9dd3782e4c26414410f03bcd1f869fa18f1"
+    },
+    {
+      "url": "/assets/vfx/water-grow-2.png",
+      "bytes": 3264,
+      "sha256": "521eb3a60ee1463913dafea3340d3d0d9a38f7cc1e27ed9e166ef6ef8db02aca"
+    },
+    {
+      "url": "/assets/vfx/water-grow-3.png",
+      "bytes": 3421,
+      "sha256": "1bb2c95863dbb6ff87bb72be69a2bfa67c32b60d5efa9dcc43f42b0e5ea5f98a"
+    },
+    {
+      "url": "/assets/vfx/water-grow-4.png",
+      "bytes": 3452,
+      "sha256": "7061c2ba5cf53e3182776b3e589e44deed0a0172be30a1193b7b4982940ed4fb"
+    },
+    {
+      "url": "/assets/water-dark.png",
+      "bytes": 1342,
+      "sha256": "d8d051fb4a599ce74bb008c0b6854c8126312c8315515c181c8078bcb188315d"
+    },
+    {
+      "url": "/assets/water-light.png",
+      "bytes": 1215,
+      "sha256": "8f4da90c63be70b3a0987af2cb7dc2c4a85508cb55079bfb4387b1cc33ee2a20"
+    },
+    {
+      "url": "/assets/water.png",
+      "bytes": 1341,
+      "sha256": "82e6a0a3e7b512041385493911ded14dcbdaa1ca271837beeae0e5d5ec235284"
+    },
+    {
+      "url": "/assets/wildlife/bat-sheet.png",
+      "bytes": 561,
+      "sha256": "eeb43a957a4b4332e2ac550b7544067071776482d1e87174f9bef0c932e15c0d"
+    },
+    {
+      "url": "/assets/wildlife/butterfly-sheet.png",
+      "bytes": 552,
+      "sha256": "874d4562672c255cc1a4fd45f7aea419d4e01f37e15abc3811b59f8995e44ba8"
+    },
+    {
+      "url": "/assets/wildlife/fish-sheet.png",
+      "bytes": 411,
+      "sha256": "45f23a3a6451bf285d2a427aa2b556c561c68a9516d1d1c92b8d8180ce320f46"
+    },
+    {
+      "url": "/assets/wildlife/frog-sheet.png",
+      "bytes": 344,
+      "sha256": "22281c98a64bbe85c20dd6d63cf92ae8e74e7419f1f2420972d173bad357049f"
+    },
+    {
+      "url": "/assets/wildlife/owl-sheet.png",
+      "bytes": 498,
+      "sha256": "0658a5c9ce68453a3ed41decab4a9c30b98c5497444e646970328c0dcd27f965"
+    },
+    {
+      "url": "/assets/wildlife/rabbit-sheet.png",
+      "bytes": 495,
+      "sha256": "de84990c0a933d3377ee5782f286355d71d3844576220442cb89d129287f91a5"
+    },
+    {
+      "url": "/assets/wildlife/snake-sheet.png",
+      "bytes": 481,
+      "sha256": "88fabd88e8ada74fd40319f61468df816c9572d1cec5fb0d9cedf5e27262985a"
+    },
+    {
+      "url": "/assets/wildlife/songbird-sheet.png",
+      "bytes": 499,
+      "sha256": "8e3d3db97237c6012da8efa10307d6f4b3111debd07b8d95d7724977841ff10f"
+    },
+    {
+      "url": "/assets/wisp-sheet.png",
+      "bytes": 652,
+      "sha256": "14cbe0427fb3082a211728530e8554c57fd7bd9157506ec87074f16fa457f216"
+    },
+    {
+      "url": "/assets/wisp.png",
+      "bytes": 396,
+      "sha256": "a554f7788e1cc96a1b4194cd4565245316e105fffa95966fb29ba01f7e7cfc23"
+    },
+    {
+      "url": "/assets/wolf-sheet.png",
+      "bytes": 715,
+      "sha256": "b2de4eda44f5ae6c1f5733d112dc89370abe4efab046b3e6ccb2947c6c349662"
+    },
+    {
+      "url": "/assets/wolf.png",
+      "bytes": 434,
+      "sha256": "6e3d20b5eb66cee5de3b6b76c0fb7778f3e548165257cedfc9c3e87611deff43"
+    },
+    {
+      "url": "/assets/world-illustration-atlas.png",
+      "bytes": 4242949,
+      "sha256": "928505f8706864536062ca5e8b5d705600ae325adfcb7a29fa9c6b23f57e23db"
+    },
+    {
+      "url": "/assets/zones/ancient-pyramids-landmark.png",
+      "bytes": 2184,
+      "sha256": "5f24a7f974967f5182f4a6255c739e66866f1a87889a3b0ecdc5dd71b6a777f8"
+    },
+    {
+      "url": "/assets/zones/ancient-pyramids-portal-sheet.png",
+      "bytes": 4281,
+      "sha256": "a79e12899861a7520a24222c20ff5e3516f2cf4651e9c00d1bf3883fcf7e6a9f"
+    },
+    {
+      "url": "/assets/zones/ancient-pyramids-portal.png",
+      "bytes": 1714,
+      "sha256": "c5199ca9532732706bc46d08094ff5b70eaf85d0259528d60283afdc9fe7e969"
+    },
+    {
+      "url": "/assets/zones/astral-observatory-landmark.png",
+      "bytes": 2214,
+      "sha256": "ce70624321fb4ea2b7ae42029f24f5cff9963d5b2559bd862edaf25c814a849e"
+    },
+    {
+      "url": "/assets/zones/astral-observatory-portal-sheet.png",
+      "bytes": 4276,
+      "sha256": "174ca62a4e8f97db093d2868853b63afb77d0e78694a7e4ca261e30b89cad106"
+    },
+    {
+      "url": "/assets/zones/astral-observatory-portal.png",
+      "bytes": 1715,
+      "sha256": "0b2aed0611c533fc20df4426f33cf1a4d989dab526b25402d7d7b74d04fb5246"
+    },
+    {
+      "url": "/assets/zones/celestial-observatories-landmark.png",
+      "bytes": 2233,
+      "sha256": "224a81975cdce82e189fef5fe85d3ac5f7596aa17ead978bb7208c5697bc6abe"
+    },
+    {
+      "url": "/assets/zones/celestial-observatories-portal-sheet.png",
+      "bytes": 4284,
+      "sha256": "9aa7c01fd46ce3128580681208498ed50558e9235cbb5e026d67f8187262e9fa"
+    },
+    {
+      "url": "/assets/zones/celestial-observatories-portal.png",
+      "bytes": 1722,
+      "sha256": "77ca2dc1565c46c9c1c9b03000bccbcb5cf2d9745dd54764bd58dea1b8ff3877"
+    },
+    {
+      "url": "/assets/zones/celestial-palaces-landmark.png",
+      "bytes": 2625,
+      "sha256": "60dcab1d0086f6ea79bb0ee730f11f13b15b19e1606c8aded404d7e76792f967"
+    },
+    {
+      "url": "/assets/zones/celestial-palaces-portal-sheet.png",
+      "bytes": 4324,
+      "sha256": "99b2acbaad63e404e38c4449b58b3de3dc764e3659a4629390ca30c98387e5b4"
+    },
+    {
+      "url": "/assets/zones/celestial-palaces-portal.png",
+      "bytes": 1752,
+      "sha256": "8d7d19280707582bbb1775c62b367cf7834d72b3ed4d4375d7a5e185c6280e83"
+    },
+    {
+      "url": "/assets/zones/celestial-sanctuaries-landmark.png",
+      "bytes": 2667,
+      "sha256": "c37f630db48b345596eb7c7000fcbe2ce9cdea1259fd10803a9cdd2e89bf9268"
+    },
+    {
+      "url": "/assets/zones/celestial-sanctuaries-portal-sheet.png",
+      "bytes": 4262,
+      "sha256": "a7efa301ee73a0a0235d5372cc4a8ae4dff3f5fcb8d437862a82852a9b0d661b"
+    },
+    {
+      "url": "/assets/zones/celestial-sanctuaries-portal.png",
+      "bytes": 1715,
+      "sha256": "a393d81f1a924b8a5c4cf8333c18bfa344c5465f3f80367d80286e04ae97210f"
+    },
+    {
+      "url": "/assets/zones/celestial-waterfalls-landmark.png",
+      "bytes": 2533,
+      "sha256": "09fdff99bed8d6abc5df5b9aea3dad67a7d0f640e39f266d1350549d4f4c3f5d"
+    },
+    {
+      "url": "/assets/zones/celestial-waterfalls-portal-sheet.png",
+      "bytes": 4284,
+      "sha256": "9aa7c01fd46ce3128580681208498ed50558e9235cbb5e026d67f8187262e9fa"
+    },
+    {
+      "url": "/assets/zones/celestial-waterfalls-portal.png",
+      "bytes": 1722,
+      "sha256": "77ca2dc1565c46c9c1c9b03000bccbcb5cf2d9745dd54764bd58dea1b8ff3877"
+    },
+    {
+      "url": "/assets/zones/chaos-chasms-landmark.png",
+      "bytes": 2812,
+      "sha256": "72801d8057d7453cea3070d4b9c836793b0e2413f5f768dd835c1e3c6a6ffb3a"
+    },
+    {
+      "url": "/assets/zones/chaos-chasms-portal-sheet.png",
+      "bytes": 4314,
+      "sha256": "72c6810ede9ce91161c1d295e9b932af3411b03ac8abf3385edda6af19346ccf"
+    },
+    {
+      "url": "/assets/zones/chaos-chasms-portal.png",
+      "bytes": 1751,
+      "sha256": "0d6769e9af53d23826782bf7dc69d82f9fba9be8f9e028d0b1575c35a7e9b86e"
+    },
+    {
+      "url": "/assets/zones/city-of-stars-landmark.png",
+      "bytes": 2641,
+      "sha256": "ada0627cb470eb39c71a684dc4494770f16e923b412982d30ba664d9f0282734"
+    },
+    {
+      "url": "/assets/zones/city-of-stars-portal-sheet.png",
+      "bytes": 4280,
+      "sha256": "36e92ab1641e5d567aa8ff186c635c8cd54367e66b7065393c5adbee715d8d46"
+    },
+    {
+      "url": "/assets/zones/city-of-stars-portal.png",
+      "bytes": 1727,
+      "sha256": "511f0871493b47056cc91892756ae5c805c82da64101b1b4df2ad5df1147f22f"
+    },
+    {
+      "url": "/assets/zones/cosmic-deserts-landmark.png",
+      "bytes": 2600,
+      "sha256": "66e35182833500fdb29ee57b124906b829040a7f07a2c40de635cec3db5db2bc"
+    },
+    {
+      "url": "/assets/zones/cosmic-deserts-portal-sheet.png",
+      "bytes": 4288,
+      "sha256": "1c69647c86412daa49d8ca4c163101ea56c775f6d222e28ea7ae2c3fe24402b7"
+    },
+    {
+      "url": "/assets/zones/cosmic-deserts-portal.png",
+      "bytes": 1723,
+      "sha256": "ad8784484e8a5fdc87898e02247df943036644cbe08a135b5d4263fd6091ee5b"
+    },
+    {
+      "url": "/assets/zones/dark-spire-towers-landmark.png",
+      "bytes": 2217,
+      "sha256": "231526f183687f36a7c6addcf8e2b6675e1bd5ce01ad26c3eaabb8c202e63873"
+    },
+    {
+      "url": "/assets/zones/dark-spire-towers-portal-sheet.png",
+      "bytes": 4266,
+      "sha256": "f5513e2e7f51ff46c6367c25646a65a4962cfe25bca738e4b005d456196e6975"
+    },
+    {
+      "url": "/assets/zones/dark-spire-towers-portal.png",
+      "bytes": 1708,
+      "sha256": "af8874ed9f073792e1846bc9c51d3bd78299878e93ec04587624e4e813c5fb5a"
+    },
+    {
+      "url": "/assets/zones/divine-cities-landmark.png",
+      "bytes": 2643,
+      "sha256": "615ab64e8818d4a1de1a00ee87a207bc30ca927351e94c284cc30b3251a7fb32"
+    },
+    {
+      "url": "/assets/zones/divine-cities-portal-sheet.png",
+      "bytes": 4284,
+      "sha256": "9aa7c01fd46ce3128580681208498ed50558e9235cbb5e026d67f8187262e9fa"
+    },
+    {
+      "url": "/assets/zones/divine-cities-portal.png",
+      "bytes": 1722,
+      "sha256": "77ca2dc1565c46c9c1c9b03000bccbcb5cf2d9745dd54764bd58dea1b8ff3877"
+    },
+    {
+      "url": "/assets/zones/eternal-light-fields-landmark.png",
+      "bytes": 2608,
+      "sha256": "d163515ce5fc182bac48c38c920dab82fddadb3ebab8d6778dd2ebb3dc6c8df5"
+    },
+    {
+      "url": "/assets/zones/eternal-light-fields-portal-sheet.png",
+      "bytes": 4301,
+      "sha256": "287542586feac9dcba676c171c059a22e1813e6a7f0ae661c98c1d068226538e"
+    },
+    {
+      "url": "/assets/zones/eternal-light-fields-portal.png",
+      "bytes": 1735,
+      "sha256": "e39cf9431b25065d845e99f206cae4b834d1bebc4ba9eab97201099a309c61c2"
+    },
+    {
+      "url": "/assets/zones/ethereal-gardens-landmark.png",
+      "bytes": 2899,
+      "sha256": "88b1d7a7bee3ea1e760df45353b4b659e0b0554b9c4a41d72e4e0e3054a4ae7f"
+    },
+    {
+      "url": "/assets/zones/ethereal-gardens-portal-sheet.png",
+      "bytes": 4276,
+      "sha256": "174ca62a4e8f97db093d2868853b63afb77d0e78694a7e4ca261e30b89cad106"
+    },
+    {
+      "url": "/assets/zones/ethereal-gardens-portal.png",
+      "bytes": 1715,
+      "sha256": "0b2aed0611c533fc20df4426f33cf1a4d989dab526b25402d7d7b74d04fb5246"
+    },
+    {
+      "url": "/assets/zones/ethereal-libraries-landmark.png",
+      "bytes": 2294,
+      "sha256": "0de7e05d88c8e0ed72ed91b9d0d11a44691c004b4c2b58e4b40f11d30914cb67"
+    },
+    {
+      "url": "/assets/zones/ethereal-libraries-portal-sheet.png",
+      "bytes": 4324,
+      "sha256": "99b2acbaad63e404e38c4449b58b3de3dc764e3659a4629390ca30c98387e5b4"
+    },
+    {
+      "url": "/assets/zones/ethereal-libraries-portal.png",
+      "bytes": 1752,
+      "sha256": "8d7d19280707582bbb1775c62b367cf7834d72b3ed4d4375d7a5e185c6280e83"
+    },
+    {
+      "url": "/assets/zones/ethereal-sanctuary-landmark.png",
+      "bytes": 2567,
+      "sha256": "20a047a26af577972e12483db271c13b6ef74885040d6f9bc4cae0f36922750e"
+    },
+    {
+      "url": "/assets/zones/ethereal-sanctuary-portal-sheet.png",
+      "bytes": 4276,
+      "sha256": "174ca62a4e8f97db093d2868853b63afb77d0e78694a7e4ca261e30b89cad106"
+    },
+    {
+      "url": "/assets/zones/ethereal-sanctuary-portal.png",
+      "bytes": 1715,
+      "sha256": "0b2aed0611c533fc20df4426f33cf1a4d989dab526b25402d7d7b74d04fb5246"
+    },
+    {
+      "url": "/assets/zones/forests-plains-and-lakes-landmark.png",
+      "bytes": 2887,
+      "sha256": "53a91aedb4fe634e0e235caff33f66f6a2fb28c62304601099e98bb5157381eb"
+    },
+    {
+      "url": "/assets/zones/forests-plains-and-lakes-portal-sheet.png",
+      "bytes": 4262,
+      "sha256": "a7efa301ee73a0a0235d5372cc4a8ae4dff3f5fcb8d437862a82852a9b0d661b"
+    },
+    {
+      "url": "/assets/zones/forests-plains-and-lakes-portal.png",
+      "bytes": 1715,
+      "sha256": "a393d81f1a924b8a5c4cf8333c18bfa344c5465f3f80367d80286e04ae97210f"
+    },
+    {
+      "url": "/assets/zones/forsaken-wastelands-landmark.png",
+      "bytes": 2826,
+      "sha256": "63c76e53e67fd4695ae539daa72bd49e3285329b5c15bb5a9e0cc8897781618d"
+    },
+    {
+      "url": "/assets/zones/forsaken-wastelands-portal-sheet.png",
+      "bytes": 4295,
+      "sha256": "583491c35fd816652707a684ab0a215650b05b57165e13180b0274f27cc11bad"
+    },
+    {
+      "url": "/assets/zones/forsaken-wastelands-portal.png",
+      "bytes": 1737,
+      "sha256": "a734872a31659552b9b80488039268c109654333474bc2311442b5fa3c23e3fc"
+    },
+    {
+      "url": "/assets/zones/halls-of-knowledge-landmark.png",
+      "bytes": 2279,
+      "sha256": "dad5b37cba8d2c5ef66cffdbab0b543292388e884a2eb231daace1c282c7a4cd"
+    },
+    {
+      "url": "/assets/zones/halls-of-knowledge-portal-sheet.png",
+      "bytes": 4301,
+      "sha256": "287542586feac9dcba676c171c059a22e1813e6a7f0ae661c98c1d068226538e"
+    },
+    {
+      "url": "/assets/zones/halls-of-knowledge-portal.png",
+      "bytes": 1735,
+      "sha256": "e39cf9431b25065d845e99f206cae4b834d1bebc4ba9eab97201099a309c61c2"
+    },
+    {
+      "url": "/assets/zones/infernal-abyss-landmark.png",
+      "bytes": 2871,
+      "sha256": "9651e8718802b7c06cde81c16accd6dca541761cfe9ca4958d6cdb29c5bd67b2"
+    },
+    {
+      "url": "/assets/zones/infernal-abyss-portal-sheet.png",
+      "bytes": 4295,
+      "sha256": "583491c35fd816652707a684ab0a215650b05b57165e13180b0274f27cc11bad"
+    },
+    {
+      "url": "/assets/zones/infernal-abyss-portal.png",
+      "bytes": 1737,
+      "sha256": "a734872a31659552b9b80488039268c109654333474bc2311442b5fa3c23e3fc"
+    },
+    {
+      "url": "/assets/zones/infernal-gates-landmark.png",
+      "bytes": 2774,
+      "sha256": "4c8f9d820e877b45e1761e5fc401e19a46c5716cda78d5c03e43f0b933490105"
+    },
+    {
+      "url": "/assets/zones/infernal-gates-portal-sheet.png",
+      "bytes": 4314,
+      "sha256": "72c6810ede9ce91161c1d295e9b932af3411b03ac8abf3385edda6af19346ccf"
+    },
+    {
+      "url": "/assets/zones/infernal-gates-portal.png",
+      "bytes": 1751,
+      "sha256": "0d6769e9af53d23826782bf7dc69d82f9fba9be8f9e028d0b1575c35a7e9b86e"
+    },
+    {
+      "url": "/assets/zones/infernal-strongholds-landmark.png",
+      "bytes": 2933,
+      "sha256": "f76ff5b51d3ff53a6bbfd482e1f30b7e51f880f172f33273582bad09ed88c947"
+    },
+    {
+      "url": "/assets/zones/infernal-strongholds-portal-sheet.png",
+      "bytes": 4295,
+      "sha256": "583491c35fd816652707a684ab0a215650b05b57165e13180b0274f27cc11bad"
+    },
+    {
+      "url": "/assets/zones/infernal-strongholds-portal.png",
+      "bytes": 1737,
+      "sha256": "a734872a31659552b9b80488039268c109654333474bc2311442b5fa3c23e3fc"
+    },
+    {
+      "url": "/assets/zones/iridescent-temples-landmark.png",
+      "bytes": 2649,
+      "sha256": "23c5bb18c6e7a650487dff020d05d30cc66ff74f0a49c264e486e68c73c23755"
+    },
+    {
+      "url": "/assets/zones/iridescent-temples-portal-sheet.png",
+      "bytes": 4324,
+      "sha256": "99b2acbaad63e404e38c4449b58b3de3dc764e3659a4629390ca30c98387e5b4"
+    },
+    {
+      "url": "/assets/zones/iridescent-temples-portal.png",
+      "bytes": 1752,
+      "sha256": "8d7d19280707582bbb1775c62b367cf7834d72b3ed4d4375d7a5e185c6280e83"
+    },
+    {
+      "url": "/assets/zones/living-settlements-landmark.png",
+      "bytes": 2671,
+      "sha256": "8f933b02b8f912633da05a6d8ae59cf666ccdfe779f2ae1673a4c7eff8861517"
+    },
+    {
+      "url": "/assets/zones/living-settlements-portal-sheet.png",
+      "bytes": 4254,
+      "sha256": "1e03a7c55f0ea3e498041e9bfe515e5ac7c9e0dccb254ab0197f9356158420f9"
+    },
+    {
+      "url": "/assets/zones/living-settlements-portal.png",
+      "bytes": 1707,
+      "sha256": "824bb92381f9f3d005bc60d953efd818013900e9e86df3e6301afb44ecbd348a"
+    },
+    {
+      "url": "/assets/zones/majestic-mountain-ranges-landmark.png",
+      "bytes": 2561,
+      "sha256": "c2eb5ea317f9e4bf91adf492a27ae57a4323147ee2b261d79f2019a9a81d7ca4"
+    },
+    {
+      "url": "/assets/zones/majestic-mountain-ranges-portal-sheet.png",
+      "bytes": 4280,
+      "sha256": "36e92ab1641e5d567aa8ff186c635c8cd54367e66b7065393c5adbee715d8d46"
+    },
+    {
+      "url": "/assets/zones/majestic-mountain-ranges-portal.png",
+      "bytes": 1727,
+      "sha256": "511f0871493b47056cc91892756ae5c805c82da64101b1b4df2ad5df1147f22f"
+    },
+    {
+      "url": "/assets/zones/malevolence-forest-landmark.png",
+      "bytes": 2884,
+      "sha256": "7ff5ee3e370fbd62e1a0246ff3aa9fa24febcfe6e341238c34e946981ab2a647"
+    },
+    {
+      "url": "/assets/zones/malevolence-forest-portal-sheet.png",
+      "bytes": 4266,
+      "sha256": "f5513e2e7f51ff46c6367c25646a65a4962cfe25bca738e4b005d456196e6975"
+    },
+    {
+      "url": "/assets/zones/malevolence-forest-portal.png",
+      "bytes": 1708,
+      "sha256": "af8874ed9f073792e1846bc9c51d3bd78299878e93ec04587624e4e813c5fb5a"
+    },
+    {
+      "url": "/assets/zones/malevolent-citadels-landmark.png",
+      "bytes": 2933,
+      "sha256": "f76ff5b51d3ff53a6bbfd482e1f30b7e51f880f172f33273582bad09ed88c947"
+    },
+    {
+      "url": "/assets/zones/malevolent-citadels-portal-sheet.png",
+      "bytes": 4314,
+      "sha256": "72c6810ede9ce91161c1d295e9b932af3411b03ac8abf3385edda6af19346ccf"
+    },
+    {
+      "url": "/assets/zones/malevolent-citadels-portal.png",
+      "bytes": 1751,
+      "sha256": "0d6769e9af53d23826782bf7dc69d82f9fba9be8f9e028d0b1575c35a7e9b86e"
+    },
+    {
+      "url": "/assets/zones/palatial-halls-landmark.png",
+      "bytes": 2683,
+      "sha256": "c0363141750e492703958271990454d8ace50f6ed1c335b645885ea509dc9dde"
+    },
+    {
+      "url": "/assets/zones/palatial-halls-portal-sheet.png",
+      "bytes": 4301,
+      "sha256": "287542586feac9dcba676c171c059a22e1813e6a7f0ae661c98c1d068226538e"
+    },
+    {
+      "url": "/assets/zones/palatial-halls-portal.png",
+      "bytes": 1735,
+      "sha256": "e39cf9431b25065d845e99f206cae4b834d1bebc4ba9eab97201099a309c61c2"
+    },
+    {
+      "url": "/assets/zones/pits-of-despair-landmark.png",
+      "bytes": 2871,
+      "sha256": "9651e8718802b7c06cde81c16accd6dca541761cfe9ca4958d6cdb29c5bd67b2"
+    },
+    {
+      "url": "/assets/zones/pits-of-despair-portal-sheet.png",
+      "bytes": 4273,
+      "sha256": "687c9e2bcd293691b4d2420e4de19e6dc1c02a0eddb08d91f0090f4c9e0f7961"
+    },
+    {
+      "url": "/assets/zones/pits-of-despair-portal.png",
+      "bytes": 1718,
+      "sha256": "07e356c49c6c1dea9f4385a6890c9fc3523688adde7ee7babc45876fb941dbef"
+    },
+    {
+      "url": "/assets/zones/pits-of-suffering-landmark.png",
+      "bytes": 2788,
+      "sha256": "e2d5847f4704fbc6d4377d7277682259051101d8f91c3d50291d8b4dd66838a4"
+    },
+    {
+      "url": "/assets/zones/pits-of-suffering-portal-sheet.png",
+      "bytes": 4273,
+      "sha256": "687c9e2bcd293691b4d2420e4de19e6dc1c02a0eddb08d91f0090f4c9e0f7961"
+    },
+    {
+      "url": "/assets/zones/pits-of-suffering-portal.png",
+      "bytes": 1718,
+      "sha256": "07e356c49c6c1dea9f4385a6890c9fc3523688adde7ee7babc45876fb941dbef"
+    },
+    {
+      "url": "/assets/zones/prismatic-waterfalls-landmark.png",
+      "bytes": 2473,
+      "sha256": "7b0473fca0bd6ce62cf146cbac838f6740f3601ba3f8a67eba0c334875820917"
+    },
+    {
+      "url": "/assets/zones/prismatic-waterfalls-portal-sheet.png",
+      "bytes": 4254,
+      "sha256": "1e03a7c55f0ea3e498041e9bfe515e5ac7c9e0dccb254ab0197f9356158420f9"
+    },
+    {
+      "url": "/assets/zones/prismatic-waterfalls-portal.png",
+      "bytes": 1707,
+      "sha256": "824bb92381f9f3d005bc60d953efd818013900e9e86df3e6301afb44ecbd348a"
+    },
+    {
+      "url": "/assets/zones/realm-of-eternal-conflict-landmark.png",
+      "bytes": 2828,
+      "sha256": "fb46514f6735bda3ee9c42bfb0fa83b26ba5f16c4b59140bb8acc67a169f0ccb"
+    },
+    {
+      "url": "/assets/zones/realm-of-eternal-conflict-portal-sheet.png",
+      "bytes": 4266,
+      "sha256": "f5513e2e7f51ff46c6367c25646a65a4962cfe25bca738e4b005d456196e6975"
+    },
+    {
+      "url": "/assets/zones/realm-of-eternal-conflict-portal.png",
+      "bytes": 1708,
+      "sha256": "af8874ed9f073792e1846bc9c51d3bd78299878e93ec04587624e4e813c5fb5a"
+    },
+    {
+      "url": "/assets/zones/sacred-groves-landmark.png",
+      "bytes": 2838,
+      "sha256": "9b90a1b28ece312744203a67b6858b5572db3266234a5e9a6523de7fa5d3f14e"
+    },
+    {
+      "url": "/assets/zones/sacred-groves-portal-sheet.png",
+      "bytes": 4302,
+      "sha256": "fe3de5bca06940e6adb0ecaa936af5816d5651a10718bc4ded74be3ade480c62"
+    },
+    {
+      "url": "/assets/zones/sacred-groves-portal.png",
+      "bytes": 1743,
+      "sha256": "63d8f2f919bedacf1701d50022fb0a90ae06c4567544d8de23deecffa7a46771"
+    },
+    {
+      "url": "/assets/zones/sacred-monuments-landmark.png",
+      "bytes": 2612,
+      "sha256": "eea19e6b15c2c3bbe7393d3e9b7de0de52bcb2b04498555bf89ada1218785d09"
+    },
+    {
+      "url": "/assets/zones/sacred-monuments-portal-sheet.png",
+      "bytes": 4302,
+      "sha256": "fe3de5bca06940e6adb0ecaa936af5816d5651a10718bc4ded74be3ade480c62"
+    },
+    {
+      "url": "/assets/zones/sacred-monuments-portal.png",
+      "bytes": 1743,
+      "sha256": "63d8f2f919bedacf1701d50022fb0a90ae06c4567544d8de23deecffa7a46771"
+    },
+    {
+      "url": "/assets/zones/sacred-temples-landmark.png",
+      "bytes": 2644,
+      "sha256": "4b82796bc86f3538f891f145f3ebf9096894c8310107ec55612c6752549d1b50"
+    },
+    {
+      "url": "/assets/zones/sacred-temples-portal-sheet.png",
+      "bytes": 4302,
+      "sha256": "fe3de5bca06940e6adb0ecaa936af5816d5651a10718bc4ded74be3ade480c62"
+    },
+    {
+      "url": "/assets/zones/sacred-temples-portal.png",
+      "bytes": 1743,
+      "sha256": "63d8f2f919bedacf1701d50022fb0a90ae06c4567544d8de23deecffa7a46771"
+    },
+    {
+      "url": "/assets/zones/sanctified-cathedrals-landmark.png",
+      "bytes": 2561,
+      "sha256": "c2eb5ea317f9e4bf91adf492a27ae57a4323147ee2b261d79f2019a9a81d7ca4"
+    },
+    {
+      "url": "/assets/zones/sanctified-cathedrals-portal-sheet.png",
+      "bytes": 4262,
+      "sha256": "a7efa301ee73a0a0235d5372cc4a8ae4dff3f5fcb8d437862a82852a9b0d661b"
+    },
+    {
+      "url": "/assets/zones/sanctified-cathedrals-portal.png",
+      "bytes": 1715,
+      "sha256": "a393d81f1a924b8a5c4cf8333c18bfa344c5465f3f80367d80286e04ae97210f"
+    },
+    {
+      "url": "/assets/zones/suffering-labyrinths-landmark.png",
+      "bytes": 1285,
+      "sha256": "abd05768c865a02b8179a1a1d13f2e17125883527231f2ccfa06e4e90cd8565b"
+    },
+    {
+      "url": "/assets/zones/suffering-labyrinths-portal-sheet.png",
+      "bytes": 4295,
+      "sha256": "583491c35fd816652707a684ab0a215650b05b57165e13180b0274f27cc11bad"
+    },
+    {
+      "url": "/assets/zones/suffering-labyrinths-portal.png",
+      "bytes": 1737,
+      "sha256": "a734872a31659552b9b80488039268c109654333474bc2311442b5fa3c23e3fc"
+    },
+    {
+      "url": "/assets/zones/tormented-ruins-landmark.png",
+      "bytes": 2826,
+      "sha256": "63c76e53e67fd4695ae539daa72bd49e3285329b5c15bb5a9e0cc8897781618d"
+    },
+    {
+      "url": "/assets/zones/tormented-ruins-portal-sheet.png",
+      "bytes": 4273,
+      "sha256": "687c9e2bcd293691b4d2420e4de19e6dc1c02a0eddb08d91f0090f4c9e0f7961"
+    },
+    {
+      "url": "/assets/zones/tormented-ruins-portal.png",
+      "bytes": 1718,
+      "sha256": "07e356c49c6c1dea9f4385a6890c9fc3523688adde7ee7babc45876fb941dbef"
+    },
+    {
+      "url": "/assets/zones/translucent-bridges-landmark.png",
+      "bytes": 2649,
+      "sha256": "09c8c8860b474151443588f5a44d2396222fd48d7a0c4574017f3318859a4261"
+    },
+    {
+      "url": "/assets/zones/translucent-bridges-portal-sheet.png",
+      "bytes": 4276,
+      "sha256": "174ca62a4e8f97db093d2868853b63afb77d0e78694a7e4ca261e30b89cad106"
+    },
+    {
+      "url": "/assets/zones/translucent-bridges-portal.png",
+      "bytes": 1715,
+      "sha256": "0b2aed0611c533fc20df4426f33cf1a4d989dab526b25402d7d7b74d04fb5246"
+    },
+    {
+      "url": "/assets/zones/zen-gardens-landmark.png",
+      "bytes": 2804,
+      "sha256": "fb31e0d4fae115fe198a03201d5edbd4bb44eca5b91d74efd1cb3c00f42e23a8"
+    },
+    {
+      "url": "/assets/zones/zen-gardens-portal-sheet.png",
+      "bytes": 4280,
+      "sha256": "36e92ab1641e5d567aa8ff186c635c8cd54367e66b7065393c5adbee715d8d46"
+    },
+    {
+      "url": "/assets/zones/zen-gardens-portal.png",
+      "bytes": 1727,
+      "sha256": "511f0871493b47056cc91892756ae5c805c82da64101b1b4df2ad5df1147f22f"
+    }
+  ]
+}

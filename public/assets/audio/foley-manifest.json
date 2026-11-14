@@ -1,0 +1,268 @@
+{
+  "license": "Original synthesized project sound design; no third-party samples",
+  "sampleRate": 22050,
+  "ambience": [
+    {
+      "id": "ambient-forest",
+      "duration": 12
+    },
+    {
+      "id": "ambient-forest-night",
+      "duration": 12
+    },
+    {
+      "id": "ambient-water",
+      "duration": 12
+    },
+    {
+      "id": "ambient-wind",
+      "duration": 12
+    },
+    {
+      "id": "ambient-infernal",
+      "duration": 12
+    },
+    {
+      "id": "ambient-rain",
+      "duration": 12
+    }
+  ],
+  "footsteps": [
+    {
+      "id": "footstep-grass",
+      "duration": 0.20997732426303856
+    },
+    {
+      "id": "footstep-stone",
+      "duration": 0.20997732426303856
+    },
+    {
+      "id": "footstep-sand",
+      "duration": 0.20997732426303856
+    },
+    {
+      "id": "footstep-water",
+      "duration": 0.26
+    }
+  ],
+  "creatures": [
+    {
+      "id": "creature-deer",
+      "duration": 0.58
+    },
+    {
+      "id": "creature-chirp",
+      "duration": 0.44
+    },
+    {
+      "id": "creature-wisp",
+      "duration": 0.94
+    },
+    {
+      "id": "creature-growl",
+      "duration": 0.86
+    },
+    {
+      "id": "creature-demon",
+      "duration": 1.06
+    },
+    {
+      "id": "creature-golem",
+      "duration": 1.1499773242630384
+    }
+  ],
+  "spells": [
+    {
+      "id": "spell-love-laugh-cast",
+      "duration": 0.58
+    },
+    {
+      "id": "spell-love-laugh-release",
+      "duration": 0.88
+    },
+    {
+      "id": "spell-love-laugh-hit",
+      "duration": 0.36
+    },
+    {
+      "id": "spell-light-pleasure-cast",
+      "duration": 0.58
+    },
+    {
+      "id": "spell-light-pleasure-release",
+      "duration": 0.88
+    },
+    {
+      "id": "spell-light-pleasure-hit",
+      "duration": 0.36
+    },
+    {
+      "id": "spell-water-grow-cast",
+      "duration": 0.58
+    },
+    {
+      "id": "spell-water-grow-release",
+      "duration": 0.88
+    },
+    {
+      "id": "spell-water-grow-hit",
+      "duration": 0.36
+    },
+    {
+      "id": "spell-air-move-cast",
+      "duration": 0.58
+    },
+    {
+      "id": "spell-air-move-release",
+      "duration": 0.88
+    },
+    {
+      "id": "spell-air-move-hit",
+      "duration": 0.36
+    },
+    {
+      "id": "spell-hate-clean-cast",
+      "duration": 0.58
+    },
+    {
+      "id": "spell-hate-clean-release",
+      "duration": 0.88
+    },
+    {
+      "id": "spell-hate-clean-hit",
+      "duration": 0.36
+    },
+    {
+      "id": "spell-dark-heal-cast",
+      "duration": 0.58
+    },
+    {
+      "id": "spell-dark-heal-release",
+      "duration": 0.88
+    },
+    {
+      "id": "spell-dark-heal-hit",
+      "duration": 0.36
+    },
+    {
+      "id": "spell-fire-create-cast",
+      "duration": 0.58
+    },
+    {
+      "id": "spell-fire-create-release",
+      "duration": 0.88
+    },
+    {
+      "id": "spell-fire-create-hit",
+      "duration": 0.36
+    },
+    {
+      "id": "spell-earth-give-cast",
+      "duration": 0.58
+    },
+    {
+      "id": "spell-earth-give-release",
+      "duration": 0.88
+    },
+    {
+      "id": "spell-earth-give-hit",
+      "duration": 0.36
+    },
+    {
+      "id": "spell-hate-cry-cast",
+      "duration": 0.58
+    },
+    {
+      "id": "spell-hate-cry-release",
+      "duration": 0.88
+    },
+    {
+      "id": "spell-hate-cry-hit",
+      "duration": 0.36
+    },
+    {
+      "id": "spell-dark-pain-cast",
+      "duration": 0.58
+    },
+    {
+      "id": "spell-dark-pain-release",
+      "duration": 0.88
+    },
+    {
+      "id": "spell-dark-pain-hit",
+      "duration": 0.36
+    },
+    {
+      "id": "spell-fire-destroy-cast",
+      "duration": 0.58
+    },
+    {
+      "id": "spell-fire-destroy-release",
+      "duration": 0.88
+    },
+    {
+      "id": "spell-fire-destroy-hit",
+      "duration": 0.36
+    },
+    {
+      "id": "spell-earth-take-cast",
+      "duration": 0.58
+    },
+    {
+      "id": "spell-earth-take-release",
+      "duration": 0.88
+    },
+    {
+      "id": "spell-earth-take-hit",
+      "duration": 0.36
+    },
+    {
+      "id": "spell-love-dirty-cast",
+      "duration": 0.58
+    },
+    {
+      "id": "spell-love-dirty-release",
+      "duration": 0.88
+    },
+    {
+      "id": "spell-love-dirty-hit",
+      "duration": 0.36
+    },
+    {
+      "id": "spell-light-harm-cast",
+      "duration": 0.58
+    },
+    {
+      "id": "spell-light-harm-release",
+      "duration": 0.88
+    },
+    {
+      "id": "spell-light-harm-hit",
+      "duration": 0.36
+    },
+    {
+      "id": "spell-water-decay-cast",
+      "duration": 0.58
+    },
+    {
+      "id": "spell-water-decay-release",
+      "duration": 0.88
+    },
+    {
+      "id": "spell-water-decay-hit",
+      "duration": 0.36
+    },
+    {
+      "id": "spell-air-stop-cast",
+      "duration": 0.58
+    },
+    {
+      "id": "spell-air-stop-release",
+      "duration": 0.88
+    },
+    {
+      "id": "spell-air-stop-hit",
+      "duration": 0.36
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+# Asset sources and generation
+
+The game ships its graphics and audio locally. Runtime play does not require an external asset service.
+
+## Imported assets
+
+**Superpowers Medieval Fantasy Asset Pack** by **Pixel-boy / Sparklin Labs** is distributed under **Creative Commons Zero 1.0 Universal (CC0)**.
+
+- Source: https://github.com/sparklinlabs/superpowers-asset-packs
+- Imported revision: `e8674a03ab4456802f71f848c4df79eccca23f7a`
+- Local files: `public/assets/vendor/superpowers/`
+- Full license: `public/assets/vendor/superpowers/LICENSE-CC0.txt`
+- Original source README and a SHA-256 file manifest are retained in that folder.
+
+The selected import includes scenery, containers, food and item sprites, animals, spell strips, six sound recordings, and three music tracks. Imported imagery is used in authored settlements and scenery; imported music and nature ambience can be selected from audio settings. These files remain separate from the original generated artwork.
+
+## Original game artwork
+
+Original procedural pixel art, character animation, creature families, terrain, construction templates, item and power icons, and spell effects are reproducible with the scripts in `scripts/`. Their manifests record the shipped files and animation dimensions.
+
+The sanctuary paintings and twelve-region illustration atlas were generated for this project. They are used as in-game illustrations and region previews. They do not replace collision geometry or playable maps.
+
+## Original sound design
+
+The original regional music loops, power cues, environmental beds, movement sounds, and creature sounds are synthesized by the generation scripts. Imported recordings retain the CC0 source and license described above.
+
+## Interface dependencies
+
+Inter and Cormorant Garamond are provided by Fontsource under their font licenses. Lucide icons use the ISC license. React and Vite retain their package license terms. Dependency versions are pinned in `package-lock.json`.
