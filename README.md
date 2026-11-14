@@ -4,6 +4,18 @@ A playable 2D fantasy campaign based on the supplied **Eternal Powers Game Manua
 
 The game includes local solo play, persistent private co-op, hundreds of generated graphics and audio assets, and licensed CC0 imports. Everything needed for the game is shipped in the repository.
 
+## Public GitHub edition
+
+The source is published at **https://github.com/Muonntau/Eternal-Powers**. The **Publish playable game** GitHub Actions workflow builds the solo game for **https://muonntau.github.io/Eternal-Powers/** whenever `main` changes.
+
+For a repository's first deployment, enable **Settings → Pages → Build and deployment → Source: GitHub Actions**. The workflow then publishes its validated build. GitHub Pages serves solo and offline play; the repository's Node server provides private co-op, player trading, and the shared market when hosted separately.
+
+To reproduce the Pages build locally:
+
+```sh
+VITE_BASE_PATH=/Eternal-Powers/ VITE_STATIC_HOST=true npm run build
+```
+
 ## Run the game
 
 Requires **Node.js 22.13 or newer**; Node 24 is recommended. The server uses Node's built-in SQLite implementation.
@@ -96,7 +108,7 @@ npm run test:browser
 npm run build
 ```
 
-`npm run check` runs the simulation, network, offline, and production-build checks. The current edition passes 160 tests across these suites and the browser suite; see [validation details](docs/VALIDATION.md). Browser tests use Playwright; run `npx playwright install chromium` when no compatible browser is installed.
+`npm run check` runs the simulation, network, offline, and production-build checks. The current edition passes 162 tests across these suites and the browser suite; see [validation details](docs/VALIDATION.md). Browser tests use Playwright; run `npx playwright install chromium` when no compatible browser is installed.
 
 ## Fidelity and sources
 

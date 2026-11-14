@@ -1,3 +1,4 @@
+import { assetUrl } from "../assetUrl.js";
 // Original canvas art. World generation is deterministic so exploration stays consistent.
 const TAU = Math.PI * 2;
 const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
@@ -91,8 +92,8 @@ export class WorldRenderer {
   constructor(canvas) {
     this.canvas = canvas; this.ctx = canvas.getContext('2d'); this.width = 1000; this.height = 650;
     this.camera = { x: 420, y: 575 }; this.images = {}; this.manifest = null;this.remoteTracks=new Map();
-    Promise.all([fetch('/assets/manifest.json').then(r=>r.json()),fetch('/assets/expanded-manifest.json').then(r=>r.json())]).then(([base,extra])=>{this.manifest={...base,props:{...base.props,...extra.props},characters:{...base.characters,...extra.characters},vfx:extra.vfx};this.expanded=extra;}).catch(()=>{});
-    const tiles=new Image();tiles.src='/assets/vendor/superpowers/background-elements/0-tileset.png';tiles.onload=()=>{this.groundWorld=null;};this.images[tiles.src] = tiles;this.importedTiles=tiles;
+    Promise.all([fetch(assetUrl('/assets/manifest.json')).then(r=>r.json()),fetch(assetUrl('/assets/expanded-manifest.json')).then(r=>r.json())]).then(([base,extra])=>{this.manifest={...base,props:{...base.props,...extra.props},characters:{...base.characters,...extra.characters},vfx:extra.vfx};this.expanded=extra;}).catch(()=>{});
+    const tiles=new Image();tiles.src=assetUrl('/assets/vendor/superpowers/background-elements/0-tileset.png');tiles.onload=()=>{this.groundWorld=null;};this.images[tiles.src] = tiles;this.importedTiles=tiles;
     this.resize();
   }
   resize() {
@@ -108,6 +109,7 @@ export class WorldRenderer {
   }
   image(path) {
     if (!path) return null;
+    path = assetUrl(path);
     if (!this.images[path]) { const im = new Image(); im.src = path; this.images[path] = im; }
     const im = this.images[path]; return im.complete && im.naturalWidth ? im : null;
   }
@@ -300,11 +302,11 @@ export class WorldRenderer {
     for(let i=0;i<24;i++){const t=(now/900+i*.17)%1,xx=x+Math.sin(i*2.8)*70*t;c.globalAlpha=(1-t)*.7;c.fillStyle='#e0eee1';c.fillRect(xx,526-Math.sin(t*Math.PI)*22,2+i%3,2+i%2);}
     c.restore();this.glow(x,523,95,'#c6e6dc',.1);
   }
-  drawWildlife(e,now){const imported=e.imported||e.sprite?.startsWith('vendor/'),im=this.image(`/assets/${e.sprite}${imported?'':'-sheet'}.png`);if(!im)return;const bob=imported?Math.sin(now/500+(e.phase||0))*.8:e.sprite==='deer'?0:Math.sin(now/300+(e.phase||0))*2;this.ctx.save();this.ctx.globalAlpha=.92;if(imported)this.ctx.drawImage(im,Math.round(e.x-im.width*1.5),Math.round(e.y-im.height*3+bob),im.width*3,im.height*3);else this.ctx.drawImage(im,Math.floor(now/300+(e.phase||0))%4*40,0,40,40,Math.round(e.x-16),Math.round(e.y-29+bob),32,32);this.ctx.restore();}
+  drawWildlife(e,now){const imported=e.imported||e.sprite?.startsWith('vendor/'),im=this.image(assetUrl(`/assets/${e.sprite}${imported?'':'-sheet'}.png`));if(!im)return;const bob=imported?Math.sin(now/500+(e.phase||0))*.8:e.sprite==='deer'?0:Math.sin(now/300+(e.phase||0))*2;this.ctx.save();this.ctx.globalAlpha=.92;if(imported)this.ctx.drawImage(im,Math.round(e.x-im.width*1.5),Math.round(e.y-im.height*3+bob),im.width*3,im.height*3);else this.ctx.drawImage(im,Math.floor(now/300+(e.phase||0))%4*40,0,40,40,Math.round(e.x-16),Math.round(e.y-29+bob),32,32);this.ctx.restore();}
   drawRemoteLabel(p,game){const c=this.ctx,party=p.partyId&&p.partyId===game.network?.partyId;c.save();c.strokeStyle=party?'#d9cb92':'#9dbfca';c.lineWidth=1;c.beginPath();c.ellipse(p.x,p.y+2,18,7,0,0,TAU);c.stroke();c.font='10px Inter, sans-serif';c.textAlign='center';const name=String(p.name||'Wayfarer').slice(0,26);c.fillStyle='rgba(24,39,37,.82)';const width=c.measureText(name).width;c.fillRect(p.x-width/2-6,p.y-65,width+12,16);c.fillStyle=party?'#ecdfb2':'#c8e0e4';c.fillText(name,p.x,p.y-53);if(p.role){c.font='8px Inter, sans-serif';c.fillStyle='#b4c5b6';c.fillText(p.role,p.x,p.y+19);}c.restore();}
   roomLabels(world,player){const c=this.ctx;for(const room of world.interiors||[]){const inside=player.x>room.x&&player.x<room.x+room.width&&player.y>room.y&&player.y<room.y+room.height;if(!inside&&Math.hypot(player.x-room.x-room.width/2,player.y-room.y-room.height/2)>700)continue;c.save();c.font='11px Georgia';c.textAlign='center';const label=room.name||'Interior',x=room.x+room.width/2,y=room.y+20,w=c.measureText(label).width;c.fillStyle='rgba(24,35,37,.73)';c.fillRect(x-w/2-10,y-11,w+20,20);c.fillStyle='#ddd2ab';c.fillText(label,x,y+3);c.restore();}}
   drawBuild(p,now,game,preview=null) {
-    if(!p)return;const c=this.ctx,name=p.sprite||`build-${p.templateId}`,im=this.image(`/assets/${name}.png`),meta=this.manifest?.props?.[name];
+    if(!p)return;const c=this.ctx,name=p.sprite||`build-${p.templateId}`,im=this.image(assetUrl(`/assets/${name}.png`)),meta=this.manifest?.props?.[name];
     c.save();c.translate(p.x,p.y);c.rotate((p.rotation||0)*Math.PI/180);
     const faded=p.layer==='canopy'&&Math.hypot(game.player.x-p.x,game.player.y-p.y)<90;
     c.globalAlpha=preview!==null ? .55 : faded ? .38 : 1;
@@ -333,7 +335,7 @@ export class WorldRenderer {
     if(/snow/.test(kind)||b==='mountain'){for(let i=0;i<45;i++){const x=(i*127+Math.sin(now/2000+i)*15+now*.008)%w,y=(i*71+now*.023)%h;c.globalAlpha=.25+i%3*.15;c.fillStyle='#deede1';c.fillRect(x,y,2+i%2,2);}c.globalAlpha=1;}
     if(/sand|dust/.test(kind)||b==='desert'){c.strokeStyle='rgba(223,196,139,.12)';for(let i=0;i<22;i++){const x=(i*137+now*.045)%w,y=(i*69+Math.sin(now/1500+i)*15)%h;c.beginPath();c.moveTo(x,y);c.quadraticCurveTo(x+40,y-12,x+85,y);c.stroke();}}
     if(/fog|mist/.test(kind)||b==='water'){for(let i=0;i<4;i++){const x=((i*330+now*.005)%(w+350))-150,y=h*.35+i*71;const fog=c.createRadialGradient(x,y,0,x,y,180);fog.addColorStop(0,`rgba(202,223,210,${/fog/.test(kind)?.11:.04})`);fog.addColorStop(1,'transparent');c.fillStyle=fog;c.fillRect(x-180,y-180,360,360);}}
-    if(b==='heaven'||game.world.realm==='heaven'){for(let i=0;i<5;i++){const im=this.image('/assets/cloud.png');if(im){c.globalAlpha=.12;c.drawImage(im,(i*289+now*.006)%(w+200)-150,40+(i*137)%h,240,130);}}c.globalAlpha=1;}
+    if(b==='heaven'||game.world.realm==='heaven'){for(let i=0;i<5;i++){const im=this.image(assetUrl('/assets/cloud.png'));if(im){c.globalAlpha=.12;c.drawImage(im,(i*289+now*.006)%(w+200)-150,40+(i*137)%h,240,130);}}c.globalAlpha=1;}
     if(phase==='night'||phase==='dusk'){for(const p of game.world.props.filter(p=>p.kind==='lantern'||p.asset==='brazier')){const x=p.x-this.camera.x,y=p.y-this.camera.y-36;if(x>-80&&x<w+80&&y>-80&&y<h+80)this.glow(x,y,65,'#edc78a',phase==='night'?.16:.09);}}
     c.restore();
   }
@@ -344,7 +346,7 @@ export class WorldRenderer {
     const pathMap = { tree: p.tone === 1 ? 'tree-oak-gold' : 'tree-oak', pine: p.tone === 1 ? 'tree-pine-blue' : 'tree-pine', bush: p.tone === 1 ? 'bush-berries' : 'bush', rock: 'rock-' + (p.tone || 0), flowers: p.tone === 1 ? 'flowers-blue' : 'flowers', shrine: 'shrine', lantern: b==='hell'?'lantern-infernal':b==='heaven'?'lantern-heaven':'lantern', chest: 'chest', arch: 'temple-forest', obelisk: ruin, column: ruin };
     const sizes = { tree: [96, 120], pine: [80, 132], bush: [42, 30], rock: [44, 34], flowers: [38, 22], shrine: [92, 106], lantern: [32, 58], arch: [138, 156], obelisk: [40, 80], column: [40, 47], sign: [48, 51] };
     // Individual assets use consistent bottom-center anchoring.
-    let asset=p.asset||pathMap[p.kind];if(world.realm==='heaven'){if(['tree-oak','tree-oak-gold','tree-pine','tree-pine-blue'].includes(asset))asset='tree-heaven';if(/^house-[0-2]$/.test(asset||''))asset=asset.replace('house-','house-heaven-');if(asset==='temple-forest')asset='temple-heaven';if(asset==='shrine')asset='shrine-heaven';if(asset==='ruin')asset='ruin-heaven';}const image = asset?this.image(`/assets/${asset}.png`):null;
+    let asset=p.asset||pathMap[p.kind];if(world.realm==='heaven'){if(['tree-oak','tree-oak-gold','tree-pine','tree-pine-blue'].includes(asset))asset='tree-heaven';if(/^house-[0-2]$/.test(asset||''))asset=asset.replace('house-','house-heaven-');if(asset==='temple-forest')asset='temple-heaven';if(asset==='shrine')asset='shrine-heaven';if(asset==='ruin')asset='ruin-heaven';}const image = asset?this.image(assetUrl(`/assets/${asset}.png`)):null;
     if (image) { const data = this.manifest?.props?.[asset]; const w = image.width, h = image.height; const anchor = data?.anchor || [w / 2, h - 8]; c.drawImage(image, x - anchor[0] * s, y - anchor[1] * s, w * s, h * s); if (p.kind === 'lantern'||asset==='brazier') this.glow(x, y - 38, 45, '#efce87', .2+Math.sin(now/200+x)*.025);if(asset.includes('crystal'))this.glow(x,y-20,32,b==='hell'?'#edac7f':'#a7e4d5',.12);return; }
     c.save(); c.translate(x, y); c.scale(s, s);
     if (p.kind === 'pine' || p.kind === 'tree') {
@@ -386,7 +388,7 @@ export class WorldRenderer {
     this.glow(x,y-18,42,demon?'#dd9aa4':'#a3ded0',veil?.05:.09);
     c.save();c.globalAlpha=veil?.42:1;
     if(flight){const flap=Math.sin(now/220)*4;for(const side of[-1,1]){c.fillStyle=demon?'#936577':'#d6dcc0';c.beginPath();c.moveTo(x+side*6,y-25);c.lineTo(x+side*28,y-40-flap);c.lineTo(x+side*25,y-18);c.lineTo(x+side*12,y-16);c.fill();c.strokeStyle=demon?'#c39295':'#f1e8c7';c.lineWidth=2;c.beginPath();c.moveTo(x+side*9,y-23);c.lineTo(x+side*23,y-34-flap);c.stroke();}c.strokeStyle='#a9c9c1';c.lineWidth=1;c.beginPath();c.ellipse(x,groundY-3,24,8,0,0,TAU);c.stroke();}
-    const dir=typeof p.facing==='number'?p.facing:({down:0,left:1,right:2,up:3})[p.facing]||0,sheet=this.image(`/assets/hero-${demon?'demon':'angel'}-sheet.png`)||this.image('/assets/hero-sheet.png');
+    const dir=typeof p.facing==='number'?p.facing:({down:0,left:1,right:2,up:3})[p.facing]||0,sheet=this.image(assetUrl(`/assets/hero-${demon?'demon':'angel'}-sheet.png`))||this.image(assetUrl('/assets/hero-sheet.png'));
     if(sheet)c.drawImage(sheet,step*32,clamp(dir,0,3)*40,32,40,x-20,y-44,40,50);
     c.restore();
     if(ward||guard){c.save();c.strokeStyle=ward?'#d9dfad':'#b8d7cf';c.fillStyle='rgba(164,205,187,.06)';c.lineWidth=ward?1.8:2.5;c.beginPath();c.ellipse(x,y-19,ward?25:23,ward?34:29,0,guard?Math.PI*.1:0,guard?Math.PI*.95:TAU);c.fill();c.stroke();if(ward){c.globalAlpha=.6;c.beginPath();c.ellipse(x,y-19,29,37,0,0,TAU);c.stroke();}c.restore();}
@@ -394,7 +396,7 @@ export class WorldRenderer {
     if(p.dodgeUntil>time){c.save();c.globalAlpha=.35;c.strokeStyle='#e2ecdb';c.lineWidth=2;c.beginPath();c.arc(x,y-12,24,Math.PI*.2,Math.PI*1.1);c.stroke();c.restore();}
   }
   drawFallen(e,now,game){
-    const c=this.ctx,im=e.creatureId?this.image(`/assets/creature-${e.creatureId}-sheet.png`):this.image('/assets/npc-jobs/medic-sheet.png');
+    const c=this.ctx,im=e.creatureId?this.image(assetUrl(`/assets/creature-${e.creatureId}-sheet.png`)):this.image(assetUrl('/assets/npc-jobs/medic-sheet.png'));
     c.save();c.globalAlpha=.42;if(im){const sw=e.creatureId?40:40,sh=e.creatureId?40:48;c.drawImage(im,0,0,sw,sh,e.x-22,e.y-21,44,25);}
     c.strokeStyle='#b6bac7';c.setLineDash([3,4]);c.lineWidth=1;c.beginPath();c.ellipse(e.x,e.y,25,10,0,0,TAU);c.stroke();c.globalAlpha=.75;c.fillStyle='#c3ced5';c.font='16px Georgia';c.textAlign='center';c.fillText('✧',e.x,e.y-29);c.restore();
     if(game.targetId===e.id){c.save();c.font='10px Georgia';c.textAlign='center';c.fillStyle='#d8d5bf';c.fillText(`${e.name} · fallen`,e.x,e.y+20);c.restore();}
@@ -405,7 +407,7 @@ export class WorldRenderer {
       const w=o.width||80,h=o.height||16;c.fillStyle='#684f50';c.fillRect(o.x-w/2,o.y-h/2,w,h);c.strokeStyle='#e6bd83';c.lineWidth=2;c.strokeRect(o.x-w/2,o.y-h/2,w,h);
       for(let i=0;i<Math.max(3,w/10);i++){const x=o.x-w/2+5+i*10,h=14+Math.sin(now/120+i*1.4)*6;c.fillStyle=i%2?'#e7a56c':'#f2cc8a';c.fillRect(x,o.y-h,5,h);c.fillStyle='#fff0b9';c.fillRect(x+1,o.y-h+4,2,h-6);}this.glow(o.x,o.y-8,65,'#efa96b',.12);
     }else if(o.branchId==='fire-create'){
-      const im=this.image(`/assets/vfx/${o.powerId}.png`)||this.image('/assets/vfx/family-fire-create.png');if(im)c.drawImage(im,Math.floor(now/100)%8*96,0,96,96,o.x-35,o.y-45,70,70);this.glow(o.x,o.y-12,30,'#e8b177',.15);
+      const im=this.image(assetUrl(`/assets/vfx/${o.powerId}.png`))||this.image(assetUrl('/assets/vfx/family-fire-create.png'));if(im)c.drawImage(im,Math.floor(now/100)%8*96,0,96,96,o.x-35,o.y-45,70,70);this.glow(o.x,o.y-12,30,'#e8b177',.15);
     }else this.drawProp({kind:'flowers',asset:'flowers',x:o.x,y:o.y,scale:.8},now,game.world);
     c.restore();
   }
@@ -415,14 +417,14 @@ export class WorldRenderer {
   drawContractMarker(e,now,game){
     const c=this.ctx,selected=game.targetId===e.id;
     if(e.sprite==='npc')this.drawJob(e,now);
-    else if(e.sprite==='chest')this.sprite('/assets/vendor/superpowers/items/gold-chest-close.png',e.x,e.y+3,36,27);
+    else if(e.sprite==='chest')this.sprite(assetUrl('/assets/vendor/superpowers/items/gold-chest-close.png'),e.x,e.y+3,36,27);
     else this.drawProp({kind:'obelisk',asset:'ruin',x:e.x,y:e.y,scale:.65},now,game.world);
     this.glow(e.x,e.y-18,33,e.complete?'#9ac58a':'#d7c88a',.1);c.save();c.font='17px Georgia';c.textAlign='center';c.fillStyle=e.complete?'#afd49b':'#e4d29c';c.fillText(e.complete?'✓':'◇',e.x,e.y-(e.sprite==='npc'?57:48));
     if(selected||Math.hypot(e.x-game.player.x,e.y-game.player.y)<155)this.queueEntityLabel(e,game);c.restore();
   }
   drawJob(e,now){
     const job=/medic|heal/.test(e.role||'')?'medic':/guard/.test(e.role||'')?'guard':/scout/.test(e.role||'')?'scout':/trader|merchant/.test(e.role||'')?'trader':/escort|courier/.test(e.role||'')?'courier':/garden|farm/.test(e.name?.toLowerCase()||'')?'gardener':/forge|smith/.test(e.name?.toLowerCase()||'')?'blacksmith':'scholar';
-    const im=this.image(`/assets/npc-jobs/${job}-sheet.png`);if(!im)return false;this.ctx.drawImage(im,Math.floor(now/(e.walking?140:330))%4*40,0,40,48,e.x-22,e.y-48,44,53);return true;
+    const im=this.image(assetUrl(`/assets/npc-jobs/${job}-sheet.png`));if(!im)return false;this.ctx.drawImage(im,Math.floor(now/(e.walking?140:330))%4*40,0,40,48,e.x-22,e.y-48,44,53);return true;
   }
   queueEntityLabel(e,game){
     const own=e.ownerId===game.player.id,role=e.role==='companion'?'familiar':e.role==='contract-escort'?'escort':e.command?'hired ally':null;
@@ -461,9 +463,9 @@ export class WorldRenderer {
     c.fillStyle = 'rgba(15,31,25,.3)'; c.beginPath(); c.ellipse(x, y + 2, e.kind === 'portal' ? 30 : 15, 6, 0, 0, TAU); c.fill();
     if(e.kind==='contract-node'){this.drawContractMarker(e,now,game);return;}
     if(e.kind==='world-landmark'){this.drawProp({asset:'ruin',kind:'obelisk',x,y,scale:.55},now,game.world);if(selected||Math.hypot(x-game.player.x,y-game.player.y)<160){c.save();c.font='11px Georgia';c.fillStyle='#d9d4aa';c.textAlign='center';c.fillText(e.name,x,y+18);c.restore();}return;}
-    if(e.asset&&e.kind==='portal'){const path=e.asset.startsWith('/')?e.asset:`/assets/${e.asset}-sheet.png`,meta=this.expanded?.props?.[e.asset],im=this.image(meta?.animationSrc||path);if(im){const frame=meta?Math.floor(now/1000*(meta.fps||7))%(meta.frames||6):Math.floor(now/140)%6;const fw=meta?.frameWidth||96,fh=meta?.frameHeight||128;c.drawImage(im,frame*fw,0,fw,fh,x-fw*.42,y-fh*.8,fw*.84,fh*.84);this.glow(x,y-40,55,'#afddc4',.13);if(selected){c.font='10px Georgia';c.fillStyle='#e2dab4';c.textAlign='center';c.fillText(e.name,x,y+22);}return;}}
+    if(e.asset&&e.kind==='portal'){const path=e.asset.startsWith('/')?e.asset:assetUrl(`/assets/${e.asset}-sheet.png`),meta=this.expanded?.props?.[e.asset],im=this.image(meta?.animationSrc||path);if(im){const frame=meta?Math.floor(now/1000*(meta.fps||7))%(meta.frames||6):Math.floor(now/140)%6;const fw=meta?.frameWidth||96,fh=meta?.frameHeight||128;c.drawImage(im,frame*fw,0,fw,fh,x-fw*.42,y-fh*.8,fw*.84,fh*.84);this.glow(x,y-40,55,'#afddc4',.13);if(selected){c.font='10px Georgia';c.fillStyle='#e2dab4';c.textAlign='center';c.fillText(e.name,x,y+22);}return;}}
     if(e.creatureId){
-      const im=this.image(`/assets/creature-${e.creatureId}-sheet.png`),size=e.boss?68:e.kind==='enemy'?48:44,bob=/spirit|soul|cherub|avatar|sprite/.test(e.creatureId)?Math.sin(now/400+x)*3:0;
+      const im=this.image(assetUrl(`/assets/creature-${e.creatureId}-sheet.png`)),size=e.boss?68:e.kind==='enemy'?48:44,bob=/spirit|soul|cherub|avatar|sprite/.test(e.creatureId)?Math.sin(now/400+x)*3:0;
       if(im)c.drawImage(im,Math.floor(now/(e.state==='chase'?140:260))%4*40,0,40,40,x-size/2,y-size*.86+bob,size,size);
       if(e.boss){const stage=e.phase||e.stage||1;c.save();c.strokeStyle=stage>1?'#edb180':'#c6b586';c.lineWidth=1.5;c.globalAlpha=.55;c.beginPath();c.ellipse(x,y+2,31+stage*3,12+stage,0,0,TAU);c.stroke();c.fillStyle='#e2bc80';c.font='11px Georgia';c.textAlign='center';c.fillText('✦'.repeat(Math.min(3,stage)),x,y-size-8);c.restore();}
       if(e.kind==='npc'){c.fillStyle='#dfcf91';c.font='14px Georgia';c.textAlign='center';c.fillText('◇',x,y-size-6);}
@@ -486,11 +488,11 @@ export class WorldRenderer {
       else this.drawProp({ kind: crystal ? 'rock' : 'rock', x, y, scale: .9 }, now, game.world);
       if (crystal) { this.glow(x, y - 16, 28, '#9bd4c7', .14); c.fillStyle = '#72b0ae'; c.fillRect(x - 6, y - 28, 9, 22); c.fillRect(x + 4, y - 20, 6, 14); c.fillStyle = '#b1dfcd'; c.fillRect(x - 4, y - 26, 3, 15); }
     } else if (e.kind === 'chest') {
-      if (!this.sprite('/assets/chest.png', x, y + 4, 42, 37)) { c.fillStyle = '#554e3a'; c.fillRect(x - 19, y - 22, 38, 25); c.fillStyle = '#877747'; c.fillRect(x - 19, y - 27, 38, 12); c.fillStyle = '#b9a16c'; c.fillRect(x - 19, y - 23, 38, 4); c.fillRect(x - 14, y - 24, 4, 27); c.fillRect(x + 10, y - 24, 4, 27); c.fillRect(x - 3, y - 15, 7, 8); }
+      if (!this.sprite(assetUrl('/assets/chest.png'), x, y + 4, 42, 37)) { c.fillStyle = '#554e3a'; c.fillRect(x - 19, y - 22, 38, 25); c.fillStyle = '#877747'; c.fillRect(x - 19, y - 27, 38, 12); c.fillStyle = '#b9a16c'; c.fillRect(x - 19, y - 23, 38, 4); c.fillRect(x - 14, y - 24, 4, 27); c.fillRect(x + 10, y - 24, 4, 27); c.fillRect(x - 3, y - 15, 7, 8); }
     } else if (e.kind === 'dummy') {
       c.fillStyle = '#736449'; c.fillRect(x - 3, y - 43, 6, 43); c.fillStyle = '#9a8a60'; c.fillRect(x - 20, y - 33, 40, 6); c.fillStyle = '#b4a17a'; c.fillRect(x - 11, y - 46, 22, 24); c.fillStyle = '#685e42'; c.fillRect(x - 2, y - 40, 4, 12); c.fillRect(x - 8, y - 36, 16, 4); c.fillStyle = '#d4c39b'; c.fillRect(x - 6, y - 53, 12, 10);
     } else if (e.kind === 'enemy') {
-      const nm = (e.sprite || e.name || '').toLowerCase(); let path = e.sprite && ['guardian','sentinel','golem','imp','demon','shadow','angel','spirit','firefly','moth','fox','deer','serpent'].includes(e.sprite) ? `/assets/${e.sprite}-sheet.png` : nm.includes('wolf') || nm.includes('beast') ? '/assets/wolf-sheet.png' : nm.includes('wisp') || nm.includes('spirit') || nm.includes('shade') ? '/assets/wisp-sheet.png' : '/assets/slime-sheet.png';
+      const nm = (e.sprite || e.name || '').toLowerCase(); let path = e.sprite && ['guardian','sentinel','golem','imp','demon','shadow','angel','spirit','firefly','moth','fox','deer','serpent'].includes(e.sprite) ? assetUrl(`/assets/${e.sprite}-sheet.png`) : nm.includes('wolf') || nm.includes('beast') ? assetUrl('/assets/wolf-sheet.png') : nm.includes('wisp') || nm.includes('spirit') || nm.includes('shade') ? assetUrl('/assets/wisp-sheet.png') : assetUrl('/assets/slime-sheet.png');
       const im = this.image(path);
       if (im) { if (im.width > 64) c.drawImage(im, Math.floor(now / 230) % 4 * 40, 0, 40, 40, x - 24, y - 41, 48, 48); else c.drawImage(im, x - 24, y - 43, 48, 48); }
       else if (nm.includes('wisp') || nm.includes('shade') || nm.includes('spirit')) { const bob = Math.sin(now / 430 + x) * 3; this.glow(x, y - 19 + bob, 32, '#b5aac6', .2); c.fillStyle = '#697389'; c.fillRect(x - 12, y - 28 + bob, 24, 20); c.fillRect(x - 7, y - 37 + bob, 14, 30); c.fillStyle = '#9ca9b6'; c.fillRect(x - 8, y - 31 + bob, 15, 12); c.fillStyle = '#d5e8d7'; c.fillRect(x - 5, y - 25 + bob, 3, 4); c.fillRect(x + 3, y - 25 + bob, 3, 4); }
@@ -498,7 +500,7 @@ export class WorldRenderer {
       else { const bob = Math.sin(now / 300 + x) * 1.5; c.fillStyle = '#5d7e69'; c.fillRect(x - 16, y - 19 + bob, 32, 19); c.fillRect(x - 11, y - 27 + bob, 22, 27); c.fillStyle = '#88a784'; c.fillRect(x - 12, y - 21 + bob, 21, 8); c.fillStyle = '#b0c49a'; c.fillRect(x - 7, y - 23 + bob, 9, 4); c.fillStyle = '#2e4b3d'; c.fillRect(x - 8, y - 12 + bob, 3, 4); c.fillRect(x + 6, y - 12 + bob, 3, 4); }
     } else {
       const drewJob=e.role!=='keeper'&&this.drawJob(e,now);
-      const sheet = drewJob?null:this.image(e.role === 'keeper' ? '/assets/angel.png' : '/assets/npc.png');
+      const sheet = drewJob?null:this.image(e.role === 'keeper' ? assetUrl('/assets/angel.png') : assetUrl('/assets/npc.png'));
       if (sheet) { if (sheet.width > 64) c.drawImage(sheet, 0, 0, 32, 40, x - 20, y - 48, 40, 50); else c.drawImage(sheet, x - 20, y - 48, 40, 50); }
       else if(!drewJob) { const merchant = /merchant|artisan|trader/i.test(e.name || ''); c.fillStyle = '#3c4741'; c.fillRect(x - 7, y - 16, 6, 17); c.fillRect(x + 2, y - 16, 6, 17); c.fillStyle = merchant ? '#a68b5b' : '#899e8a'; c.fillRect(x - 10, y - 32, 21, 25); c.fillStyle = merchant ? '#c5af7f' : '#c5c7aa'; c.fillRect(x - 7, y - 31, 5, 22); c.fillStyle = '#cab291'; c.fillRect(x - 8, y - 43, 16, 13); c.fillStyle = merchant ? '#6e7758' : '#d0d1b7'; c.fillRect(x - 10, y - 47, 19, 9); c.fillRect(x - 13, y - 42, 25, 3); c.fillStyle = '#44584e'; c.fillRect(x - 4, y - 36, 2, 2); c.fillRect(x + 3, y - 36, 2, 2); }
       const iconY = y - 65 + Math.sin(now / 550 + x) * 2; c.fillStyle = '#cfbd77'; c.font = 'bold 16px Georgia'; c.textAlign = 'center'; c.fillText(/merchant|artisan|trader/i.test(e.name || '') ? '◇' : '!', x, iconY);
@@ -518,7 +520,7 @@ export class WorldRenderer {
     c.save(); c.globalAlpha = 1 - p;
     const entry=this.expanded?.vfx?.[`vfx/${e.powerId}`]||this.expanded?.vfx?.[`vfx/family-${e.branchId}`];
     if(entry&&!e.text&&e.amount==null&&['spell','cast','channel','heal','ward','hazard','ritual'].includes(e.kind)){const strip=this.image(entry.src);if(strip){const frames=entry.frames||8,fw=entry.frameWidth||96,fh=entry.frameHeight||96,frame=duration>3?Math.floor(elapsed*(entry.fps||12))%frames:Math.min(frames-1,Math.floor(p*frames)),size=clamp(radius*2,56,e.kind==='ritual'?300:190);c.globalAlpha=duration>3?.68:Math.min(1,(1-p)*1.5);c.drawImage(strip,frame*fw,0,fw,fh,e.x-size/2,e.y-size*.68,size,size);c.restore();return;}}
-    if(e.kind==='slash'){const strip=this.image('/assets/vendor/superpowers/fx/2.png');if(strip){const fw=13,frame=Math.min(4,Math.floor(p*5));c.drawImage(strip,frame*fw,0,fw,13,e.x-32,e.y-47,64,64);c.restore();return;}}
+    if(e.kind==='slash'){const strip=this.image(assetUrl('/assets/vendor/superpowers/fx/2.png'));if(strip){const fw=13,frame=Math.min(4,Math.floor(p*5));c.drawImage(strip,frame*fw,0,fw,13,e.x-32,e.y-47,64,64);c.restore();return;}}
     if (e.kind === 'text' || e.text || e.amount != null) { c.font = `bold ${e.kind === 'damage' ? 16 : 13}px Georgia`; c.textAlign = 'center'; c.fillStyle = '#243d32'; c.fillText(e.text || `−${e.amount || 0}`, e.x + 1, e.y - 38 - p * 28 + 1); c.fillStyle = color; c.fillText(e.text || `−${e.amount || 0}`, e.x, e.y - 38 - p * 28); }
     else {
       c.strokeStyle = color; c.lineWidth = 2 - p; c.beginPath(); c.ellipse(e.x, e.y, radius * (.35 + p), radius * (.2 + p * .45), 0, 0, TAU); c.stroke();

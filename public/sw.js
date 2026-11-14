@@ -1,16 +1,19 @@
 /* Production-only offline solo game. Private-room APIs and sockets are never cached. */
-try { importScripts('/offline-version.js'); } catch { /* A first unindexed preview still works online. */ }
+const BASE = new URL(self.registration?.scope || '/', self.location.origin).pathname;
+const appPath = path => BASE + String(path).replace(/^\/+/, '');
+const localPath = url => url.pathname.startsWith(BASE) ? '/' + url.pathname.slice(BASE.length) : null;
+try { importScripts(appPath('/offline-version.js')); } catch { /* A first unindexed preview still works online. */ }
 const BUILD = self.ETERNAL_OFFLINE_BUILD || 'unindexed';
-const PREFIX = 'eternal-powers-offline-';
+const PREFIX = 'eternal-powers-offline-' + encodeURIComponent(BASE) + '-';
 const CACHE = PREFIX + BUILD;
-const INFO_KEY = '/__eternal_offline_status__';
+const INFO_KEY = appPath('/__eternal_offline_status__');
 let downloadJob = null;
 
 const sameOrigin = url => url.origin === self.location.origin;
-const forbidden = url => /^\/(?:api|socket)(?:\/|$)/.test(url.pathname);
+const forbidden = url => /^\/(?:api|socket)(?:\/|$)/.test(localPath(url) || url.pathname);
 const gameFile = url => {
   let decoded;
-  try { decoded = decodeURIComponent(url.pathname); } catch { return false; }
+  try { decoded = decodeURIComponent(localPath(url) || ''); } catch { return false; }
   if (url.username || url.password || url.hash || url.search || decoded.includes('\\')) return false;
   if (decoded.split('/').some(part => part === '.' || part === '..')) return false;
   return decoded === '/' || /^\/(?:favicon\.svg|manifest\.webmanifest|offline-assets\.json)$/.test(decoded)
@@ -18,7 +21,7 @@ const gameFile = url => {
 };
 const safeURL = path => {
   let url;
-  try { url = new URL(path, self.location.origin); } catch { return null; }
+  try { url = new URL(path, self.location.origin + BASE); } catch { return null; }
   return sameOrigin(url) && !forbidden(url) && gameFile(url) ? url : null;
 };
 async function fetchAndCache(cache, path) {
@@ -31,16 +34,16 @@ async function fetchAndCache(cache, path) {
 }
 async function shellFiles() {
   try {
-    const response = await fetch('/offline-core.json', { cache: 'no-store' });
+    const response = await fetch(appPath('/offline-core.json'), { cache: 'no-store' });
     if (response.ok) {
       const index = await response.json();
       if (Array.isArray(index.files)) return index.files.map(file => file.url).filter(Boolean);
     }
   } catch { /* Fallback supports a static preview without the postbuild index. */ }
-  const response = await fetch('/', { cache: 'no-store' });
+  const response = await fetch(BASE, { cache: 'no-store' });
   if (!response.ok) throw new Error('The game shell could not be downloaded.');
   const html = await response.text();
-  const files = ['/', '/favicon.svg', '/manifest.webmanifest'];
+  const files = [BASE, appPath('/favicon.svg'), appPath('/manifest.webmanifest')];
   for (const match of html.matchAll(/(?:src|href)=["']([^"']+)["']/g)) {
     if (/\.(?:js|css|woff2?)(?:\?|$)/.test(match[1]) && safeURL(match[1])) files.push(match[1]);
   }
@@ -49,7 +52,7 @@ async function shellFiles() {
 async function cacheShell() {
   const cache = await caches.open(CACHE), files = await shellFiles();
   for (const path of files) await fetchAndCache(cache, path);
-  await fetchAndCache(cache, '/offline-assets.json');
+  await fetchAndCache(cache, appPath('/offline-assets.json'));
 }
 self.addEventListener('install', event => {
   event.waitUntil(cacheShell().then(() => self.skipWaiting()));
@@ -62,21 +65,21 @@ self.addEventListener('activate', event => {
 });
 self.addEventListener('fetch', event => {
   const request = event.request, url = new URL(request.url);
-  if (request.method !== 'GET' || !sameOrigin(url) || forbidden(url)) return;
+  if (request.method !== 'GET' || !sameOrigin(url) || !localPath(url) || forbidden(url)) return;
   if (request.mode === 'navigate') {
     event.respondWith((async () => {
       const cache = await caches.open(CACHE);
       try {
         const response = await fetch(request);
-        if (response.ok && /text\/html/.test(response.headers.get('content-type') || '')) await cache.put('/', response.clone());
+        if (response.ok && /text\/html/.test(response.headers.get('content-type') || '')) await cache.put(BASE, response.clone());
         return response;
       } catch {
-        return await cache.match('/') || new Response('Open Eternal Powers online once before playing offline.', { status: 503, headers: { 'Content-Type': 'text/plain' } });
+        return await cache.match(BASE) || new Response('Open Eternal Powers online once before playing offline.', { status: 503, headers: { 'Content-Type': 'text/plain' } });
       }
     })());
     return;
   }
-  if (!/^\/(?:assets\/|favicon\.svg$|manifest\.webmanifest$|offline-assets\.json$)/.test(url.pathname)) return;
+  if (!/^\/(?:assets\/|favicon\.svg$|manifest\.webmanifest$|offline-assets\.json$)/.test(localPath(url))) return;
   event.respondWith((async () => {
     // Static game files are independent of the request's Origin header. A
     // module/font request sets Origin while the opt-in prefetch does not;
@@ -90,12 +93,12 @@ self.addEventListener('fetch', event => {
 });
 async function status() {
   const cache = await caches.open(CACHE), response = await cache.match(INFO_KEY);
-  return response ? response.json() : { version: BUILD, complete: false, shellReady: !!await cache.match('/'), cached: 0, total: 0, bytes: 0, totalBytes: 0 };
+  return response ? response.json() : { version: BUILD, complete: false, shellReady: !!await cache.match(BASE), cached: 0, total: 0, bytes: 0, totalBytes: 0 };
 }
 async function downloadAll(port) {
   const cache = await caches.open(CACHE);
-  let indexResponse = await cache.match('/offline-assets.json');
-  if (!indexResponse) indexResponse = await fetchAndCache(cache, '/offline-assets.json');
+  let indexResponse = await cache.match(appPath('/offline-assets.json'));
+  if (!indexResponse) indexResponse = await fetchAndCache(cache, appPath('/offline-assets.json'));
   const index = await indexResponse.json();
   if (!Array.isArray(index.files)) throw new Error('The offline asset index is invalid.');
   let cursor = 0, done = 0, bytes = 0;
@@ -108,7 +111,7 @@ async function downloadAll(port) {
       const file = index.files[cursor++];
       try {
         const url = safeURL(file.url);
-        if (!url || !url.pathname.startsWith('/assets/')) throw new Error('Invalid local asset path.');
+        if (!url || !localPath(url)?.startsWith('/assets/')) throw new Error('Invalid local asset path.');
         if (!await cache.match(url.href)) await fetchAndCache(cache, file.url);
         done++; bytes += Number(file.bytes) || 0;
         Object.assign(progress, { cached: done, bytes, current: file.url });

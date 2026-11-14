@@ -1,3 +1,4 @@
+import { assetUrl } from "../assetUrl.js";
 import React, { useEffect, useState } from "react";
 import {
   Sun,
@@ -539,7 +540,7 @@ export default function WorldPanel({
               </select>
             </label>
             <div className="ritual-spell-card">
-              <img src={`/assets/power-${power.branch.id}.png`} alt="" />
+              <img src={assetUrl(`/assets/power-${power.branch.id}.png`)} alt="" />
               <div>
                 <span className="eyebrow">
                   {power.branch.name} · LEVEL {power.level}

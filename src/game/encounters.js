@@ -1,3 +1,4 @@
+import { assetUrl } from "../assetUrl.js";
 import { CREATURES } from '../data/manual.js';
 
 // Encounter actions use the manual's visible tells and finite authored outcomes.
@@ -67,7 +68,7 @@ function hostileEntity(profile, id, position, boss = false) {
  const config = CONFIG[profile.id];
  return {
   id, ...position, name: profile.name, kind: 'enemy', creatureId: profile.id, profiledEncounter: true,
-  sprite: config.sprite, spritePath: `/assets/creature-${profile.id}-sheet.png`, behavior: config.behavior,
+  sprite: config.sprite, spritePath: assetUrl(`/assets/creature-${profile.id}-sheet.png`), behavior: config.behavior,
   realm: profile.realm, rank: profile.rank, encounterRank: profile.rank, health: profile.hp, maxHealth: profile.hp, damage: profile.attack,
   speed: config.behavior === 'charger' ? 95 : config.behavior === 'ambusher' ? 98 : config.behavior === 'guardian' ? 48 : 65,
   boss, worldBoss: !!config.world, phase: 1, state: 'idle', cooldown: 1, morale: 50,
@@ -95,7 +96,7 @@ export function createRegionalEncounters(zone, playerRank = 1, seed = 17) {
  const contacts = [contactPool[Math.floor(rng() * contactPool.length)], zone.realm === 'earth' ? PROFILES['celestial-familiars'] : realm[0]];
  contacts.forEach((profile, i) => result.push({
   id: `encounter-contact-${i + 1}`, x: i ? 600 : 1200, y: i ? 650 : 1340,
-  name: profile.name, creatureId: profile.id, sprite: CONFIG[profile.id].sprite, spritePath: `/assets/creature-${profile.id}-sheet.png`,
+  name: profile.name, creatureId: profile.id, sprite: CONFIG[profile.id].sprite, spritePath: assetUrl(`/assets/creature-${profile.id}-sheet.png`),
   kind: 'npc', role: 'encounter-contact', neutral: true, health: profile.hp, maxHealth: profile.hp, rank: profile.rank,
   description: profile.noncombat, counterplay: profile.counterplay, manualPage: profile.manualPage,
   offer: { item: i ? 'herb' : 'crystal', quantity: 1 }, canBond: profile.id === 'celestial-familiars',

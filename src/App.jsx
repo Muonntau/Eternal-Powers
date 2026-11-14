@@ -1,3 +1,4 @@
+import { assetUrl } from "./assetUrl.js";
 import React, { useEffect, useRef, useState } from "react";
 import {
   Compass,
@@ -164,10 +165,10 @@ function initialLoadout() {
 }
 function itemArtwork(id, rank = 1) {
   if (["focus", "ward", "utility"].includes(id))
-    return `/assets/equipment-icons/${id}-${Math.max(1, Math.min(10, rank))}.png`;
+    return assetUrl(`/assets/equipment-icons/${id}-${Math.max(1, Math.min(10, rank))}.png`);
   if (["wallComponent", "gardenBed", "portalAnchor"].includes(id))
-    return `/assets/build-${{ wallComponent: "wall", gardenBed: "garden", portalAnchor: "portal" }[id]}.png`;
-  return `/assets/item-${{ draught: "health", essenceDraught: "essence-tonic", wood: "timber", cleansingCharm: "seed", protectiveCharm: "crystal" }[id] || id}.png`;
+    return assetUrl(`/assets/build-${{ wallComponent: "wall", gardenBed: "garden", portalAnchor: "portal" }[id]}.png`);
+  return assetUrl(`/assets/item-${{ draught: "health", essenceDraught: "essence-tonic", wood: "timber", cleansingCharm: "seed", protectiveCharm: "crystal" }[id] || id}.png`);
 }
 function Key({ children }) {
   return <kbd>{children}</kbd>;
@@ -440,10 +441,10 @@ function App() {
     0;
   const sceneArt =
     state.zone?.realm === "hell"
-      ? "/assets/infernal-sanctuary-keyart.png"
+      ? assetUrl("/assets/infernal-sanctuary-keyart.png")
       : state.zone?.realm === "heaven"
-        ? "/assets/celestial-sanctuary-keyart.png"
-        : "/assets/sacred-grove-keyart.png";
+        ? assetUrl("/assets/celestial-sanctuary-keyart.png")
+        : assetUrl("/assets/sacred-grove-keyart.png");
   const currentRank = (Array.isArray(RANKS) ? RANKS : []).find(
     (r) => r.rank === player.rank,
   );
@@ -607,8 +608,8 @@ function App() {
             <img
               src={
                 player.lineage === "demon"
-                  ? "/assets/hero-demon-down-0.png"
-                  : "/assets/hero-down-0.png"
+                  ? assetUrl("/assets/hero-demon-down-0.png")
+                  : assetUrl("/assets/hero-down-0.png")
               }
               onError={(e) => {
                 e.currentTarget.style.display = "none";
@@ -942,7 +943,7 @@ function App() {
                           <div className="slot-aura" />
                           <img
                             className="power-sprite"
-                            src={`/assets/power-icons/${id}-${level}.png`}
+                            src={assetUrl(`/assets/power-icons/${id}-${level}.png`)}
                             alt=""
                           />
                           <span className="slot-level">{level}</span>
@@ -960,7 +961,7 @@ function App() {
                       onClick={() => call("usePotion")}
                     >
                       <img
-                        src="/assets/item-health.png"
+                        src={assetUrl("/assets/item-health.png")}
                         onError={(e) =>
                           (e.currentTarget.style.display = "none")
                         }
@@ -1310,7 +1311,7 @@ function App() {
                           >
                             <img
                               className="power-level-icon"
-                              src={`/assets/power-icons/${p.id}.png`}
+                              src={assetUrl(`/assets/power-icons/${p.id}.png`)}
                               alt=""
                             />
                             <span className="level-badge">
@@ -1502,7 +1503,7 @@ function App() {
                     <button key={i} onClick={() => assignSlot(i)}>
                       <Key>{i + 1}</Key>
                       <img
-                        src={`/assets/power-icons/${slot.branchId}-${slot.level}.png`}
+                        src={assetUrl(`/assets/power-icons/${slot.branchId}-${slot.level}.png`)}
                         alt=""
                       />
                       <span>
@@ -1526,8 +1527,8 @@ function App() {
                       className="inventory-avatar-sprite"
                       src={
                         player.lineage === "demon"
-                          ? "/assets/hero-demon-down-0.png"
-                          : "/assets/hero-down-0.png"
+                          ? assetUrl("/assets/hero-demon-down-0.png")
+                          : assetUrl("/assets/hero-down-0.png")
                       }
                       alt={
                         player.lineage === "demon"
@@ -1910,7 +1911,7 @@ function App() {
                         {codexTab === "creatures" && (
                           <img
                             className="bestiary-sprite"
-                            src={`/assets/creature-${x.id}.png`}
+                            src={assetUrl(`/assets/creature-${x.id}.png`)}
                             alt=""
                             onError={(e) =>
                               (e.currentTarget.style.display = "none")
@@ -2825,8 +2826,8 @@ function App() {
                   <img
                     src={
                       state.target?.creatureId
-                        ? `/assets/creature-${state.target.creatureId}.png`
-                        : "/assets/angel.png"
+                        ? assetUrl(`/assets/creature-${state.target.creatureId}.png`)
+                        : assetUrl("/assets/angel.png")
                     }
                     alt={state.target?.name || "The celestial keeper"}
                   />

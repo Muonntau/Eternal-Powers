@@ -25,17 +25,20 @@ async function filesUnder(directory) {
 }
 const urlFor = (root, file) => '/' + relative(root, file).split('\\').map(part => part.split('/').map(encodeURIComponent).join('/')).join('/');
 
-export async function createOfflineIndex({ projectRoot = DEFAULT_ROOT, dist = false } = {}) {
+export async function createOfflineIndex({ projectRoot = DEFAULT_ROOT, dist = false, base = process.env.VITE_BASE_PATH || '/' } = {}) {
+  const basePath = '/' + String(base).replace(/^\/+|\/+$/g, '') + (String(base).replace(/^\/+|\/+$/g, '') ? '/' : '');
+  const deployedURL = path => basePath + path.replace(/^\/+/, '');
   const publicRoot = resolve(projectRoot, 'public');
   const outputRoot = resolve(projectRoot, dist ? 'dist' : 'public');
   const assets = [];
   for (const file of await filesUnder(resolve(publicRoot, 'assets'))) {
     if (!ASSET_TYPES.has(extname(file).toLowerCase())) continue;
     const bytes = await readFile(file);
-    assets.push({ url: urlFor(publicRoot, file), bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') });
+    assets.push({ url: deployedURL(urlFor(publicRoot, file)), bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') });
   }
   assets.sort((a, b) => a.url.localeCompare(b.url));
   const fingerprint = createHash('sha256');
+  fingerprint.update(basePath);
   for (const asset of assets) fingerprint.update(`${asset.url}\0${asset.sha256}\n`);
   const codeFiles = [
     ...await filesUnder(resolve(projectRoot, 'src')),
@@ -51,12 +54,12 @@ export async function createOfflineIndex({ projectRoot = DEFAULT_ROOT, dist = fa
   await writeFile(resolve(outputRoot, 'offline-assets.json'), JSON.stringify(index, null, 2) + '\n');
   await writeFile(resolve(outputRoot, 'offline-version.js'), `self.ETERNAL_OFFLINE_BUILD = ${JSON.stringify(version)};\n`);
   if (dist) {
-    const core = [{ url: '/', bytes: (await stat(resolve(outputRoot, 'index.html'))).size }];
+    const core = [{ url: basePath, bytes: (await stat(resolve(outputRoot, 'index.html'))).size }];
     for (const file of await filesUnder(resolve(outputRoot, 'assets'))) {
-      if (CORE_TYPES.has(extname(file).toLowerCase())) core.push({ url: urlFor(outputRoot, file), bytes: (await stat(file)).size });
+      if (CORE_TYPES.has(extname(file).toLowerCase())) core.push({ url: deployedURL(urlFor(outputRoot, file)), bytes: (await stat(file)).size });
     }
     for (const name of ['favicon.svg', 'manifest.webmanifest']) {
-      try { core.push({ url: '/' + name, bytes: (await stat(resolve(outputRoot, name))).size }); } catch (error) { if (error.code !== 'ENOENT') throw error; }
+      try { core.push({ url: deployedURL(name), bytes: (await stat(resolve(outputRoot, name))).size }); } catch (error) { if (error.code !== 'ENOENT') throw error; }
     }
     await writeFile(resolve(outputRoot, 'offline-core.json'), JSON.stringify({ version, files: core }, null, 2) + '\n');
     index.coreCount = core.length;

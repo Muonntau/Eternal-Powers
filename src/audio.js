@@ -1,3 +1,4 @@
+import { assetUrl } from "./assetUrl.js";
 /** Original audio: five regional scores and tactile synthesized effects.
  * The context is created only after a player gesture. No autoplay permissions
  * or network services are required; every recording is shipped in /assets.
@@ -10,7 +11,7 @@ const SURFACES = ['grass', 'stone', 'sand', 'water'];
 const CREATURE_VOICES = ['deer', 'chirp', 'wisp', 'growl', 'demon', 'golem'];
 // Imported alternatives are Pixel-boy/Sparklin Labs CC0 assets; their source
 // and license travel with the recordings in public/assets/vendor/superpowers.
-const VENDOR_ROOT = '/assets/vendor/superpowers';
+const VENDOR_ROOT = assetUrl('/assets/vendor/superpowers');
 const IMPORTED_URLS = Object.fromEntries([
   ...['theme-1', 'theme-3', 'theme-6'].map(name => [`imported-${name}`, `${VENDOR_ROOT}/music/${name}.ogg`]),
   ...['forest-ambience', 'monster-1', 'monster-2', 'woosh-1', 'woosh-2', 'victory-2'].map(name => [`imported-${name}`, `${VENDOR_ROOT}/sounds/${name}.wav`]),
@@ -147,7 +148,7 @@ export class AudioEngine {
     const generation = this.contextGeneration;
     if (!context) return null;
     const promise = (async () => {
-      const response = await fetch(IMPORTED_URLS[name] || `/assets/audio/${name}.${MUSIC_TRACKS.includes(name) || AMBIENT_TRACKS.includes(name) ? 'ogg' : 'wav'}`);
+      const response = await fetch(IMPORTED_URLS[name] || assetUrl(`/assets/audio/${name}.${MUSIC_TRACKS.includes(name) || AMBIENT_TRACKS.includes(name) ? 'ogg' : 'wav'}`));
       if (!response.ok || this.context !== context) return null;
       const result = await context.decodeAudioData(await response.arrayBuffer());
       if (this.contextGeneration !== generation || this.context !== context) return null;

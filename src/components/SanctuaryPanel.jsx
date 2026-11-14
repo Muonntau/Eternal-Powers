@@ -1,3 +1,4 @@
+import { assetUrl } from "../assetUrl.js";
 import React, { useEffect, useState } from "react";
 import {
   Hammer,
@@ -21,7 +22,7 @@ import {
 } from "lucide-react";
 
 const itemAsset = (id) =>
-  `/assets/item-${{ wood: "timber", draught: "health", essenceDraught: "essence-tonic", focus: "scroll", ward: "crystal", utility: "seed" }[id] || id}.png`;
+  assetUrl(`/assets/item-${{ wood: "timber", draught: "health", essenceDraught: "essence-tonic", focus: "scroll", ward: "crystal", utility: "seed" }[id] || id}.png`);
 const materialName = (id) =>
   ({
     wood: "Timber",

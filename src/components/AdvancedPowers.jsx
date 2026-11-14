@@ -1,3 +1,4 @@
+import { assetUrl } from "../assetUrl.js";
 import React from "react";
 import {
   Sparkles,
@@ -46,7 +47,7 @@ export default function AdvancedPowers({
               return (
                 <article className="enhancement-card" key={track.id}>
                   <div className="enhancement-heading">
-                    <img src={`/assets/power-${track.branchId}.png`} alt="" />
+                    <img src={assetUrl(`/assets/power-${track.branchId}.png`)} alt="" />
                     <div>
                       <span className="eyebrow">{branch?.name}</span>
                       <h3>{track.name}</h3>
@@ -62,7 +63,7 @@ export default function AdvancedPowers({
                         <div key={r.id} className={isLearned ? "learned" : ""}>
                           <img
                             className="rank-art"
-                            src={`/assets/enhancement-icons/${r.id}.png`}
+                            src={assetUrl(`/assets/enhancement-icons/${r.id}.png`)}
                             alt=""
                           />
                           <span className="enhancement-rank">
@@ -161,7 +162,7 @@ export default function AdvancedPowers({
                   </div>
                   <img
                     className="technique-card-icon"
-                    src={`/assets/technique-icons/${t.id}.png`}
+                    src={assetUrl(`/assets/technique-icons/${t.id}.png`)}
                     alt=""
                   />
                   <h3>{t.name}</h3>

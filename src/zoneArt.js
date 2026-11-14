@@ -1,3 +1,4 @@
+import { assetUrl } from "./assetUrl.js";
 export function zoneArt(zone = {}) {
   const name = `${zone.name || ""} ${zone.id || ""}`.toLowerCase();
   let index = /observator|light.fields/.test(name)
@@ -26,7 +27,7 @@ export function zoneArt(zone = {}) {
                         ? 7
                         : 0;
   return {
-    backgroundImage: "url('/assets/world-illustration-atlas.png')",
+    backgroundImage: `url("${assetUrl("/assets/world-illustration-atlas.png")}")`,
     backgroundSize: "400% 300%",
     backgroundPosition: `${((index % 4) / 3) * 100}% ${(Math.floor(index / 4) / 2) * 100}%`,
   };

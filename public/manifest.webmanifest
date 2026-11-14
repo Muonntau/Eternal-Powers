@@ -1,11 +1,11 @@
 {
-  "id": "/",
+  "id": "./",
   "name": "Eternal Powers — The 2D Chronicles",
   "short_name": "Eternal Powers",
   "description": "Explore three realms, learn celestial powers, and shape a persistent 2D world.",
   "lang": "en",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "orientation": "any",
   "background_color": "#141b18",
@@ -13,7 +13,7 @@
   "categories": ["games", "entertainment"],
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "./favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"

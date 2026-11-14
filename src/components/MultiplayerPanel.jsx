@@ -1,3 +1,4 @@
+import { assetUrl } from "../assetUrl.js";
 import React, { useEffect, useState } from "react";
 import {
   Users,
@@ -50,6 +51,42 @@ export default function MultiplayerPanel({ client, state: provided }) {
     [listingPrice, setListingPrice] = useState(25),
     [listingCurrency, setListingCurrency] = useState("goodKarma");
   useEffect(() => client?.subscribe?.(setLive), [client]);
+  if (import.meta.env?.VITE_STATIC_HOST === "true") {
+    return (
+      <div className="multiplayer-content">
+        <div className="network-banner">
+          <div>
+            <span className="eyebrow">THE PUBLIC SOLO EDITION</span>
+            <h3>Your own eternity, anywhere.</h3>
+            <p>
+              Explore the full solo campaign, keep your journey in this browser,
+              and download the game for offline play in Settings.
+            </p>
+          </div>
+          <div className="network-status">
+            <i />
+            <span>SOLO WORLD</span>
+          </div>
+        </div>
+        <div className="network-intro">
+          <Users size={30} />
+          <h3>Bring friends to a private world.</h3>
+          <p>
+            Private co-op, player trading, and the shared market need a running
+            game server. They are included in the repository version.
+          </p>
+          <a
+            className="outline-button"
+            href="https://github.com/Muonntau/Eternal-Powers#private-worlds-and-saves"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Set up private co-op <ArrowRight size={13} />
+          </a>
+        </div>
+      </div>
+    );
+  }
   const net = provided?.room ? provided : live,
     connected = net.status === "connected" && !!net.room,
     player = client?.engine?.player || {},
@@ -298,8 +335,8 @@ export default function MultiplayerPanel({ client, state: provided }) {
                       <img
                         src={
                           p.lineage === "demon"
-                            ? "/assets/hero-demon-down-0.png"
-                            : "/assets/hero-down-0.png"
+                            ? assetUrl("/assets/hero-demon-down-0.png")
+                            : assetUrl("/assets/hero-down-0.png")
                         }
                         alt=""
                       />

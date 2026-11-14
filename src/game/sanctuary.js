@@ -1,3 +1,4 @@
+import { assetUrl } from "../assetUrl.js";
 /** Local-owner construction, storage and posted-price economy. Manual pp.18–19,216–223. */
 import { ITEMS as MANUAL_ITEMS, RECIPES as MANUAL_RECIPES } from '../data/manual.js';
 export const MANUAL_ITEM_ALIASES = {'restorative-draught':'draught','essence-tonic':'essenceDraught','cleansing-charm':'cleansingCharm','protective-charm':'protectiveCharm','branch-focus':'focus','tagged-ward':'ward','route-utility':'utility'};
@@ -22,7 +23,7 @@ export const BUILD_TEMPLATES = [
  {id:'garden',name:'Garden bed',width:45,height:30,cost:{wood:4,herb:2},layer:'structure',blocking:false},
  {id:'forge',name:'Personal forge',width:45,height:45,cost:{stone:8,metal:4},layer:'structure',blocking:true},
  {id:'portal',name:'Portal anchor',width:45,height:45,cost:{stone:20,crystal:10,residue:10},layer:'structure',blocking:false}
-].map(t=>({...t,asset:`/assets/build-${t.id}.png`,sprite:`build-${t.id}`}));
+].map(t=>({...t,asset:assetUrl(`/assets/build-${t.id}.png`),sprite:`build-${t.id}`}));
 const EXTRA_ITEMS = {wallComponent:{id:'wallComponent',name:'Wall component',price:30,description:'Recipe-backed construction component: four stone and two timber.'},gardenBed:{id:'gardenBed',name:'Garden bed',price:30,description:'Recipe-backed bed: four timber and two fibre.'},portalAnchor:{id:'portalAnchor',name:'Portal anchor',price:200,description:'Bound route construction component; requires the portal access trial.'}, metal:{id:'metal',name:'Metal',description:'A finite forge material.',price:5,icon:'metal'},residue:{id:'residue',name:'Essence residue',description:'A finite material for alchemy and anchors.',price:5,icon:'residue'} };
 let catalogItems = {...EXTRA_ITEMS}, catalogRecipes=[];
 const freshSanctuary=()=>({version:1,owner:'local-player',plot:copy(SANCTUARY_PLOT),components:[],edits:[],layouts:[],bank:{},recovery:{},itemDurability:{focus:100,ward:100,utility:100},gearItems:[],activeGear:{},recipePlans:{wallComponent:true,gardenBed:true},serial:0,revision:0});

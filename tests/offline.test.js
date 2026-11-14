@@ -84,3 +84,45 @@ test('prefetched module and font files remain usable offline when static hosting
   assert.equal(privateResponse, null, 'Private APIs remain outside the offline handler');
   assert.equal(networkRequests, 0);
 });
+
+test('deployment base keeps runtime URLs scoped without changing external resources', async () => {
+  const { withBase } = await import('../src/assetUrl.js');
+  assert.equal(withBase('/assets/hero-sheet.png', '/Eternal-Powers/'), '/Eternal-Powers/assets/hero-sheet.png');
+  assert.equal(withBase('/Eternal-Powers/assets/hero-sheet.png', '/Eternal-Powers/'), '/Eternal-Powers/assets/hero-sheet.png');
+  assert.equal(withBase('/sw.js', '/Eternal-Powers/'), '/Eternal-Powers/sw.js');
+  assert.equal(withBase('/', '/Eternal-Powers/'), '/Eternal-Powers/');
+  assert.equal(withBase('/assets/hero-sheet.png', '/'), '/assets/hero-sheet.png');
+  assert.equal(withBase('https://example.com/a.png', '/Eternal-Powers/'), 'https://example.com/a.png');
+  const parent = resolve('work'); await mkdir(parent, { recursive: true });
+  const root = await mkdtemp(resolve(parent, 'offline-pages-'));
+  try {
+    await mkdir(resolve(root, 'public/assets'), { recursive: true });
+    await writeFile(resolve(root, 'public/assets/hero.png'), 'pixels');
+    const index = await createOfflineIndex({ projectRoot: root, base: '/Eternal-Powers/' });
+    assert.equal(index.files[0].url, '/Eternal-Powers/assets/hero.png');
+    const rootIndex = await createOfflineIndex({ projectRoot: root, base: '/' });
+    assert.notEqual(rootIndex.version, index.version, 'Distinct deployment scopes have distinct cache versions');
+  } finally { await rm(root, { recursive: true, force: true }); }
+});
+
+test('project Pages worker accepts only its own static files and leaves both API routes uncached', async () => {
+  const source = await readFile(resolve('public/sw.js'), 'utf8');
+  const listeners = {};
+  const context = { URL, importScripts() {}, self: {
+    location: { origin: 'http://localhost:5184' },
+    registration: { scope: 'http://localhost:5184/Eternal-Powers/' },
+    addEventListener(type, handler) { listeners[type] = handler; }
+  } };
+  runInNewContext(source + '\nthis.acceptOfflineURL = safeURL;', context);
+  for (const path of ['/Eternal-Powers/', '/Eternal-Powers/favicon.svg', '/Eternal-Powers/assets/app.js', '/Eternal-Powers/assets/one%20sprite.png']) {
+    assert.ok(context.acceptOfflineURL(path), path);
+  }
+  for (const path of ['/', '/assets/a.png', '/Other-Game/assets/a.png', '/api/session', '/Eternal-Powers/api/session', '/Eternal-Powers/socket', '/Eternal-Powers/assets/a.png?private=1']) {
+    assert.equal(context.acceptOfflineURL(path), null, path);
+    if (!path.includes('assets/a.png?')) {
+      let response = null;
+      listeners.fetch({ request: { method: 'GET', url: `http://localhost:5184${path}` }, respondWith(value) { response = value; } });
+      assert.equal(response, null, `No cache handler for ${path}`);
+    }
+  }
+});
