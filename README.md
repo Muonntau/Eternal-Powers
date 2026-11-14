@@ -8,7 +8,7 @@ The game includes local solo play, persistent private co-op, hundreds of generat
 
 The source is published at **https://github.com/Muonntau/Eternal-Powers**. The **Publish playable game** GitHub Actions workflow builds the solo game for **https://muonntau.github.io/Eternal-Powers/** whenever `main` changes.
 
-For a repository's first deployment, enable **Settings → Pages → Build and deployment → Source: GitHub Actions**. The workflow then publishes its validated build. GitHub Pages serves solo and offline play; the repository's Node server provides private co-op, player trading, and the shared market when hosted separately.
+For a repository's first deployment, an owner must enable **Settings → Pages → Build and deployment → Source: GitHub Actions**. If the first deployment already ran before this setting was enabled, rerun its failed deployment job from the Actions tab. The validated `github-pages` build artifact remains available even when initial Pages setup requires owner permission. GitHub Pages serves solo and offline play; the repository's Node server provides private co-op, player trading, and the shared market when hosted separately.
 
 To reproduce the Pages build locally:
 
