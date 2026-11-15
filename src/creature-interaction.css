@@ -1,0 +1,302 @@
+.creature-interaction {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.8fr) minmax(0, 1.4fr);
+  overflow: hidden;
+  border: 1px solid #ffffff13;
+  border-radius: 18px;
+  background: #0b1425;
+  color: #e6edf7;
+  margin-bottom: 20px;
+}
+.creature-portrait-panel {
+  position: relative;
+  padding: 24px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 38%, #514a813f, transparent 65%),
+    linear-gradient(155deg, #17283d, #10172b 65%);
+  border-right: 1px solid #ffffff0c;
+}
+.creature-realm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 9px;
+  border: 1px solid #80c9e62e;
+  border-radius: 30px;
+  font-size: 10px;
+  color: #a8d6e8;
+  text-transform: capitalize;
+}
+.creature-realm-badge.realm-hell {
+  border-color: #e8878740;
+  color: #f1b1ac;
+}
+.creature-realm-badge.realm-heaven {
+  color: #ddd6ff;
+  border-color: #bca3f94a;
+}
+.creature-portrait {
+  position: relative;
+  width: 144px;
+  height: 144px;
+  margin: 25px auto 17px;
+  background-size: 576px 144px;
+  image-rendering: pixelated;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 12px 15px #0006) drop-shadow(0 0 20px #9cd6fc22);
+  animation: creature-portrait-idle 2s steps(4) infinite;
+}
+@keyframes creature-portrait-idle {
+  to {
+    background-position: -576px 0;
+  }
+}
+.creature-attitude {
+  font-size: 8px;
+  color: #8ba8c6;
+  letter-spacing: 1.5px;
+}
+.creature-portrait-panel h3 {
+  font: 600 24px/1.2 var(--sans, "Inter", sans-serif);
+  color: #f1f4ff;
+  margin: 12px 0;
+}
+.creature-portrait-panel p {
+  font-size: 11px;
+  color: #98a8bf;
+  line-height: 1.8;
+}
+.creature-proximity {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #d5b18d;
+  font-size: 11px;
+  background: #0002;
+  padding: 7px 10px;
+  margin-top: 12px;
+  border-radius: 20px;
+}
+.creature-proximity.in-range {
+  color: #83d6c6;
+}
+.creature-interaction-body {
+  padding: 28px;
+  min-width: 0;
+}
+.creature-relationship-heading .eyebrow {
+  color: #7d9bb7;
+  font-size: 8px;
+  letter-spacing: 1.6px;
+}
+.creature-relationship-heading h4 {
+  font: 600 21px/1.3 var(--sans, "Inter", sans-serif);
+  color: #f1f5ff;
+  margin: 8px 0 12px;
+}
+.creature-peaceful-route {
+  color: #a4b3c8;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.creature-material-request {
+  margin: 22px 0 18px;
+  padding: 18px;
+  border: 1px solid #a6c6e023;
+  background: #b1c8f008;
+  border-radius: 12px;
+}
+.creature-material-request.received {
+  border-color: #69d9be44;
+  background: #69d9be08;
+}
+.creature-request-title {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  color: #cee7fa;
+  font-size: 12px;
+}
+.creature-request-title > svg:last-child:not(:first-child) {
+  margin-left: auto;
+  color: #7ed8c0;
+}
+.creature-material-list {
+  margin: 14px 0;
+}
+.creature-material-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 0;
+}
+.creature-material-row img {
+  width: 37px;
+  height: 37px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+.creature-material-row > div {
+  flex: 1;
+  min-width: 0;
+}
+.creature-material-row strong {
+  display: block;
+  font-size: 12px;
+  color: #e2eaf6;
+}
+.creature-material-row div span {
+  display: block;
+  font-size: 10px;
+  color: #7e95b3;
+  margin-top: 4px;
+}
+.creature-material-row > .ready {
+  color: #87ddc8;
+}
+.creature-material-row > .missing {
+  color: #f5b69b;
+}
+.creature-material-row > span {
+  font-size: 12px;
+}
+.creature-offer-note {
+  color: #92a6c3;
+  font-size: 10px;
+  line-height: 1.6;
+  margin: 12px 0;
+}
+.creature-give-button {
+  width: 100%;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  min-height: 42px;
+}
+.creature-approach-button {
+  width: 100%;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  min-height: 36px;
+}
+.creature-bond-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border-top: 1px solid #ffffff11;
+  padding-top: 18px;
+  color: #d5b3f7;
+}
+.creature-bond-card > div {
+  flex: 1;
+}
+.creature-bond-card h4 {
+  color: #dfe5f5;
+  font-size: 12px;
+  margin: 0 0 6px;
+}
+.creature-bond-card p {
+  color: #92a3bc;
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 0;
+}
+.creature-bond-card > button {
+  flex-shrink: 0;
+  font-size: 10px;
+}
+.creature-support-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.creature-support-actions button {
+  flex: 1;
+  justify-content: center;
+  min-width: 135px;
+  gap: 7px;
+  font-size: 10px;
+}
+.creature-support-actions button.selected {
+  border-color: #81d5c4;
+  color: #92e2cf;
+  background: #71cbb315;
+}
+.creature-combat-facts {
+  margin-top: 20px;
+  border: 1px solid #b9a4dc25;
+  border-radius: 12px;
+  padding: 16px;
+}
+.creature-combat-facts > span {
+  display: flex;
+  gap: 8px;
+  color: #d8c9ef;
+  font-size: 11px;
+}
+.creature-combat-facts p {
+  color: #9babc1;
+  font-size: 11px;
+  line-height: 1.7;
+  margin-top: 10px;
+}
+.creature-combat-facts small {
+  color: #8299ba;
+  font-size: 10px;
+}
+.creature-interaction-feedback {
+  margin: 15px 0 0;
+  font-size: 11px;
+  color: #a6dace;
+  line-height: 1.7;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #6bc8b00c;
+}
+@media (max-width: 650px) {
+  .creature-interaction {
+    grid-template-columns: 1fr;
+    border-radius: 12px;
+  }
+  .creature-portrait-panel {
+    padding: 18px;
+    border-right: 0;
+    border-bottom: 1px solid #ffffff0e;
+  }
+  .creature-portrait {
+    margin: 14px auto;
+    width: 108px;
+    height: 108px;
+    background-size: 432px 108px;
+    animation-name: creature-portrait-idle-small;
+  }
+  .creature-portrait-panel p {
+    display: none;
+  }
+  .creature-portrait-panel h3 {
+    font-size: 21px;
+    margin: 9px 0;
+  }
+  .creature-interaction-body {
+    padding: 19px;
+  }
+  .creature-bond-card {
+    flex-wrap: wrap;
+  }
+  .creature-bond-card > button {
+    margin-left: 32px;
+  }
+}
+@keyframes creature-portrait-idle-small {
+  to {
+    background-position: -432px 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .creature-portrait {
+    animation: none;
+  }
+}

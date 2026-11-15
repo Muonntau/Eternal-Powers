@@ -34,7 +34,8 @@ const displayOffer = (offer, items = {}) =>
 export default function MultiplayerPanel({ client, state: provided }) {
   const [live, setLive] = useState(client?.getState?.() || provided || {}),
     [tab, setTab] = useState("party"),
-    [name, setName] = useState("Wayfarer"),
+    [name, setName] = useState(client?.engine?.player?.name || "Wayfarer"),
+    [serverAddress, setServerAddress] = useState(client?.baseURL || ""),
     [roomName, setRoomName] = useState("A Shared Eternity"),
     [roomCode, setRoomCode] = useState(""),
     [importCheckpoint, setImportCheckpoint] = useState(false),
@@ -51,42 +52,6 @@ export default function MultiplayerPanel({ client, state: provided }) {
     [listingPrice, setListingPrice] = useState(25),
     [listingCurrency, setListingCurrency] = useState("goodKarma");
   useEffect(() => client?.subscribe?.(setLive), [client]);
-  if (import.meta.env?.VITE_STATIC_HOST === "true") {
-    return (
-      <div className="multiplayer-content">
-        <div className="network-banner">
-          <div>
-            <span className="eyebrow">THE PUBLIC SOLO EDITION</span>
-            <h3>Your own eternity, anywhere.</h3>
-            <p>
-              Explore the full solo campaign, keep your journey in this browser,
-              and download the game for offline play in Settings.
-            </p>
-          </div>
-          <div className="network-status">
-            <i />
-            <span>SOLO WORLD</span>
-          </div>
-        </div>
-        <div className="network-intro">
-          <Users size={30} />
-          <h3>Bring friends to a private world.</h3>
-          <p>
-            Private co-op, player trading, and the shared market need a running
-            game server. They are included in the repository version.
-          </p>
-          <a
-            className="outline-button"
-            href="https://github.com/Muonntau/Eternal-Powers#private-worlds-and-saves"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Set up private co-op <ArrowRight size={13} />
-          </a>
-        </div>
-      </div>
-    );
-  }
   const net = provided?.room ? provided : live,
     connected = net.status === "connected" && !!net.room,
     player = client?.engine?.player || {},
@@ -122,6 +87,8 @@ export default function MultiplayerPanel({ client, state: provided }) {
   }
   async function connect(mode) {
     await perform(async () => {
+      if (serverAddress.trim() !== client.baseURL)
+        client.setServerURL(serverAddress);
       await client.connectSession({ name, importCheckpoint });
       if (mode === "create") await client.createRoom(roomName);
       else await client.joinRoom(roomCode);
@@ -136,13 +103,52 @@ export default function MultiplayerPanel({ client, state: provided }) {
   const owned = Object.keys(inventory).filter((id) => inventory[id] > 0);
   return (
     <div className="multiplayer-content">
+      {!connected && (
+        <section className="network-endpoint-card">
+          <div>
+            <span className="eyebrow">MULTIPLAYER GATEWAY</span>
+            <h3>Choose your realm server</h3>
+            <p>
+              A server hosts up to 64 travelers with independent region travel,
+              shared encounters, and renewable wilderness. Your character's
+              appearance follows you; each world keeps its own progression.
+            </p>
+          </div>
+          <label>
+            Multiplayer server address
+            <input
+              aria-label="Multiplayer server address"
+              type="url"
+              value={serverAddress}
+              onChange={(e) => setServerAddress(e.target.value)}
+              placeholder={
+                import.meta.env?.VITE_STATIC_HOST === "true"
+                  ? "https://your-game-server.example"
+                  : "This game server (leave empty)"
+              }
+            />
+          </label>
+          <p className="network-server-note">
+            {import.meta.env?.VITE_STATIC_HOST === "true"
+              ? "Enter the HTTPS address provided by your server operator. Your solo journey stays local."
+              : "Leave empty to use this game server, or enter another HTTPS server. Each server has a separate saved identity."}{" "}
+            <a
+              href="https://github.com/Muonntau/Eternal-Powers#private-worlds-and-saves"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Server setup
+            </a>
+          </p>
+        </section>
+      )}
       <div className="network-banner">
         <div>
-          <span className="eyebrow">PRIVATE CO-OP · UP TO FOUR TRAVELERS</span>
+          <span className="eyebrow">MULTIPLAYER · UP TO 64 TRAVELERS</span>
           <h3>{connected ? net.room.name : "Make a shared eternity."}</h3>
           <p>
             {connected
-              ? "The server records your shared world, character, exchanges, and building permissions. The owner leads travel for the whole party."
+              ? "The server records your shared world, character, exchanges, and building permissions. Travel between regions independently."
               : "Invite people you choose with a private world code. Your solo journey stays separate and returns when you leave."}
           </p>
         </div>
@@ -186,9 +192,9 @@ export default function MultiplayerPanel({ client, state: provided }) {
             <div className="network-server-note">
               <Shield size={15} />
               <span>
-                Run <code>npm run server</code> alongside the development
-                server, or use <code>npm start</code> after a production build.
-                Default world-server port: 5176.
+                Your host provides the server address and world code. Join a
+                world to meet other travelers, and return to your solo journey
+                whenever you like.
               </span>
             </div>
           </div>
@@ -300,7 +306,7 @@ export default function MultiplayerPanel({ client, state: provided }) {
             <div>
               <span>
                 {(net.players || []).filter((p) => p.connected).length} /{" "}
-                {net.room.capacity || 4} travelers
+                {net.room.capacity || 64} travelers
               </span>
               <button
                 className="outline-button"

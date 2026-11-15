@@ -4,6 +4,12 @@ import { ZONES } from "../src/data/manual.js";
 import { WorldSystems } from "../src/game/worldSystems.js";
 import { updateRegionalEncounters } from "../src/game/encounters.js";
 import { WorldStore } from "./store.js";
+import {
+  initRespawns,
+  updateRespawns,
+  serializeRespawns,
+} from "../src/game/respawn.js";
+export const MAX_PLAYERS = 64;
 
 const copy = (value) => structuredClone(value);
 const wallets = ["goodKarma", "badKarma"];
@@ -41,6 +47,8 @@ const OWNER_METHODS = new Set([
 const ACTIONS = new Set([
   "setPower",
   "setLineage",
+  "createCharacter",
+  "updateAppearance",
   "cast",
   "cancelCast",
   "interact",
@@ -128,10 +136,106 @@ const finitePlayer = (player) =>
   Object.keys(player.inventory).length <= 80 &&
   Object.values(player.inventory).every((n) => integer(n, 0, 9999));
 
+// Shared enemies use one clock even when travelers join from checkpoints with
+// different playtimes. Rebase personal deadlines by their remaining duration.
+function alignClock(game, target) {
+  const offset = target - game.time;
+  if (!Number.isFinite(offset) || Math.abs(offset) < 1e-9) return;
+  for (const key of [
+    "lastAction",
+    "lastDamage",
+    "lastAttack",
+    "lastDodge",
+    "recallState",
+  ])
+    if (Number.isFinite(game[key])) game[key] += offset;
+  for (const key of Object.keys(game.cooldowns)) game.cooldowns[key] += offset;
+  const seen = new WeakSet();
+  const rebase = (value) => {
+    if (!value || typeof value !== "object" || seen.has(value)) return;
+    seen.add(value);
+    for (const [key, item] of Object.entries(value)) {
+      if (
+        Number.isFinite(item) &&
+        item > 0 &&
+        (/(?:Until|At)$/.test(key) ||
+          ["until", "start", "next", "nextTick", "nextSupport"].includes(key))
+      )
+        value[key] = item + offset;
+      else if (item && typeof item === "object") rebase(item);
+    }
+  };
+  rebase(game.player.statuses);
+  rebase(game.player.companion);
+  rebase(game.localMagic);
+  rebase(game.powerObjects);
+  rebase(game.effects);
+  rebase(game.castState);
+  rebase(game.techniqueState);
+  if (game.player.dodgeUntil > 0) game.player.dodgeUntil += offset;
+  game.time = target;
+}
+
+function refreshLegacyZone(zone, game) {
+  if (
+    (zone.world?.layoutVersion || 0) >= 2 &&
+    zone.world.width >= game.world.width &&
+    zone.world.height >= game.world.height
+  )
+    return;
+  const previous = new Map(
+    (zone.entities || [])
+      .filter(
+        (entity) =>
+          !entity.contractSimulation &&
+          entity.role !== "companion" &&
+          !entity.ownerId,
+      )
+      .map((entity) => [entity.baseEntityId || entity.id, entity]),
+  );
+  const entities = game.entities.filter(
+    (entity) => !entity.contractSimulation && entity.role !== "companion",
+  );
+  for (const entity of entities) {
+    const saved = previous.get(entity.baseEntityId || entity.id);
+    if (saved) Object.assign(entity, saved);
+  }
+  const props = new Map(
+    (zone.world?.props || []).map((prop) => [prop.id, prop]),
+  );
+  for (const prop of game.world.props || []) {
+    const saved = props.get(prop.id);
+    if (!saved) continue;
+    for (const key of [
+      "dead",
+      "collected",
+      "restored",
+      "durability",
+      "eroded",
+      "resolved",
+      "growthStage",
+      "harvestConsumed",
+      "harvestAuthorized",
+      "harvestRemaining",
+    ])
+      if (saved[key] !== undefined) prop[key] = saved[key];
+  }
+  zone.world = game.world;
+  zone.entities = entities;
+}
+
 export class CoopService {
-  constructor({ store = new WorldStore(), now = () => Date.now() } = {}) {
+  constructor({
+    store = new WorldStore(),
+    now = () => Date.now(),
+    capacity = MAX_PLAYERS,
+  } = {}) {
     this.store = store;
     this.now = now;
+    this.capacity = Math.max(
+      1,
+      Math.min(MAX_PLAYERS, Math.floor(Number(capacity) || MAX_PLAYERS)),
+    );
     this.rooms = new Map();
     this.connections = new Map();
     this.trades = new Map();
@@ -162,7 +266,8 @@ export class CoopService {
       });
     }
   }
-  createSession(name, checkpoint = null) {
+  createSession(name, checkpoint = null, character = null) {
+    const imported = !!checkpoint;
     if (
       checkpoint &&
       (!finitePlayer(checkpoint.player) ||
@@ -170,12 +275,34 @@ export class CoopService {
         !ZONES.some((zone) => zone.id === checkpoint.zoneId))
     )
       throw Error("This checkpoint cannot be imported.");
+    if (!checkpoint) {
+      const engine = new GameEngine(null, {
+        headless: true,
+        storage: memoryStorage(),
+      });
+      const draft = {
+        name: cleanName(character?.name || name),
+        lineage: character?.lineage || "angel",
+        starterBranch: character?.starterBranch || "water-grow",
+        appearance: character?.appearance,
+      };
+      if (
+        typeof engine.createCharacter === "function" &&
+        !engine.createCharacter(draft)
+      )
+        throw Error(
+          "Choose a valid character before creating a server identity.",
+        );
+      engine.player.name = draft.name;
+      engine.player.characterCreated = true;
+      checkpoint = engine.exportCheckpoint();
+    }
     const account = this.store.createAccount(cleanName(name), checkpoint);
     return {
       id: account.id,
       token: account.token,
       name: account.name,
-      imported: !!checkpoint,
+      imported,
     };
   }
   authenticate(token) {
@@ -199,6 +326,10 @@ export class CoopService {
       stock: saved.state.stock || null,
       ritualOwner: null,
       zoneId: saved.state.zoneId || "sacred-groves",
+      respawns: saved.state.respawns || null,
+      clockTime: Number.isFinite(saved.state.clockTime)
+        ? saved.state.clockTime
+        : null,
     };
     this.rooms.set(code, room);
     return room;
@@ -217,9 +348,9 @@ export class CoopService {
     if (
       !room.members.get(account.id)?.connected &&
       [...room.members.values()].filter((member) => member.connected).length >=
-        4
+        this.capacity
     )
-      throw Error("This private world already has four celestial travelers.");
+      throw Error(`This server is full (${this.capacity} travelers).`);
     let member = room.members.get(account.id);
     if (!member) {
       const checkpoint =
@@ -250,7 +381,10 @@ export class CoopService {
       if (account.id === room.ownerId) member.role = "owner";
       this.store.setRole(room.code, account.id, member.role);
       room.members.set(account.id, member);
-      if (engine.zone.id !== room.zoneId) engine.setZone(room.zoneId);
+      if (!checkpoint && engine.zone.id !== room.zoneId)
+        engine.setZone(room.zoneId);
+      room.clockTime ??= engine.time;
+      alignClock(engine, room.clockTime);
       if (!room.system)
         room.system = new WorldSystems(
           engine,
@@ -259,6 +393,7 @@ export class CoopService {
       this.bindMember(room, member);
       this.linkMember(room, member);
     }
+    alignClock(member.engine, room.clockTime ?? member.engine.time);
     member.connected = true;
     member.lastInput = this.now();
     this.connections.set(account.id, {
@@ -271,6 +406,35 @@ export class CoopService {
   bindMember(room, member) {
     const engine = member.engine,
       original = engine.resolveEnemy.bind(engine);
+    const originalSync = engine.syncContractEntities.bind(engine);
+    engine.syncContractEntities = () => {
+      originalSync();
+      for (const entity of engine.entities) {
+        // These are personal interaction facades for a shared physical NPC,
+        // not sixty-four extra witnesses standing on the same square.
+        if (entity.role === "contract-trader") entity.canWitness = false;
+      }
+    };
+    const originalSetZone = engine.setZone.bind(engine);
+    engine.setZone = (...args) => {
+      const previousWorld = engine.world,
+        previousEntities = engine.entities;
+      const result = originalSetZone(...args);
+      if (result && engine.world !== previousWorld) {
+        this.cancelPlayerTrades(member.id, "Travel released the exchange.");
+        for (let i = previousEntities.length - 1; i >= 0; i--) {
+          const entity = previousEntities[i];
+          if (
+            entity.ownerId === member.id &&
+            (entity.role === "companion" || entity.contractSimulation)
+          )
+            previousEntities.splice(i, 1);
+        }
+        this.linkMember(room, member);
+        room.system.climate.update(0, engine);
+      }
+      return result;
+    };
     engine.resolveEnemy = (entity, outcome) => {
       const wasDead = entity.dead,
         result = original(entity, outcome);
@@ -329,10 +493,13 @@ export class CoopService {
       zone = { world: game.world, entities: game.entities };
       room.zones.set(game.zone.id, zone);
     } else {
+      refreshLegacyZone(zone, game);
       game.world = zone.world;
       game.entities = zone.entities;
     }
     game.worldSystems = room.system;
+    if (!room.respawns) room.respawns = game.respawns || initRespawns(game);
+    game.respawns = room.respawns;
     if (!room.sanctuary)
       room.sanctuary = {
         plot: game.sanctuary.plot,
@@ -410,24 +577,21 @@ export class CoopService {
     if (!Array.isArray(args) || JSON.stringify(args).length > 8192)
       throw Error("Invalid action arguments.");
     if (method === "setZone") {
-      if (member.id !== room.ownerId)
-        throw Error("The world owner leads shared-region travel.");
-      if (
-        !ZONES.some((zone) => zone.id === args[0]) ||
-        [...room.members.values()].some(
-          (peer) => peer.connected && peer.engine.inCombat(),
+      if (!ZONES.some((zone) => zone.id === args[0]))
+        throw Error("Choose a known region.");
+      if (game.inCombat() || game.downed)
+        throw Error("Leave conflict before traveling.");
+      this.cancelPlayerTrades(member.id, "Travel released the exchange.");
+      for (let i = game.entities.length - 1; i >= 0; i--) {
+        const entity = game.entities[i];
+        if (
+          entity.ownerId === member.id &&
+          (entity.role === "companion" || entity.contractSimulation)
         )
-      )
-        throw Error("All travelers must leave conflict before shared travel.");
-      room.zoneId = args[0];
-      for (const peer of room.members.values()) {
-        this.cancelPlayerTrades(
-          peer.id,
-          "Shared travel released the exchange.",
-        );
-        peer.engine.setZone(args[0]);
-        this.linkMember(room, peer);
+          game.entities.splice(i, 1);
       }
+      game.setZone(args[0]);
+      this.linkMember(room, member);
       room.system.climate.update(0, game);
       this.persist(room);
       return true;
@@ -984,6 +1148,8 @@ export class CoopService {
       sanctuary: room.sanctuary,
       stock: room.stock,
       zoneId: room.zoneId,
+      respawns: room.respawns,
+      clockTime: room.clockTime,
     });
   }
   tick(dt = 0.05) {
@@ -993,6 +1159,7 @@ export class CoopService {
         (member) => member.connected,
       );
       if (!members.length) continue;
+      room.clockTime = (room.clockTime ?? members[0].engine.time) + dt;
       const driver = room.members.get(room.ritualOwner)?.connected
         ? room.members.get(room.ritualOwner)
         : members.find((member) => member.id === room.ownerId) || members[0];
@@ -1010,22 +1177,26 @@ export class CoopService {
         const peers = members.filter(
           (member) => member.engine.world === zone.world,
         );
+        if (peers.length)
+          updateRespawns(peers[0].engine, dt, {
+            players: peers.map((peer) => peer.engine.player),
+          });
         for (const enemy of zone.entities.filter(
           (entity) => entity.kind === "enemy" && !entity.dead,
         )) {
-          const target = peers
-            .filter((member) => !member.engine.downed)
-            .sort(
-              (a, b) =>
-                Math.hypot(
-                  a.engine.player.x - enemy.x,
-                  a.engine.player.y - enemy.y,
-                ) -
-                Math.hypot(
-                  b.engine.player.x - enemy.x,
-                  b.engine.player.y - enemy.y,
-                ),
-            )[0];
+          let target = null,
+            nearest = Infinity;
+          for (const peer of peers) {
+            if (peer.engine.downed) continue;
+            const distance = Math.hypot(
+              peer.engine.player.x - enemy.x,
+              peer.engine.player.y - enemy.y,
+            );
+            if (distance < nearest) {
+              target = peer;
+              nearest = distance;
+            }
+          }
           if (target) target.engine.updateEnemy(enemy, dt);
         }
       }
@@ -1038,42 +1209,102 @@ export class CoopService {
           "Exchange timed out; reservations released.",
         );
   }
-  snapshot(room, viewerId) {
+  snapshot(room, viewerId, { compact = false, includeWorld = true } = {}) {
     const viewer = room.members.get(viewerId);
     if (!viewer) return null;
     const game = viewer.engine;
     room.system.engine = game;
+    const gameSnapshot = game.getSnapshot();
+    if (compact && gameSnapshot.veil?.observers) {
+      gameSnapshot.veil.observers = gameSnapshot.veil.observers
+        .filter(
+          (observer) =>
+            observer.zoneId === game.zone.id &&
+            observer.visible &&
+            game.entities.some(
+              (entity) =>
+                entity.id === observer.id && entity.role !== "contract-trader",
+            ),
+        )
+        .map(({ unseenFor, ...observer }) => observer);
+    }
+    const visibleEffects = [...room.members.values()]
+      .filter(
+        (member) => member.connected && member.engine.zone.id === game.zone.id,
+      )
+      .flatMap((member) =>
+        member.engine.effects
+          .filter(
+            (effect) =>
+              member.engine.time - effect.start < effect.duration &&
+              Math.hypot(effect.x - game.player.x, effect.y - game.player.y) <
+                1600,
+          )
+          .map((effect) => ({
+            ...effect,
+            start: game.time - (member.engine.time - effect.start),
+          })),
+      )
+      .slice(-256);
     return {
       status: "connected",
       room: {
         code: room.code,
         name: room.name,
         ownerId: room.ownerId,
-        capacity: 4,
-        sharedTravel: true,
+        capacity: this.capacity,
+        sharedTravel: false,
+        tickRate: 20,
       },
       selfId: viewerId,
       role: viewer.role,
-      players: [...room.members.values()].map((member) => ({
-        id: member.id,
-        name: member.engine.player.name,
-        lineage: member.engine.player.lineage,
-        rank: member.engine.player.rank,
-        x: member.engine.player.x,
-        y: member.engine.player.y,
-        facing: member.engine.player.facing,
-        walking: member.engine.player.walking,
-        health: member.engine.player.health,
-        maxHealth: member.engine.player.maxHealth,
-        zoneId: member.engine.zone.id,
-        role: member.role,
-        connected: member.connected,
-      })),
-      game: game.getSnapshot(),
-      entities: game.entities,
-      world: game.world,
-      effects: game.effects,
-      checkpoint: game.exportCheckpoint(),
+      players: [...room.members.values()]
+        .filter((member) => member.connected || member.id === viewerId)
+        .map((member) => ({
+          id: member.id,
+          name: member.engine.player.name,
+          lineage: member.engine.player.lineage,
+          appearance: member.engine.player.appearance,
+          characterCreated: member.engine.player.characterCreated,
+          rank: member.engine.player.rank,
+          x: member.engine.player.x,
+          y: member.engine.player.y,
+          facing: member.engine.player.facing,
+          walking: member.engine.player.walking,
+          health: member.engine.player.health,
+          maxHealth: member.engine.player.maxHealth,
+          zoneId: member.engine.zone.id,
+          role: member.role,
+          connected: member.connected,
+        })),
+      game: gameSnapshot,
+      entities: compact
+        ? game.entities.filter((entity) => {
+            if (
+              entity.ownerId &&
+              entity.ownerId !== viewerId &&
+              ["contract-step", "contract-trader"].includes(entity.role)
+            )
+              return false;
+            return (
+              entity.id === game.targetId ||
+              entity.ownerId === viewerId ||
+              Math.hypot(entity.x - game.player.x, entity.y - game.player.y) <
+                1400
+            );
+          })
+        : game.entities,
+      ...(includeWorld ? { world: game.world } : {}),
+      effects: visibleEffects,
+      ...(!compact ? { checkpoint: game.exportCheckpoint() } : {}),
+      transport: { interestRadius: 1400, protocol: 3 },
+      renderState: {
+        progression: {
+          elapsed: game.progression?.elapsed || 0,
+          fallen: game.progression?.fallen || {},
+        },
+        party: game.contracts?.party || [],
+      },
       destination: game.destination || null,
       targetId: game.targetId ?? null,
       worldRevision: room.sanctuary?.components?.length || 0,

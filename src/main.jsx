@@ -8,6 +8,7 @@ import "@fontsource/cormorant-garamond/latin-500.css";
 import "@fontsource/cormorant-garamond/latin-600.css";
 import App from "./App.jsx";
 import "./styles.css";
+import "./v2.css";
 import "./offline.js";
 
 createRoot(document.getElementById("root")).render(<App />);

@@ -1,7 +1,7 @@
 {
-  "version": "63b0914af5334fca7aef",
-  "assetCount": 981,
-  "totalBytes": 28901405,
+  "version": "2ec88dcab9e9611c15a1",
+  "assetCount": 1021,
+  "totalBytes": 31524130,
   "files": [
     {
       "url": "/assets/angel-sheet.png",
@@ -3067,6 +3067,206 @@
       "url": "/assets/tree-snow.png",
       "bytes": 1379,
       "sha256": "3c0cde0fb6d0fa600672b39e5976609d4b1db9431eb7e360464bae3c96094acf"
+    },
+    {
+      "url": "/assets/v2/creator-world.png",
+      "bytes": 2111893,
+      "sha256": "22d4adfcff13fa0214dd798bd541f8f5f148d991c563eba41dc0c53adfb7bbee"
+    },
+    {
+      "url": "/assets/v2/regions/ancient-pyramids.svg",
+      "bytes": 11003,
+      "sha256": "96ce0d190b7ea3c3e75bac69291df5fe7cb7c5d9d2a4a16898ab5dcbf37a93a0"
+    },
+    {
+      "url": "/assets/v2/regions/astral-observatory.svg",
+      "bytes": 13243,
+      "sha256": "f6d12698584425d3f890727ba1cfe675aa19ba8c80071d2b9c8eff890adb68af"
+    },
+    {
+      "url": "/assets/v2/regions/celestial-observatories.svg",
+      "bytes": 13275,
+      "sha256": "d9856e11f687ff5a497c65e4191495917a8a0a1462c60e2c43fc790b9afc8def"
+    },
+    {
+      "url": "/assets/v2/regions/celestial-palaces.svg",
+      "bytes": 13271,
+      "sha256": "e76dc4b4acac36439f2e363bb8bd6752fd7dc50e09564ce5482b2f9c09f24ff0"
+    },
+    {
+      "url": "/assets/v2/regions/celestial-sanctuaries.svg",
+      "bytes": 14651,
+      "sha256": "c5efdfce8e7aeb68f36b5e5db76f7fa958f357f11e5c0c2d9daf48b7ae52a70b"
+    },
+    {
+      "url": "/assets/v2/regions/celestial-waterfalls.svg",
+      "bytes": 13264,
+      "sha256": "46a44ea6acbb34438e4f27ff8d1301d6e9b9dba8ae0159ea9e3e5fb43f64590d"
+    },
+    {
+      "url": "/assets/v2/regions/chaos-chasms.svg",
+      "bytes": 13137,
+      "sha256": "4e63f58b2cae71d875cd6104fd9ece8092943619c4dca14f2d6735ca06f26525"
+    },
+    {
+      "url": "/assets/v2/regions/city-of-stars.svg",
+      "bytes": 13029,
+      "sha256": "80d7e9afe3e85b5916627b9cf6cbd78254036b3c23f3b84255cb5a6a6dc0a47f"
+    },
+    {
+      "url": "/assets/v2/regions/cosmic-deserts.svg",
+      "bytes": 11010,
+      "sha256": "19ffe9c94aedca192967d3bb1f96fad3834e849bc0df340ff515086439a108ca"
+    },
+    {
+      "url": "/assets/v2/regions/dark-spire-towers.svg",
+      "bytes": 12967,
+      "sha256": "ca0eea019c7177d33e1a2e45081ef1560dd457ee6712e40b59de79f38f468e7d"
+    },
+    {
+      "url": "/assets/v2/regions/divine-cities.svg",
+      "bytes": 13247,
+      "sha256": "c7747887448169af09a2089e695e553b32996168fc959f45b0698f8dc7479725"
+    },
+    {
+      "url": "/assets/v2/regions/eternal-light-fields.svg",
+      "bytes": 13247,
+      "sha256": "758059a0e92d2b2fecef2951a29d0fc02b07f671cb1087ef0d187856186ad34f"
+    },
+    {
+      "url": "/assets/v2/regions/ethereal-gardens.svg",
+      "bytes": 13242,
+      "sha256": "24ebf0734f0cfe86f4e794d51cb2392e06f1802398c9903679f936d77cda60fd"
+    },
+    {
+      "url": "/assets/v2/regions/ethereal-libraries.svg",
+      "bytes": 13267,
+      "sha256": "8e4508051e1c6e22eaf4eeeabeb37cb788e4ea36fd43d452bd8027c8f93f1e5e"
+    },
+    {
+      "url": "/assets/v2/regions/ethereal-sanctuary.svg",
+      "bytes": 13223,
+      "sha256": "7f72520ce4e3b8e4172ee17b4739e83017c12a7d236b0ca188d20b1a9accf7ec"
+    },
+    {
+      "url": "/assets/v2/regions/forests-plains-and-lakes.svg",
+      "bytes": 11054,
+      "sha256": "0ff72acf862ae7e34c707965a83f4c69381f8ba41041e47a9024bb9b50b34e1b"
+    },
+    {
+      "url": "/assets/v2/regions/forsaken-wastelands.svg",
+      "bytes": 13002,
+      "sha256": "f800e3df501ad2930c90fbb42fa34ce45ebf8faf1c30a85164a8375cc3e8f972"
+    },
+    {
+      "url": "/assets/v2/regions/halls-of-knowledge.svg",
+      "bytes": 13211,
+      "sha256": "334f24fd6db458a5cfeabb1a910b799302bb94f6b9b60f7796c8de4dcf0ff398"
+    },
+    {
+      "url": "/assets/v2/regions/infernal-abyss.svg",
+      "bytes": 13008,
+      "sha256": "e3f7d8930cc26e3f2a70a639247732298138f323fd6ecbea5502b5fdb6d39464"
+    },
+    {
+      "url": "/assets/v2/regions/infernal-gates.svg",
+      "bytes": 12976,
+      "sha256": "d085e9f0c38ea8ff9cc21dcf0ec1934a8993ce39151d6510222f984f0b841c16"
+    },
+    {
+      "url": "/assets/v2/regions/infernal-strongholds.svg",
+      "bytes": 12984,
+      "sha256": "a61a5a09a590c0628a61458e509b546a9942327f0ceb450562d733f1398fb9d0"
+    },
+    {
+      "url": "/assets/v2/regions/iridescent-temples.svg",
+      "bytes": 13244,
+      "sha256": "04d06ebc154fed49ab9180beb77212232f2a0b822a84680e78bb533db76d2c1c"
+    },
+    {
+      "url": "/assets/v2/regions/living-settlements.svg",
+      "bytes": 13007,
+      "sha256": "833f0b6d5f2bfc7f65adbb6b6c70d1c85c3a4578f0a025f83f9ba1a4a72b51a2"
+    },
+    {
+      "url": "/assets/v2/regions/majestic-mountain-ranges.svg",
+      "bytes": 14754,
+      "sha256": "10aa5406cc279213cf5abda7099e49e04abe4a41503ff2b0d8455cf3d4da8a1d"
+    },
+    {
+      "url": "/assets/v2/regions/malevolence-forest.svg",
+      "bytes": 13016,
+      "sha256": "2b848821e00b66c58f6cfc9a6581993935cc3c04b2fa79332ccdfb5f873f843d"
+    },
+    {
+      "url": "/assets/v2/regions/malevolent-citadels.svg",
+      "bytes": 13033,
+      "sha256": "16ab974ec13efa9dc072c7f3c49753f850dd48b3a052ac5ede78eaeb2c941fe1"
+    },
+    {
+      "url": "/assets/v2/regions/palatial-halls.svg",
+      "bytes": 13234,
+      "sha256": "ac667f36669f5380fed8fe42ef11a0c527bc0531c68d4c4831b545e281188ad6"
+    },
+    {
+      "url": "/assets/v2/regions/pits-of-despair.svg",
+      "bytes": 13009,
+      "sha256": "5a89dde7c96d18c06e6418c5a9a3c3edb50d7fe281f90c0e171ece108ef7591a"
+    },
+    {
+      "url": "/assets/v2/regions/pits-of-suffering.svg",
+      "bytes": 12999,
+      "sha256": "74c77adf2682fc6b559236399067aaca0e9db83f76675e94824dc5d55d8add2c"
+    },
+    {
+      "url": "/assets/v2/regions/prismatic-waterfalls.svg",
+      "bytes": 11070,
+      "sha256": "955b1dc1387a4b79f6457655bb3722ca712ce3a9fa21ad410bd0b73fcb24770b"
+    },
+    {
+      "url": "/assets/v2/regions/realm-of-eternal-conflict.svg",
+      "bytes": 13012,
+      "sha256": "d9add01bae2a6551f9a0ab1bd15a11db2b259bf4457fed4d4de8d77cb5d2a093"
+    },
+    {
+      "url": "/assets/v2/regions/sacred-groves.svg",
+      "bytes": 14616,
+      "sha256": "fd751d9f07524d49f68651f0b0189e30b3c126df739c6ef421a68cf0202fa65f"
+    },
+    {
+      "url": "/assets/v2/regions/sacred-monuments.svg",
+      "bytes": 14650,
+      "sha256": "19c2c1e17381f6f3e11a9034c933a9c2f87d54c7b2488c2f687d40e92ea88707"
+    },
+    {
+      "url": "/assets/v2/regions/sacred-temples.svg",
+      "bytes": 13027,
+      "sha256": "ba89a1d8f08612b378ba9b522221a5c2db1f49e44f1c5e40614b23f9aa40b2c2"
+    },
+    {
+      "url": "/assets/v2/regions/sanctified-cathedrals.svg",
+      "bytes": 12996,
+      "sha256": "77b194fa3852826fa6ba16b59f0ee5301f5f8d23bcbe913f053f5a6999dfc8b8"
+    },
+    {
+      "url": "/assets/v2/regions/suffering-labyrinths.svg",
+      "bytes": 13013,
+      "sha256": "53e6620f8790e8685e5a8e049f047f18dce5d575681d0ec9f289a5205e3503ba"
+    },
+    {
+      "url": "/assets/v2/regions/tormented-ruins.svg",
+      "bytes": 13017,
+      "sha256": "b7fe0059b6423f8a93fe1c5a37e9c0276e0c2ff1f8c099cb3ea087daea2263e6"
+    },
+    {
+      "url": "/assets/v2/regions/translucent-bridges.svg",
+      "bytes": 13226,
+      "sha256": "1f6f02248f25f9fc1477a9736b22c412323c214f0d7ab1069d05f38b4e4cbc09"
+    },
+    {
+      "url": "/assets/v2/regions/zen-gardens.svg",
+      "bytes": 14598,
+      "sha256": "311143d3b536d0a418f5fdc66bb353381ecc6756a373916d80ac82b67b7a5fd7"
     },
     {
       "url": "/assets/vendor/superpowers/animals/0-animals.png",

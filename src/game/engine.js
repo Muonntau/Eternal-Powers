@@ -66,6 +66,14 @@ import {
   serializeRespecialization,
 } from "./respecialization.js";
 
+import {
+  defaultAppearance,
+  normalizeAppearance,
+  installCharacterMethods,
+} from "./character.js";
+
+import { initRespawns, updateRespawns, serializeRespawns } from "./respawn.js";
+
 const SAVE_KEY = "eternal-powers-v1";
 const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
 const dist = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
@@ -391,6 +399,9 @@ function makeWorld(zone) {
 function defaultPlayer() {
   return {
     name: "Wayfarer",
+    characterCreated: false,
+    characterVersion: 2,
+    appearance: defaultAppearance("angel"),
     lineage: "angel",
     x: 920,
     y: 900,
@@ -673,6 +684,7 @@ export class GameEngine {
     initSanctuary(this, this.savedSanctuary, this.savedShop);
     initContracts(this, this.savedContracts);
     this.syncContractEntities();
+    initRespawns(this, this.savedRespawns);
     this.inputBlocked = false;
     this.bindEvents();
     this.publish();
@@ -790,7 +802,10 @@ export class GameEngine {
     updateSanctuary(this, dt);
     updateContracts(this, dt);
     this.syncContractEntities();
-    if (!this.authorityPeer) updateRegionalEncounters(this, dt);
+    if (!this.authorityPeer) {
+      updateRegionalEncounters(this, dt);
+      updateRespawns(this, dt);
+    }
     const p = this.player;
     if (this.downed) return;
     let dx =
@@ -2326,11 +2341,14 @@ export class GameEngine {
       : this.worldSystems.climate.disableHazard(id, this);
   }
   navigateTo(x, y, zoneId) {
+    if (!Number.isFinite(x) || !Number.isFinite(y)) return false;
     if (this.inCombat() || this.downed) {
       this.event("info", "Leave conflict before using route assistance.");
       return false;
     }
     if (zoneId && zoneId !== this.zone.id) this.setZone(zoneId);
+    x = clamp(x, 40, this.world.width - 40);
+    y = clamp(y, 40, this.world.height - 40);
     const step = 30,
       cols = Math.floor(this.world.width / step),
       rows = Math.floor(this.world.height / step),
@@ -2343,20 +2361,100 @@ export class GameEngine {
         x: clamp(Math.floor(x / step), 1, cols - 2),
         y: clamp(Math.floor(y / step), 1, rows - 2),
       };
-    const blocked = (gx, gy) =>
-      this.isPositionBlocked(gx * step + step / 2, gy * step + step / 2, {
-        radius: 15,
-      });
-    const open = [
-        { ...start, g: 0, f: Math.hypot(goal.x - start.x, goal.y - start.y) },
-      ],
+    const collision = new Map();
+    const blocked = (gx, gy) => {
+      const key = index(gx, gy);
+      if (!collision.has(key))
+        collision.set(
+          key,
+          this.isPositionBlocked(gx * step + step / 2, gy * step + step / 2, {
+            radius: 15,
+          }),
+        );
+      return collision.get(key);
+    };
+    const heuristic = (gx, gy) => {
+      const dx = Math.abs(goal.x - gx),
+        dy = Math.abs(goal.y - gy);
+      return Math.max(dx, dy) + (Math.SQRT2 - 1) * Math.min(dx, dy);
+    };
+    const open = [],
       best = new Map([[index(start.x, start.y), 0]]),
       parents = new Map();
+    const before = (a, b) => a.f < b.f || (a.f === b.f && a.g > b.g);
+    const pushOpen = (node) => {
+      open.push(node);
+      let i = open.length - 1;
+      while (i > 0) {
+        const parent = (i - 1) >> 1;
+        if (!before(node, open[parent])) break;
+        open[i] = open[parent];
+        i = parent;
+      }
+      open[i] = node;
+    };
+    const popOpen = () => {
+      const top = open[0],
+        last = open.pop();
+      if (open.length) {
+        let i = 0;
+        while (i * 2 + 1 < open.length) {
+          let child = i * 2 + 1;
+          if (child + 1 < open.length && before(open[child + 1], open[child]))
+            child++;
+          if (!before(open[child], last)) break;
+          open[i] = open[child];
+          i = child;
+        }
+        open[i] = last;
+      }
+      return top;
+    };
+    // Landmarks and creatures can occupy solid geometry. Find a walkable
+    // approach on the player's side rather than routing into their collider.
+    if (blocked(goal.x, goal.y)) {
+      const candidates = [];
+      for (let dy = -4; dy <= 4; dy++)
+        for (let dx = -4; dx <= 4; dx++) {
+          const gx = goal.x + dx,
+            gy = goal.y + dy;
+          if (
+            gx < 1 ||
+            gy < 1 ||
+            gx >= cols - 1 ||
+            gy >= rows - 1 ||
+            blocked(gx, gy)
+          )
+            continue;
+          const proximity = Math.hypot(
+            gx * step + step / 2 - x,
+            gy * step + step / 2 - y,
+          );
+          if (proximity <= 130)
+            candidates.push({
+              x: gx,
+              y: gy,
+              score: proximity + Math.hypot(gx - start.x, gy - start.y) * 0.1,
+            });
+        }
+      candidates.sort((a, b) => a.score - b.score);
+      if (!candidates.length) {
+        this.event("info", "Choose an accessible approach near this landmark.");
+        return false;
+      }
+      goal.x = candidates[0].x;
+      goal.y = candidates[0].y;
+    }
+    pushOpen({ ...start, g: 0, f: heuristic(start.x, start.y) });
     let end = null;
-    for (let count = 0; open.length && count < 7000; count++) {
-      open.sort((a, b) => a.f - b.f);
-      const n = open.shift();
-      if (Math.hypot(n.x - goal.x, n.y - goal.y) <= 1) {
+    for (
+      let count = 0;
+      open.length && count < Math.min(cols * rows, 20000);
+      count++
+    ) {
+      const n = popOpen();
+      if (n.g > (best.get(index(n.x, n.y)) ?? Infinity)) continue;
+      if (n.x === goal.x && n.y === goal.y) {
         end = n;
         break;
       }
@@ -2386,12 +2484,7 @@ export class GameEngine {
         if ((best.get(key) ?? Infinity) <= cost) continue;
         best.set(key, cost);
         parents.set(key, index(n.x, n.y));
-        open.push({
-          x: nx,
-          y: ny,
-          g: cost,
-          f: cost + Math.hypot(goal.x - nx, goal.y - ny),
-        });
+        pushOpen({ x: nx, y: ny, g: cost, f: cost + heuristic(nx, ny) });
       }
     }
     if (!end) {
@@ -2413,9 +2506,11 @@ export class GameEngine {
       if (key == null) break;
     }
     route.reverse();
-    route.push({ x, y });
+    if (!this.isPositionBlocked(x, y, { radius: 15 })) route.push({ x, y });
+    if (!route.length)
+      route.push({ x: goal.x * step + step / 2, y: goal.y * step + step / 2 });
     this.travelWaypoints = route;
-    this.destination = this.travelWaypoints.shift() || { x, y };
+    this.destination = this.travelWaypoints.shift() || null;
     this.targetId = null;
     this.event(
       "info",
@@ -2550,6 +2645,7 @@ export class GameEngine {
     this.targetId = null;
     this.castState = null;
     initializeRegionalEncounters(this);
+    if (!this.authorityPeer) initRespawns(this);
     this.lastDamage = this.time - 10;
     this.worldSystems?.climate.update(0, this);
     this.worldSystems?.applyCurrentRegion();
@@ -2690,6 +2786,8 @@ export class GameEngine {
     }
     const allowed = new Set([
       "setPower",
+      "createCharacter",
+      "updateAppearance",
       "cast",
       "cancelCast",
       "interact",
@@ -2805,6 +2903,7 @@ export class GameEngine {
       initSanctuary(this, this.savedSanctuary, this.savedShop);
       initContracts(this, this.savedContracts);
       this.syncContractEntities();
+      initRespawns(this, this.savedRespawns);
       this.publish();
       return true;
     } catch {
@@ -2958,6 +3057,7 @@ export class GameEngine {
           version: 1,
           progression: this.progression,
           respecialization: serializeRespecialization(this),
+          respawns: serializeRespawns(this),
           contracts: this.contracts ? serializeContracts(this) : undefined,
           localMagic: this.localMagic,
           gameTime: this.time,
@@ -2998,6 +3098,7 @@ export class GameEngine {
       this.time = Math.max(0, Number(s.gameTime) || 0);
       this.savedProgression = s.progression;
       this.savedRespecialization = s.respecialization;
+      this.savedRespawns = s.respawns;
       this.savedContracts = s.contracts;
       this.savedLocalMagic = s.localMagic;
       this.savedWorldSystems = s.worldSystems;
@@ -3009,6 +3110,15 @@ export class GameEngine {
         statuses: [],
         dodgeUntil: 0,
       };
+      this.player.characterCreated =
+        typeof s.player?.characterCreated === "boolean"
+          ? s.player.characterCreated
+          : true;
+      this.player.characterVersion = s.player?.characterVersion || 1;
+      this.player.appearance = normalizeAppearance(
+        s.player?.appearance,
+        this.player.lineage,
+      );
       this.questProgress = s.questProgress || {};
       this.completedQuests = s.completedQuests || [];
       this.rewardedEncounters = s.rewardedEncounters || [];
@@ -3050,6 +3160,9 @@ export class GameEngine {
   reset() {
     this.storage?.removeItem(SAVE_KEY);
     this.player = defaultPlayer();
+    delete this.respawns;
+    this.savedRespawns = undefined;
+    initRespawns(this);
     delete this.respecialization;
     this.savedRespecialization = undefined;
     initRespecialization(this);
@@ -3097,6 +3210,7 @@ installLocalPowerMethods(GameEngine);
 installProgression(GameEngine);
 installContracts(GameEngine);
 installRespecialization(GameEngine);
+installCharacterMethods(GameEngine);
 function canvasListen(canvas, type, fn) {
   canvas.addEventListener(type, fn);
 }

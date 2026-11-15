@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { ensureCharacter } from "./helpers/character.js";
 
 async function boot(page) {
   const errors = [];
@@ -11,6 +12,7 @@ async function boot(page) {
   await page.waitForFunction(
     () => window.__eternal?.getSnapshot().contracts?.offers?.length === 3,
   );
+  await ensureCharacter(page);
   return errors;
 }
 
@@ -390,14 +392,12 @@ test("NPC barter previews freely, releases cancelled escrow, and settles both si
   await page
     .getByRole("button", { name: "Secure barter", exact: true })
     .click();
-  const offer = page
-    .locator(".barter-offers > article")
-    .filter({
-      has: page.getByRole("heading", {
-        name: "Crystal for building supplies",
-        exact: true,
-      }),
-    });
+  const offer = page.locator(".barter-offers > article").filter({
+    has: page.getByRole("heading", {
+      name: "Crystal for building supplies",
+      exact: true,
+    }),
+  });
   await offer
     .getByRole("button", { name: "Inspect exchange", exact: true })
     .click();

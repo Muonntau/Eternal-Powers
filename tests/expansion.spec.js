@@ -1,10 +1,12 @@
 import { test, expect } from "@playwright/test";
+import { ensureCharacter } from "./helpers/character.js";
 
 async function boot(page) {
   const errors = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/");
   await page.waitForFunction(() => window.__eternal?.getSnapshot().sanctuary);
+  await ensureCharacter(page);
   return errors;
 }
 
@@ -266,11 +268,18 @@ test("a posted creature offering creates one optional familiar and lets its owne
   await page
     .getByRole("button", { name: "Inspect target", exact: true })
     .click();
-  await page.getByRole("button", { name: "Offer 1 herb", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Give requested materials", exact: true })
+    .click();
   expect(
     await page.evaluate(() => window.__eternal.player.inventory.herb),
   ).toBe(2);
-  await page.getByRole("button", { name: "Offer 1 herb", exact: true }).click();
+  await expect(
+    page.getByRole("button", { name: "Give requested materials", exact: true }),
+  ).toHaveCount(0);
+  await expect(
+    page.getByText("Materials received", { exact: true }),
+  ).toBeVisible();
   expect(
     await page.evaluate(() => window.__eternal.player.inventory.herb),
   ).toBe(2);

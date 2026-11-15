@@ -829,3 +829,201 @@ test("a paused ritual revalidates learned scope after respecialization without u
   g.player.learned["water-grow"] = 10;
   assert.equal(g.resumeRitual(p.id), true);
 });
+
+test("v2 assisted navigation crosses large districts without cutting solid geometry or reviving a blocked destination", () => {
+  const g = fresh();
+  g.entities = [];
+  for (const zoneId of [
+    "sacred-groves",
+    "suffering-labyrinths",
+    "cosmic-deserts",
+  ]) {
+    const known = g.zoneCatalog.find((zone) => zone.id === zoneId);
+    assert.ok(known, `Known expanded route fixture: ${zoneId}`);
+    g.setZone(known.id);
+    g.entities = [];
+    for (const district of g.world.districts) {
+      assert.equal(
+        g.navigateTo(district.x, district.y),
+        true,
+        `${known.id}: ${district.name}`,
+      );
+      const route = [
+        { x: g.player.x, y: g.player.y },
+        g.destination,
+        ...g.travelWaypoints,
+      ];
+      assert.ok(
+        route.length > 2,
+        `${known.id}: a remote district requires an actual route`,
+      );
+      for (let i = 1; i < route.length; i++) {
+        const from = route[i - 1],
+          to = route[i],
+          length = Math.hypot(to.x - from.x, to.y - from.y);
+        for (let travelled = 0; travelled <= length; travelled += 6) {
+          const t = length ? travelled / length : 0;
+          assert.equal(
+            g.isPositionBlocked(
+              from.x + (to.x - from.x) * t,
+              from.y + (to.y - from.y) * t,
+            ),
+            false,
+            `${known.id}: ${district.name} route crosses solid geometry`,
+          );
+        }
+      }
+    }
+  }
+  g.world = {
+    width: 1000,
+    height: 1000,
+    spawn: { x: 200, y: 200 },
+    terrain: {
+      walls: [{ x: 220, y: 180, width: 15, height: 30, solid: true }],
+    },
+    props: [],
+  };
+  g.player.x = 200;
+  g.player.y = 200;
+  g.destination = null;
+  g.travelWaypoints = [];
+  g.navigateTo(225, 195);
+  assert.ok(
+    !g.destination ||
+      !g.isPositionBlocked(g.destination.x, g.destination.y, { radius: 15 }),
+    "A one-cell blocked target must never become the fallback destination",
+  );
+  const routeBefore = structuredClone({
+    destination: g.destination,
+    waypoints: g.travelWaypoints,
+  });
+  assert.equal(g.navigateTo(Infinity, 200), false);
+  assert.equal(g.navigateTo(200, NaN), false);
+  assert.deepEqual(
+    { destination: g.destination, waypoints: g.travelWaypoints },
+    routeBefore,
+  );
+});
+
+test("renewable generations restore as available despite their collected base identity", () => {
+  const g = fresh();
+  g.skipEncounterAI = true;
+  g.update(0);
+  const node = g.entities.find((n) => n.kind === "resource" && n.renewable),
+    base = node.id;
+  const initial = g.player.inventory[node.item] || 0;
+  g.player.x = node.x;
+  g.player.y = node.y;
+  g.targetId = node.id;
+  assert.equal(g.interact(), true);
+  assert.equal(g.player.inventory[node.item], initial + 1);
+  g.player.x = g.world.spawn.x;
+  g.player.y = g.world.spawn.y;
+  g.update(91);
+  assert.equal(node.id, `${base}:spawn:1`);
+  assert.ok(!node.collected);
+  g.save(false);
+  const h = new GameEngine(null, { headless: true });
+  const restored = h.entities.find((n) => n.baseEntityId === base);
+  assert.equal(restored.id, `${base}:spawn:1`);
+  assert.ok(
+    !restored.collected,
+    "A previously collected base resource must not consume the next generation on reload",
+  );
+  h.player.x = restored.x;
+  h.player.y = restored.y;
+  h.targetId = restored.id;
+  assert.equal(h.interact(), true);
+  assert.equal(h.player.inventory[restored.item], initial + 2);
+  assert.ok(h.collected[h.zone.id].includes(base));
+  assert.ok(h.collected[h.zone.id].includes(restored.id));
+});
+
+test("a renewed resource consumed immediately before region travel cannot reopen or pay twice", () => {
+  const g = fresh();
+  g.skipEncounterAI = true;
+  g.update(0);
+  const node = g.entities.find((n) => n.kind === "resource" && n.renewable),
+    base = node.id;
+  g.player.x = node.x;
+  g.player.y = node.y;
+  g.targetId = node.id;
+  assert.equal(g.interact(), true);
+  g.player.x = g.world.spawn.x;
+  g.player.y = g.world.spawn.y;
+  g.update(91);
+  g.player.x = node.x;
+  g.player.y = node.y;
+  g.targetId = node.id;
+  assert.equal(g.interact(), true);
+  const amount = g.player.inventory[node.item],
+    generationId = node.id;
+  // No update or explicit save between the claim and travel: the travel commit
+  // must snapshot the current generation rather than an earlier pristine clone.
+  g.setZone("prismatic-waterfalls");
+  g.setZone("sacred-groves");
+  const returned = g.entities.find((n) => n.baseEntityId === base);
+  assert.equal(returned.id, generationId);
+  assert.equal(returned.collected, true);
+  assert.equal(g.player.inventory[node.item], amount);
+  const h = new GameEngine(null, { headless: true });
+  const restored = h.entities.find((n) => n.baseEntityId === base);
+  assert.equal(restored.id, generationId);
+  assert.equal(restored.collected, true);
+  assert.equal(h.player.inventory[restored.item], amount);
+});
+
+test("renewed hostile generations pay physical loot once each while the authored trial pays lifetime Karma once", () => {
+  const g = fresh();
+  g.skipEncounterAI = true;
+  g.update(0);
+  const enemy = g.entities.find((n) => n.frontier && n.kind === "enemy"),
+    base = enemy.id;
+  const initialCrystals = g.player.inventory.crystal,
+    initialHerbs = g.player.inventory.herb;
+  const identities = new Set();
+  let lifetimeAfterTrial;
+  for (let generation = 0; generation < 5; generation++) {
+    assert.equal(enemy.spawnGeneration, generation);
+    identities.add(enemy.id);
+    g.resolveEnemy(enemy, false);
+    assert.equal(g.player.inventory.crystal, initialCrystals + generation + 1);
+    assert.equal(g.player.inventory.herb, initialHerbs + generation + 1);
+    g.resolveEnemy(enemy, false);
+    assert.equal(
+      g.player.inventory.crystal,
+      initialCrystals + generation + 1,
+      "A settled identity cannot issue its loot again",
+    );
+    if (generation === 2) {
+      assert.equal(
+        g.completedQuests.filter((id) => id === "grove-trial").length,
+        1,
+      );
+      lifetimeAfterTrial = g.player.lifetimeGood;
+      assert.equal(lifetimeAfterTrial, 150);
+    }
+    if (generation > 2) assert.equal(g.player.lifetimeGood, lifetimeAfterTrial);
+    g.player.x = g.world.spawn.x;
+    g.player.y = g.world.spawn.y;
+    g.update(121);
+  }
+  assert.equal(identities.size, 5);
+  assert.equal(
+    g.rewardedEncounters.filter((id) => id.startsWith(`${g.zone.id}:${base}`))
+      .length,
+    5,
+  );
+  g.save(false);
+  const h = new GameEngine(null, { headless: true });
+  const restored = h.entities.find((n) => n.baseEntityId === base);
+  assert.equal(restored.spawnGeneration, 5);
+  h.resolveEnemy(restored, false);
+  assert.equal(h.player.inventory.crystal, initialCrystals + 6);
+  assert.equal(h.player.lifetimeGood, lifetimeAfterTrial);
+  assert.equal(
+    h.completedQuests.filter((id) => id === "grove-trial").length,
+    1,
+  );
+});

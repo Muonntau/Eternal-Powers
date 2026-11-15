@@ -1,0 +1,14 @@
+services:
+  eternal-powers:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "5176:5176"
+    environment:
+      ETERNAL_CAPACITY: "64"
+      ETERNAL_DB: /data/private-worlds.sqlite
+      ETERNAL_ALLOWED_ORIGINS: "${ETERNAL_ALLOWED_ORIGINS:-https://muonntau.github.io}"
+    volumes:
+      - world-data:/data
+volumes:
+  world-data:

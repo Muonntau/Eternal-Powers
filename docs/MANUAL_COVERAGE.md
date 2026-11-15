@@ -80,3 +80,13 @@ Construction commits only after a valid preview and uses the exact recorded inpu
 Vendor quotes lock item, quantity, currency, durability and price factors for thirty simulation seconds. Settlement checks current stock, funds, pack capacity and the exact offered equipment identity. Each quote settles once and never changes lifetime karma. Common stock returns to ten units and base materials to twenty at the next world-calendar dawn. Equipment resale pays 40% of base price scaled by wear; repair costs 20% of base price; salvage returns 50% of recipe inputs, rounded down.
 
 Committed crafts reserve inputs once, take five seconds within 220 pixels of the sanctuary artisan or an owned forge, pause on leaving the station/region or entering conflict, and resume without another input charge. An output that cannot fit goes to recovery storage.
+
+## V2 implementation changes
+
+The character creator now precedes all play on a fresh save. Name, native lineage/branch, appearance, free starting power and initial wallet are committed together; recreating an established identity is rejected. A pre-v2 save is migrated as an established character, while an explicitly unfinished new save remains in the creator. Sanctuary appearance changes preserve all progression and inventory.
+
+Every named region is now 4800 × 3600, with its original story and recovery anchors preserved. Each includes six outer districts, architectural features, new halls and reachable habitats. The region atlas and nearby radar use actual geometry, consistent aspect ratio, team ownership and real assisted routes.
+
+Renewable non-story enemies and wilderness resources use separate generation identities. Spawn timers pause at occupied/blocked anchors, survive travel and saving, and do not reset living damage. Story bosses, chests, offerings and first-completion lifetime rewards remain finite.
+
+The optional Node server admits up to 64 travelers with independent regions and incremental/interest-filtered snapshots. A controlled 64-client WebSocket fixture verifies admission, the 65th-player boundary, movement, region isolation and reconnection; it is not a production hosting guarantee. The public GitHub Pages client requires an operator-provided HTTPS multiplayer server.

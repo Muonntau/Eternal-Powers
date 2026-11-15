@@ -164,14 +164,15 @@ test("market sale credits an offline seller once, charges the exact fee, and pre
   service.close();
 });
 
-test("shared travel is owner-led and character inventories are scoped to their private world", () => {
+test("region travel is individual and character inventories are scoped to their private world", () => {
   const { service, a, b, ga, code } = roomFixture();
   ga.player.inventory.herb = 8;
   service.command(a.token, "save");
-  assert.throws(
-    () => service.command(b.token, "setZone", ["prismatic-waterfalls"]),
-    /owner/,
+  assert.equal(
+    service.command(b.token, "setZone", ["prismatic-waterfalls"]),
+    true,
   );
+  assert.equal(service.member(a.token).member.engine.zone.id, "sacred-groves");
   service.command(a.token, "setZone", ["prismatic-waterfalls"]);
   assert.equal(
     service.member(b.token).member.engine.zone.id,
@@ -483,6 +484,10 @@ test("two owned escorts remain visible while only the nearby owner advances and 
     service.command(a.token, "setZone", ["celestial-waterfalls"]),
     true,
   );
+  assert.equal(
+    service.command(b.token, "setZone", ["celestial-waterfalls"]),
+    true,
+  );
   const [investigation, mechanism, escortContract] = getContractDefinitions(
     ga.zone.id,
   );
@@ -759,5 +764,164 @@ test("server respecialization previews and cancellations are free, and one recor
     assert.equal(gb.respecialization.receipts.length, 0);
   } finally {
     service.close();
+  }
+});
+
+test("assisted cross-region navigation and same-region travel stay attached to shared authority", () => {
+  const { service, a, b, ga, gb, code } = roomFixture();
+  try {
+    const room = service.roomFor(code),
+      original = ga.entities;
+    assert.equal(
+      service.command(a.token, "navigateTo", [
+        920,
+        900,
+        "prismatic-waterfalls",
+      ]),
+      true,
+    );
+    assert.equal(ga.world, room.zones.get("prismatic-waterfalls").world);
+    assert.equal(ga.entities, room.zones.get("prismatic-waterfalls").entities);
+    assert.equal(gb.zone.id, "sacred-groves");
+    assert.equal(gb.entities, original);
+    assert.equal(
+      original.some((e) => e.ownerId === a.id && e.contractSimulation),
+      false,
+    );
+    const shared = ga.entities;
+    assert.equal(
+      service.command(a.token, "setZone", ["prismatic-waterfalls"]),
+      true,
+    );
+    assert.equal(ga.entities, shared);
+    assert.equal(ga.world, room.zones.get("prismatic-waterfalls").world);
+    assert.equal(
+      service.command(b.token, "setZone", ["prismatic-waterfalls"]),
+      true,
+    );
+    assert.equal(gb.entities, ga.entities);
+    assert.equal(gb.world, ga.world);
+  } finally {
+    service.close();
+  }
+});
+
+test("nearby travelers see each other's spell effects at the correct animation age and personal trader facades do not multiply witnesses", () => {
+  const { service, a, b, ga, gb, code } = roomFixture();
+  try {
+    ga.time = 100;
+    gb.time = 20;
+    ga.effects = [];
+    gb.effects = [];
+    ga.effect(ga.player, "impact", "#73eee4", 40, 2, {
+      branchId: "water-grow",
+    });
+    ga.time += 0.5;
+    const state = service.snapshot(service.roomFor(code), b.id, {
+      compact: true,
+      includeWorld: false,
+    });
+    assert.equal(state.effects.length, 1);
+    assert.equal(gb.time - state.effects[0].start, 0.5);
+    service.tick(0.05);
+    assert.ok(
+      ga.entities
+        .filter((e) => e.role === "contract-trader")
+        .every((e) => e.canWitness === false),
+    );
+    assert.ok(
+      state.game.veil.observers.every((o) => o.unseenFor === undefined),
+    );
+    service.command(a.token, "setZone", ["prismatic-waterfalls"]);
+    assert.equal(
+      service.snapshot(service.roomFor(code), b.id, {
+        compact: true,
+        includeWorld: false,
+      }).effects.length,
+      0,
+    );
+  } finally {
+    service.close();
+  }
+});
+
+test("joining and reconnecting travelers share the authoritative clock while retaining personal cooldown durations", () => {
+  const service = new CoopService({ store: new WorldStore(":memory:") });
+  try {
+    const a = service.createSession("Aster"),
+      state = service.createRoom(a.token, "Clock"),
+      room = service.roomFor(state.room.code);
+    const ga = service.member(a.token).member.engine;
+    for (let i = 0; i < 100; i++) service.tick(0.05);
+    const b = service.createSession("Bryn");
+    service.joinRoom(b.token, room.code);
+    const gb = service.member(b.token).member.engine;
+    assert.equal(gb.time, ga.time);
+    gb.cooldowns["water-grow-1"] = gb.time + 4;
+    gb.player.statuses = [{ type: "potency", until: gb.time + 6 }];
+    gb.localMagic.fields.push({ id: "temporary", until: gb.time + 8 });
+    service.leaveRoom(b.id, room.code);
+    for (let i = 0; i < 40; i++) service.tick(0.05);
+    service.joinRoom(b.token, room.code);
+    assert.equal(gb.time, ga.time);
+    assert.ok(Math.abs(gb.cooldowns["water-grow-1"] - gb.time - 4) < 1e-8);
+    assert.ok(Math.abs(gb.player.statuses[0].until - gb.time - 6) < 1e-8);
+    assert.ok(Math.abs(gb.localMagic.fields[0].until - gb.time - 8) < 1e-8);
+  } finally {
+    service.close();
+  }
+});
+
+test("pre-v2 shared terrain upgrades to expanded layouts without losing construction, gathered identities or encounter outcomes", () => {
+  const folder = mkdtempSync(join(tmpdir(), "eternal-legacy-")),
+    file = join(folder, "world.sqlite");
+  let service = new CoopService({ store: new WorldStore(file) }),
+    account,
+    code;
+  try {
+    account = service.createSession("Legacy");
+    code = service.createRoom(account.token, "Legacy Terrain").room.code;
+    const room = service.roomFor(code),
+      game = service.member(account.token).member.engine,
+      zone = room.zones.get("sacred-groves");
+    const resource = zone.entities.find((e) => e.kind === "resource"),
+      guardian = zone.entities.find((e) => e.id === "guardian");
+    resource.collected = true;
+    guardian.dead = true;
+    guardian.rewardedOutcome = "restored";
+    game.collected[game.zone.id] = [resource.id];
+    room.sanctuary.components.push({
+      id: "legacy-floor",
+      kind: "floor",
+      x: 450,
+      y: 550,
+      width: 30,
+      height: 30,
+      owner: account.id,
+    });
+    zone.world = { ...zone.world, width: 2400, height: 1800, layoutVersion: 1 };
+    service.close();
+    service = new CoopService({ store: new WorldStore(file) });
+    service.joinRoom(account.token, code);
+    const restored = service.member(account.token).member.engine;
+    assert.equal(restored.world.layoutVersion, 2);
+    assert.equal(restored.world.width, 4800);
+    assert.equal(restored.world.height, 3600);
+    assert.equal(
+      restored.entities.find((e) => e.id === resource.id).collected,
+      true,
+    );
+    assert.equal(restored.entities.find((e) => e.id === "guardian").dead, true);
+    assert.equal(
+      restored.entities.find((e) => e.id === "guardian").rewardedOutcome,
+      "restored",
+    );
+    assert.ok(
+      restored.sanctuary.components.some((e) => e.id === "legacy-floor"),
+    );
+    assert.ok(restored.entities.some((e) => e.spawnGroup === "frontier"));
+  } finally {
+    service.close();
+    rmSync(folder, { recursive: true, force: true });
   }
 });

@@ -1,7 +1,33 @@
 const TOKEN_KEY = "eternal-coop-token";
 const ID_KEY = "eternal-coop-account";
+const SERVER_KEY = "eternal-coop-server";
+export function normalizeServerURL(value) {
+  const text = String(value || "").trim();
+  if (!text) return "";
+  let url;
+  try {
+    url = new URL(text);
+  } catch {
+    throw Error("Enter a complete https:// server address.");
+  }
+  const local = ["localhost", "127.0.0.1", "[::1]"].includes(url.hostname);
+  if (
+    (url.protocol !== "https:" && !(url.protocol === "http:" && local)) ||
+    url.username ||
+    url.password ||
+    url.search ||
+    url.hash ||
+    url.pathname !== "/"
+  )
+    throw Error(
+      "Use an HTTPS server origin without a path, login, or query. Local development may use http://localhost.",
+    );
+  return url.origin;
+}
 const clone = (value) => (value == null ? value : structuredClone(value));
 const MUTATIONS = [
+  "createCharacter",
+  "updateAppearance",
   "cast",
   "cancelCast",
   "interact",
@@ -95,13 +121,18 @@ export class NetworkClient {
     this.engine = engine;
     this.onUpdate = onUpdate;
     this.onEvent = onEvent;
-    this.baseURL = baseURL;
+    let savedServer = "";
+    try {
+      savedServer = localStorage.getItem(SERVER_KEY) || "";
+    } catch {}
+    this.baseURL = normalizeServerURL(baseURL || savedServer);
     this.listeners = new Set();
     this.pending = new Map();
     this.counter = 0;
     this.sequence = 0;
     this.state = {
       status: "offline",
+      serverURL: this.baseURL,
       room: null,
       players: [],
       trades: [],
@@ -118,9 +149,24 @@ export class NetworkClient {
     this.worldCache = new Map();
     this.closed = false;
   }
+  storageKey(key) {
+    return this.baseURL ? `${key}:${this.baseURL}` : key;
+  }
+  setServerURL(value) {
+    if (this.state.status === "connected" || this.socket?.readyState === 1)
+      throw Error("Leave the current server before changing its address.");
+    this.baseURL = normalizeServerURL(value);
+    try {
+      localStorage.setItem(SERVER_KEY, this.baseURL);
+    } catch {}
+    this.token = this.readStorage(TOKEN_KEY);
+    this.account = this.readAccount();
+    this.emit({ serverURL: this.baseURL, error: null });
+    return this.baseURL;
+  }
   readStorage(key) {
     try {
-      return localStorage.getItem(key);
+      return localStorage.getItem(this.storageKey(key));
     } catch {
       return null;
     }
@@ -134,8 +180,11 @@ export class NetworkClient {
   }
   remember() {
     try {
-      localStorage.setItem(TOKEN_KEY, this.token);
-      localStorage.setItem(ID_KEY, JSON.stringify(this.account));
+      localStorage.setItem(this.storageKey(TOKEN_KEY), this.token);
+      localStorage.setItem(
+        this.storageKey(ID_KEY),
+        JSON.stringify(this.account),
+      );
     } catch {}
   }
   subscribe(fn) {
@@ -163,6 +212,8 @@ export class NetworkClient {
     fresh = false,
   } = {}) {
     if (this.closed) throw Error("This connection has been closed.");
+    if (import.meta.env?.VITE_STATIC_HOST === "true" && !this.baseURL)
+      throw Error("Enter the HTTPS address of a running multiplayer server.");
     if (!this.token || fresh) {
       const checkpoint = importCheckpoint
         ? (
@@ -172,7 +223,16 @@ export class NetworkClient {
       const response = await fetch(`${this.baseURL}/api/session`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, ...(checkpoint ? { checkpoint } : {}) }),
+        body: JSON.stringify({
+          name,
+          character: {
+            name: this.engine?.player?.name || name,
+            lineage: this.engine?.player?.lineage,
+            starterBranch: this.engine?.player?.starterBranch,
+            appearance: this.engine?.player?.appearance,
+          },
+          ...(checkpoint ? { checkpoint } : {}),
+        }),
       });
       const body = await response.json();
       if (!response.ok || body.error)
@@ -221,8 +281,8 @@ export class NetworkClient {
         this.token = null;
         this.account = null;
         try {
-          localStorage.removeItem(TOKEN_KEY);
-          localStorage.removeItem(ID_KEY);
+          localStorage.removeItem(this.storageKey(TOKEN_KEY));
+          localStorage.removeItem(this.storageKey(ID_KEY));
         } catch {}
       }
       throw error;
@@ -399,6 +459,46 @@ export class NetworkClient {
   }
   applySnapshot(snapshot) {
     if (!snapshot?.game || !snapshot?.room) return;
+    if (snapshot.gameFields && this.latest) {
+      const game = { ...snapshot.game };
+      for (const [key, patch] of Object.entries(snapshot.gameFields)) {
+        game[key] = { ...this.latest.game[key], ...patch.values };
+        for (const removed of patch.removed || []) delete game[key][removed];
+      }
+      snapshot = { ...snapshot, game };
+    }
+    if (snapshot.entityChanges && this.latest) {
+      const entities = new Map(
+        (this.latest.entities || []).map((entity) => [entity.id, entity]),
+      );
+      for (const id of snapshot.entityChanges.removed || [])
+        entities.delete(id);
+      for (const entity of snapshot.entityChanges.added || [])
+        entities.set(entity.id, entity);
+      for (const patch of snapshot.entityChanges.updated || []) {
+        const entity = { ...entities.get(patch.id), ...patch.values };
+        for (const key of patch.removed || []) delete entity[key];
+        entities.set(patch.id, entity);
+      }
+      snapshot = { ...snapshot, entities: [...entities.values()] };
+    }
+    if (snapshot.playersDelta && this.latest) {
+      const players = new Map(
+        this.latest.players.map((player) => [player.id, player]),
+      );
+      for (const id of snapshot.playersRemoved || []) players.delete(id);
+      for (const player of snapshot.playersDelta)
+        players.set(player.id, player);
+      snapshot = { ...snapshot, players: [...players.values()] };
+    }
+    if (snapshot.delta && this.latest)
+      snapshot = {
+        ...this.latest,
+        ...snapshot,
+        game: { ...this.latest.game, ...snapshot.game },
+        world: snapshot.world || this.latest.world,
+        checkpoint: undefined,
+      };
     this.attach();
     const e = this.engine;
     this.latest = snapshot;
@@ -417,6 +517,9 @@ export class NetworkClient {
             "powerObjects",
             "downed",
             "cooldowns",
+            "worldModel",
+            "sanctuary",
+            "shop",
           ].includes(key)
         )
           e[key] = clone(value);
@@ -425,6 +528,16 @@ export class NetworkClient {
         this.worldCache.set(worldKey, snapshot.world);
       e.world = this.worldCache.get(worldKey) || snapshot.world || e.world;
       e.entities = snapshot.entities || e.entities;
+      if (snapshot.renderState?.progression)
+        e.progression = {
+          ...e.progression,
+          ...clone(snapshot.renderState.progression),
+        };
+      if (snapshot.renderState?.party)
+        e.contracts = {
+          ...e.contracts,
+          party: clone(snapshot.renderState.party),
+        };
       e.effects = snapshot.effects || [];
       e.selectedPower = {
         branchId: snapshot.game.selectedPower?.branchId || "water-grow",

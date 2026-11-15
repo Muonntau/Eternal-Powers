@@ -3,7 +3,7 @@ import { WebSocketServer, WebSocket } from "ws";
 import { readFile, stat } from "node:fs/promises";
 import { resolve, extname, sep } from "node:path";
 import { pathToFileURL } from "node:url";
-import { CoopService } from "./service.js";
+import { CoopService, MAX_PLAYERS } from "./service.js";
 import { WorldStore } from "./store.js";
 
 const MIME = {
@@ -40,14 +40,41 @@ export function createGameServer({
   service = null,
   dist = resolve("dist"),
   tickInterval = 50,
-  broadcastInterval = 100,
+  broadcastInterval = 150,
+  capacity = MAX_PLAYERS,
+  allowedOrigins = [],
+  sessionsPerMinute = 120,
   now = () => Date.now(),
 } = {}) {
   const coop =
-    service || new CoopService({ store: new WorldStore(database), now });
+    service ||
+    new CoopService({ store: new WorldStore(database), now, capacity });
   const clients = new Map(),
     sessionsByIP = new Map();
   let closing = false;
+  const originAllowlist = new Set(
+    allowedOrigins
+      .map((value) => {
+        try {
+          return new URL(value).origin;
+        } catch {
+          return "";
+        }
+      })
+      .filter(Boolean),
+  );
+  const allowsOrigin = (origin, host) => {
+    if (!origin) return true;
+    try {
+      const url = new URL(origin);
+      return (
+        ["http:", "https:"].includes(url.protocol) &&
+        (url.host === host || originAllowlist.has(url.origin))
+      );
+    } catch {
+      return false;
+    }
+  };
   const json = (response, status, value) => {
     response.writeHead(status, {
       "Content-Type": "application/json; charset=utf-8",
@@ -62,13 +89,34 @@ export function createGameServer({
         request.url || "/",
         `http://${request.headers.host || "localhost"}`,
       );
+      const origin = request.headers.origin;
+      if (url.pathname.startsWith("/api/") && origin) {
+        if (!allowsOrigin(origin, request.headers.host)) {
+          json(response, 403, {
+            error: "This game origin is not allowed by the server.",
+          });
+          return;
+        }
+        response.setHeader("Access-Control-Allow-Origin", origin);
+        response.setHeader("Vary", "Origin");
+      }
+      if (request.method === "OPTIONS" && url.pathname.startsWith("/api/")) {
+        response.writeHead(204, {
+          "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+          "Access-Control-Max-Age": "600",
+        });
+        response.end();
+        return;
+      }
       if (url.pathname === "/api/health") {
         json(response, 200, {
           ok: true,
           service: "Eternal Powers private worlds",
-          capacity: 4,
+          capacity: coop.capacity,
           persistence: "SQLite",
-          version: "1",
+          version: "2",
+          tickRate: Math.round(1000 / tickInterval),
         });
         return;
       }
@@ -81,14 +129,13 @@ export function createGameServer({
         }
         entry.count++;
         sessionsByIP.set(address, entry);
-        if (entry.count > 12) {
+        if (entry.count > sessionsPerMinute) {
           json(response, 429, {
             error: "Wait a minute before creating another local identity.",
           });
           return;
         }
-        const origin = request.headers.origin;
-        if (origin && new URL(origin).host !== request.headers.host) {
+        if (!allowsOrigin(origin, request.headers.host)) {
           json(response, 403, {
             error: "Create identities from this game origin.",
           });
@@ -98,7 +145,11 @@ export function createGameServer({
         json(
           response,
           201,
-          coop.createSession(body.name, body.checkpoint || null),
+          coop.createSession(
+            body.name,
+            body.checkpoint || null,
+            body.character || null,
+          ),
         );
         return;
       }
@@ -182,7 +233,7 @@ export function createGameServer({
     const origin = request.headers.origin;
     if (origin) {
       try {
-        if (new URL(origin).host !== request.headers.host) {
+        if (!allowsOrigin(origin, request.headers.host)) {
           socket.destroy();
           return;
         }
@@ -207,23 +258,131 @@ export function createGameServer({
       if (context.accountId === accountId) send(socket, { type, data });
   };
   const broadcast = () => {
+    const encodedObjects = new WeakMap();
+    const encode = (value) => {
+      if (!value || typeof value !== "object") return JSON.stringify(value);
+      if (!encodedObjects.has(value))
+        encodedObjects.set(value, JSON.stringify(value));
+      return encodedObjects.get(value);
+    };
+    const fields = (value) =>
+      new Map(Object.entries(value).map(([key, item]) => [key, encode(item)]));
+    const changes = (value, before) => {
+      const values = {},
+        removed = [];
+      for (const [key, item] of Object.entries(value))
+        if (before.get(key) !== encode(item)) values[key] = item;
+      for (const key of before.keys())
+        if (!Object.hasOwn(value, key)) removed.push(key);
+      return { values, removed };
+    };
     for (const [socket, context] of clients) {
       if (
         !context.token ||
         !context.accountId ||
-        socket.readyState !== WebSocket.OPEN
+        socket.readyState !== WebSocket.OPEN ||
+        socket.bufferedAmount >= 4 * 1024 * 1024
       )
         continue;
       const connection = coop.connections.get(context.accountId);
       if (!connection) continue;
       try {
-        send(socket, {
-          type: "snapshot",
-          data: coop.snapshot(
-            coop.roomFor(connection.roomCode),
-            context.accountId,
-          ),
+        const room = coop.roomFor(connection.roomCode),
+          member = room.members.get(context.accountId);
+        if (!member) continue;
+        const worldKey = `${member.engine.zone.id}:${member.engine.world.seed}:${room.sanctuary?.components?.length || 0}`;
+        const frame = coop.snapshot(room, context.accountId, {
+          compact: true,
+          includeWorld: context.worldKey !== worldKey,
         });
+        if (context.worldKey !== worldKey) {
+          context.lastGame = {};
+          context.lastEntities = null;
+          context.worldKey = worldKey;
+        }
+        const delta = {},
+          gameFields = {};
+        context.lastGame ||= {};
+        for (const [key, value] of Object.entries(frame.game)) {
+          const record =
+            value && typeof value === "object" && !Array.isArray(value);
+          const previous = context.lastGame[key];
+          if (record) {
+            if (previous instanceof Map) {
+              const patch = changes(value, previous);
+              if (Object.keys(patch.values).length || patch.removed.length)
+                gameFields[key] = patch;
+            } else delta[key] = value;
+            context.lastGame[key] = fields(value);
+          } else {
+            const encoded = encode(value);
+            if (previous !== encoded) delta[key] = value;
+            context.lastGame[key] = encoded;
+          }
+        }
+        frame.game = delta;
+        if (Object.keys(gameFields).length) frame.gameFields = gameFields;
+        const nextEntities = new Map(
+          frame.entities.map((entity) => [entity.id, fields(entity)]),
+        );
+        if (context.lastEntities) {
+          const added = [],
+            updated = [],
+            removed = [];
+          for (const entity of frame.entities) {
+            const previous = context.lastEntities.get(entity.id);
+            if (!previous) added.push(entity);
+            else {
+              const patch = changes(entity, previous);
+              if (Object.keys(patch.values).length || patch.removed.length)
+                updated.push({ id: entity.id, ...patch });
+            }
+          }
+          for (const id of context.lastEntities.keys())
+            if (!nextEntities.has(id)) removed.push(id);
+          if (added.length || updated.length || removed.length)
+            frame.entityChanges = { added, updated, removed };
+          delete frame.entities;
+        }
+        context.lastEntities = nextEntities;
+        context.lastCollections ||= {};
+        for (const key of [
+          "effects",
+          "chat",
+          "trades",
+          "market",
+          "receipts",
+          "renderState",
+        ]) {
+          const encoded = encode(frame[key]);
+          if (context.lastCollections[key] === encoded) delete frame[key];
+          else context.lastCollections[key] = encoded;
+        }
+        if (context.lastPlayers) {
+          const changed = [],
+            removed = [];
+          const present = new Set(frame.players.map((player) => player.id));
+          for (const id of context.lastPlayers.keys())
+            if (!present.has(id)) {
+              context.lastPlayers.delete(id);
+              removed.push(id);
+            }
+          for (const player of frame.players) {
+            const encoded = JSON.stringify(player);
+            if (context.lastPlayers.get(player.id) !== encoded) {
+              changed.push(player);
+              context.lastPlayers.set(player.id, encoded);
+            }
+          }
+          frame.playersDelta = changed;
+          if (removed.length) frame.playersRemoved = removed;
+          delete frame.players;
+        } else
+          context.lastPlayers = new Map(
+            frame.players.map((player) => [player.id, JSON.stringify(player)]),
+          );
+        frame.delta = true;
+        send(socket, { type: "snapshot", data: frame });
       } catch (error) {
         send(socket, { type: "error", error: String(error.message) });
       }
@@ -368,7 +527,8 @@ export function createGameServer({
           });
         }
         if (id) send(socket, response);
-        if (action !== "input" && action !== "snapshot") broadcast();
+        // The regular snapshot timer batches simultaneous actions and joins.
+        // Resource-changing replies remain immediate and replay-safe.
       } catch (error) {
         if (id)
           send(socket, {
@@ -390,7 +550,7 @@ export function createGameServer({
         const connection = coop.connections.get(context.accountId);
         if (connection) coop.leaveRoom(context.accountId, connection.roomCode);
       }
-      if (!closing) broadcast();
+      // The next regular broadcast advertises the disconnect.
     });
     socket.on("error", () => {});
   });
@@ -443,6 +603,11 @@ if (
 ) {
   const app = createGameServer({
     database: process.env.ETERNAL_DB || "data/private-worlds.sqlite",
+    capacity: Number(process.env.ETERNAL_CAPACITY) || MAX_PLAYERS,
+    allowedOrigins: (process.env.ETERNAL_ALLOWED_ORIGINS || "")
+      .split(",")
+      .map((value) => value.trim())
+      .filter(Boolean),
   });
   const address = await app.listen(
     Number(process.env.PORT) || 5176,

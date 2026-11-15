@@ -1230,3 +1230,62 @@
     gap: 9px;
   }
 }
+
+.network-endpoint-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 24px;
+  padding: 22px;
+  margin-bottom: 20px;
+  background: linear-gradient(125deg, #142437, #1a1e38);
+  border: 1px solid #77b4da33;
+  border-radius: 14px;
+}
+.network-endpoint-card h3 {
+  color: #ecf5ff;
+  margin: 7px 0;
+  font-size: 20px;
+}
+.network-endpoint-card p {
+  color: #a3b4c8;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.network-endpoint-card label {
+  align-self: center;
+  color: #c6d5e8;
+  font-size: 12px;
+  display: grid;
+  gap: 8px;
+}
+.network-endpoint-card input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #79a7c74d;
+  background: #0b1424;
+  color: #e9f5ff;
+  padding: 13px;
+  border-radius: 9px;
+  font: inherit;
+}
+.network-endpoint-card .network-server-note {
+  grid-column: 1/-1;
+  margin: 0;
+}
+.network-endpoint-card a {
+  color: #83dce8;
+}
+.network-roster {
+  max-height: 480px;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+@media (max-width: 700px) {
+  .network-endpoint-card {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+  .network-endpoint-card h3 {
+    font-size: 18px;
+  }
+}

@@ -1,16 +1,16 @@
-# Eternal Powers — The 2D Chronicles
+# Eternal Powers v2 — Eternity Reborn
 
 **[Play Eternal Powers in your browser](https://muonntau.github.io/Eternal-Powers/)**
 
-A playable 2D fantasy campaign based on the supplied **Eternal Powers Game Manual**, provisional ruleset 0.1. Explore three realms, develop an angelic or demonic character, complete authored contracts, build a sanctuary, and change the world through reversible rituals.
+A character-driven 2D fantasy campaign based on the supplied **Eternal Powers Game Manual**, provisional ruleset 0.1. Create an angelic or demonic avatar, explore three expanded realms, complete authored contracts, build a sanctuary, and change the world through reversible rituals.
 
-The game includes local solo play, persistent private co-op, hundreds of generated graphics and audio assets, and licensed CC0 imports. Everything needed for the game is shipped in the repository.
+Version 2 introduces a mandatory four-step character creator, matching customizable world avatars, a modern navy/cyan interface, redesigned interaction windows, nearby/region maps, larger environments, richer spell effects, and renewable wilderness populations. The included authoritative server supports rooms of up to 64 travelers. Original art, music and effects, plus licensed CC0 imports, ship with the repository.
 
 ## Public GitHub edition
 
 The source is published at **https://github.com/Muonntau/Eternal-Powers**. The **Publish playable game** GitHub Actions workflow builds the solo game for **https://muonntau.github.io/Eternal-Powers/** whenever `main` changes.
 
-For a repository's first deployment, an owner must enable **Settings → Pages → Build and deployment → Source: GitHub Actions**. If the first deployment already ran before this setting was enabled, rerun its failed deployment job from the Actions tab. The validated `github-pages` build artifact remains available even when initial Pages setup requires owner permission. GitHub Pages serves solo and offline play; the repository's Node server provides private co-op, player trading, and the shared market when hosted separately.
+For a repository's first deployment, an owner must enable **Settings → Pages → Build and deployment → Source: GitHub Actions**. If the first deployment already ran before this setting was enabled, rerun its failed deployment job from the Actions tab. The validated `github-pages` build artifact remains available even when initial Pages setup requires owner permission. GitHub Pages serves solo and offline play. Its multiplayer gateway can connect to a separately hosted HTTPS game server for up to 64 travelers, player trading, and the shared market. A running multiplayer host is required; the static Pages deployment does not create one.
 
 To reproduce the Pages build locally:
 
@@ -41,20 +41,22 @@ Open **http://localhost:5173**. Vite forwards the API and WebSocket connection t
 
 ## What you can play
 
-- **39 authored regions:** distinct roads, terrain, interiors, landmarks, safe hubs, encounter locations, and reachable objective anchors across Earth, Heaven, and Hell.
+- **Your own character:** four-step creation before play, both lineages, sixteen native starting paths, three body silhouettes, four hairstyles, and skin/hair/attire/aura palettes. Your chosen appearance is shared by the creator, profile, inventory, world sprite and other players. Existing journeys migrate without losing progress.
+- **39 larger authored regions:** each is 4800 × 3600 pixels, four times its original area, with six districts, twelve architectural features, additional enterable halls, waterways and reachable wilderness habitats. Core campaign and recovery anchors retain their positions.
+- **Rebuilt navigation and interface:** full-world viewport, compact status HUD, modern dialogs and inventory, clean radar with nearby/region modes, marker legend, detailed region atlas and collision-aware walking waypoints.
 - **117 campaign contracts:** investigation, delivery, escort, fair or coercive allocation, negotiation, restoration, and visible mechanism puzzles. Realm accords lead to a rank-ten campaign conclusion; exploration continues afterward.
 - **All 160 named powers:** 87 local abilities have typed targeting and effect handlers; 73 rituals use scope previews, resource reservation, preparation, staged settlement, interruption/resume, expiry, reversal, and counter-projects.
 - **Progression and combat:** separate karma wallets and lifetime standing, ten celestial ranks and trials, sequential training, all forty enhancement ranks, all forty cross-affinity techniques, real certification prerequisites, guard, dodge, barriers, timed conditions, line of effect, and moving-target revalidation.
-- **Thirty creature profiles:** realm-aware placement, varied attack patterns, visible warnings, resistances, phased encounters, peaceful anchor solutions, neutral offerings, and familiar support.
+- **Thirty creature profiles:** realm-aware placement, varied attack patterns, readable warnings, resistances and peaceful solutions. Pressing E at a neutral creature opens the same material-offering card as Inspect, with inventory counts, missing requirements, approach navigation, exact settlement, bonding and familiar support.
 - **Relationships and recovery:** Veil transitions, observer detection, witnesses, faction and NPC standing, one-time restitution, twenty-second downed states, four-second ally revives at 25% vitality, and identity-preserving Tenebrous Rebirth.
 - **Construction and economy:** nine templates, an owned plot, placement/exit checks, rotation, 500-component capacity, twenty-edit undo, layout snapshots, storage/recovery chests, individual gear wear, repair, salvage, finite stock, locked purchases, NPC barter, and timed station crafting.
-- **Living world:** the manual's sixty-minute world day, weather, sheltered routes, marked hazards, finite daily events, regional meters, persistent conditions, and finite resource lots.
-- **Private co-op:** up to four players, server-controlled characters and encounters, personal reward receipts, owner-led travel, building roles, explicit chat, two-sided escrow trades, a persistent player market, and SQLite saves.
-- **Local assets:** individual power/enhancement/technique icons, animated creatures, spell strips, zone architecture, twelve-region illustrations, original regional music and foley, and imported CC0 scenery, items, wildlife, effects, and recordings.
+- **Living world:** the manual's sixty-minute day, weather, sheltered routes, hazards and persistent conditions. Each expanded region has 96 renewable resource anchors and 18 additional roaming creatures. Wilderness respawns wait for nearby players to leave; generation receipts allow new loot without duplicating prior claims or story rewards.
+- **64-player server rooms:** server-controlled characters, independent region travel, nearby entity interest filtering, incremental snapshots, visible customized travelers, personal rewards, building roles, chat, escrow trading, market and SQLite persistence. Connections use a per-server identity and an explicit origin allowlist.
+- **V2 graphics:** a newly generated portal/realm backdrop, 39 original region illustrations, custom animated avatars, region-specific architecture, depth/lighting and layered elemental effects. Individual power/enhancement/technique icons, creatures, music, foley and CC0 scenery remain available offline.
 
 ## Begin a journey
 
-Choose a lineage and native starting branch before settling your first action. The default character begins with Water–Grow. Select the training effigy and press **Q** to practice. Gather Moonleaf, restore damaged gardens, and open the Campaign panel for the Sacred Groves contracts.
+On a new journey, choose a name and lineage, customize your form, select a native starting branch, then review and enter the world. Appearance can be changed at a sanctuary through your character profile. Select the training effigy and press **Q** to practice. Gather Moonleaf, restore damaged gardens, and open Campaign & contracts for the Sacred Groves route.
 
 Angels initially earn Good Karma; demons initially earn Bad Karma. The journal exposes destructive and coercive routes separately from restorative routes. Opposing outcomes do not pay an inaccessible wallet before certification. At rank three, complete a cooperative objective and isolated opposing-domain practice before paying the certification fee.
 
@@ -88,7 +90,7 @@ The six printed recipes retain their material and access requirements. Recipe pl
 
 ## Private worlds and saves
 
-Open **Private co-op** to create or join a room. Joining switches to a separate server character for that room; leaving restores your original solo journey. A room owner leads shared travel and grants construction roles. Offers and trades show their contents before either side locks or confirms. Transfers and market proceeds never count as new lifetime karma.
+Open **Private co-op** to create or join a server room with up to 64 travelers. On the public Pages client, enter your server operator's HTTPS address first. See [multiplayer hosting](docs/MULTIPLAYER_HOSTING.md) for Docker, persistence, TLS and origin settings. Joining switches to a separate server character for that room; leaving restores your original solo journey. Travelers change regions independently; a room owner grants construction roles. Offers and trades show their contents before either side locks or confirms. Transfers and market proceeds never count as new lifetime karma.
 
 Solo saves live in browser storage under `eternal-powers-v1`. Settings can export or restore a portable JSON backup. Browser origins have separate saves.
 
@@ -110,7 +112,7 @@ npm run test:browser
 npm run build
 ```
 
-`npm run check` runs the simulation, network, offline, and production-build checks. The current edition passes 162 tests across these suites and the browser suite; see [validation details](docs/VALIDATION.md). Browser tests use Playwright; run `npx playwright install chromium` when no compatible browser is installed.
+`npm run check` runs the simulation, network, offline, and production-build checks. See [validation details](docs/VALIDATION.md) for the current coverage, including the real 64-client load fixture. Browser tests use Playwright; run `npx playwright install chromium` when no compatible browser is installed.
 
 ## Fidelity and sources
 

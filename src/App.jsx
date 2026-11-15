@@ -50,6 +50,12 @@ import {
 } from "lucide-react";
 import { GameEngine, ITEMS, RECIPES, SAVE_KEY } from "./game/engine.js";
 import AdvancedPowers from "./components/AdvancedPowers.jsx";
+import CharacterCreator, {
+  CharacterPortrait,
+} from "./components/CharacterCreator.jsx";
+import CreatureInteraction from "./components/CreatureInteraction.jsx";
+import RegionAtlas from "./components/RegionAtlas.jsx";
+
 import RespecializationPanel from "./components/RespecializationPanel.jsx";
 import SanctuaryPanel from "./components/SanctuaryPanel.jsx";
 import WorldPanel from "./components/WorldPanel.jsx";
@@ -165,10 +171,16 @@ function initialLoadout() {
 }
 function itemArtwork(id, rank = 1) {
   if (["focus", "ward", "utility"].includes(id))
-    return assetUrl(`/assets/equipment-icons/${id}-${Math.max(1, Math.min(10, rank))}.png`);
+    return assetUrl(
+      `/assets/equipment-icons/${id}-${Math.max(1, Math.min(10, rank))}.png`,
+    );
   if (["wallComponent", "gardenBed", "portalAnchor"].includes(id))
-    return assetUrl(`/assets/build-${{ wallComponent: "wall", gardenBed: "garden", portalAnchor: "portal" }[id]}.png`);
-  return assetUrl(`/assets/item-${{ draught: "health", essenceDraught: "essence-tonic", wood: "timber", cleansingCharm: "seed", protectiveCharm: "crystal" }[id] || id}.png`);
+    return assetUrl(
+      `/assets/build-${{ wallComponent: "wall", gardenBed: "garden", portalAnchor: "portal" }[id]}.png`,
+    );
+  return assetUrl(
+    `/assets/item-${{ draught: "health", essenceDraught: "essence-tonic", wood: "timber", cleansingCharm: "seed", protectiveCharm: "crystal" }[id] || id}.png`,
+  );
 }
 function Key({ children }) {
   return <kbd>{children}</kbd>;
@@ -187,6 +199,10 @@ function App() {
     network = useRef(null),
     restoreInput = useRef(null);
   const [state, setState] = useState(INITIAL);
+  const [engineReady, setEngineReady] = useState(false);
+  const [creatorBusy, setCreatorBusy] = useState(false);
+  const [creatorError, setCreatorError] = useState("");
+  const [mapView, setMapView] = useState("realm");
   const [networkState, setNetworkState] = useState({
     status: "offline",
     players: [],
@@ -242,7 +258,9 @@ function App() {
         else if (e.type === "open-contracts" || e.type === "contract-dialogue")
           setPanel("contracts");
         else if (e.type === "open-social") setPanel("social");
-        else if (e.type === "dialogue") {
+        else if (e.type === "open-creature") {
+          setPanel("inspect");
+        } else if (e.type === "dialogue") {
           setDialogue(e.text);
           setPanel("dialogue");
         } else notify(e.text || e.message || "The world has changed.", e.type);
@@ -252,8 +270,11 @@ function App() {
     game.current = g;
     network.current = new NetworkClient(g, { onUpdate: setNetworkState });
     window.__eternalNetwork = network.current;
+    g.inputBlocked = !g.player.characterCreated;
+    g.setPaused(!g.player.characterCreated);
     g.start();
     window.__eternal = g;
+    setEngineReady(true);
     return () => {
       network.current?.detach();
       network.current?.destroy();
@@ -266,9 +287,11 @@ function App() {
   }, []);
   useEffect(() => {
     if (game.current) {
-      game.current.inputBlocked = !!panel;
+      const needsCharacter = !game.current.player.characterCreated;
+      game.current.inputBlocked = !!panel || needsCharacter;
       game.current.setPaused(
-        paused ||
+        needsCharacter ||
+          paused ||
           !!(
             panel &&
             ![
@@ -284,7 +307,7 @@ function App() {
           welcome,
       );
     }
-  }, [paused, panel, welcome]);
+  }, [paused, panel, welcome, engineReady, state.player?.characterCreated]);
   useEffect(() => {
     try {
       localStorage.setItem("eternal-powers-loadout", JSON.stringify(slots));
@@ -319,6 +342,7 @@ function App() {
   useEffect(() => {
     const handle = (e) => {
       if (e.target.matches("input,textarea,select")) return;
+      if (!game.current?.player.characterCreated) return;
       if (e.key === "Escape") {
         setPanel(null);
         setWelcome(false);
@@ -409,6 +433,8 @@ function App() {
     return game.current?.[method]?.(...args);
   }
   function open(id) {
+    if (!game.current?.player.characterCreated) return;
+    if (id === "map") setMapView("realm");
     if (id === "social") setSocialTab("standing");
     if (id === "play") setPanel(null);
     else {
@@ -439,12 +465,9 @@ function App() {
     player.learnedPowers?.[id] ??
     state.learnedPowers?.[id] ??
     0;
-  const sceneArt =
-    state.zone?.realm === "hell"
-      ? assetUrl("/assets/infernal-sanctuary-keyart.png")
-      : state.zone?.realm === "heaven"
-        ? assetUrl("/assets/celestial-sanctuary-keyart.png")
-        : assetUrl("/assets/sacred-grove-keyart.png");
+  const sceneArt = assetUrl(
+    `/assets/v2/regions/${state.zone?.id || "sacred-groves"}.svg`,
+  );
   const currentRank = (Array.isArray(RANKS) ? RANKS : []).find(
     (r) => r.rank === player.rank,
   );
@@ -542,7 +565,7 @@ function App() {
     else document.exitFullscreen?.();
   }
   return (
-    <div className={`app ${reduced ? "reduced-motion" : ""}`}>
+    <div className={`app v2 ${reduced ? "reduced-motion" : ""}`}>
       {offlineNotice && (
         <div className="offline-notice">
           <Wifi size={12} />
@@ -561,7 +584,7 @@ function App() {
           <Emblem />
           <div>
             <span>ETERNAL POWERS</span>
-            <small>A WORLD OF YOUR MAKING</small>
+            <small>V2 · ETERNITY REBORN</small>
           </div>
         </a>
         <div className="top-navigation">
@@ -569,19 +592,19 @@ function App() {
             className={!panel ? "active" : ""}
             onClick={() => open("play")}
           >
-            The living world
+            World
           </button>
           <button
             className={panel === "powers" ? "active" : ""}
             onClick={() => open("powers")}
           >
-            Your powers
+            Abilities
           </button>
           <button
             className={panel === "codex" ? "active" : ""}
             onClick={() => open("codex")}
           >
-            The codex <ArrowUpRight size={12} />
+            Codex <ArrowUpRight size={12} />
           </button>
         </div>
         <div className="top-actions">
@@ -605,16 +628,12 @@ function App() {
             onClick={() => open("character")}
             aria-label="Character profile"
           >
-            <img
-              src={
-                player.lineage === "demon"
-                  ? assetUrl("/assets/hero-demon-down-0.png")
-                  : assetUrl("/assets/hero-down-0.png")
-              }
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-              }}
-              alt=""
+            <CharacterPortrait
+              compact
+              appearance={player.appearance}
+              lineage={player.lineage}
+              className="v2-profile-portrait"
+              title={`${player.name}'s character`}
             />
             <Feather size={20} />
           </button>
@@ -708,7 +727,13 @@ function App() {
                 <div className="game-hud-top">
                   <div className="character-hud">
                     <div className="avatar-gem">
-                      <Feather size={23} />
+                      <CharacterPortrait
+                        compact
+                        appearance={player.appearance}
+                        lineage={player.lineage}
+                        className="v2-hud-portrait"
+                        title={player.name}
+                      />
                       <span>{player.rank}</span>
                     </div>
                     <div className="vitals">
@@ -772,22 +797,15 @@ function App() {
                     </button>
                   </div>
                 </div>
-                <div
-                  className="minimap"
-                  onClick={() => open("map")}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => e.key === "Enter" && open("map")}
-                  aria-label="Open world map"
-                >
-                  <div className="minimap-inner">
-                    <WorldMinimap engine={game.current} state={state} />
-                    <span className="map-north">N</span>
-                  </div>
-                  <span className="map-coordinates">
-                    {Math.floor((player.x || 0) / 10)},{" "}
-                    {Math.floor((player.y || 0) / 10)} <Compass size={10} />
-                  </span>
+                <div className="minimap">
+                  <WorldMinimap
+                    engine={game.current}
+                    state={state}
+                    onOpenAtlas={() => {
+                      setMapView("region");
+                      setPanel("map");
+                    }}
+                  />
                 </div>
                 {state.target && (
                   <div className="target-info">
@@ -943,7 +961,9 @@ function App() {
                           <div className="slot-aura" />
                           <img
                             className="power-sprite"
-                            src={assetUrl(`/assets/power-icons/${id}-${level}.png`)}
+                            src={assetUrl(
+                              `/assets/power-icons/${id}-${level}.png`,
+                            )}
                             alt=""
                           />
                           <span className="slot-level">{level}</span>
@@ -1003,7 +1023,8 @@ function App() {
                       ? `Day ${state.worldModel.day || 1} · ${state.worldModel.phase || "Morning"} · ${typeof state.worldModel.weather === "object" ? state.worldModel.weather.label || state.worldModel.weather.name || state.worldModel.weather.id || state.worldModel.weather.type : state.worldModel.weather || "Clear"}`
                       : "A living, changing world"}
                   </button>{" "}
-                  <span className="strip-separator">·</span> Manual ruleset 0.1
+                  <span className="strip-separator">·</span> Eternity Reborn ·
+                  v2.0
                 </div>
                 <button
                   onClick={() => {
@@ -1189,25 +1210,25 @@ function App() {
                 <h2>
                   {
                     {
-                      powers: "The power within",
-                      inventory: "Your belongings",
-                      map: "A world to discover",
-                      journal: "The path you choose",
-                      codex: "The eternal codex",
-                      settings: "Make yourself at home",
-                      character: "Your celestial form",
-                      help: "Begin your journey",
-                      shop: "The sanctuary exchange",
-                      craft: "The art of creation",
-                      sanctuary: "A sanctuary of your own",
-                      world: "The shape of the world",
-                      companion: "A bond beyond words",
-                      contracts: "The road through the three realms",
-                      social: "The memory of the world",
-                      multiplayer: "Share a private eternity",
-                      credits: "The hands behind this world",
-                      dialogue: "A keeper of the grove",
-                      inspect: "Look a little closer",
+                      powers: "Abilities",
+                      inventory: "Inventory & equipment",
+                      map: "World atlas",
+                      journal: "Quest journal",
+                      codex: "Discovery codex",
+                      settings: "Settings",
+                      character: "Your character",
+                      help: "Field guide",
+                      shop: "Sanctuary exchange",
+                      craft: "Crafting",
+                      sanctuary: "Sanctuary",
+                      world: "World & rituals",
+                      companion: "Your familiar",
+                      contracts: "Campaign & contracts",
+                      social: "Standing & recovery",
+                      multiplayer: "Realms & servers",
+                      credits: "Credits",
+                      dialogue: "Conversation",
+                      inspect: "Interaction",
                     }[panel]
                   }
                 </h2>
@@ -1503,7 +1524,9 @@ function App() {
                     <button key={i} onClick={() => assignSlot(i)}>
                       <Key>{i + 1}</Key>
                       <img
-                        src={assetUrl(`/assets/power-icons/${slot.branchId}-${slot.level}.png`)}
+                        src={assetUrl(
+                          `/assets/power-icons/${slot.branchId}-${slot.level}.png`,
+                        )}
                         alt=""
                       />
                       <span>
@@ -1523,18 +1546,11 @@ function App() {
               <div className="inventory-layout">
                 <div className="inventory-character">
                   <div className="character-art">
-                    <img
-                      className="inventory-avatar-sprite"
-                      src={
-                        player.lineage === "demon"
-                          ? assetUrl("/assets/hero-demon-down-0.png")
-                          : assetUrl("/assets/hero-down-0.png")
-                      }
-                      alt={
-                        player.lineage === "demon"
-                          ? "Demonic Wayfarer"
-                          : "Celestial Wayfarer"
-                      }
+                    <CharacterPortrait
+                      appearance={player.appearance}
+                      lineage={player.lineage}
+                      className="v2-inventory-portrait"
+                      title={`${player.name}, ${player.lineage}`}
                     />
                     <div className="character-art-ring" />
                   </div>
@@ -1685,86 +1701,111 @@ function App() {
                     new discovery.
                   </span>
                 </div>
-                <div className="realm-tabs">
-                  {["Earth", "Heaven", "Hell"].map((r) => (
-                    <button
-                      key={r}
-                      className={
-                        codexTab === r ||
-                        (!["Heaven", "Hell"].includes(codexTab) &&
-                          r === "Earth")
-                          ? "active"
-                          : ""
-                      }
-                      onClick={() => setCodexTab(r)}
-                    >
-                      {r === "Earth" ? (
-                        <Leaf size={14} />
-                      ) : r === "Heaven" ? (
-                        <Sun size={14} />
-                      ) : (
-                        <Flame size={14} />
-                      )}{" "}
-                      {r} realm
-                    </button>
-                  ))}
+                <div className="v2-map-tabs">
+                  <button
+                    className={mapView === "region" ? "active" : ""}
+                    onClick={() => setMapView("region")}
+                  >
+                    Region atlas
+                  </button>
+                  <button
+                    className={mapView === "realm" ? "active" : ""}
+                    onClick={() => setMapView("realm")}
+                  >
+                    Realm travel
+                  </button>
                 </div>
-                <div className="zone-grid">
-                  {ZONES.filter(
-                    (z) =>
-                      (z.realm || "Earth").toLowerCase() ===
-                      (["Heaven", "Hell"].includes(codexTab)
-                        ? codexTab
-                        : "Earth"
-                      ).toLowerCase(),
-                  ).map((z, i) => (
-                    <button
-                      key={z.id}
-                      className={`zone-card ${state.zone?.id === z.id ? "current" : ""}`}
-                      onClick={() => {
-                        if (state.inCombat) {
-                          notify("Leave conflict before travelling.");
-                          return;
-                        }
-                        call("setZone", z.id);
-                        setPanel(null);
-                      }}
-                    >
-                      <div
-                        className={`zone-landscape biome-${z.biome || i % 5}`}
-                        style={{ "--hue": `${i * 32}deg` }}
-                      >
-                        <div
-                          className="zone-atlas-art"
-                          style={zoneArt(z)}
-                          role="img"
-                          aria-label={`${z.name} environment illustration`}
-                        />
-                        <span>
-                          {state.zone?.id === z.id
-                            ? "YOU ARE HERE"
-                            : (state.discoveredZones || []).includes(z.id)
-                              ? "DISCOVERED"
-                              : "UNDISCOVERED"}
-                        </span>
-                      </div>
-                      <div className="zone-card-body">
-                        <h3>
-                          {z.name}
-                          <ArrowUpRight size={14} />
-                        </h3>
-                        <p>
-                          {z.description ||
-                            z.subtitle ||
-                            "A new horizon awaits your arrival."}
-                        </p>
-                        <small>
-                          {z.realm} REALM <span>EXPLORE →</span>
-                        </small>
-                      </div>
-                    </button>
-                  ))}
-                </div>
+                {mapView === "region" ? (
+                  <RegionAtlas
+                    engine={game.current}
+                    state={state}
+                    call={call}
+                    close={() => setPanel(null)}
+                  />
+                ) : (
+                  <>
+                    <div className="realm-tabs">
+                      {["Earth", "Heaven", "Hell"].map((r) => (
+                        <button
+                          key={r}
+                          className={
+                            codexTab === r ||
+                            (!["Heaven", "Hell"].includes(codexTab) &&
+                              r === "Earth")
+                              ? "active"
+                              : ""
+                          }
+                          onClick={() => setCodexTab(r)}
+                        >
+                          {r === "Earth" ? (
+                            <Leaf size={14} />
+                          ) : r === "Heaven" ? (
+                            <Sun size={14} />
+                          ) : (
+                            <Flame size={14} />
+                          )}{" "}
+                          {r} realm
+                        </button>
+                      ))}
+                    </div>
+                    <div className="zone-grid">
+                      {ZONES.filter(
+                        (z) =>
+                          (z.realm || "Earth").toLowerCase() ===
+                          (["Heaven", "Hell"].includes(codexTab)
+                            ? codexTab
+                            : "Earth"
+                          ).toLowerCase(),
+                      ).map((z, i) => (
+                        <button
+                          key={z.id}
+                          className={`zone-card ${state.zone?.id === z.id ? "current" : ""}`}
+                          onClick={() => {
+                            if (state.inCombat) {
+                              notify("Leave conflict before travelling.");
+                              return;
+                            }
+                            call("setZone", z.id);
+                            setPanel(null);
+                          }}
+                        >
+                          <div
+                            className={`zone-landscape biome-${z.biome || i % 5}`}
+                            style={{ "--hue": `${i * 32}deg` }}
+                          >
+                            <div
+                              className="zone-atlas-art"
+                              style={zoneArt(z)}
+                              role="img"
+                              aria-label={`${z.name} environment illustration`}
+                            />
+                            <span>
+                              {state.zone?.id === z.id
+                                ? "YOU ARE HERE"
+                                : (state.discoveredZones || []).includes(z.id)
+                                  ? "DISCOVERED"
+                                  : "UNDISCOVERED"}
+                            </span>
+                          </div>
+                          <div className="zone-card-body">
+                            <h3>
+                              {z.name}
+                              <ArrowUpRight size={14} />
+                            </h3>
+                            <p>
+                              {z.description ||
+                                z.subtitle ||
+                                "A new horizon awaits your arrival."}
+                            </p>
+                            <small>
+                              {z.realm} REALM <span>EXPLORE →</span>
+                            </small>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
             )}
             {panel === "journal" && (
@@ -2222,7 +2263,7 @@ function App() {
                                 })),
                               );
                               setResetConfirm(false);
-                              setPanel("character");
+                              setPanel(null);
                             }}
                           >
                             Begin anew <ArrowRight size={12} />
@@ -2301,80 +2342,30 @@ function App() {
               </div>
             )}
             {panel === "character" && (
-              <div className="character-content">
-                <p>Your lineage opens a path. Your choices give it meaning.</p>
-                <div className="lineage-grid">
-                  {["angel", "demon"].map((l) => (
-                    <button
-                      className={lineage === l ? "active" : ""}
-                      key={l}
-                      onClick={() => {
-                        setLineage(l);
-                        setStarter(
-                          l === "angel" ? "love-laugh" : "fire-create",
-                        );
-                      }}
-                    >
-                      {l === "angel" ? (
-                        <Feather size={44} />
-                      ) : (
-                        <Flame size={44} />
-                      )}
-                      <h3>
-                        {l === "angel"
-                          ? "The celestial path"
-                          : "The infernal path"}
-                      </h3>
-                      <p>
-                        {l === "angel"
-                          ? "Love · Light · Water · Air"
-                          : "Hate · Dark · Fire · Earth"}
-                      </p>
-                    </button>
-                  ))}
-                </div>
-                <div className="section-caption">
-                  YOUR NATIVE STARTING BRANCH
-                </div>
-                <div className="starter-grid">
-                  {BRANCHES.filter(
-                    (b) => (lineage === "angel") === (b.currency === "good"),
-                  ).map((b) => (
-                    <button
-                      key={b.id}
-                      className={starter === b.id ? "active" : ""}
-                      onClick={() => setStarter(b.id)}
-                    >
-                      <DomainIcon domain={b.domain} size={16} />
-                      {b.name}
-                    </button>
-                  ))}
-                </div>
-                {player.starterLocked && (
-                  <p className="lineage-established">
-                    Your starting affinity is established. Train additional
-                    branches through the Powers panel.
-                  </p>
-                )}
-                <button
-                  className="primary-button"
-                  onClick={() => {
-                    if (call("setLineage", lineage, starter)) {
-                      setBranchId(starter);
-                      setSlots((s) =>
-                        [
-                          { branchId: starter, level: 1 },
-                          ...s.filter((x) => x.branchId !== starter),
-                        ].slice(0, 8),
+              <CharacterCreator
+                mode="edit"
+                player={player}
+                busy={creatorBusy}
+                error={creatorError}
+                onCancel={() => {
+                  setPanel(null);
+                  setCreatorError("");
+                }}
+                onComplete={async (draft) => {
+                  setCreatorBusy(true);
+                  setCreatorError("");
+                  try {
+                    const result = await call("updateAppearance", draft);
+                    if (result) setPanel(null);
+                    else
+                      setCreatorError(
+                        "Return to a sanctuary outside conflict to update your character.",
                       );
-                      setPanel(null);
-                      notify("Your chosen path is ready.");
-                    }
-                  }}
-                >
-                  Embrace your path <ArrowRight size={14} />
-                </button>
-              </div>
+                  } finally {
+                    setCreatorBusy(false);
+                  }
+                }}
+              />
             )}
             {(panel === "shop" || panel === "craft") && (
               <div className="shop-content">
@@ -2650,54 +2641,13 @@ function App() {
                   )}
                 </div>
                 {creatureProfile && (
-                  <div className="encounter-profile">
-                    <h4>
-                      {creatureProfile.behavior} · phase {creatureProfile.phase}
-                    </h4>
-                    <p>
-                      {creatureProfile.tell ||
-                        creatureProfile.currentTell ||
-                        creatureProfile.description}
-                    </p>
-                    <div>
-                      <small>Peaceful route</small>
-                      <p>
-                        {creatureProfile.peaceful ||
-                          creatureProfile.noncombat ||
-                          creatureProfile.peacefulRoute ||
-                          "Inspect the local anchors and meet its posted need."}
-                      </p>
-                    </div>
-                    {creatureProfile.offer && (
-                      <div className="source-actions">
-                        <button
-                          className="outline-button"
-                          onClick={() => {
-                            call("assistCreature", state.target.id);
-                            setCreatureProfile(
-                              call("inspectCreature", state.target.id),
-                            );
-                          }}
-                        >
-                          Offer {creatureProfile.offer.quantity}{" "}
-                          {creatureProfile.offer.item} <Leaf size={12} />
-                        </button>
-                        {creatureProfile.canBond && (
-                          <button
-                            className="outline-button"
-                            onClick={() => {
-                              call("bondCompanion", state.target.id);
-                              setCreatureProfile(
-                                call("inspectCreature", state.target.id),
-                              );
-                            }}
-                          >
-                            Bond familiar <Heart size={12} />
-                          </button>
-                        )}
-                      </div>
-                    )}
-                  </div>
+                  <CreatureInteraction
+                    state={state}
+                    profile={creatureProfile}
+                    call={call}
+                    close={() => setPanel(null)}
+                    items={items}
+                  />
                 )}
                 <div className="cast-preview">
                   <span className="section-caption">SELECTED POWER</span>
@@ -2826,7 +2776,9 @@ function App() {
                   <img
                     src={
                       state.target?.creatureId
-                        ? assetUrl(`/assets/creature-${state.target.creatureId}.png`)
+                        ? assetUrl(
+                            `/assets/creature-${state.target.creatureId}.png`,
+                          )
                         : assetUrl("/assets/angel.png")
                     }
                     alt={state.target?.name || "The celestial keeper"}
@@ -2870,6 +2822,46 @@ function App() {
             )}
           </section>
         </div>
+      )}
+      {engineReady && !player.characterCreated && (
+        <CharacterCreator
+          mode="create"
+          player={player}
+          busy={creatorBusy}
+          error={creatorError}
+          onComplete={async (draft) => {
+            setCreatorBusy(true);
+            setCreatorError("");
+            try {
+              const result = await call("createCharacter", draft);
+              if (!result) {
+                setCreatorError(
+                  "Choose a valid name, lineage, and native starting path.",
+                );
+                return;
+              }
+              const native = BRANCHES.filter(
+                (b) =>
+                  b.currency === (draft.lineage === "demon" ? "bad" : "good"),
+              );
+              setSlots(
+                [
+                  { branchId: draft.starterBranch, level: 1 },
+                  ...native
+                    .filter((b) => b.id !== draft.starterBranch)
+                    .map((b) => ({ branchId: b.id, level: 1 })),
+                ].slice(0, 8),
+              );
+              setBranchId(draft.starterBranch);
+              setPanel(null);
+              setPaused(false);
+              setWelcome(false);
+              audio.unlock();
+            } finally {
+              setCreatorBusy(false);
+            }
+          }}
+        />
       )}
       {panel && notices.length > 0 && (
         <div className="global-notices">

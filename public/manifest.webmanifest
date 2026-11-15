@@ -1,15 +1,15 @@
 {
   "id": "./",
-  "name": "Eternal Powers — The 2D Chronicles",
+  "name": "Eternal Powers v2 — Eternity Reborn",
   "short_name": "Eternal Powers",
-  "description": "Explore three realms, learn celestial powers, and shape a persistent 2D world.",
+  "description": "Create your celestial character, explore expanded realms, and shape a persistent 2D world.",
   "lang": "en",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#141b18",
-  "theme_color": "#1c2922",
+  "background_color": "#080d1c",
+  "theme_color": "#111a2e",
   "categories": ["games", "entertainment"],
   "icons": [
     {

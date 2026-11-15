@@ -1,0 +1,1 @@
+Original Eternal Powers v2 graphics, including the generated portal/realm character-creator backdrop and generated SVG region illustrations. Released under CC0 1.0. Region illustration source: scripts/generate-v2-regions.mjs. Existing imported assets retain their separate licenses.

@@ -46,7 +46,9 @@ test('every campaign step and critical encounter has a continuous ground route f
 
 test('Sacred Groves preserves the first-session anchors and the owned sanctuary plot', () => {
  const zone=ZONES.find(z=>z.id==='sacred-groves'),world=decorateZoneWorld(createWorld(17,'forest'),zone);
- assert.equal(world.legacy,true);
+ assert.equal(world.legacy,false);
+ assert.equal(world.authored,true);
+ assert.equal(world.layoutVersion,2);
  assert.deepEqual(world.spawn,{x:920,y:900});
  assert.deepEqual(getZoneEntityLayout(zone),{});
  assert.equal(world.props.some(p=>p.radius>0&&p.x>=350&&p.x<=650&&p.y>=450&&p.y<=750),false);
@@ -92,4 +94,44 @@ test('portal anchor access has an explicit reachable authored trial and posted g
  assert.equal(trial.steps.at(-1).grantsPortalAccess,true);
  assert.ok(trial.steps.every(step=>step.type==='mechanism'&&step.sequence.length===3));
  const world=getZoneLayout('infernal-gates');for(const step of trial.steps)assert.ok(findAuthoredRoute(world,world.spawn,step).length);
+});
+
+
+test('v2 expands every region fourfold with distinct districts and real accessible architecture', () => {
+ const names=new Set(), signatures=new Set();
+ for(const zone of ZONES){
+  const world=getZoneLayout(zone);
+  assert.equal(world.authored,true,zone.id);assert.equal(world.legacy,false,zone.id);
+  assert.ok(world.width*world.height>=2400*1800*4,zone.id);
+  assert.equal(world.districts.length,6,zone.id);
+  assert.equal(world.discoverySites.length,6,zone.id);
+  assert.ok(world.architecturalFeatures.length>=12,zone.id);
+  assert.equal(world.interiors.filter(r=>r.expansion).length,3,zone.id);
+  signatures.add(JSON.stringify(world.districts.map(d=>[d.name,d.theme])));
+  for(const d of world.districts){
+   names.add(d.name);
+   assert.ok(d.x>2400||d.y>1800,`${zone.id}: district must open new territory`);
+   assert.ok(findAuthoredRoute(world,world.spawn,d).length,`${zone.id}: ${d.name} requires a ground route`);
+  }
+  for(const room of world.interiors.filter(r=>r.expansion)){
+   const inside={x:room.x+room.width/2,y:room.y+room.height-70};
+   assert.equal(isWorldBlocked(world,inside.x,inside.y,{ignoreProps:true}),false,room.name);
+   assert.ok(findAuthoredRoute(world,world.spawn,inside).length,`${zone.id}: ${room.name} needs an enterable doorway`);
+  }
+ }
+ assert.equal(signatures.size,39);assert.ok(names.size>200,'districts are individually named places');
+});
+
+test('frontier habitats and renewable materials populate reachable new territory without story duplicates', () => {
+ for(const zone of ZONES){
+  const world=getZoneLayout(zone),entities=createWorldEntities(zone);
+  const resources=entities.filter(e=>e.kind==='resource'&&e.renewable),monsters=entities.filter(e=>e.kind==='enemy'&&e.renewable);
+  assert.equal(resources.length,96,zone.id);assert.equal(monsters.length,18,zone.id);
+  assert.equal(new Set(entities.map(e=>e.id)).size,entities.length,zone.id);
+  assert.ok(resources.every(e=>e.respawnSeconds===90&&['herb','crystal','wood','stone'].includes(e.item)));
+  assert.ok(monsters.every(e=>e.respawnSeconds===120&&!e.boss&&!e.worldBoss&&e.creatureId&&e.profiledEncounter));
+  assert.ok([...resources,...monsters].every(e=>(e.x>2400||e.y>1800)&&!isWorldBlocked(world,e.x,e.y,{ignoreProps:true})),zone.id);
+  for(const habitat of world.habitats)assert.ok(findAuthoredRoute(world,world.spawn,habitat).length,`${zone.id}: habitat ${habitat.id}`);
+  for(const e of resources.filter((_,i)=>i%16===0))assert.ok(findAuthoredRoute(world,world.spawn,e).length,`${zone.id}: ${e.id}`);
+ }
 });

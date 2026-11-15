@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { ensureCharacter } from "./helpers/character.js";
 
 test("keyboard movement, click targeting, casting and save persist a settled objective", async ({
   page,
@@ -6,6 +7,7 @@ test("keyboard movement, click targeting, casting and save persist a settled obj
   const errors = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/");
+  await ensureCharacter(page);
   await page.waitForFunction(() => window.__eternal?.getSnapshot().player);
   const initial = await page.evaluate(
     () => window.__eternal.getSnapshot().player,
@@ -70,6 +72,7 @@ test("all primary panels, advanced catalogs and transaction preview work", async
       failures.push(`${response.status()} ${response.url()}`);
   });
   await page.goto("/");
+  await ensureCharacter(page);
   await page.getByRole("button", { name: "Powers", exact: true }).click();
   await expect(
     page.getByText("Refreshing Mist", { exact: true }),
@@ -116,7 +119,10 @@ test("all primary panels, advanced catalogs and transaction preview work", async
   await expect(
     page.getByRole("heading", { name: /Prismatic Waterfalls/, level: 1 }),
   ).toBeVisible();
-  await page.getByRole("button", { name: "Codex", exact: true }).click();
+  await page
+    .locator(".navigation-rail")
+    .getByRole("button", { name: "Codex", exact: true })
+    .click();
   await expect(page.locator(".codex-card")).toHaveCount(30);
   await page.getByRole("button", { name: "Close dialog" }).click();
   await page.getByRole("button", { name: "Enable audio" }).click();
@@ -136,6 +142,7 @@ test("phone layout keeps world and controls within the screen", async ({
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
+  await ensureCharacter(page);
   await expect(page.locator(".game-viewport > canvas")).toBeVisible();
   expect(
     await page.evaluate(() => document.documentElement.scrollWidth),

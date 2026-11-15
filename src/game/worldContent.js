@@ -1,4 +1,6 @@
 import { ZONES } from '../data/manual.js';
+import { createRegionExpansion } from './worldExpansion.js';
+import { createRegionalEncounters } from './encounters.js';
 
 // These layouts are authored separately. Seeded scenery fills their margins; it never
 // chooses the roads, rooms, crossings, landmarks, or campaign acceptance conditions.
@@ -146,21 +148,40 @@ function interiorWalls(room){const t=22,x=room.x,y=room.y,w=room.width,h=room.he
 function carveRoads(walls,paths){let result=walls;for(const path of paths)for(let i=1;i<path.points.length;i++){const a=path.points[i-1],b=path.points[i],width=path.width+18;const opening=rect(Math.min(a.x,b.x)-width/2,Math.min(a.y,b.y)-width/2,Math.abs(a.x-b.x)+width,Math.abs(a.y-b.y)+width);result=result.flatMap(r=>subtractRect(r,opening));}return result;}
 function legacyStreamPolygon(){const left=[],right=[];for(let y=0;y<=1800;y+=30){const x=1420+Math.sin(y/230)*75;left.push({x:x-56,y});right.unshift({x:x+56,y});}return [...left,...right];}
 function autoBridges(paths,water){const cells=new Map();for(const path of paths)for(let i=1;i<path.points.length;i++){const a=path.points[i-1],b=path.points[i],d=Math.hypot(b.x-a.x,b.y-a.y);for(let n=0;n<=d;n+=20){const t=d?n/d:0,x=a.x+(b.x-a.x)*t,y=a.y+(b.y-a.y)*t;if(water.some(w=>pointInPolygon(x,y,w.points))){const size=path.width+24,cx=Math.round(x/30)*30,cy=Math.round(y/30)*30;cells.set(`${cx}:${cy}`,rect(cx-size/2,cy-size/2,size,size,{id:`bridge:${path.id}:${cx}:${cy}`,pathId:path.id,material:'stone',passable:true}));}}}return [...cells.values()];}
-const layoutCache=new Map(),entityLayoutCache=new Map(),campaignCache=new Map();
-export function getZoneLayout(zoneOrId){const zone=typeof zoneOrId==='string'?ZONES.find(z=>z.id===zoneOrId):zoneOrId;if(layoutCache.has(zone?.id))return clone(layoutCache.get(zone.id));const record=AUTHORED_LAYOUTS[zone?.id];if(!record)throw new Error(`No authored world layout for ${zone?.id}`);const data=clone(record);const paths=data.roads;for(const source of sharedSources)paths.push({...route(`service:${source.x}:${source.y}`,[[hub.x,hub.y],[source.x,source.y]],64,zone.realm==='hell'?'ash':'stone'),hidden:true});
- const terrain={water:data.legacy?[{id:'grove-stream',kind:'water',points:legacyStreamPolygon()}]:data.water,walls:carveRoads([...data.walls.map((w,i)=>({...w,id:`${zone.id}:wall-${i}`,solid:true})),...data.interiors.flatMap(interiorWalls)],paths),cliffs:carveRoads(data.cliffs.map((c,i)=>({...c,id:`${zone.id}:cliff-${i}`,solid:true,blocksFlight:false})),paths),bridges:[]};terrain.bridges=data.legacy?[rect(1270,882,215,96,{id:'grove-crossing',passable:true})]:autoBridges(paths,terrain.water);
- const waterfalls=/waterfalls/.test(zone.id)?[{id:`${zone.id}:fall`,x:zone.id==='celestial-waterfalls'?1770:1500,y:zone.id==='celestial-waterfalls'?420:500,width:135,height:220}]:[];
- const layout={id:zone.id,name:zone.name,realm:zone.realm,theme:data.theme,width:2400,height:1800,authored:!data.legacy,legacy:!!data.legacy,spawn:{...hub},ritualAnchor:{x:915,y:736},paths,terrain,landmarks:data.landmarks.map((l,i)=>({...l,id:`${zone.id}:${l.id}`,localId:l.id,asset:`zones/${zone.id}-landmark`,scale:i===0?1:.78,radius:0})),interiors:data.interiors,hamlet:data.hamlet||[],hazardFields:data.hazardFields||[],safeAreas:[{...hub,radius:300},{x:915,y:736,radius:110}],routePuzzles:[],waterfalls};layoutCache.set(zone.id,layout);return clone(layout);}
+const layoutCache=new Map(),coreLayoutCache=new Map(),entityLayoutCache=new Map(),campaignCache=new Map();
+export function getZoneLayout(zoneOrId) {
+ const zone = typeof zoneOrId === 'string' ? ZONES.find(z => z.id === zoneOrId) : zoneOrId;
+ if (layoutCache.has(zone?.id)) return clone(layoutCache.get(zone.id));
+ const record = AUTHORED_LAYOUTS[zone?.id];
+ if (!record) throw new Error(`No authored world layout for ${zone?.id}`);
+ const data = clone(record), paths = data.roads;
+ for (const source of sharedSources) paths.push({...route(`service:${source.x}:${source.y}`,[[hub.x,hub.y],[source.x,source.y]],64,zone.realm==='hell'?'ash':'stone'),hidden:true});
+ const water = data.legacy ? [{id:'grove-stream',kind:'water',points:legacyStreamPolygon()}] : data.water;
+ const walls = [...data.walls.map((w,i)=>({...w,id:`${zone.id}:wall-${i}`,solid:true})),...data.interiors.flatMap(interiorWalls)];
+ const cliffs = data.cliffs.map((c,i)=>({...c,id:`${zone.id}:cliff-${i}`,solid:true,blocksFlight:false}));
+ const coreTerrain = {water, walls:carveRoads(walls,paths), cliffs:carveRoads(cliffs,paths), bridges:data.legacy?[rect(1270,882,215,96,{id:'grove-crossing',passable:true})]:autoBridges(paths,water)};
+ const landmarks = data.landmarks.map((l,i)=>({...l,id:`${zone.id}:${l.id}`,localId:l.id,asset:`zones/${zone.id}-landmark`,scale:i===0?1:.78,radius:0}));
+ const waterfalls = /waterfalls/.test(zone.id)?[{id:`${zone.id}:fall`,x:zone.id==='celestial-waterfalls'?1770:1500,y:zone.id==='celestial-waterfalls'?420:500,width:135,height:220}]:[];
+ const core = {id:zone.id,name:zone.name,realm:zone.realm,theme:data.theme,width:2400,height:1800,authored:!data.legacy,legacy:!!data.legacy,spawn:{...hub},ritualAnchor:{x:915,y:736},paths:clone(paths),terrain:clone(coreTerrain),landmarks:clone(landmarks),interiors:clone(data.interiors)};
+ // Campaign and legacy save anchors are derived from this unexpanded heart.
+ coreLayoutCache.set(zone.id,core);
+ const expansion = createRegionExpansion(zone,data.theme,ZONES.findIndex(z=>z.id===zone.id));
+ const fullPaths = [...paths,...expansion.roads], fullWater = [...water,...expansion.water], interiors = [...data.interiors,...expansion.interiors];
+ const terrain = {water:fullWater,walls:carveRoads([...walls,...expansion.interiors.flatMap(interiorWalls)],fullPaths),cliffs:carveRoads(cliffs,fullPaths),bridges:[...coreTerrain.bridges,...autoBridges(expansion.roads,fullWater)]};
+ const frontierLandmarks = expansion.landmarks.map(l=>({...l,id:`${zone.id}:${l.id}`,localId:l.id}));
+ const layout = {id:zone.id,name:zone.name,realm:zone.realm,theme:data.theme,width:expansion.width,height:expansion.height,authored:true,legacy:false,layoutVersion:2,spawn:{...hub},ritualAnchor:{x:915,y:736},paths:fullPaths,terrain,landmarks:[...landmarks,...frontierLandmarks],interiors,hamlet:data.hamlet||[],hazardFields:data.hazardFields||[],safeAreas:[{...hub,radius:300},{x:915,y:736,radius:110}],routePuzzles:[],waterfalls,districts:expansion.districts,architecturalFeatures:expansion.architecturalFeatures,discoverySites:frontierLandmarks,habitats:expansion.habitats,resourceAnchors:expansion.resourceAnchors,scenicAssets:expansion.scenicAssets,frontierAccent:expansion.accent,regionDescription:expansion.detail,coreBounds:{x:0,y:0,width:2400,height:1800}};
+ layoutCache.set(zone.id,layout); return clone(layout);
+}
 
 export function isWorldBlocked(world,x,y,{flying=false,radius=9,ignoreProps=false}={}){
  if(x<30+radius||y<30+radius||x>world.width-30-radius||y>world.height-30-radius)return true;
  const terrain=world.terrain;if(!terrain){if(!flying&&Math.abs(x-(1420+Math.sin(y/230)*75))<56+radius&&Math.abs(y-930)>44-radius)return true;}
  else{if((terrain.walls||[]).some(w=>w.blocking!==false&&w.closed!==false&&inRect(x,y,w,radius)))return true;if(!flying&&(terrain.cliffs||[]).some(c=>inRect(x,y,c,radius)))return true;
   const onBridge=(terrain.bridges||[]).some(b=>inRect(x,y,b,-Math.min(radius,6)));if(!flying&&!onBridge&&(terrain.water||[]).some(w=>pointInPolygon(x,y,w.points)))return true;}
- if(!ignoreProps&&(world.props||[]).some(p=>{const r=p.radius??p.collisionRadius??0;return r>0&&Math.hypot(x-p.x,y-p.y)<r+radius;}))return true;return false;
+ if(!ignoreProps&&(world.props||[]).some(p=>{const r=p.radius??p.collisionRadius??0;if(r<=0)return false;const limit=r+radius,dx=x-p.x,dy=y-p.y;return Math.abs(dx)<limit&&Math.abs(dy)<limit&&dx*dx+dy*dy<limit*limit;}))return true;return false;
 }
 export function hasWorldLineOfEffect(world,from,to,{radius=0}={}){const distance=Math.hypot(to.x-from.x,to.y-from.y);for(let n=10;n<distance;n+=10){const x=from.x+(to.x-from.x)*n/distance,y=from.y+(to.y-from.y)*n/distance;if((world.terrain?.walls||[]).some(w=>w.solid!==false&&inRect(x,y,w,radius)))return false;}return true;}
-function nearestWalkable(layout,p){if(!isWorldBlocked(layout,p.x,p.y,{ignoreProps:true,radius:12}))return {x:p.x,y:p.y};for(let r=20;r<=300;r+=20)for(let i=0;i<24;i++){const q={x:clamp(p.x+Math.cos(i/24*Math.PI*2)*r,70,2330),y:clamp(p.y+Math.sin(i/24*Math.PI*2)*r,70,1730)};if(!isWorldBlocked(layout,q.x,q.y,{ignoreProps:true,radius:12}))return q;}return {x:920,y:900};}
+function nearestWalkable(layout,p){if(!isWorldBlocked(layout,p.x,p.y,{ignoreProps:true,radius:12}))return {x:p.x,y:p.y};for(let r=20;r<=300;r+=20)for(let i=0;i<24;i++){const q={x:clamp(p.x+Math.cos(i/24*Math.PI*2)*r,70,layout.width-70),y:clamp(p.y+Math.sin(i/24*Math.PI*2)*r,70,layout.height-70)};if(!isWorldBlocked(layout,q.x,q.y,{ignoreProps:true,radius:12}))return q;}return {x:920,y:900};}
 // A point can be on a small isolated bridge tile or behind an interior wall.
 // Interaction anchors must have a continuous ordinary ground route from refuge.
 function nearestReachable(layout,p){
@@ -170,28 +191,60 @@ function nearestReachable(layout,p){
  return choices.find(point=>findAuthoredRoute(layout,layout.spawn,point).length)||{...layout.spawn};
 }
 function endpoints(layout){return layout.landmarks.map(l=>nearestWalkable(layout,l));}
-export function getZoneEntityLayout(zoneOrId){const layout=getZoneLayout(zoneOrId);if(entityLayoutCache.has(layout.id))return clone(entityLayoutCache.get(layout.id));if(layout.legacy)return {};const locations=endpoints(layout),p0=locations[0],p1=locations[1],p2=locations[2]||locations[0],p3=locations[3]||locations[1];const open=(x,y)=>nearestReachable(layout,{x,y});const overrides={keeper:{x:820,y:820},merchant:{x:1080,y:870},training:{x:1030,y:1005},portal:{x:713,y:955},bridge:open(p1.x-95,p1.y+85),'chest-1':open(p0.x+120,p0.y+90),'chest-2':open(p2.x-110,p2.y+70),'patch-1':open(p0.x-90,p0.y+70),'patch-2':open(p1.x-90,p1.y+70),'patch-3':open(p2.x+90,p2.y+80),'blight-1':open(p0.x+170,p0.y+80),'blight-2':open(p1.x+160,p1.y+100),'blight-3':open(p2.x+150,p2.y+90),guardian:open(p3.x+100,p3.y-90),'encounter-contact-1':open(p0.x-80,p0.y-60),'encounter-contact-2':open(600,650)};
+export function getZoneEntityLayout(zoneOrId){const expanded=getZoneLayout(zoneOrId),layout=coreLayoutCache.get(expanded.id)||expanded;if(entityLayoutCache.has(layout.id))return clone(entityLayoutCache.get(layout.id));if(layout.legacy)return {};const locations=endpoints(layout),p0=locations[0],p1=locations[1],p2=locations[2]||locations[0],p3=locations[3]||locations[1];const open=(x,y)=>nearestReachable(layout,{x,y});const overrides={keeper:{x:820,y:820},merchant:{x:1080,y:870},training:{x:1030,y:1005},portal:{x:713,y:955},bridge:open(p1.x-95,p1.y+85),'chest-1':open(p0.x+120,p0.y+90),'chest-2':open(p2.x-110,p2.y+70),'patch-1':open(p0.x-90,p0.y+70),'patch-2':open(p1.x-90,p1.y+70),'patch-3':open(p2.x+90,p2.y+80),'blight-1':open(p0.x+170,p0.y+80),'blight-2':open(p1.x+160,p1.y+100),'blight-3':open(p2.x+150,p2.y+90),guardian:open(p3.x+100,p3.y-90),'encounter-contact-1':open(p0.x-80,p0.y-60),'encounter-contact-2':open(600,650)};
  ['encounter-node-1','encounter-node-2','encounter-node-3'].forEach((id,i)=>{const p=locations[i%locations.length];overrides[id]=open(p.x+75,p.y-40);});
  const resourcePoints=layout.paths.filter(p=>!p.id.startsWith('service:')).flatMap(p=>p.points).filter(p=>Math.hypot(p.x-920,p.y-900)>250);for(let i=0;i<19;i++){const p=resourcePoints[i%resourcePoints.length]||p0;overrides[`resource-${i}`]=open(p.x+(i%3-1)*65,p.y+(i%2?65:-65));}
  entityLayoutCache.set(layout.id,overrides);return clone(overrides);
 }
 function seeded(seed){let n=seed>>>0;return()=>((n=Math.imul(n,1664525)+1013904223>>>0)/4294967296);}
-export function decorateZoneWorld(world,zoneOrId){const zone=typeof zoneOrId==='string'?ZONES.find(z=>z.id===zoneOrId):zoneOrId,layout=getZoneLayout(zone),rng=seeded(world.seed||17);const protectedPoints=[...Object.values(getZoneEntityLayout(zone)),...layout.landmarks,...sharedSources,{x:915,y:736},{x:820,y:820},{x:1080,y:870},{x:1030,y:1005},{x:713,y:955}];
+export function decorateZoneWorld(world,zoneOrId) {
+ const zone=typeof zoneOrId==='string'?ZONES.find(z=>z.id===zoneOrId):zoneOrId,layout=getZoneLayout(zone),rng=seeded(world.seed||17);
+ const protectedPoints=[...Object.values(getZoneEntityLayout(zone)),...layout.landmarks,...layout.resourceAnchors,...layout.habitats,...sharedSources,{x:915,y:736},{x:820,y:820},{x:1080,y:870},{x:1030,y:1005},{x:713,y:955}];
  Object.assign(world,layout,{layoutId:zone.id,zoneId:zone.id,zoneName:zone.name,realm:zone.realm,variant:layout.theme==='hell'?'infernal':layout.theme});
- if(layout.legacy){world.authored=false;return world;}
- const blockedForScenery=p=>Math.hypot(p.x-920,p.y-900)<255||isOnAuthoredPath(layout,p.x,p.y,40)||isWorldBlocked(layout,p.x,p.y,{ignoreProps:true,radius:30})||protectedPoints.some(q=>Math.hypot(q.x-p.x,q.y-p.y)<85)||layout.interiors.some(room=>inRect(p.x,p.y,room,15));
+ const blockedForScenery=p=>Math.hypot(p.x-920,p.y-900)<255||inRect(p.x,p.y,{x:330,y:430,width:340,height:340},25)||isOnAuthoredPath(layout,p.x,p.y,40)||isWorldBlocked(layout,p.x,p.y,{ignoreProps:true,radius:30})||protectedPoints.some(q=>Math.hypot(q.x-p.x,q.y-p.y)<70)||layout.interiors.some(room=>inRect(p.x,p.y,room,15));
  world.props=(world.props||[]).filter(p=>/^(scenery|prop|mushroom)-/.test(p.id)&&!blockedForScenery(p));
  const kit=layout.theme==='hell'?['dead-tree','obsidian-spire','rock-obsidian','brazier']:layout.theme==='heaven'?['tree-heaven','ruin-heaven','floating-island']:layout.theme==='desert'?['palm','cactus','dune','ruin-desert']:layout.theme==='mountain'?['crag','tree-snow','rock-0']:['tree-oak','tree-pine','tree-oak-gold','bush'];
- for(let i=0;i<145;i++){const p={x:90+rng()*2220,y:90+rng()*1620};if(blockedForScenery(p))continue;const asset=kit[Math.floor(rng()*kit.length)];world.props.push({id:`authored-scenery-${i}`,kind:asset.includes('tree')||asset==='palm'?'tree':'rock',asset,...p,radius:asset==='floating-island'||asset==='brazier'?0:12,scale:.8+rng()*.45});}
- for(const [i,l] of layout.landmarks.entries())world.props.push({...l,id:`landmark:${l.id}`,kind:'landmark',radius:0,anchor:[96,208]});
+ for(let i=0;i<680;i++){
+  const p={x:90+rng()*(layout.width-180),y:90+rng()*(layout.height-180)};
+  if(blockedForScenery(p))continue;
+  const assets=p.x>2400||p.y>1800?[...kit,...layout.scenicAssets]:kit,asset=assets[Math.floor(rng()*assets.length)];
+  world.props.push({id:`authored-scenery-${i}`,kind:asset.includes('tree')||asset==='palm'?'tree':'rock',asset,...p,radius:asset==='floating-island'||asset==='brazier'?0:12,scale:.8+rng()*.65});
+ }
+ for(const l of layout.landmarks)world.props.push({...l,id:`landmark:${l.id}`,kind:'landmark',radius:0,...(!l.frontier?{anchor:[96,208]}:{})});
  world.props.push({id:'sanctuary-shrine',kind:'shrine',asset:zone.realm==='hell'?'shrine-infernal':zone.realm==='heaven'?'shrine-heaven':'shrine',x:915,y:736,radius:22,scale:1.1},{id:'ancient-arch',kind:'arch',asset:`temple-${zone.realm==='hell'?'infernal':zone.realm==='heaven'?'heaven':layout.theme==='desert'?'desert':'forest'}`,x:1000,y:635,radius:0,scale:1.08});
  for(const [i,p]of layout.hamlet.entries())world.props.push({id:`authored-house-${i}`,kind:'house',asset:`vendor/superpowers/background-elements/${[1,9,16][i%3]}`,...p,scale:3,anchor:i%3===0?[15,28]:i%3===1?[8,18]:[8,22],radius:24});
- for(const [i,room]of layout.interiors.entries()){const count=Math.max(2,Math.floor(room.width/180));for(let j=0;j<count;j++){const p={x:room.x+85+j*(room.width-150)/Math.max(1,count-1),y:room.y+95};if(isOnAuthoredPath(world,p.x,p.y,35))continue;world.props.push({id:`interior-${room.id}-${j}`,kind:'interior-prop',asset:`vendor/superpowers/background-elements/${room.theme==='library'?2:room.theme==='pyramid'?14:room.theme==='citadel'?15:16}`,...p,scale:3,anchor:[8,20],radius:10});}}
- // Keep interaction approach points free, including region-specific contract markers.
- world.props=world.props.filter(p=>!(p.radius>0&&protectedPoints.some(q=>Math.hypot(q.x-p.x,q.y-p.y)<80)&&p.id!=='sanctuary-shrine'));
- world.decor=(world.decor||[]).filter(p=>!isWorldBlocked(world,p.x,p.y,{ignoreProps:true,radius:0}));world.pathPoints=layout.paths.flatMap(p=>p.points);return world;
+ for(const district of layout.districts.filter(d=>d.kind==='settlement'))for(let i=0;i<8;i++){
+  const p={x:district.x+(i%4-1.5)*170,y:district.y+(i<4?-215:210)};
+  if(blockedForScenery(p))continue;
+  world.props.push({id:`district-house:${district.id}:${i}`,kind:'house',asset:zone.realm==='hell'?'ruin-infernal':zone.realm==='heaven'?'ruin-heaven':`vendor/superpowers/background-elements/${[1,9,16][i%3]}`,...p,scale:zone.realm==='earth'?3.5:1.3,radius:18,...(zone.realm==='earth'?{anchor:i%3===0?[15,28]:i%3===1?[8,18]:[8,22]}:{})});
+ }
+ for(const room of layout.interiors){const count=Math.max(2,Math.floor(room.width/180));for(let j=0;j<count;j++){
+  const p={x:room.x+85+j*(room.width-150)/Math.max(1,count-1),y:room.y+95};if(isOnAuthoredPath(world,p.x,p.y,35))continue;
+  world.props.push({id:`interior-${room.id}-${j}`,kind:'interior-prop',asset:`vendor/superpowers/background-elements/${room.theme==='library'?2:room.theme==='pyramid'?14:room.theme==='citadel'?15:16}`,...p,scale:3,anchor:[8,20],radius:10});
+ }}
+ world.props=world.props.filter(p=>!(p.radius>0&&protectedPoints.some(q=>Math.hypot(q.x-p.x,q.y-p.y)<70)&&p.id!=='sanctuary-shrine'));
+ world.decor=(world.decor||[]).filter(p=>!isWorldBlocked(world,p.x,p.y,{ignoreProps:true,radius:0}));
+ for(let i=0;i<1350;i++){const p={x:rng()*layout.width,y:rng()*layout.height};if((p.x>2400||p.y>1800)&&!isWorldBlocked(world,p.x,p.y,{ignoreProps:true,radius:0}))world.decor.push({...p,type:i%4?'grass':'mote',seed:rng()});}
+ world.ambient ||= [];
+ for(let i=0;i<32;i++){const p={x:250+rng()*(layout.width-500),y:1900+rng()*(layout.height-2150)};if(isWorldBlocked(world,p.x,p.y,{ignoreProps:true,radius:5}))continue;world.ambient.push({id:`frontier-wildlife-${i}`,...p,homeX:p.x,homeY:p.y,sprite:zone.realm==='hell'?['moth','firefly'][i%2]:['deer','wildlife/rabbit','wildlife/songbird','wildlife/butterfly'][i%4],phase:rng()*Math.PI*2});}
+ world.pathPoints=layout.paths.flatMap(p=>p.points); return world;
 }
-export function createWorldEntities(zoneOrId){const zone=typeof zoneOrId==='string'?ZONES.find(z=>z.id===zoneOrId):zoneOrId,layout=getZoneLayout(zone),index=ZONES.findIndex(z=>z.id===zone.id),next=ZONES[(index+1)%ZONES.length];const out=layout.landmarks.map(l=>({id:`world-site:${l.id}`,x:l.x,y:l.y,kind:'world-landmark',role:'world-landmark',sprite:'ruin',name:l.name,description:l.description,protected:true,landmarkId:l.id}));const p=nearestWalkable(layout,{x:2200,y:1560});out.push({id:`route-portal:${zone.id}`,kind:'portal',role:'route-portal',...p,sprite:'portal',asset:`zones/${zone.id}-portal`,name:`Passage to ${next.name}`,description:`Stable route to ${next.name}. The public return and sanctuary recall remain available.`,destination:next.id,protected:true});return out;}
+
+export function createWorldEntities(zoneOrId) {
+ const zone=typeof zoneOrId==='string'?ZONES.find(z=>z.id===zoneOrId):zoneOrId,layout=getZoneLayout(zone),index=ZONES.findIndex(z=>z.id===zone.id),next=ZONES[(index+1)%ZONES.length];
+ const out=layout.landmarks.map(l=>({id:`world-site:${l.id}`,x:l.x,y:l.y,kind:'world-landmark',role:'world-landmark',sprite:'ruin',name:l.name,description:l.description,protected:true,landmarkId:l.id,frontier:!!l.frontier,districtId:l.districtId,discoveryRadius:l.discoveryRadius||160}));
+ const p=nearestWalkable(layout,{x:2200,y:1560});
+ out.push({id:`route-portal:${zone.id}`,kind:'portal',role:'route-portal',...p,sprite:'portal',asset:`zones/${zone.id}-portal`,name:`Passage to ${next.name}`,description:`Stable route to ${next.name}. The public return and sanctuary recall remain available.`,destination:next.id,protected:true});
+ const materialNames={herb:'Moonleaf',crystal:'Resonant Crystal',wood:'Sacred Timber',stone:'Runestone'};
+ for(const anchor of layout.resourceAnchors){const pos=nearestWalkable(layout,anchor);out.push({...anchor,...pos,kind:'resource',sprite:anchor.item,name:materialNames[anchor.item],description:'A renewable frontier material node. Gather it, then allow the habitat to replenish away from nearby travelers.',renewable:true,respawnSeconds:90,spawnGroup:'frontier',home:{...pos},spawn:{...pos},spawnGeneration:0});}
+ const prototypes=createRegionalEncounters(zone,zone.minRank||1,700+index).filter(e=>e.kind==='enemy'&&!e.boss);
+ for(const [i,habitat]of layout.habitats.entries())for(let j=0;j<6;j++){
+  const angle=j/6*Math.PI*2,pos=nearestWalkable(layout,{x:habitat.x+Math.cos(angle)*110,y:habitat.y+Math.sin(angle)*110});
+  const n=clone(prototypes[(i+j)%prototypes.length]);
+  Object.assign(n,{id:`frontier-enemy:${zone.id}:${i}:${j}`,...pos,home:{...pos},spawn:{...pos},boss:false,worldBoss:false,renewable:true,respawnSeconds:120,spawnGroup:habitat.id,spawnGeneration:0,frontier:true});out.push(n);
+ }
+ return out;
+}
 
 
 
@@ -409,7 +462,7 @@ function bodyFor(zone,index,definition,layout){const [type,title,description]=de
  else if(type==='negotiation'){const evidence=campaignStep(zone,index,'inspect',a,{key:'terms',name:`${sourceName(index)} · posted terms`});steps=[evidence,campaignStep(zone,index,'negotiate',b,{key:'agreement',name:sourceName(index+1),requiresEvidence:[evidence.id],choices:[{id:'fair',label:'Present the evidence and preserve public access',effect:'fair',requiresEvidence:[evidence.id],reputationDelta:5,currency:'good'},{id:'coerce',label:'Impose the posted demand · Bad Karma',effect:'coerce',reputationDelta:-10,currency:'bad'},{id:'leave',label:'Leave the decision open',effect:'leave',reputationDelta:0}]})];}
  else if(type==='trial'){steps=[campaignStep(zone,index,'inspect',a,{key:'read-accords',name:'The Three Realm Accord Register'}),campaignStep(zone,index,'mechanism',b,{key:'align-concordance',name:'The Concordance Alignment',sequence:[1,3,2]}),campaignStep(zone,index,'negotiate',c,{key:'ratify',name:'The Concordance Dais',choices:[{id:'ratify',label:'Ratify the reversible concordance',effect:'fair',currency:'good',reputationDelta:5}]})];}
  return{type,title,description,steps};}
-export function getAuthoredCampaign(zoneOrId){const zone=typeof zoneOrId==='string'?ZONES.find(z=>z.id===zoneOrId):zoneOrId;if(!zone)return null;if(campaignCache.has(zone.id))return clone(campaignCache.get(zone.id));const layout=getZoneLayout(zone),definitions=SCENARIOS[zone.id];const objectives=definitions.map((definition,index)=>{const body=bodyFor(zone,index,definition,layout);return{id:campaignId(zone,index),zoneId:zone.id,...body,chapter:zone.realm,requiredRank:Math.min(zone.minRank||1,6),prerequisites:index?[campaignId(zone,index-1)]:[],reward:{amount:25*Math.max(1,zone.minRank||1)*(index+1),currency:'good'},location:{...body.steps[0]},alternatives:body.steps.flatMap(s=>(s.choices||[]).filter(c=>c.currency==='bad').map(c=>({id:c.id,title:c.label,currency:'bad',consequence:'A coercive outcome is recorded independently from the wallet.'}))),failureTerms:'Leaving or being downed pauses the objective. Bound cargo cannot be sold; no unrelated belongings are confiscated.',recoveryTerms:'Return to the recorded source or the public refuge. Settled steps and unique reward receipts remain recorded.'};});
+export function getAuthoredCampaign(zoneOrId){const zone=typeof zoneOrId==='string'?ZONES.find(z=>z.id===zoneOrId):zoneOrId;if(!zone)return null;if(campaignCache.has(zone.id))return clone(campaignCache.get(zone.id));const layout=getZoneLayout(zone),definitions=SCENARIOS[zone.id];const objectives=definitions.map((definition,index)=>{const body=bodyFor(zone,index,definition,coreLayoutCache.get(zone.id)||layout);return{id:campaignId(zone,index),zoneId:zone.id,...body,chapter:zone.realm,requiredRank:Math.min(zone.minRank||1,6),prerequisites:index?[campaignId(zone,index-1)]:[],reward:{amount:25*Math.max(1,zone.minRank||1)*(index+1),currency:'good'},location:{...body.steps[0]},alternatives:body.steps.flatMap(s=>(s.choices||[]).filter(c=>c.currency==='bad').map(c=>({id:c.id,title:c.label,currency:'bad',consequence:'A coercive outcome is recorded independently from the wallet.'}))),failureTerms:'Leaving or being downed pauses the objective. Bound cargo cannot be sold; no unrelated belongings are confiscated.',recoveryTerms:'Return to the recorded source or the public refuge. Settled steps and unique reward receipts remain recorded.'};});
  if(zone.id==='infernal-gates'){
   const trial=objectives[2];trial.grantsPortalAccess=true;trial.portalAccessTrial=true;trial.title='A Reserved Return · Portal Access Trial';
   trial.description='Align all three visible gate controls while preserving a free return route. Settling this explicit access trial grants permission to fabricate an owned portal anchor; materials, recipe training, and Fire–Create requirements remain separate.';
