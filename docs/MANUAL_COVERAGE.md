@@ -90,3 +90,7 @@ Every named region is now 4800 × 3600, with its original story and recovery anc
 Renewable non-story enemies and wilderness resources use separate generation identities. Spawn timers pause at occupied/blocked anchors, survive travel and saving, and do not reset living damage. Story bosses, chests, offerings and first-completion lifetime rewards remain finite.
 
 The optional Node server admits up to 64 travelers with independent regions and incremental/interest-filtered snapshots. A controlled 64-client WebSocket fixture verifies admission, the 65th-player boundary, movement, region isolation and reconnection; it is not a production hosting guarantee. The public GitHub Pages client requires an operator-provided HTTPS multiplayer server.
+
+## Version 3 faction stories and power challenges
+
+The two 12-mission faction campaigns, Concord of Dawn / Ashbound Covenant lore, named envoys and endings, and six reactive site mechanics are authored adaptation content. They are not claimed to be text or plot transcribed from the manual. They provide a clear character-centered path through the existing manual-derived regions and power systems. All local named powers retain their normal costs, preparation, cooldown and range when driving a site. See `CONCORD_AND_COVENANT.md` for exact progression and reward rules.

@@ -1,7 +1,7 @@
 {
-  "version": "2ec88dcab9e9611c15a1",
-  "assetCount": 1021,
-  "totalBytes": 31524130,
+  "version": "cad1e208fe591bee6b94",
+  "assetCount": 1023,
+  "totalBytes": 38313067,
   "files": [
     {
       "url": "/assets/angel-sheet.png",
@@ -3267,6 +3267,16 @@
       "url": "/assets/v2/regions/zen-gardens.svg",
       "bytes": 14598,
       "sha256": "311143d3b536d0a418f5fdc66bb353381ecc6756a373916d80ac82b67b7a5fd7"
+    },
+    {
+      "url": "/assets/v3/cosmic-atlas.png",
+      "bytes": 3273655,
+      "sha256": "3d84cdfc1814854317ab6d6052093f0dc564d258729b35f103bd9cd8dbb2c6c1"
+    },
+    {
+      "url": "/assets/v3/earth-atlas.png",
+      "bytes": 3515282,
+      "sha256": "057afa802dd16c24db4eea84bf86a126566d75123ccd1645c65c771a0038d329"
     },
     {
       "url": "/assets/vendor/superpowers/animals/0-animals.png",

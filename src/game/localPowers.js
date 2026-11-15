@@ -370,6 +370,8 @@ export function validateLocalAction(g, b, p, t) {
     return fail("Target is out of range.");
   if (t && !g.hasLineOfEffect(g.player, t))
     return fail("A solid wall or closed gate blocks line of effect.");
+  if (t?.adventureActor && t.kind === "world-activity")
+    return g.previewAdventurePower(b, p, t);
   if (t?.kind === "dummy") return { valid: true, practice: true };
   if (b.id === "dark-heal" && p.level === 7)
     return (
@@ -713,6 +715,8 @@ export function resolveLocalPower(g, b, p, t) {
   };
   g.effect(at, "spell", b.color, 40 + p.level * 9, 1.1, meta);
   g.effect(g.player, "cast", b.color, 28, 0.65, meta);
+  if (t?.adventureActor && t.kind === "world-activity")
+    return g.resolveAdventurePower(b, p, t);
   if (t?.kind === "dummy") {
     t.health = Math.max(1, t.health - mag);
     t.resetAt = g.time + 2;
@@ -1423,6 +1427,18 @@ export function validateTechniqueAction(g, t, target) {
     )
   )
     return fail("A current condition prevents technique casting.");
+  if (target?.adventureActor && target.kind === "world-activity") {
+    if (
+      distance(g.player, target) > 600 ||
+      !g.hasLineOfEffect(g.player, target)
+    )
+      return fail("Choose a visible reactive site within twenty metres.");
+    return g.previewAdventurePower(
+      { domain: t.domain || "Light", id: "cross-affinity" },
+      t,
+      target,
+    );
+  }
   if (TECHNIQUE_SELF.has(t.id)) return { valid: true, recipientId: "player" };
   if (target && (target.dead || target.collected || target.destroyed))
     return fail("The selected identity is no longer eligible.");
@@ -1561,6 +1577,12 @@ export function validateTechniqueAction(g, t, target) {
 }
 
 export function resolveTechniqueAction(g, t, target, point) {
+  if (target?.adventureActor && target.kind === "world-activity")
+    return g.resolveAdventurePower(
+      { domain: t.domain || "Light", id: "cross-affinity", color: "#a7dfff" },
+      t,
+      target,
+    );
   const s = state(g),
     self = g.player,
     recipient = target && ally(target) ? target : self,

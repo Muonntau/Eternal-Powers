@@ -31,7 +31,7 @@ test("the authored Grove evidence contract needs physical proof, offers a choice
     .poll(() => page.evaluate(() => window.__eternal.player.veil))
     .toBe(true);
   await page
-    .getByRole("button", { name: "Campaign & contracts", exact: true })
+    .getByRole("button", { name: "Regional contracts", exact: true })
     .click();
   await page.locator(".contract-list > button").first().click();
   await page
@@ -348,7 +348,7 @@ test("new campaign and standing panels fit a phone without losing their actions"
   await page.setViewportSize({ width: 390, height: 844 });
   const errors = await boot(page);
   await page
-    .getByRole("button", { name: "Campaign & contracts", exact: true })
+    .getByRole("button", { name: "Regional contracts", exact: true })
     .click();
   await expect(
     page.getByRole("button", { name: "Accept contract", exact: true }),
@@ -387,7 +387,7 @@ test("NPC barter previews freely, releases cancelled escrow, and settles both si
     () => window.__eternal.player.lifetimeGood,
   );
   await page
-    .getByRole("button", { name: "Campaign & contracts", exact: true })
+    .getByRole("button", { name: "Regional contracts", exact: true })
     .click();
   await page
     .getByRole("button", { name: "Secure barter", exact: true })

@@ -1,15 +1,15 @@
-# Eternal Powers v2 validation
+# Eternal Powers v3 validation
 
-The v2 release passes 205 automated tests:
+The v3 release is checked by 217 automated tests:
 
 | Suite | Tests | Command |
 | --- | ---: | --- |
-| Game simulation, character creation, world geometry and respawns | 152 | `npm test` |
-| Authoritative server, transport, origins and 64-client capacity | 27 | `npm run test:network` |
+| Game simulation, character creation, world geometry and respawns | 160 | `npm test` |
+| Authoritative server, transport, origins and 64-client capacity | 28 | `npm run test:network` |
 | Offline boundaries and project-base hosting | 7 | `npm run test:offline` |
-| Browser gameplay, onboarding and responsive interface | 19 | `npm run test:browser` |
+| Browser gameplay, onboarding and responsive interface | 22 | `npm run test:browser` |
 
-The production build passes with both root hosting and GitHub Pages project hosting. The offline manifest contains 1,021 asset files totaling 30.1 MiB and 21 production shell files. Art licenses and source revisions are documented in `ASSET_PROVENANCE.md`.
+The production build passes with both root hosting and GitHub Pages project hosting. The offline manifest contains 1,023 asset files totaling 36.5 MiB and 21 production shell files. Art licenses and source revisions are documented in `ASSET_PROVENANCE.md`.
 
 ## Character and interface checks
 
@@ -27,7 +27,7 @@ Real engine regressions cover restored renewable resources, repeated collection 
 
 ## Multiplayer checks
 
-The capacity fixture opens 65 real WebSocket transports. It verifies 64 simultaneous room admissions, rejection of the 65th, authoritative movement, independent regions, reconnect identity and capacity recovery. The latest controlled run measured approximately 6.95 ms average ticks, 10.07 ms maximum ticks and 1,082-byte average warmed idle updates. These measurements describe that fixture, not a production hosting guarantee.
+The capacity fixture opens 65 real WebSocket transports. It verifies 64 simultaneous room admissions, rejection of the 65th, authoritative movement, independent regions, reconnect identity and capacity recovery. The current fixture includes all 64 created characters and their 448 personal campaign actors and power sites. Its timing and idle-wire diagnostics describe the controlled fixture, not a production hosting guarantee.
 
 Two independent browser contexts also connect from a different client origin to the actual server through the game's gateway. Customized appearances, movement, separate region travel and exact restoration of each solo journey are verified without page errors or failed requests. Other regressions cover escrow, persistent market receipts, origin checks, personal actor/cargo ownership, nested/entity snapshot deltas, slow-client backpressure, common server clocks and migration of older small world layouts.
 
@@ -38,3 +38,9 @@ A strict static fixture serves the production build only from `/Eternal-Powers/`
 GitHub Pages hosts the public client. A 64-player session requires a separately running HTTPS Node server; the gateway, Docker/Compose definitions and operator settings are documented in `MULTIPLAYER_HOSTING.md`.
 
 These checks establish the included 2D simulation. The manual's wider physical, social and population scope remains documented in `MANUAL_COVERAGE.md`.
+
+## Faction campaign and reactive site checks
+
+Both 12-mission campaigns are completed through actual preparation/resolution, physical site actions, dialogue decisions and once-only settlements. Reload preserves each ending. All 87 local named powers and all 40 cross-affinity techniques drive a site through the real cost and validation path. Tests cover wrong notes, cancellation, range and ownership denial, renewable materials without repeat lifetime Karma, saved cooldowns, and six walkable sites plus a viable relay finish in every one of the 39 regions.
+
+New browser flows choose both factions, settle the first story mission, practice, charge and collect a resonator, review all 12 missions and six regional sites, then reload the resulting objective. A phone check aligns a rune through the actual window and verifies no horizontal overflow. Existing creature offering/bonding, contract, crafting and sanctuary checks remain in the browser suite. The production project-base fixture additionally verifies all generated landscape assets are cached and available on offline reload.

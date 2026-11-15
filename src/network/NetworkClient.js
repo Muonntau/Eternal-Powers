@@ -28,6 +28,10 @@ const clone = (value) => (value == null ? value : structuredClone(value));
 const MUTATIONS = [
   "createCharacter",
   "updateAppearance",
+  "openInteraction",
+  "performInteraction",
+  "navigateInteraction",
+  "navigateAdventureObjective",
   "cast",
   "cancelCast",
   "interact",

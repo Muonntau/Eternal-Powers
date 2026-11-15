@@ -74,6 +74,15 @@ import {
 
 import { initRespawns, updateRespawns, serializeRespawns } from "./respawn.js";
 
+import {
+  initAdventure,
+  updateAdventure,
+  syncAdventureEntities,
+  snapshotAdventure,
+  serializeAdventure,
+  installAdventure,
+} from "./adventure.js";
+
 const SAVE_KEY = "eternal-powers-v1";
 const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
 const dist = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
@@ -685,6 +694,8 @@ export class GameEngine {
     initContracts(this, this.savedContracts);
     this.syncContractEntities();
     initRespawns(this, this.savedRespawns);
+    initAdventure(this, this.savedAdventure);
+    syncAdventureEntities(this);
     this.inputBlocked = false;
     this.bindEvents();
     this.publish();
@@ -725,6 +736,9 @@ export class GameEngine {
           (n) =>
             !n.dead &&
             !n.collected &&
+            (!(n.contractSimulation || n.adventureActor) ||
+              !n.ownerId ||
+              n.ownerId === this.player.id) &&
             dist(n, p) < Math.max(25, n.boss ? 40 : 28),
         )
         .sort((a, b) => dist(a, p) - dist(b, p));
@@ -741,7 +755,14 @@ export class GameEngine {
       e.preventDefault();
       if (this.paused || this.inputBlocked) return;
       const p = this.renderer.screenToWorld(e.clientX, e.clientY);
-      const t = this.entities.find((n) => !n.dead && dist(n, p) < 40);
+      const t = this.entities.find(
+        (n) =>
+          !n.dead &&
+          (!(n.contractSimulation || n.adventureActor) ||
+            !n.ownerId ||
+            n.ownerId === this.player.id) &&
+          dist(n, p) < 40,
+      );
       if (t) this.targetId = t.id;
       this.cast();
     };
@@ -802,6 +823,7 @@ export class GameEngine {
     updateSanctuary(this, dt);
     updateContracts(this, dt);
     this.syncContractEntities();
+    updateAdventure(this, dt);
     if (!this.authorityPeer) {
       updateRegionalEncounters(this, dt);
       updateRespawns(this, dt);
@@ -1170,7 +1192,13 @@ export class GameEngine {
   }
   getTargetEntity(id = this.targetId) {
     return (
-      this.entities.find((n) => n.id === id) ||
+      this.entities.find(
+        (n) =>
+          n.id === id &&
+          (!(n.contractSimulation || n.adventureActor) ||
+            !n.ownerId ||
+            n.ownerId === this.player.id),
+      ) ||
       this.world.props?.find((n) => n.id === id) ||
       this.localMagic?.objects.find((n) => n.id === id) ||
       this.sanctuary?.components.find((n) => n.id === id)
@@ -1294,7 +1322,13 @@ export class GameEngine {
   }
   cycleTarget() {
     const ns = this.entities.filter(
-      (n) => !n.dead && !n.collected && dist(n, this.player) < 450,
+      (n) =>
+        !n.dead &&
+        !n.collected &&
+        (!(n.contractSimulation || n.adventureActor) ||
+          !n.ownerId ||
+          n.ownerId === this.player.id) &&
+        dist(n, this.player) < 450,
     );
     const i = ns.findIndex((n) => n.id === this.targetId);
     if (ns.length) this.targetId = ns[(i + 1) % ns.length].id;
@@ -1660,7 +1694,7 @@ export class GameEngine {
     if (this.paused || this.downed) return false;
     const selected = this.entities.find((n) => n.id === this.targetId);
     if (
-      selected?.contractSimulation &&
+      (selected?.contractSimulation || selected?.adventureActor) &&
       selected.ownerId &&
       selected.ownerId !== this.player.id
     ) {
@@ -1683,7 +1717,7 @@ export class GameEngine {
           (n) =>
             !n.dead &&
             !n.collected &&
-            (!n.contractSimulation ||
+            (!(n.contractSimulation || n.adventureActor) ||
               !n.ownerId ||
               n.ownerId === this.player.id) &&
             n.kind !== "enemy" &&
@@ -1698,6 +1732,14 @@ export class GameEngine {
       return false;
     }
     this.targetId = t.id;
+    if (
+      !this._adventureBypass &&
+      (t.adventureActor ||
+        t.contractSimulation ||
+        (t.kind === "npc" && !t.creatureId) ||
+        ["dummy", "world-landmark"].includes(t.kind))
+    )
+      return this.openInteraction(t.id);
     if (t.contractSimulation) {
       const result = this.interactContractEntity(t.id);
       this.syncContractEntities();
@@ -2653,6 +2695,7 @@ export class GameEngine {
       updateContracts(this, 0);
       this.syncContractEntities();
     }
+    if (this.adventure) updateAdventure(this, 0);
     if (!this.discoveredZones.includes(zone.id)) {
       this.discoveredZones.push(zone.id);
       this.progress("discover");
@@ -2779,13 +2822,19 @@ export class GameEngine {
         this.targetId = null;
         return { ok: true };
       }
-      if (!this.getTargetEntity(String(id)))
-        return { ok: false, reason: "Unknown target identity." };
+      if (!this.getTargetEntity(String(id))) {
+        this.targetId = String(id);
+        return { ok: false, reason: "Unknown or unavailable target identity." };
+      }
       this.selectTarget(String(id));
       return { ok: true };
     }
     const allowed = new Set([
       "setPower",
+      "openInteraction",
+      "performInteraction",
+      "navigateInteraction",
+      "navigateAdventureObjective",
       "createCharacter",
       "updateAppearance",
       "cast",
@@ -2904,6 +2953,8 @@ export class GameEngine {
       initContracts(this, this.savedContracts);
       this.syncContractEntities();
       initRespawns(this, this.savedRespawns);
+      initAdventure(this, this.savedAdventure);
+      syncAdventureEntities(this);
       this.publish();
       return true;
     } catch {
@@ -2919,7 +2970,7 @@ export class GameEngine {
         (n) =>
           !n.dead &&
           !n.collected &&
-          (!n.contractSimulation ||
+          (!(n.contractSimulation || n.adventureActor) ||
             !n.ownerId ||
             n.ownerId === this.player.id) &&
           n.kind !== "enemy" &&
@@ -2965,6 +3016,7 @@ export class GameEngine {
       time: this.time,
       worldModel: this.worldSystems?.snapshot() || null,
       ...snapshotProgression(this),
+      ...snapshotAdventure(this),
       ...snapshotRespecialization(this),
       ...getContractsSnapshot(this),
       localMagic: this.localMagic,
@@ -3058,6 +3110,7 @@ export class GameEngine {
           progression: this.progression,
           respecialization: serializeRespecialization(this),
           respawns: serializeRespawns(this),
+          adventure: serializeAdventure(this),
           contracts: this.contracts ? serializeContracts(this) : undefined,
           localMagic: this.localMagic,
           gameTime: this.time,
@@ -3099,6 +3152,7 @@ export class GameEngine {
       this.savedProgression = s.progression;
       this.savedRespecialization = s.respecialization;
       this.savedRespawns = s.respawns;
+      this.savedAdventure = s.adventure;
       this.savedContracts = s.contracts;
       this.savedLocalMagic = s.localMagic;
       this.savedWorldSystems = s.worldSystems;
@@ -3162,6 +3216,9 @@ export class GameEngine {
     this.player = defaultPlayer();
     delete this.respawns;
     this.savedRespawns = undefined;
+    delete this.adventure;
+    this.savedAdventure = undefined;
+    initAdventure(this);
     initRespawns(this);
     delete this.respecialization;
     this.savedRespecialization = undefined;
@@ -3211,6 +3268,7 @@ installProgression(GameEngine);
 installContracts(GameEngine);
 installRespecialization(GameEngine);
 installCharacterMethods(GameEngine);
+installAdventure(GameEngine);
 function canvasListen(canvas, type, fn) {
   canvas.addEventListener(type, fn);
 }

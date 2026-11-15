@@ -217,7 +217,9 @@ export function drawNavigationMap(
       n.collected ||
       n.kind === "dummy" ||
       !t.contains(n.x, n.y) ||
-      (n.contractSimulation && n.ownerId && n.ownerId !== player.id)
+      ((n.contractSimulation || n.adventureActor) &&
+        n.ownerId &&
+        n.ownerId !== player.id)
     )
       continue;
     const dist = Math.hypot(n.x - player.x, n.y - player.y);
@@ -231,7 +233,10 @@ export function drawNavigationMap(
           ? "resource"
           : n.kind === "portal"
             ? "portal"
-            : n.contractSimulation
+            : n.contractSimulation ||
+                ["available", "objective", "turnin", "reward"].includes(
+                  n.markerState,
+                )
               ? "objective"
               : "friendly";
     markers.push({

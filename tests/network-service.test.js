@@ -7,10 +7,25 @@ import { CoopService } from "../server/service.js";
 import { WorldStore } from "../server/store.js";
 import { getContractDefinitions } from "../src/game/contracts.js";
 
-function roomFixture({ file = ":memory:", now = () => 1000 } = {}) {
+function roomFixture({
+  file = ":memory:",
+  now = () => 1000,
+  factionCharacters = false,
+} = {}) {
   const service = new CoopService({ store: new WorldStore(file), now });
   const a = service.createSession("Ada"),
-    b = service.createSession("Bryn");
+    b = service.createSession(
+      "Bryn",
+      null,
+      factionCharacters
+        ? {
+            name: "Bryn",
+            lineage: "demon",
+            starterBranch: "fire-create",
+            appearance: {},
+          }
+        : null,
+    );
   const room = service.createRoom(a.token, "A Shared Test");
   service.joinRoom(b.token, room.room.code);
   return {
@@ -371,6 +386,10 @@ test("personal contract markers and bound delivery custody coexist without cross
   );
   assert.equal(
     service.command(a.token, "interact", [], { targetId: own.id }),
+    true,
+  );
+  assert.equal(
+    service.command(a.token, "performInteraction", [own.id, "contract"]),
     true,
   );
   assert.equal(
@@ -860,6 +879,13 @@ test("joining and reconnecting travelers share the authoritative clock while ret
     gb.cooldowns["water-grow-1"] = gb.time + 4;
     gb.player.statuses = [{ type: "potency", until: gb.time + 6 }];
     gb.localMagic.fields.push({ id: "temporary", until: gb.time + 8 });
+    gb.adventure.activities["sacred-groves:bloom"].claimedAt = gb.time;
+    gb.adventure.activities["sacred-groves:pulsewell"].lastCastAt =
+      gb.time - 0.5;
+    gb.adventure.activities["sacred-groves:skybridge"].challenge = {
+      finish: { x: 1740, y: 940 },
+      expiresAt: gb.time + 30,
+    };
     service.leaveRoom(b.id, room.code);
     for (let i = 0; i < 40; i++) service.tick(0.05);
     service.joinRoom(b.token, room.code);
@@ -867,6 +893,25 @@ test("joining and reconnecting travelers share the authoritative clock while ret
     assert.ok(Math.abs(gb.cooldowns["water-grow-1"] - gb.time - 4) < 1e-8);
     assert.ok(Math.abs(gb.player.statuses[0].until - gb.time - 6) < 1e-8);
     assert.ok(Math.abs(gb.localMagic.fields[0].until - gb.time - 8) < 1e-8);
+    assert.ok(
+      Math.abs(
+        gb.adventure.activities["sacred-groves:bloom"].claimedAt - gb.time,
+      ) < 1e-8,
+    );
+    assert.ok(
+      Math.abs(
+        gb.adventure.activities["sacred-groves:pulsewell"].lastCastAt -
+          gb.time +
+          0.5,
+      ) < 1e-8,
+    );
+    assert.ok(
+      Math.abs(
+        gb.adventure.activities["sacred-groves:skybridge"].challenge.expiresAt -
+          gb.time -
+          30,
+      ) < 1e-8,
+    );
   } finally {
     service.close();
   }
@@ -924,4 +969,54 @@ test("pre-v2 shared terrain upgrades to expanded layouts without losing construc
     service.close();
     rmSync(folder, { recursive: true, force: true });
   }
+});
+
+test("personal faction campaigns reject foreign actions, preserve independent rewards and survive region relinking", () => {
+  const { service, a, b, ga, gb } = roomFixture({ factionCharacters: true });
+  service.tick(0.05);
+  const mentor = ga.entities.find(
+    (e) => e.role === "campaign-mentor" && e.ownerId === a.id,
+  );
+  ga.player.x = mentor.x;
+  ga.player.y = mentor.y;
+  assert.equal(
+    service.command(b.token, "performInteraction", [
+      mentor.id,
+      "choice:listen",
+    ]),
+    false,
+  );
+  assert.equal(
+    service.command(a.token, "performInteraction", [
+      mentor.id,
+      "choice:listen",
+    ]),
+    true,
+  );
+  assert.equal(
+    service.command(a.token, "performInteraction", [mentor.id, "claim"]),
+    true,
+  );
+  assert.equal(ga.adventure.completed.length, 1);
+  assert.equal(gb.adventure.completed.length, 0);
+  const personal = service
+    .snapshot(service.roomFor(service.connections.get(a.id).roomCode), a.id, {
+      compact: true,
+      includeWorld: false,
+    })
+    .entities.filter((e) => e.adventureActor);
+  assert.equal(personal.length, 7);
+  assert.ok(personal.every((e) => e.ownerId === a.id));
+  service.command(a.token, "setZone", ["prismatic-waterfalls"]);
+  service.command(a.token, "setZone", ["sacred-groves"]);
+  assert.equal(
+    ga.entities.filter((e) => e.adventureActor && e.ownerId === a.id).length,
+    7,
+  );
+  assert.equal(
+    ga.entities.filter((e) => e.adventureActor && e.ownerId === b.id).length,
+    7,
+  );
+  assert.equal(ga.adventure.completed.length, 1);
+  service.close();
 });

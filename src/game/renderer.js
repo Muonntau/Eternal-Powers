@@ -2907,6 +2907,168 @@ export class WorldRenderer {
     c.stroke();
     c.restore();
   }
+  drawPurposeMarker(e, now, game) {
+    const c = this.ctx,
+      state = e.markerState;
+    const quest = ["available", "objective", "turnin", "reward"].includes(
+      state,
+    );
+    const near =
+      game.targetId === e.id ||
+      Math.hypot(e.x - game.player.x, e.y - game.player.y) < 190;
+    if (!quest && !near) return;
+    const symbol =
+      state === "turnin" || state === "reward"
+        ? "✓"
+        : state === "available"
+          ? "!"
+          : state === "objective"
+            ? "◆"
+            : /merchant|trader/.test(e.role || "")
+              ? "◇"
+              : e.role === "keeper"
+                ? "✦"
+                : "·";
+    const y =
+      e.y -
+      (e.kind === "world-activity" ? 69 : 66) +
+      Math.sin(now / 700 + e.x) * 2;
+    c.save();
+    c.fillStyle = "#101d2d";
+    c.strokeStyle = quest ? "#8de9ed" : "#73829e";
+    c.lineWidth = 1.4;
+    c.beginPath();
+    c.arc(e.x, y - 5, quest ? 10 : 8, 0, TAU);
+    c.fill();
+    c.stroke();
+    c.fillStyle =
+      state === "turnin" || state === "reward" ? "#f4d99c" : "#a9f4ef";
+    c.font = "bold 13px sans-serif";
+    c.textAlign = "center";
+    c.fillText(symbol, e.x, y);
+    c.restore();
+  }
+  drawAdventureSite(e, now, game) {
+    const c = this.ctx,
+      x = e.x,
+      y = e.y,
+      t = now / 1000;
+    const color = e.activityReady
+      ? "#ffe09d"
+      : e.activityPhase
+        ? ["#82eee0", "#c6a8ff", "#f7b5db"][e.activityPhase - 1]
+        : "#8ddcf0";
+    c.save();
+    this.glow(x, y - 22, 70, color, e.activityReady ? 0.18 : 0.08);
+    c.strokeStyle = color;
+    c.fillStyle = "#182b40";
+    c.lineWidth = 1.6;
+    c.beginPath();
+    c.ellipse(x, y, 35, 15, 0, 0, TAU);
+    c.fill();
+    c.stroke();
+    c.globalAlpha = 0.4;
+    c.beginPath();
+    c.ellipse(x, y, 45, 20, 0, 0, TAU);
+    c.stroke();
+    c.globalAlpha = 1;
+    if (e.role === "relay-finish") {
+      c.setLineDash([5, 5]);
+      c.beginPath();
+      c.ellipse(x, y - 9, 44, 23, 0, 0, TAU);
+      c.stroke();
+      c.setLineDash([]);
+      for (let i = 0; i < 8; i++) {
+        const a = t + (i * TAU) / 8;
+        c.fillStyle = color;
+        c.fillRect(x + Math.cos(a) * 32 - 1, y - 22 + Math.sin(a) * 13, 3, 3);
+      }
+    } else if (e.activityType === "runegate") {
+      c.fillStyle = "#273950";
+      c.fillRect(x - 29, y - 53, 10, 48);
+      c.fillRect(x + 19, y - 53, 10, 48);
+      c.strokeRect(x - 29, y - 53, 10, 48);
+      c.strokeRect(x + 19, y - 53, 10, 48);
+      c.beginPath();
+      c.arc(x, y - 37, 24, Math.PI, TAU);
+      c.stroke();
+      c.font = "12px sans-serif";
+      c.textAlign = "center";
+      [1, 3, 2].forEach((n, i) => {
+        c.fillStyle = i < (e.activityStep || 0) ? "#ffe09d" : "#a2d9ee";
+        c.fillText(n, x - 18 + i * 18, y - 23);
+      });
+    } else if (e.activityType === "bloom") {
+      for (let i = 0; i < 6; i++) {
+        const a = (i * TAU) / 6 + t * 0.12;
+        c.fillStyle = i % 2 ? "#ad9ee7" : "#86d4c2";
+        c.beginPath();
+        c.ellipse(
+          x + Math.cos(a) * 14,
+          y - 27 + Math.sin(a) * 9,
+          10,
+          5,
+          a,
+          0,
+          TAU,
+        );
+        c.fill();
+      }
+      c.fillStyle = "#e8edcf";
+      c.beginPath();
+      c.arc(x, y - 27, 6, 0, TAU);
+      c.fill();
+    } else if (e.activityType === "pulsewell") {
+      for (let i = 0; i < 3; i++) {
+        c.globalAlpha = 0.3 + i * 0.2;
+        c.beginPath();
+        c.ellipse(x, y - 13 - i * 7, 24 - i * 4, 10 - i * 2, 0, 0, TAU);
+        c.stroke();
+      }
+      c.globalAlpha = 1;
+    } else {
+      c.beginPath();
+      c.moveTo(x, y - 57);
+      c.lineTo(x + 17, y - 30);
+      c.lineTo(x, y - 9);
+      c.lineTo(x - 17, y - 30);
+      c.closePath();
+      c.fillStyle = "#244563";
+      c.fill();
+      c.stroke();
+      c.beginPath();
+      c.moveTo(x, y - 57);
+      c.lineTo(x, y - 9);
+      c.moveTo(x - 17, y - 30);
+      c.lineTo(x + 17, y - 30);
+      c.stroke();
+      if (e.activityType === "ward")
+        for (let i = 0; i < 3; i++) {
+          c.fillStyle = e.activityFacets?.includes(i + 1)
+            ? "#ffe09d"
+            : "#556780";
+          c.beginPath();
+          c.arc(x - 16 + i * 16, y - 3, 3, 0, TAU);
+          c.fill();
+        }
+      if (e.activityType === "skybridge") {
+        c.beginPath();
+        c.ellipse(x, y - 32, 30, 11, t * 0.3, 0, TAU);
+        c.stroke();
+      }
+    }
+    for (let i = 0; i < (e.activityStep || 0); i++) {
+      c.fillStyle = "#ffe09d";
+      c.fillRect(x - 12 + i * 8, y + 7, 4, 3);
+    }
+    c.restore();
+    this.drawPurposeMarker(e, now, game);
+    if (
+      game.targetId === e.id ||
+      Math.hypot(x - game.player.x, y - game.player.y) < 155
+    )
+      this.queueEntityLabel(e, game);
+  }
   drawContractMarker(e, now, game) {
     const c = this.ctx,
       selected = game.targetId === e.id;
@@ -3088,7 +3250,9 @@ export class WorldRenderer {
     if (
       e.ownerId &&
       e.ownerId !== game.player.id &&
-      (e.kind === "contract-node" || e.role === "contract-trader")
+      (e.adventureActor ||
+        e.kind === "contract-node" ||
+        e.role === "contract-trader")
     )
       return;
     const c = this.ctx,
@@ -3106,6 +3270,10 @@ export class WorldRenderer {
     c.beginPath();
     c.ellipse(x, y + 2, e.kind === "portal" ? 30 : 15, 6, 0, 0, TAU);
     c.fill();
+    if (e.kind === "world-activity") {
+      this.drawAdventureSite(e, now, game);
+      return;
+    }
     if (e.kind === "contract-node") {
       this.drawContractMarker(e, now, game);
       return;
@@ -3428,15 +3596,7 @@ export class WorldRenderer {
         c.fillRect(x - 4, y - 36, 2, 2);
         c.fillRect(x + 3, y - 36, 2, 2);
       }
-      const iconY = y - 65 + Math.sin(now / 550 + x) * 2;
-      c.fillStyle = "#cfbd77";
-      c.font = "bold 16px Georgia";
-      c.textAlign = "center";
-      c.fillText(
-        /merchant|artisan|trader/i.test(e.name || "") ? "◇" : "!",
-        x,
-        iconY,
-      );
+      this.drawPurposeMarker(e, now, game);
     }
     if (e.status && (!e.statusUntil || e.statusUntil > (game.time || 0))) {
       c.save();

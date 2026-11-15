@@ -62,7 +62,15 @@ test(
         const response = await fetch(origin + "/api/session", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name: `Traveler ${i + 1}` }),
+          body: JSON.stringify({
+            name: `Traveler ${i + 1}`,
+            character: {
+              name: `Traveler ${i + 1}`,
+              lineage: i % 2 ? "demon" : "angel",
+              starterBranch: i % 2 ? "fire-create" : "water-grow",
+              appearance: {},
+            },
+          }),
         });
         assert.equal(response.status, 201);
         accounts.push(await response.json());
@@ -79,6 +87,14 @@ test(
       for (let i = 1; i < 64; i++)
         await clients[i].request("room.join", { code });
       assert.equal(app.service.roomFor(code).members.size, 64);
+      // Every admitted server identity already has a created character.
+      app.service.tick(0.05);
+      assert.equal(
+        app.service
+          .member(accounts[0].token)
+          .member.engine.entities.filter((e) => e.adventureActor).length,
+        64 * 7,
+      );
       await assert.rejects(
         () => clients[64].request("room.join", { code }),
         /full.*64/,

@@ -1,0 +1,743 @@
+.objective-tracker {
+  margin-top: 9px;
+  border: 1px solid color-mix(in srgb, var(--faction-accent) 28%, transparent);
+  border-radius: 12px;
+  background: #091526ee;
+  box-shadow: 0 8px 28px #0004;
+  backdrop-filter: blur(18px);
+  color: #d6e7fa;
+  overflow: hidden;
+}
+.objective-heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 11px 5px;
+  background: none;
+  border: 0;
+  color: var(--faction-accent);
+}
+.objective-faction {
+  font-size: 7px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 650;
+}
+.objective-heading svg {
+  transition: transform 0.2s;
+}
+.objective-heading svg:not(.expanded) {
+  transform: rotate(-90deg);
+}
+.objective-title {
+  display: flex;
+  gap: 7px;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+  padding: 6px 11px 9px;
+  background: none;
+  border: 0;
+  color: #f1f5ff;
+  font-size: 11px;
+  line-height: 1.45;
+}
+.objective-title > svg {
+  color: var(--faction-accent);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.objective-detail {
+  padding: 0 11px 11px;
+}
+.objective-detail p {
+  font-size: 10px;
+  line-height: 1.6;
+  color: #b0c5df;
+  margin: 0 0 9px;
+}
+.objective-detail > small {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  color: #7f98b6;
+  font-size: 7px;
+}
+.objective-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  width: 100%;
+  border: 1px solid #83e9de35;
+  border-radius: 6px;
+  background: #6ee3d70d;
+  color: var(--faction-accent);
+  font-size: 9px;
+  padding: 8px;
+  margin-top: 10px;
+}
+.adventure-panel,
+.interaction-panel,
+.purpose-creature {
+  padding: 24px 28px 28px;
+}
+.campaign-hero {
+  border: 1px solid #a9bdf42b;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 180px;
+  border-radius: 15px;
+  padding: 28px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  background: #122238;
+}
+.campaign-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-size: 200% 200%;
+  background-position: 0 0;
+  opacity: 0.65;
+}
+.campaign-hero:after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background: linear-gradient(0deg, #081323f0, #08132322);
+  z-index: -1;
+}
+.campaign-hero h3 {
+  font-size: 32px;
+  margin: 8px 0;
+}
+.campaign-hero p {
+  max-width: 540px;
+  color: #c0d1e6;
+  font-size: 12px;
+}
+.campaign-hero .eyebrow {
+  color: var(--faction-accent);
+}
+.campaign-completion {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ecfaff;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+.campaign-completion small {
+  font-size: 8px;
+  letter-spacing: 0.13em;
+  white-space: nowrap;
+}
+.adventure-tabs {
+  display: flex;
+  gap: 6px;
+  border-bottom: 1px solid #a4c5ef25;
+  margin: 22px 0;
+}
+.adventure-tabs button {
+  border: 0;
+  background: none;
+  padding: 12px 16px;
+  color: #91a7c4;
+  font-size: 11px;
+  border-bottom: 2px solid transparent;
+}
+.adventure-tabs button.active {
+  border-color: var(--faction-accent);
+  color: var(--faction-accent);
+}
+.campaign-current {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  border: 1px solid #a1c3ef25;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #11203580;
+}
+.campaign-current > div {
+  padding: 24px;
+}
+.campaign-current h3 {
+  font-size: 23px;
+  margin: 8px 0;
+}
+.campaign-current p {
+  color: #a5bad4;
+  font-size: 12px;
+}
+.campaign-current ol {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0;
+  display: grid;
+  gap: 10px;
+}
+.campaign-current li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #758ca9;
+}
+.campaign-current li > span {
+  width: 23px;
+  height: 23px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #8ca5ce3b;
+  border-radius: 50%;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+.campaign-current li p {
+  margin: 0;
+  font-size: 12px;
+}
+.campaign-current li.current > span {
+  color: var(--faction-accent);
+  border-color: var(--faction-accent);
+  background: #8ae2e311;
+}
+.campaign-current li.current p {
+  color: #e6f3ff;
+}
+.campaign-current li.done {
+  color: #89d6ad;
+}
+.campaign-current aside {
+  padding: 24px;
+  background: #08162a90;
+  border-left: 1px solid #a2c9fa20;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.campaign-current aside p {
+  margin: 0;
+  font-size: 13px;
+  color: #d9eaff;
+}
+.campaign-current aside small {
+  color: #7f9ab9;
+}
+.campaign-current aside button {
+  margin-top: auto;
+}
+.campaign-reward {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  color: #b5b6f1;
+  font-size: 10px;
+}
+.campaign-missions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 22px;
+}
+.campaign-missions h4 {
+  font-size: 10px;
+  color: var(--faction-accent);
+  letter-spacing: 0.1em;
+}
+.campaign-missions h4 span {
+  display: block;
+  color: #7890b0;
+  font-size: 9px;
+  letter-spacing: 0;
+  margin-top: 6px;
+  font-weight: 400;
+}
+.campaign-missions article {
+  border: 1px solid #a5c3e41c;
+  background: #0d192b;
+  padding: 14px;
+  border-radius: 10px;
+  display: flex;
+  gap: 9px;
+  align-items: start;
+  margin: 8px 0;
+  position: relative;
+  min-height: 130px;
+}
+.campaign-missions article > span {
+  font-size: 10px;
+  color: #627d9c;
+  min-width: 17px;
+}
+.campaign-missions strong {
+  color: #9aafc8;
+  font-size: 11px;
+}
+.campaign-missions article p {
+  font-size: 10px;
+  color: #6e87a7;
+  margin: 8px 0 15px;
+}
+.campaign-missions article > small {
+  position: absolute;
+  bottom: 10px;
+  left: 40px;
+  font-size: 6px;
+  letter-spacing: 0.13em;
+  color: #68819c;
+}
+.campaign-missions .active {
+  border-color: #79e5df50;
+  background: #68c5ca0b;
+}
+.campaign-missions .active strong,
+.campaign-missions .active > span,
+.campaign-missions .active > small {
+  color: #a3fff1;
+}
+.campaign-missions .complete strong,
+.campaign-missions .complete > span {
+  color: #a0cfae;
+}
+.campaign-ending {
+  text-align: center;
+  border: 1px solid #b1a8ff40;
+  padding: 30px;
+  border-radius: 12px;
+  background: #8b7ef010;
+}
+.campaign-ending > svg {
+  color: #b7a5ff;
+}
+.campaign-ending p {
+  color: #a9bed7;
+  font-size: 12px;
+}
+.activity-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.activity-cards article {
+  padding: 22px;
+  border: 1px solid #9fc3e725;
+  background: linear-gradient(135deg, #16283d, #10182d);
+  border-radius: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+}
+.activity-glyph {
+  height: 65px;
+  width: 65px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #90e4dd45;
+  background: #7ff6f30a;
+  transform: rotate(-4deg);
+  border-radius: 18px;
+  color: #86f4e7;
+}
+.activity-cards h3 {
+  font-size: 16px;
+  margin: 0;
+}
+.activity-cards p {
+  font-size: 11px;
+  color: #91abc7;
+  flex: 1;
+  margin: 0;
+}
+.activity-cards small {
+  color: #b9b0f2;
+  font-size: 9px;
+}
+.activity-cards button {
+  width: 100%;
+  justify-content: center;
+}
+.interaction-identity {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #a1bfe92b;
+}
+.interaction-identity h3,
+.interaction-purpose h3 {
+  font-size: 28px;
+  margin: 8px 0;
+}
+.interaction-identity p {
+  color: #b5c7df;
+  font-size: 13px;
+  margin: 0;
+  max-width: 650px;
+}
+.interaction-avatar {
+  height: 90px;
+  width: 90px;
+  border: 1px solid #75dddf45;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(#74cce62a, #17304710);
+  color: #9cedf0;
+  flex-shrink: 0;
+}
+.activity-console {
+  margin-top: 20px;
+  padding: 20px;
+  background: #071427;
+  border: 1px solid #99b9ef2b;
+  border-radius: 12px;
+}
+.activity-console-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 8px;
+  letter-spacing: 0.13em;
+  color: #93bacd;
+}
+.activity-console-head strong {
+  color: #b6fff1;
+  font-size: 13px;
+}
+.activity-progress {
+  display: flex;
+  gap: 6px;
+  margin: 13px 0;
+}
+.activity-progress i {
+  height: 5px;
+  flex: 1;
+  border-radius: 4px;
+  background: #1e344c;
+}
+.activity-progress i.complete {
+  background: #85eedb;
+  box-shadow: 0 0 12px #85eedb44;
+}
+.activity-console p {
+  color: #a7bdd9;
+  font-size: 12px;
+}
+.rune-sequence {
+  display: flex;
+  gap: 12px;
+  margin: 18px 0;
+}
+.rune-sequence span {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #819dca44;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: #7793b4;
+  font-weight: 700;
+}
+.rune-sequence .current {
+  border-color: #9ddbdc;
+  color: #c2fff1;
+  background: #79e3df17;
+}
+.rune-sequence .done {
+  color: #9dceb0;
+}
+.activity-rewards {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #c4b5f8;
+  font-size: 10px;
+}
+.echo-timer {
+  font-size: 12px;
+  color: #e9dba4;
+  margin: 12px 0;
+}
+.interaction-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 23px;
+}
+.interaction-actions button {
+  white-space: normal;
+  text-align: left;
+  min-height: 42px;
+  justify-content: space-between;
+}
+.interaction-actions .active {
+  border-color: #8fe6e1;
+  background: #8eece319;
+  color: #b4fff6;
+}
+.interaction-range {
+  border: 1px solid #edc28835;
+  background: #c995410b;
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.interaction-range p {
+  font-size: 12px;
+  color: #d9c4a1;
+  margin: 0;
+}
+.selected-power-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #8b9ab90a;
+  border: 1px solid #8ba7d520;
+  border-radius: 9px;
+  margin-top: 22px;
+}
+.selected-power-note img {
+  width: 40px;
+  height: 40px;
+  image-rendering: pixelated;
+}
+.selected-power-note > div {
+  flex: 1;
+  display: grid;
+  gap: 5px;
+}
+.selected-power-note small {
+  font-size: 7px;
+  letter-spacing: 0.12em;
+  color: #7895b4;
+}
+.selected-power-note strong {
+  font-size: 12px;
+  color: #e6f7ff;
+}
+.selected-power-note span {
+  font-size: 10px;
+  color: #9bb0cb;
+}
+.interaction-feedback {
+  font-size: 12px;
+  color: #e2c591;
+  border: 1px solid #c4a76b35;
+  border-radius: 7px;
+  padding: 12px;
+}
+.training-note {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: #9fc9df;
+  padding: 18px;
+  background: #6ba6d60b;
+  border-radius: 9px;
+  margin-top: 20px;
+}
+.training-note p {
+  font-size: 12px;
+  margin: 0;
+}
+.interaction-empty {
+  padding: 45px;
+  text-align: center;
+  color: #a8c1dd;
+}
+.interaction-empty > svg {
+  color: #91dfdf;
+}
+.purpose-creature .creature-interaction {
+  padding: 0;
+}
+.interaction-purpose {
+  margin-bottom: 18px;
+}
+.v2 .modal-adventure {
+  max-width: 1200px;
+}
+.v2 .modal-interact {
+  max-width: 900px;
+}
+@media (max-width: 900px) {
+  .campaign-missions {
+    grid-template-columns: 1fr;
+  }
+  .campaign-missions article {
+    min-height: 95px;
+  }
+  .campaign-current {
+    grid-template-columns: 1fr;
+  }
+  .campaign-current aside {
+    border-left: 0;
+    border-top: 1px solid #a2c9fa20;
+  }
+  .activity-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .campaign-hero {
+    padding: 20px;
+  }
+  .campaign-hero h3 {
+    font-size: 26px;
+  }
+}
+@media (max-width: 600px) {
+  .objective-tracker {
+    margin-top: 6px;
+    border-radius: 9px;
+  }
+  .objective-heading {
+    padding: 7px 8px 3px;
+  }
+  .objective-faction {
+    font-size: 5px;
+    letter-spacing: 0.07em;
+  }
+  .objective-title {
+    font-size: 9px;
+    padding: 4px 8px 6px;
+    gap: 5px;
+  }
+  .objective-title > svg {
+    width: 11px;
+  }
+  .objective-detail {
+    padding: 0 8px 8px;
+  }
+  .objective-detail p {
+    font-size: 8px;
+    line-height: 1.5;
+    margin-bottom: 7px;
+  }
+  .objective-detail > small {
+    font-size: 5px;
+    line-height: 1.5;
+  }
+  .objective-route {
+    font-size: 7px;
+    padding: 6px;
+    margin-top: 7px;
+  }
+  .objective-route svg {
+    width: 10px;
+  }
+  .adventure-panel,
+  .interaction-panel,
+  .purpose-creature {
+    padding: 17px;
+  }
+  .campaign-hero h3 {
+    font-size: 22px;
+  }
+  .campaign-hero p {
+    font-size: 10px;
+  }
+  .campaign-completion {
+    font-size: 25px;
+  }
+  .campaign-completion small {
+    font-size: 6px;
+  }
+  .adventure-tabs button {
+    padding: 10px 8px;
+    font-size: 10px;
+  }
+  .campaign-current > div,
+  .campaign-current aside {
+    padding: 17px;
+  }
+  .activity-cards {
+    grid-template-columns: 1fr;
+  }
+  .interaction-identity {
+    gap: 12px;
+    align-items: start;
+  }
+  .interaction-avatar {
+    height: 52px;
+    width: 52px;
+    border-radius: 13px;
+  }
+  .interaction-avatar svg {
+    width: 25px;
+  }
+  .interaction-identity h3 {
+    font-size: 20px;
+  }
+  .interaction-identity p {
+    font-size: 11px;
+  }
+  .interaction-identity .eyebrow {
+    font-size: 6px;
+    line-height: 1.7;
+  }
+  .interaction-actions {
+    display: grid;
+  }
+  .interaction-actions button {
+    width: 100%;
+    font-size: 11px;
+  }
+  .interaction-range {
+    align-items: start;
+    flex-direction: column;
+  }
+  .selected-power-note {
+    flex-wrap: wrap;
+  }
+  .selected-power-note > button {
+    margin-left: 52px;
+  }
+  .activity-console {
+    padding: 14px;
+  }
+}
+
+/* Preserve landscape proportions when a campaign banner crops a wide plate. */
+.campaign-hero-image {
+  inset: auto 0;
+  top: 50%;
+  aspect-ratio: 16 / 9;
+  transform: translateY(-50%);
+}
+.v2 .v2-map-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 12px 24px;
+  border-bottom: 1px solid #a4caff18;
+}
+.v2 .v2-map-tabs button {
+  padding: 10px 17px;
+  min-height: 38px;
+  border-radius: 9px;
+  border: 1px solid #a4caff22;
+  color: #9aafcc;
+  background: #102039;
+  font-size: 11px;
+}
+.v2 .v2-map-tabs button.active {
+  border-color: #91e7e766;
+  background: #87dde514;
+  color: #b8f5ed;
+}
+@media (max-width: 600px) {
+  .v2 .v2-map-tabs {
+    padding: 10px 14px;
+  }
+}

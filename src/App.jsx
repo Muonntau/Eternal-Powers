@@ -55,6 +55,11 @@ import CharacterCreator, {
 } from "./components/CharacterCreator.jsx";
 import CreatureInteraction from "./components/CreatureInteraction.jsx";
 import RegionAtlas from "./components/RegionAtlas.jsx";
+import {
+  AdventurePanel,
+  ObjectiveTracker,
+  InteractionPanel,
+} from "./components/AdventurePanel.jsx";
 
 import RespecializationPanel from "./components/RespecializationPanel.jsx";
 import SanctuaryPanel from "./components/SanctuaryPanel.jsx";
@@ -102,7 +107,8 @@ const NAV = [
   { id: "map", label: "World map", icon: Map },
   { id: "sanctuary", label: "Sanctuary", icon: Home },
   { id: "world", label: "World model", icon: Sun },
-  { id: "contracts", label: "Campaign & contracts", icon: ScrollText },
+  { id: "adventure", label: "Faction campaign", icon: ScrollText },
+  { id: "contracts", label: "Regional contracts", icon: ScrollText },
   { id: "social", label: "Standing & recovery", icon: Eye },
   { id: "multiplayer", label: "Private co-op", icon: Users },
   { id: "journal", label: "Journal", icon: ScrollText },
@@ -236,6 +242,7 @@ function App() {
   const [scoreMode, setScoreMode] = useState("original");
   const [natureAmbience, setNatureAmbience] = useState(true);
   const [socialTab, setSocialTab] = useState("standing");
+  const [adventureTab, setAdventureTab] = useState("story");
   const notify = (text, type = "info") => {
     const id = Date.now() + Math.random();
     setNotices((p) => [...p.slice(-2), { id, text, type }]);
@@ -251,6 +258,15 @@ function App() {
         }
         if (e.type === "open-shop" || e.type === "shop") setPanel("shop");
         else if (e.type === "open-map") setPanel("map");
+        else if (e.type === "open-adventure") {
+          setAdventureTab(
+            e.audioOptions?.tab === "activities" ? "activities" : "story",
+          );
+          setPanel("adventure");
+        } else if (e.type === "open-interaction") setPanel("interact");
+        else if (e.type === "close-interaction") setPanel(null);
+        else if (e.type === "open-craft") setPanel("craft");
+        else if (e.type === "open-powers") setPanel("powers");
         else if (e.type === "open-world" || e.type === "open-ritual") {
           setWorldTab(e.type === "open-ritual" ? "rituals" : "overview");
           setPanel("world");
@@ -259,7 +275,7 @@ function App() {
           setPanel("contracts");
         else if (e.type === "open-social") setPanel("social");
         else if (e.type === "open-creature") {
-          setPanel("inspect");
+          setPanel("interact");
         } else if (e.type === "dialogue") {
           setDialogue(e.text);
           setPanel("dialogue");
@@ -296,6 +312,8 @@ function App() {
             panel &&
             ![
               "world",
+              "adventure",
+              "interact",
               "sanctuary",
               "craft",
               "shop",
@@ -436,6 +454,7 @@ function App() {
     if (!game.current?.player.characterCreated) return;
     if (id === "map") setMapView("realm");
     if (id === "social") setSocialTab("standing");
+    if (id === "adventure") setAdventureTab("story");
     if (id === "play") setPanel(null);
     else {
       setPanel(id);
@@ -584,7 +603,7 @@ function App() {
           <Emblem />
           <div>
             <span>ETERNAL POWERS</span>
-            <small>V2 · ETERNITY REBORN</small>
+            <small>V3 · CONCORD & COVENANT</small>
           </div>
         </a>
         <div className="top-navigation">
@@ -806,6 +825,7 @@ function App() {
                       setPanel("map");
                     }}
                   />
+                  <ObjectiveTracker state={state} call={call} open={open} />
                 </div>
                 {state.target && (
                   <div className="target-info">
@@ -818,7 +838,7 @@ function App() {
                       </small>
                     )}
                     <button
-                      onClick={() => setPanel("inspect")}
+                      onClick={() => call("openInteraction", state.target.id)}
                       title="Inspect target"
                       aria-label="Inspect target"
                     >
@@ -1023,8 +1043,8 @@ function App() {
                       ? `Day ${state.worldModel.day || 1} · ${state.worldModel.phase || "Morning"} · ${typeof state.worldModel.weather === "object" ? state.worldModel.weather.label || state.worldModel.weather.name || state.worldModel.weather.id || state.worldModel.weather.type : state.worldModel.weather || "Clear"}`
                       : "A living, changing world"}
                   </button>{" "}
-                  <span className="strip-separator">·</span> Eternity Reborn ·
-                  v2.0
+                  <span className="strip-separator">·</span> Concord & Covenant
+                  · v3.0
                 </div>
                 <button
                   onClick={() => {
@@ -1223,7 +1243,9 @@ function App() {
                       sanctuary: "Sanctuary",
                       world: "World & rituals",
                       companion: "Your familiar",
-                      contracts: "Campaign & contracts",
+                      adventure: "Your faction campaign",
+                      interact: "World interaction",
+                      contracts: "Regional contracts",
                       social: "Standing & recovery",
                       multiplayer: "Realms & servers",
                       credits: "Credits",
@@ -1417,6 +1439,23 @@ function App() {
                   </button>
                 </div>
               </div>
+            )}
+            {panel === "adventure" && (
+              <AdventurePanel
+                initialTab={adventureTab}
+                state={state}
+                call={call}
+                close={() => setPanel(null)}
+              />
+            )}
+            {panel === "interact" && (
+              <InteractionPanel
+                key={state.target?.id || "none"}
+                state={state}
+                call={call}
+                close={() => setPanel(null)}
+                open={open}
+              />
             )}
             {panel === "multiplayer" && (
               <MultiplayerPanel client={network.current} state={networkState} />

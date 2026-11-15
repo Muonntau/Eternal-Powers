@@ -1,0 +1,14 @@
+Eternal Powers — Concord & Covenant original generated artwork
+
+Files: earth-atlas.png and cosmic-atlas.png
+Created for this repository using OpenAI image generation, November 2026.
+Each original atlas contains four landscape plates, used by the game's region
+cards and faction campaign banners. No third-party reference image was used.
+
+The project author dedicates these original project assets to the public domain
+under CC0 1.0, to the extent legally possible:
+https://creativecommons.org/publicdomain/zero/1.0/
+
+These assets are an original interpretation of luminous geometric sci-fantasy.
+They are not official work by, endorsed by, or copied from Nanogram Foundation
+Studio. The linked social reference could not be accessed during development.

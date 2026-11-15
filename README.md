@@ -1,10 +1,12 @@
-# Eternal Powers v2 — Eternity Reborn
+# Eternal Powers v3 — Concord & Covenant
 
 **[Play Eternal Powers in your browser](https://muonntau.github.io/Eternal-Powers/)**
 
 A character-driven 2D fantasy campaign based on the supplied **Eternal Powers Game Manual**, provisional ruleset 0.1. Create an angelic or demonic avatar, explore three expanded realms, complete authored contracts, build a sanctuary, and change the world through reversible rituals.
 
-Version 2 introduces a mandatory four-step character creator, matching customizable world avatars, a modern navy/cyan interface, redesigned interaction windows, nearby/region maps, larger environments, richer spell effects, and renewable wilderness populations. The included authoritative server supports rooms of up to 64 travelers. Original art, music and effects, plus licensed CC0 imports, ship with the repository.
+Version 3 adds two distinct 12-mission faction campaigns, a current-objective tracker beneath the minimap, six reactive power challenges in every region, purposeful NPC services, redesigned world interaction windows, accurate story/reward markers, and eight original generated landscape plates. Decisions, mission receipts, challenge states and endings survive saves and multiplayer region travel. See [Concord & Covenant](docs/CONCORD_AND_COVENANT.md) for the campaign and mechanics.
+
+The four-step character creator, customized world avatars, expanded 4800 × 3600 regions, 117 regional contracts, sanctuary systems, spell effects and renewable populations remain available. The authoritative server supports rooms of up to 64 travelers. Original art, music and effects, plus licensed CC0 imports, ship with the repository.
 
 ## Public GitHub edition
 

@@ -49,6 +49,10 @@ const ACTIONS = new Set([
   "setLineage",
   "createCharacter",
   "updateAppearance",
+  "openInteraction",
+  "performInteraction",
+  "navigateInteraction",
+  "navigateAdventureObjective",
   "cast",
   "cancelCast",
   "interact",
@@ -171,6 +175,7 @@ function alignClock(game, target) {
   rebase(game.powerObjects);
   rebase(game.effects);
   rebase(game.castState);
+  rebase(game.adventure);
   rebase(game.techniqueState);
   if (game.player.dodgeUntil > 0) game.player.dodgeUntil += offset;
   game.time = target;
@@ -188,13 +193,17 @@ function refreshLegacyZone(zone, game) {
       .filter(
         (entity) =>
           !entity.contractSimulation &&
+          !entity.adventureActor &&
           entity.role !== "companion" &&
           !entity.ownerId,
       )
       .map((entity) => [entity.baseEntityId || entity.id, entity]),
   );
   const entities = game.entities.filter(
-    (entity) => !entity.contractSimulation && entity.role !== "companion",
+    (entity) =>
+      !entity.contractSimulation &&
+      !entity.adventureActor &&
+      entity.role !== "companion",
   );
   for (const entity of entities) {
     const saved = previous.get(entity.baseEntityId || entity.id);
@@ -366,7 +375,10 @@ export class CoopService {
       // Construction may restore actors before the imported character receives
       // its account identity. This engine has not joined the shared entities yet.
       engine.entities = engine.entities.filter(
-        (entity) => entity.role !== "companion" && !entity.contractSimulation,
+        (entity) =>
+          entity.role !== "companion" &&
+          !entity.contractSimulation &&
+          !entity.adventureActor,
       );
       member = {
         id: account.id,
@@ -426,7 +438,9 @@ export class CoopService {
           const entity = previousEntities[i];
           if (
             entity.ownerId === member.id &&
-            (entity.role === "companion" || entity.contractSimulation)
+            (entity.role === "companion" ||
+              entity.contractSimulation ||
+              entity.adventureActor)
           )
             previousEntities.splice(i, 1);
         }
@@ -516,6 +530,7 @@ export class CoopService {
         game.entities.splice(i, 1);
     }
     game.syncContractEntities();
+    game.syncAdventureEntities?.();
     updateRegionalEncounters(game, 0);
   }
   member(token) {
@@ -586,7 +601,9 @@ export class CoopService {
         const entity = game.entities[i];
         if (
           entity.ownerId === member.id &&
-          (entity.role === "companion" || entity.contractSimulation)
+          (entity.role === "companion" ||
+            entity.contractSimulation ||
+            entity.adventureActor)
         )
           game.entities.splice(i, 1);
       }
@@ -1283,7 +1300,8 @@ export class CoopService {
             if (
               entity.ownerId &&
               entity.ownerId !== viewerId &&
-              ["contract-step", "contract-trader"].includes(entity.role)
+              (entity.adventureActor ||
+                ["contract-step", "contract-trader"].includes(entity.role))
             )
               return false;
             return (
