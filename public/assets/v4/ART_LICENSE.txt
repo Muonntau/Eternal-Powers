@@ -1,0 +1,18 @@
+Eternal Powers — Wilds Reborn original generated game artwork
+
+Files: power-wilds.png, creature-sheet.png, environment-sheet.png,
+hero-sheet.png, ground-sheet.png.
+
+Created for this repository with OpenAI image generation in November 2026.
+These are newly generated original game assets. No reference image or artwork
+from another artist was supplied to the generator. The actual game renders
+painted atlas cells, including four hero forms with four directions, sixteen
+creature silhouettes, scenery, and ground materials. Runtime animation,
+lighting, spell effects and interface graphics are original project code.
+
+The project author dedicates these original project assets to the public domain
+under CC0 1.0, to the extent legally possible:
+https://creativecommons.org/publicdomain/zero/1.0/
+
+This is an original 2D action adaptation of the Eternal Powers manual's names
+and gameplay concepts, not official artwork for an unavailable finished game.

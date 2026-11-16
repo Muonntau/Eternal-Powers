@@ -4,7 +4,7 @@ import { ensureCharacter } from "./helpers/character.js";
 async function boot(page) {
   const errors = [];
   page.on("pageerror", (error) => errors.push(error.message));
-  await page.goto("/");
+  await page.goto("/?legacy=1");
   await page.waitForFunction(() => window.__eternal?.getSnapshot().sanctuary);
   await ensureCharacter(page);
   return errors;

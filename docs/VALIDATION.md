@@ -1,21 +1,33 @@
-# Eternal Powers v3 validation
+# Eternal Powers v4 validation
 
-The v3 release is checked by 217 automated tests:
+Wilds Reborn and the retained Classic Journey are checked by 243 automated tests:
 
 | Suite | Tests | Command |
 | --- | ---: | --- |
-| Game simulation, character creation, world geometry and respawns | 160 | `npm test` |
-| Authoritative server, transport, origins and 64-client capacity | 28 | `npm run test:network` |
+| New action combat, audio, catalog, regions and retained Classic simulation | 183 | `npm test` |
+| Classic authoritative server, transport, origins and 64-client capacity | 28 | `npm run test:network` |
 | Offline boundaries and project-base hosting | 7 | `npm run test:offline` |
-| Browser gameplay, onboarding and responsive interface | 22 | `npm run test:browser` |
+| New action gameplay plus Classic onboarding and responsive interface | 25 | `npm run test:browser` |
 
-The production build passes with both root hosting and GitHub Pages project hosting. The offline manifest contains 1,023 asset files totaling 36.5 MiB and 21 production shell files. Art licenses and source revisions are documented in `ASSET_PROVENANCE.md`.
+The production build passes with both root hosting and GitHub Pages project hosting. The offline manifest contains 1,028 asset files totaling 50.6 MiB and 28 production shell files. Art licenses and source revisions are documented in `ASSET_PROVENANCE.md`.
 
-## Character and interface checks
+## Wilds Reborn action checks
+
+The new default is a separate action game and save namespace. Sixteen starting affinities and one ultimate are available immediately; all 160 preserved names use seven action forms with short cooldowns and inexpensive unlocks. New engine tests run actual aimed casts, projectiles, kills, loot, XP, unlocking, all 160 execution profiles, five elemental reactions, fixed enemy warnings, dodge immunity, renewable creatures and reactive props. Tests verify once-only chest rewards, guardian-sealed treasure, three physical rift waves, bounded retry actors, safe defeated-save recovery, stopped offensive fields while downed, and physical rift tracking without teleporting or starting a fight.
+
+World tests check all 39 layouts for collision-safe, connected arrivals, scenery, encounters, treasure, rift and guardian positions. All 30 manual creature identities are represented. Audio tests verify gesture-only startup, all elemental sound families, bounded voices, pause/mute and cleanup.
+
+New browser flows create a character through the visible controls, move and dash, defeat a real creature with aimed powers, earn and collect rewards, unlock/equip a higher named power, use it on a reactive prop, travel and reload. All 160 library entries and 39 travel choices are checked. Creator, world, library, map and pause layouts are inspected at desktop and 390-pixel phone widths. A short frame sample checks for severe rendering stalls; it is not a fixed frame-rate guarantee.
+
+A strict production fixture serves only `/Eternal-Powers/`. It checks the new client, five generated runtime atlases/illustrations, proper worker scope, complete full-library caching, absence of private requests in caches, and offline hard reload with saved character, power loadout, unlocks and region intact. Actual casting and travel must continue offline. The Classic save namespace is preserved separately.
+
+The painted characters, creatures, scenery and terrain are used in the actual Canvas world. The renderer depth-sorts actors, fades occluding scenery, shows the actual attack warning area, animates spells and statuses, and renders a tracked rift direction. The minimap draws the current world's path and river geometry.
+
+## Retained Classic character and interface checks
 
 Browser checks use the real four-step creator instead of injecting an already-created save. Fresh characters cannot move before creation; the chosen name, lineage, first power and full appearance persist after reload. Sanctuary appearance edits preserve identity, possessions and progression. The creator, customized portraits, HUD, radar, inventory and character windows are checked at desktop and 390-pixel phone widths.
 
-The same E interaction opens a neutral creature's material card. Tests verify missing-material explanations, exact inventory deduction, one-time offering settlement, familiar bonding and support. Region-map tests switch radar modes and legends, select the actual sanctuary landmark, set a collision-safe approach and observe the avatar walking after the atlas closes.
+In Classic, the same E interaction opens a neutral creature's material card. Tests verify missing-material explanations, exact inventory deduction, one-time offering settlement, familiar bonding and support. Region-map tests switch radar modes and legends, select the actual sanctuary landmark, set a collision-safe approach and observe the avatar walking after the atlas closes.
 
 The prior campaign, certification, recovery, crafting, barter, construction, rituals, respecialization, ordinary movement, named casts, saves, audio startup and region-travel checks remain covered.
 

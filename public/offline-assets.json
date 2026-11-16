@@ -1,7 +1,7 @@
 {
-  "version": "cad1e208fe591bee6b94",
-  "assetCount": 1023,
-  "totalBytes": 38313067,
+  "version": "4f06b42492288023b20d",
+  "assetCount": 1028,
+  "totalBytes": 53105324,
   "files": [
     {
       "url": "/assets/angel-sheet.png",
@@ -3277,6 +3277,31 @@
       "url": "/assets/v3/earth-atlas.png",
       "bytes": 3515282,
       "sha256": "057afa802dd16c24db4eea84bf86a126566d75123ccd1645c65c771a0038d329"
+    },
+    {
+      "url": "/assets/v4/creature-sheet.png",
+      "bytes": 3549362,
+      "sha256": "9822fe553ac4ff5be11a6858a4e7ae292a1f10270fd86e2d8ce87616a300429f"
+    },
+    {
+      "url": "/assets/v4/environment-sheet.png",
+      "bytes": 2528444,
+      "sha256": "ee33865c189dff082854c8f7f787377cf14e962b2b17fff10644ca5a816496d2"
+    },
+    {
+      "url": "/assets/v4/ground-sheet.png",
+      "bytes": 3265469,
+      "sha256": "d531defba2e39549fefe3808de8bc0011bc07e93eacd017fac31746527135c5e"
+    },
+    {
+      "url": "/assets/v4/hero-sheet.png",
+      "bytes": 1995589,
+      "sha256": "6d3ce4062dfc197ff9c6f51e007c7e87005ac6d45cbac6327f409d6433e33d1e"
+    },
+    {
+      "url": "/assets/v4/power-wilds.png",
+      "bytes": 3453393,
+      "sha256": "11b501be8ded943e904414b97d15160794d887baa2cea0e5fc80f98d99252c93"
     },
     {
       "url": "/assets/vendor/superpowers/animals/0-animals.png",

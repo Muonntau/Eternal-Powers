@@ -39,3 +39,9 @@ World avatars are drawn from the same validated appearance palettes as their cre
 ## Concord & Covenant generated landscape plates
 
 `public/assets/v3/earth-atlas.png` and `cosmic-atlas.png` contain eight newly generated original landscape plates, used by region cards and faction campaign banners. Their original-art dedication is in `public/assets/v3/ART_LICENSE.txt`. No third-party image was supplied to the generator. The Nanogram Foundation Studio social reference was inaccessible; these are an original luminous geometric sci-fantasy interpretation, not official studio art. Animated reactive crystal structures, rune gates, petal blooms, echo wells, relay rings and purpose markers are original Canvas graphics in the renderer.
+
+## Wilds Reborn painted game atlases
+
+`public/assets/v4/` contains newly generated original artwork: `power-wilds.png` (title/creator illustration), `creature-sheet.png` (16 painted creature silhouettes), `environment-sheet.png` (16 painted scenery objects), `hero-sheet.png` (four hero forms in four directions), and `ground-sheet.png` (16 ground/road materials). Transparent sprite atlases are sampled directly by the new Canvas renderer; their use is part of the actual game world. Breathing, walking, aim-facing, depth sorting, collision-aware scenery fading, water sheen, spell effects, enemy warning shapes and damage feedback are implemented in project code. Their original-art dedication is in `public/assets/v4/ART_LICENSE.txt`. No external reference image was used.
+
+Wilds Reborn's adaptive music and elemental sound effects are original real-time Web Audio synthesis in `src/reborn/audio.js`, with a bounded voice budget and playback initiated by a user gesture. Classic's shipped music, sounds and licensed imported assets retain the terms above.

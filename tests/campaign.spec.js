@@ -8,7 +8,7 @@ async function boot(page) {
     if (response.status() >= 400)
       errors.push(`${response.status()} ${response.url()}`);
   });
-  await page.goto("/");
+  await page.goto("/?legacy=1");
   await page.waitForFunction(
     () => window.__eternal?.getSnapshot().contracts?.offers?.length === 3,
   );

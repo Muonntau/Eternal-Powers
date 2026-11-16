@@ -1,13 +1,13 @@
 {
   "name": "eternal-powers",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "test": "node --test src/game/*.test.js",
+    "test": "node --test src/game/*.test.js src/reborn/*.test.js",
     "test:browser": "playwright test",
     "format": "prettier --write src tests *.js",
     "server": "node server/index.js",

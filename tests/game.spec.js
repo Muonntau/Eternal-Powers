@@ -6,7 +6,7 @@ test("keyboard movement, click targeting, casting and save persist a settled obj
 }) => {
   const errors = [];
   page.on("pageerror", (error) => errors.push(error.message));
-  await page.goto("/");
+  await page.goto("/?legacy=1");
   await ensureCharacter(page);
   await page.waitForFunction(() => window.__eternal?.getSnapshot().player);
   const initial = await page.evaluate(
@@ -71,7 +71,7 @@ test("all primary panels, advanced catalogs and transaction preview work", async
     if (response.status() >= 400)
       failures.push(`${response.status()} ${response.url()}`);
   });
-  await page.goto("/");
+  await page.goto("/?legacy=1");
   await ensureCharacter(page);
   await page.getByRole("button", { name: "Powers", exact: true }).click();
   await expect(
@@ -141,7 +141,7 @@ test("phone layout keeps world and controls within the screen", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/");
+  await page.goto("/?legacy=1");
   await ensureCharacter(page);
   await expect(page.locator(".game-viewport > canvas")).toBeVisible();
   expect(

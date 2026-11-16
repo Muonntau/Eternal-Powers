@@ -6,7 +6,7 @@ async function boot(page, lineage = "angel") {
   page.on("response", (r) => {
     if (r.status() >= 400) errors.push(`${r.status()} ${r.url()}`);
   });
-  await page.goto("/");
+  await page.goto("/?legacy=1");
   await ensureCharacter(page, {
     name: lineage === "angel" ? "Lyra Concord" : "Kael Unbound",
     lineage,
